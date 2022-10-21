@@ -1,0 +1,34 @@
+.mainheader{
+    background-color: #5adaf0;
+    background-size: cover;
+    padding: bottom 30px;;
+  }
+  .nav ul{
+    margin: 0;
+  }
+
+  .nav li{
+    display: inline;
+  }
+
+  .nav a {
+    display: inline-block;
+    text-align: center;
+    padding: .4em;
+    color: white;
+
+  }
+
+  .nav a:hover{
+    background-color: rgb(65, 64, 64);
+  }
+  .main-nav{
+    text-align: center;
+    font-size: 1.44em;
+    font-weight: lighter;
+    border-bottom: 1px solid #d79831;
+  }
+
+  .main-nav li{
+    padding: 0 5%;
+  }
