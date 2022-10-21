@@ -1,0 +1,18 @@
+.body{
+    margin:0;
+    padding:0;
+    background-color:grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    .login{
+        border-radius:25px;
+        width: 300px;
+        overflow: hidden;
+        margin:auto;
+        margin: 20 0 0 450px;
+        padding:80px;
+        background-color: lightgrey; 
+
+    }
+    
+    
