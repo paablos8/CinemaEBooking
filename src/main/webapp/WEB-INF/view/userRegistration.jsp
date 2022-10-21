@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
     <title>UserRegistration    
@@ -19,11 +20,11 @@
         padding: 14px 20px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 50px;
+        margin-top: 15px;
         text-align:center;
       }
       .title{
-        font-size:50px;
+        font-size:45px;
         text-align: center;
       }
 
@@ -90,6 +91,91 @@
     background-color:#333;
     color: white;  
 }
+
+.help-tip{
+    position: static;
+    text-align: center;
+    background-color: #BCDBEA;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+}
+
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+
+}
+
+.help-tip p{    /* The tooltip */
+    display: none;
+    text-align: center;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -4px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.help-tip p:before{ /* The pointer of the tooltip */
+    float: right;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+
+/* CSS animation */
+@-webkit-keyframes fadeIn {
+    0% { 
+        opacity:0; 
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+
+
+
+
    </style>
   </head>
 
@@ -112,21 +198,30 @@
 </div>
 
 <div class="registration">
-    <form>
+
+  <form>
         <!-- Email input -->
-        <div class="form-outline mb-4">
+
+        <div class="form-outline mb-4">   <div class="help-tip">
+          <p>Input a valid email address which will be used as your username credential</p>
+      </div> 
           <input type="email" id="" class="form-control" />
           <label class="form-label" for="form2Example1">Email address</label>
-        </div>
+        </div>        
+       
       
         <!-- Password input -->
-        <div class="form-outline mb-4">
+        <div class="form-outline mb-4">   <div class="help-tip">
+          <p>Enter a secure password that will be used as your login credential</p>
+      </div> 
           <input type="password" id="registrationPassword" class="form-control" />
           <label class="form-label" for="form2Example2">Password</label>
         </div>
       
           <!-- Password input2 -->
-          <div class="form-outline mb-4">
+          <div class="form-outline mb-4">   <div class="help-tip">
+            <p>Reinput the same password to confirm the password as your login</p>
+        </div> 
             <input type="password" id="registrationPasswordConfirmation" class="form-control" />
             <label class="form-label" for="form2Example2">Confirm Password</label>
           </div>
@@ -148,7 +243,7 @@
         <!-- Register buttons -->
         <div class="text-center">
             <p> Already a Member? <a href="userLogin.html">Login</a></p>
-            
+
             </div>
           </form>
 </div>
