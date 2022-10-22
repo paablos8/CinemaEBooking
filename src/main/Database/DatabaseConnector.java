@@ -1,5 +1,3 @@
-package Database;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,7 +16,7 @@ class DatabaseConnector
      */
     public DatabaseConnector()
     {
-        String dbURL = "jdbc:sqlserver://DESKTOP-LCS9BBJ\\SOFTWAREENGSERVE;user=sa;password=Team_C2;" +
+        String dbURL = "jdbc:sqlserver://;serverName=fe80::3d5b:11d8:c536:dfab\\SOFTWAREENGSERVE;user=sa;password=Team_C2;"  +
                 "encrypt=true;trustServerCertificate=true";
         try {
             conn = DriverManager.getConnection(dbURL);
@@ -32,8 +30,8 @@ class DatabaseConnector
 
     /**
      * Verifies a login using a given email and password.
-     * Returns 0 if valid login, 1 if incorrect password,
-     * or 2 if invalid email.
+     * Returns User ID if valid login, -1 if incorrect password,
+     * or -2 if invalid email.
      *
      * @param email The user's email.
      * @param password The user's password
@@ -44,7 +42,7 @@ class DatabaseConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT Email , Password FROM Users");
+            rs = stmt.executeQuery("SELECT Email, Password, User ID FROM Users");
 
             while(rs.next())
             {
@@ -52,11 +50,11 @@ class DatabaseConnector
                 {
                     if (password.equals(rs.getString("Password")))
                     {
-                        return 0;
+                        return rs.getInt("User ID");
                     }
                     else
                     {
-                        return 1;
+                        return -1;
                     }
                 }
 
@@ -67,19 +65,39 @@ class DatabaseConnector
             e.printStackTrace();
         }
 
-        return 2;
+        return -2;
     }
 
-    /**
-     * Creates a new User Record.
-     * @param firstName The user's first name
-     * @param lastName The user's last name
-     * @param phoneNum The user's phone number
-     * @param email The user's email
-     * @param userType The user's type, customer or admin
-     * @param
+   /**
+     * Returns the User ID given their ID.
+     * @param userID user's ID
+     * @return first name
      */
+    public String getUserFirstName(int userID)
+    {
+        String name = "";
+        ResultSet rs = null;
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT User ID , First Name FROM Users");
 
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    name = rs.getString("First Name");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return name;
+    }
+    
     /**
      * If the connection is currently open, closes the connection.
      */
