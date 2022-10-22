@@ -1,3 +1,5 @@
+package Database_Test;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,16 +9,16 @@ import java.sql.ResultSet;
 /**
  * This is an object that can connect and disconnect from the server.
  */
-class DatabaseConnector
+public class DatabaseConnector
 {
-    Connection conn = null;
+    private Connection conn = null;
 
     /**
      * Creates DatabaseConnector object and connects to server.
      */
     public DatabaseConnector()
     {
-        String dbURL = "jdbc:sqlserver://;serverName=fe80::3d5b:11d8:c536:dfab\\SOFTWAREENGSERVE;user=sa;password=Team_C2;"  +
+        String dbURL = "jdbc:sqlserver://;serverName=fe80::3d5b:11d8:c536:dfab%11\\SOFTWAREENGSERVE;user=sa;password=Team_C2;" +
                 "encrypt=true;trustServerCertificate=true";
         try {
             conn = DriverManager.getConnection(dbURL);
@@ -68,7 +70,7 @@ class DatabaseConnector
         return -2;
     }
 
-   /**
+    /**
      * Returns the User ID given their ID.
      * @param userID user's ID
      * @return first name
@@ -77,6 +79,7 @@ class DatabaseConnector
     {
         String name = "";
         ResultSet rs = null;
+
         try
         {
             Statement stmt = conn.createStatement();
@@ -97,7 +100,69 @@ class DatabaseConnector
 
         return name;
     }
-    
+
+    /**
+     * Returns the User ID given their ID.
+     * @param userID user's ID
+     * @return first name
+     */
+    public String getUserLastName(int userID)
+    {
+        String name = "";
+        ResultSet rs = null;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT User ID , First Name FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    name = rs.getString("Last Name");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return name;
+    }
+
+    /**
+     * Returns the User ID given their ID.
+     * @param userID user's ID
+     * @return first name
+     */
+    public long getUserPhoneNumber(int userID)
+    {
+        long phoneNum = 0;
+        ResultSet rs = null;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT User ID , First Name FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    phoneNum = rs.getLong("PhoneNumber");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return phoneNum;
+    }
+
     /**
      * If the connection is currently open, closes the connection.
      */
