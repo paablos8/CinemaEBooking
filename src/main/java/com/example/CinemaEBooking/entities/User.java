@@ -3,12 +3,13 @@ package com.example.CinemaEBooking.entities;
 @Entity(name = "user")
 public class User {
     protected int userId;
+    private String email;
     private String password;
     private Status status;
 
     //constructor
     public User() {
-            this.status = Status.ACTIVE;
+        this.status = Status.ACTIVE;
     }
 
     public int getUserId() {
@@ -17,6 +18,14 @@ public class User {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
