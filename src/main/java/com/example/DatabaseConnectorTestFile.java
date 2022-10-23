@@ -1,4 +1,4 @@
-package Database_Test;
+package com.example;
 import java.util.Scanner;
 
 /**
