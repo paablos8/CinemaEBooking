@@ -106,7 +106,7 @@
 
 
   <div class="title">
-    Registration Complete
+    You are now logged in!
 </div>
 
 <div class="login">
