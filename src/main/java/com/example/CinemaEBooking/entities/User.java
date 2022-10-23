@@ -4,8 +4,8 @@ package com.example.CinemaEBooking.entities;
 public class User {
     protected int userId;
     private String email;
-    private String password;
     private Status status;
+    private String password;
 
     //constructor
     public User() {
@@ -35,7 +35,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
+   
     public Status getStatus() {
         return status;
     }
