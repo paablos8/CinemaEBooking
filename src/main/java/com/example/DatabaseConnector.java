@@ -264,6 +264,36 @@ public class DatabaseConnector
     }
 
     /**
+     * Creates a new user.
+     * @param fName new user's first name
+     * @param lName new user's last name
+     * @param pNum new user's phone number
+     * @param email new user's email address
+     * @param promoOp new user's promotion opinion, or true if admin
+     * @param isAdmin true if admin
+     * @param password new user's password
+     * @return true if successful
+     */
+    public boolean createNewUser(String fName, String lName, long pNum,
+                                 String email, boolean promoOp, boolean isAdmin,
+                                 String password)
+    {
+        try(Statement stmt = conn.createStatement();)
+        {
+            String SQL = "INSERT INTO Users VALUES ('"
+                    +fName+"','"+lName+"',"+pNum+",'"+email+"','"+
+                    promoOp+"',"+2+",'"+isAdmin+"','"+password+"')";
+            stmt.executeUpdate(SQL);
+        }
+        // Handle any errors that may have occurred.
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+    
+    /**
      * If the connection is currently open, closes the connection.
      */
     public void close()
