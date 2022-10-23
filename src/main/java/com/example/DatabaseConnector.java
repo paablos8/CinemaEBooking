@@ -21,12 +21,16 @@ public class DatabaseConnector
         String loginCredentials = "user=sa;password=Team_C2;";
         String settings = "encrypt=true;trustServerCertificate=true";
         String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
-        try {
+        try 
+        {
             conn = DriverManager.getConnection(dbURL);
-        } catch (SQLException e) {
+        } 
+        catch (SQLException e) 
+        {
             throw new RuntimeException(e);
         }
-        if (conn != null) {
+        if (conn != null) 
+        {
             System.out.println("Connected");
         }
     }
@@ -129,6 +133,7 @@ public class DatabaseConnector
         {
             e.printStackTrace();
         }
+    }
 
     /**
      * Returns the User's phone number given their ID.
@@ -266,7 +271,8 @@ public class DatabaseConnector
                 conn.close();
                 System.out.println("Connection closed");
             }
-        } catch (SQLException ex)
+        } 
+        catch (SQLException ex)
         {
             ex.printStackTrace();
         }
