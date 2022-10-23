@@ -16,8 +16,11 @@ public class DatabaseConnector
      */
     public DatabaseConnector()
     {
-        String dbURL = "jdbc:sqlserver://;serverName=fe80::3d5b:11d8:c536:dfab%11\\SOFTWAREENGSERVE;user=sa;password=Team_C2;" +
-                "encrypt=true;trustServerCertificate=true";
+        String serverName = "2.tcp.ngrok.io:11975;";
+        String serverInstance = "instanceSOFTWAREENGSERVE;";
+        String loginCredentials = "user=sa;password=Team_C2;";
+        String settings = "encrypt=true;trustServerCertificate=true";
+        String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
         try {
             conn = DriverManager.getConnection(dbURL);
         } catch (SQLException e) {
@@ -69,7 +72,7 @@ public class DatabaseConnector
     }
 
     /**
-     * Returns the User ID given their ID.
+     * Returns the user's first name given their ID.
      * @param userID user's ID
      * @return first name
      */
@@ -100,9 +103,9 @@ public class DatabaseConnector
     }
 
     /**
-     * Returns the User ID given their ID.
+     * Returns the user's last name given their ID.
      * @param userID user's ID
-     * @return first name
+     * @return last name
      */
     public String getUserLastName(int userID)
     {
@@ -112,7 +115,7 @@ public class DatabaseConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , First Name FROM Users");
+            rs = stmt.executeQuery("SELECT User ID , Last Name FROM Users");
 
             while(rs.next())
             {
@@ -127,13 +130,10 @@ public class DatabaseConnector
             e.printStackTrace();
         }
 
-        return name;
-    }
-
     /**
-     * Returns the User ID given their ID.
+     * Returns the User's phone number given their ID.
      * @param userID user's ID
-     * @return first name
+     * @return phone number
      */
     public long getUserPhoneNumber(int userID)
     {
@@ -143,13 +143,13 @@ public class DatabaseConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , First Name FROM Users");
+            rs = stmt.executeQuery("SELECT User ID , Phone Number FROM Users");
 
             while(rs.next())
             {
                 if(userID == rs.getInt("User ID"))
                 {
-                    phoneNum = rs.getLong("PhoneNumber");
+                    phoneNum = rs.getLong("Phone Number");
                 }
             }
         }
@@ -159,6 +159,99 @@ public class DatabaseConnector
         }
 
         return phoneNum;
+    }
+
+    /**
+     * Returns true if the user is an admin, given their ID.
+     * @param userID user's ID
+     * @return true if the user is an admin
+     */
+    public boolean getUserType(int userID)
+    {
+        boolean isAdmin = false;
+        ResultSet rs = null;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT User ID , Is Admin FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    isAdmin = rs.getBoolean("Is Admin");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return isAdmin;
+    }
+    
+    /**
+     * Returns the user's promotion opinion given their ID.
+     * @param userID user's ID
+     * @return true if user wants promotional emails
+     */
+    public boolean getPromoOp(int userID)
+    {
+        boolean promoOp = false;
+        ResultSet rs = null;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT User ID , Promotion Opinion FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    promoOp = rs.getBoolean("Promotion Opinion");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return promoOp;
+    }
+    
+    /**
+     * Returns the user's status given their ID.
+     * @param userID user's ID
+     * @return user status, corresponds with the enum
+     */
+    public int getUserStatus(int userID)
+    {
+        int status = 0;
+        ResultSet rs = null;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT User ID , User Status FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    status = rs.getInt("User Status");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return status;
     }
 
     /**
