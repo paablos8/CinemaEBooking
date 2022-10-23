@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
-        background-color: grey;
+        background:linear-gradient(grey,orange);
+        height:100%;
       }
       .login{
         border-radius:25px;
@@ -116,30 +117,39 @@
 
 
   <div class="title">
-    Edit Profile
+    Edit Account
 </div>
 
 <div class="login">
   <div class="row">
     <div class="column" style="background-color:#aaa; text-align: right;">
-      <p>Username</p>
-      <p>Email</p>
-      <p></p>
-      <p>Password:</p>
+      <p>Name</p>
+      <p>Password</p>
       <p>Address</p>
+      <br>
+      <p>Card Number</p>
+      <p>CVN</p>
+      <p>Card Expiration</p>
       <br>
     </div>
     <div class="column" style="background-color:#bbb; text-align: left;">
-      <p>SampleUsername</p>
-      <p>SampleEmail@Sample.com</p>
+      <input type="text" id="changeName" name="changeName" placeholder="sampleName">
       <p></p>
-      <p>*************</p>
-      <p>1111 SampleStreet, SampleCity, SampleState</p>
+      <input type="text" id="changePassword" name="changePassword" placeholder="samplePassword">
+      <p></p>
+      <input type="text" id="changeAddress" name="changeAddress" placeholder="sampleAddress">
+      <p></p>
+      <input type="text" id="changeCardNumber" name="changeCardNumber" placeholder="sampleCardNumber">
+      <p></p>
+      <input type="text" id="changePassword" name="changePassword" placeholder="sampleCVN">
+      <p></p>
+      <input type="text" id="changeAddress" name="changeAddress" placeholder="sampleExpiration">
+      <p></p>
     </div>
   </div>
     <br>
-  <a href="editCard.html">
-    <button" class="btn btn-secondary btn-block mb-4">Edit Card Information</button>
+    <a href="editProfile.html">
+    <button" class="btn btn-secondary btn-block mb-4">Confirm Changes</button>
 </a>
   
 </div>
