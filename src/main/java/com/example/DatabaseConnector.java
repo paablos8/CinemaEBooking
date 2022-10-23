@@ -133,6 +133,8 @@ public class DatabaseConnector
         {
             e.printStackTrace();
         }
+        
+        return name;
     }
 
     /**
