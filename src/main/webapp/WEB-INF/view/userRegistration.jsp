@@ -199,13 +199,13 @@
 
 <div class="registration">
 
-  <form>
+  <form:form method="POST" modelAttribute="accountForm">
         <!-- Email input -->
 
         <div class="form-outline mb-4">   <div class="help-tip">
           <p>Input a valid email address which will be used as your username credential</p>
       </div> 
-          <input type="email" id="" class="form-control" />
+          <form:input type="email" id="" class="form-control" />
           <label class="form-label" for="form2Example1">Email address</label>
         </div>        
        
@@ -214,7 +214,7 @@
         <div class="form-outline mb-4">   <div class="help-tip">
           <p>Enter a secure password that will be used as your login credential</p>
       </div> 
-          <input type="password" id="registrationPassword" class="form-control" />
+          <form:input type="password" id="registrationPassword" class="form-control" />
           <label class="form-label" for="form2Example2">Password</label>
         </div>
       
@@ -222,7 +222,7 @@
           <div class="form-outline mb-4">   <div class="help-tip">
             <p>Reinput the same password to confirm the password as your login</p>
         </div> 
-            <input type="password" id="registrationPasswordConfirmation" class="form-control" />
+            <form:input type="password" id="registrationPasswordConfirmation" class="form-control" />
             <label class="form-label" for="form2Example2">Confirm Password</label>
           </div>
         
@@ -237,15 +237,15 @@
       
       
         <!-- Submit button -->
-        <button type="button" class="btn btn-secondary btn-block mb-4">Register</button>
+        <form:button type="button" class="btn btn-secondary btn-block mb-4">Register</form:button>
       
       
         <!-- Register buttons -->
         <div class="text-center">
-            <p> Already a Member? <a href="userLogin.html">Login</a></p>
+            <p> Already a Member? <a href="userLogin">Login</a></p>
 
             </div>
-          </form>
+          </form:form>
 </div>
 
 
