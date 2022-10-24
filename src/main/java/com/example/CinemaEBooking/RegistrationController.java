@@ -1,7 +1,7 @@
 package com.example.CinemaEBooking;
 
 import com.example.Database.DatabaseConnector;
-import com.example.CinemaEBooking.entities.Customer;
+import com.example.CinemaEBooking.entities.User;
 //import Database.*;
 
 import java.io.IOException;
@@ -44,22 +44,32 @@ public class RegistrationController {
 
     @RequestMapping(value = "/userRegistration", method = RequestMethod.GET)
     public String showRegPage(Model model) {
-        model.addAttribute("accountForm", new Customer());
+        model.addAttribute("accountForm", new DatabaseConnector());
+
+        System.out.println("Sending Email...");
+            //sendEmail("pablo.muller@uga.edu");
+        System.out.println("Done");
+
+        
         return "userRegistration";
     }
 
+    void sendEmail(String emailAdress) {
+
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setTo(emailAdress);
+
+        msg.setSubject("Account created");
+        msg.setText("You have sucessfully created an account for the cinema E-booking system!");
+
+        javaMailSender.send(msg);
+
+    }
 
 
     @RequestMapping(value = "/userRegistration", method = RequestMethod.POST)
-    public Object registerAccount(@ModelAttribute("accountForm") Customer accountForm, BindingResult bindingResult,
+    public Object registerAccount(@ModelAttribute("accountForm") DatabaseConnector accountForm, BindingResult bindingResult,
                                   Model model, HttpServletRequest request) throws UnsupportedEncodingException, MBeanException {
-
-                                    String firstName = accountForm.getFirstName();
-                                    String lastName = accountForm.getLastName();
-                                    String billingAddress = accountForm.getBillingAddress();
-                                    String email = accountForm.getEmail();
-                                    String password = accountForm.getPassword();
-                                    Boolean promotionSubscribe = accountForm.getPromotionSubscribe();
 
         if (bindingResult.hasErrors()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
@@ -72,17 +82,5 @@ public class RegistrationController {
      return "/registrationConfirmation";
 
     
-}
-
-void sendEmail(String emailAdress) {
-
-    SimpleMailMessage msg = new SimpleMailMessage();
-    msg.setTo(emailAdress);
-
-    msg.setSubject("Account created");
-    msg.setText("You have sucessfully created an account for the cinema E-booking system!");
-
-    javaMailSender.send(msg);
-
 }
 }
