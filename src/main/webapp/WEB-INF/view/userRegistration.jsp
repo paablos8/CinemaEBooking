@@ -11,7 +11,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:120%;
       }
       .registration{
         border-radius:25px;
@@ -152,10 +152,9 @@
     0% { opacity:0; }
     100% { opacity:100%; }
 }
+
    </style>
   </head>
-
-
 <body>
 
   <div class="topnav" id="myTopnav">
@@ -170,7 +169,7 @@
 
 
   <div class="title">
-    Signup Page
+    Registration Page
 </div>
 
 <div class="registration">
@@ -180,29 +179,28 @@
 
 
       <div class="form-outline mb-4"></div>
-                <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="Enter email address" />
+                <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="Enter First Name" />
                 <label class="form-label" for="form2Example1">First Name</label>    
-            </div>
+            
 
             <div class="form-outline mb-4"></div>
-                <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="Enter email address" />
+                <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="Enter Last Name" />
                 <label class="form-label" for="form2Example1">Last name</label>    
-            </div>
+            
 
             <div class="form-outline mb-4"></div>
-                <form:input type="adress" class="form-control" id="billingAddress" path="billingAddress" placeholder="Enter email address" />
+                <form:input type="adress" class="form-control" id="billingAddress" path="billingAddress" placeholder="Enter Billing Address" />
                 <label class="form-label" for="form2Example1">Billing Adress</label>    
-            </div>
+            
 
             <div class="form-outline mb-4"></div>
-                <form:input type="number" class="form-control" id="phone" path="phone" placeholder="Enter email address" />
-                <label class="form-label" for="form2Example1"></label>phone </label>    
-            </div>
-        
-        
+                <form:input type="number" class="form-control" id="phone" path="phone" placeholder="(000)000 0000" />
+                <label class="form-label" for="form2Example1"></label>Phone Number </label>    
+            
+       
             <!-- Email input -->
             <div class="form-outline mb-4"></div>
-                <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter email address" />
+                <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter Email Address" />
                 <label class="form-label" for="form2Example1">Email address</label>    
             </div>
 
@@ -233,10 +231,8 @@
 
         <!-- Register buttons -->
         <div class="text-center">
-            <p>Not a member? <a href="userRegistration.jsp">Register</a></p>
             <p>Continue as guest? <a href="homePage.jsp">Continue</a></p>
-            <p>Admin Login? <a href="adminLogin.jsp">Login</a></p>
-        </div>
+               </div>
     </form>
     </div>
 
