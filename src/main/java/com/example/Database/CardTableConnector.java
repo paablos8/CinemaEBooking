@@ -5,7 +5,7 @@ import java.sql.Connection;
 /**
  *  These are the functions to access the Card Table
  */
-public class CardTableConnector
+public class CardTableConnector extends SQL_GetSet
 {
     private Connection conn;
 
@@ -14,6 +14,6 @@ public class CardTableConnector
      * Connection should be linked to server prior to creating this object.
      * @param conn Valid connection
      */
-    public CardTableConnector(Connection conn) {this.conn = conn;}
+    public CardTableConnector(Connection conn) {super(conn);this.conn = conn;}
 
 }
