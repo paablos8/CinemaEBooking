@@ -1,4 +1,4 @@
-package com.example;
+package Database_Test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -67,6 +67,10 @@ public class DatabaseConnector
                                  String email, boolean promoOp, boolean isAdmin,
                                  String password)
     {return utc.createNewUser(fName,lName,pNum,email,promoOp,isAdmin,password);}
-    public boolean changeEmail(int userID,String email){return utc.changeEmail(userID,email);}
-
+    public boolean changeFirstName(int userID,String fName){return utc.changeFirstName(userID,fName);}
+    public boolean changeLastName(int userID,String lName){return utc.changeLastName(userID,lName);}
+    public boolean changePhoneNumber(int userID,Long pNum){return utc.changePhoneNumber(userID,pNum);}
+    public boolean changePromotionOpinion(int userID,Boolean promoOp){return utc.changePromoOpinion(userID,promoOp);}
+    public boolean changePassword(int userID,String password){return utc.changePassword(userID,password);}
+    public boolean changeStatus(int userID,int status){return utc.changeStatus(userID,status);}
 }
