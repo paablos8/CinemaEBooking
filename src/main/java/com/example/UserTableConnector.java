@@ -1,4 +1,4 @@
-package Database_Test;
+package Database;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -268,19 +268,175 @@ public class UserTableConnector
         return true;
     }
 
-    public boolean changeEmail(int userID,String email)
+    /**
+     * Updates the user's first name
+     * @param userID user's ID
+     * @param fName user's new first name
+     * @return true if successful
+     */
+    public boolean changeFirstName(int userID,String fName)
     {
         ResultSet rs = null;
         try
         {
-            Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT [User ID] , Email FROM Users");
+            Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT [User ID] , [First Name] FROM Users");
 
             while(rs.next())
             {
                 if(userID == rs.getInt("User ID"))
                 {
-                    rs.updateString("Email", email);
+                    rs.updateString("First Name", fName);
+                    rs.updateRow();
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    /**
+     * Updates the user's last name
+     * @param userID user's ID
+     * @param lName user's new last name
+     * @return true if successful
+     */
+    public boolean changeLastName(int userID,String lName)
+    {
+        ResultSet rs = null;
+        try
+        {
+            Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT [User ID] , [Last Name] FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    rs.updateString("Last Name", lName);
+                    rs.updateRow();
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    /**
+     * Updates the user's phone number
+     * @param userID user's ID
+     * @param pNum user's new phone number
+     * @return true if successful
+     */
+    public boolean changePhoneNumber(int userID,long pNum)
+    {
+        ResultSet rs = null;
+        try
+        {
+            Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT [User ID] , [Phone Number] FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    rs.updateLong("Phone Number", pNum);
+                    rs.updateRow();
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    /**
+     * Updates the user's promotion opinion
+     * @param userID user's ID
+     * @param promoOp user's new opinion
+     * @return true if successful
+     */
+    public boolean changePromoOpinion(int userID,Boolean promoOp)
+    {
+        ResultSet rs = null;
+        try
+        {
+            Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT [User ID] , [Promotion Opinion] FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    rs.updateBoolean("Promotion Opinion", promoOp);
+                    rs.updateRow();
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    /**
+     * Updates the user's password
+     * @param userID user's ID
+     * @param password user's new password
+     * @return true if successful
+     */
+    public boolean changePassword(int userID,String password)
+    {
+        ResultSet rs = null;
+        try
+        {
+            Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT [User ID] , Password FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    rs.updateString("Password", password);
+                    rs.updateRow();
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    /**
+     * Updates the user's status
+     * @param userID user's ID
+     * @param status user's new status id
+     * @return true if successful
+     */
+    public boolean changeStatus(int userID,int status)
+    {
+        ResultSet rs = null;
+        try
+        {
+            Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT [User ID] , [User Status] FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    rs.updateInt("User Status", status);
                     rs.updateRow();
                 }
             }
