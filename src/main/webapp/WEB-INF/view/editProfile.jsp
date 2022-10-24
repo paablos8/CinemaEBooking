@@ -10,7 +10,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:110%;
       }
       .login{
         border-radius:25px;
@@ -99,7 +99,56 @@
     background-color:#333;
     color: white;  
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');*
+{padding: 0;
+  margin: 0;
+  font-family:'Poppins', sans-serif}
+  .container1{
+    
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  .container2{
+    
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  .card{
+      width:350px;
+      height:75vh;
+      background-color:#fff;
+      box-shadow:0px 15px 30px rgba(0,0,0,0.1);
+      border-radius:10px;
+      overflow:hidden;
+    }
+      .card .info
+      {padding:15px;display:flex;justify-content:space-between;border-bottom:1px solid #e1dede;
+        background-color:#e5e5e5}
+        .card .info button
+        {height:30px;width:80px;border:none;
+          color:#fff;border-radius:4px;background-color:#000;
+          cursor:pointer;text-transform:uppercase}
+          .card .forms
+          {padding:15px}
+          .card .inputs
+          {display:flex;flex-direction:column;margin-bottom:10px}
+          .card .inputs span{font-size:12px}
+          .card .inputs input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
+          .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
 
+          .button{
+            padding-left: 25%;
+            padding-right: 25%;
+            display:flex;
+            padding-left:auto;
+            align-items:center;
+          }
     </style>
   </head>
 
@@ -114,44 +163,74 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
-
-
+  
   <div class="title">
-    Edit Account
+    View Account
 </div>
 
-<div class="login">
-  <div class="row">
-    <div class="column" style="background-color:#aaa; text-align: right;">
-      <p>Name</p>
-      <p>Password</p>
-      <p>Address</p>
-      <br>
-      <p>Card Number</p>
-      <p>CVN</p>
-      <p>Card Expiration</p>
-      <br>
-    </div>
-    <div class="column" style="background-color:#bbb; text-align: left;">
-      <input type="text" id="changeName" name="changeName" placeholder="sampleName">
-      <p></p>
-      <input type="text" id="changePassword" name="changePassword" placeholder="samplePassword">
-      <p></p>
-      <input type="text" id="changeAddress" name="changeAddress" placeholder="sampleAddress">
-      <p></p>
-      <input type="text" id="changeCardNumber" name="changeCardNumber" placeholder="sampleCardNumber">
-      <p></p>
-      <input type="text" id="changePassword" name="changePassword" placeholder="sampleCVN">
-      <p></p>
-      <input type="text" id="changeAddress" name="changeAddress" placeholder="sampleExpiration">
-      <p></p>
-    </div>
-  </div>
-    <br>
-    <a href="editProfile.jsp">
-    <button" class="btn btn-secondary btn-block mb-4">Confirm Changes</button>
-</a>
+<div class="container1">
+    <div class="card"> <div class="info"> 
+      <span>Account Information</span> 
+      </div> 
+      <div class="forms"> 
+      <div class="inputs"> 
+      <span>Name</span> 
+      <input type="text" readonly value="${name}"> </div> 
+      <div class="inputs"> 
+      <span>Address</span> 
+      <input type="text" readonly value="${address}"> </div> 
+      <div class="inputs"> 
+      <span>City</span> 
+       <input type="text" readonly value="${city}"> </div> 
+       <div class="inputs"> 
+        <span>State</span> 
+        <input type="text" readonly value="${state}"> </div> 
+        <div class="inputs"> 
+        <span>Country</span>
+        <input type="text" readonly value="${country}"> </div> 
+        
+        <a href="editPassword.jsp">
+          <div class="button">
+            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
+        </a>
+      </div>
+        
+      </div>
+
+      
+      
+       
   
+
+  
+  
+</div>
+<div class="container2">
+  <div class="card"> <div class="info"> 
+    <span>Card Information</span> 
+    </div> 
+    <div class="forms"> 
+    <div class="inputs"> 
+    <span>Name on Card</span> 
+    <input type="text" readonly value="${nameOnCard}"> </div> 
+    <div class="inputs"> 
+    <span>Number</span> 
+    <input type="text" readonly value="${cardNumber}"> </div> 
+    <div class="inputs"> 
+    <span>CVN</span> 
+     <input type="text" readonly value="${cardCVN}"> </div> 
+     <div class="inputs"> 
+      <span>Card Expiration Date</span> 
+      <input type="text" readonly value="${cardExpire}"> </div> 
+      <div class="inputs"> 
+      <span>Zip Code</span>
+      <input type="text" readonly value="${cardZip}"> </div> 
+      
+    <div class="button">
+          <button class="btn btn-secondary btn-block mb-4" button id="savebutton" >Edit</button>
+        </div>
+      </a>  
+        
 </div>
 
 <div class="footer">
@@ -170,6 +249,22 @@
           x.className = "topnav";
         }
       }
+
+      var savebutton = document.getElementById('savebutton');
+var readonly = true;
+var inputs = document.querySelectorAll('input[type="text"]');
+savebutton.addEventListener('click',function(){
+    
+     for (var i=0; i<inputs.length; i++) {
+     inputs[i].toggleAttribute('readonly');
+     };
+
+    if (savebutton.innerHTML == "Edit") {
+      savebutton.innerHTML = "Save";
+         } else {
+      savebutton.innerHTML = "Edit";
+      }  
+});
       </script>
       
 
