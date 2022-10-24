@@ -28,11 +28,6 @@ public class LoginController {
         return "userLogin";
     }
 
-    @RequestMapping(value = "/forgotPassword", method = RequestMethod.GET)
-    public String showForgotPasswordPage(ModelMap model) {
-        model.addAttribute("login", new User());
-        return "forgotPassword";
-    }
 
     
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)

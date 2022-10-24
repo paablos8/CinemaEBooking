@@ -96,8 +96,8 @@
     <div class="title">
         Forgot Password?
     </div>
-    <div class="login">
-    <form:form method="POST" modelAttribute="login">
+    <div class="forgotPassword">
+    <form:form method="POST" modelAttribute="emailBox">
     <div class="MyForm form-group">
         
         
@@ -109,9 +109,9 @@
 
 
         <!-- Submit button -->
-        <form:button type="submit" class="btn btn-secondary btn-block mb-4"><a href="resetPassword.jsp"></a>Reset Password</form:button>
+        <form:button type="submit" class="btn btn-secondary btn-block mb-4">Reset password </form:button>
         
-    </form>
+    
     </div>
 
     <div class="footer">

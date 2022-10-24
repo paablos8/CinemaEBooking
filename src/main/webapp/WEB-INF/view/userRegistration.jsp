@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     
@@ -11,7 +11,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:auto;
+        height:100%;
       }
       .registration{
         border-radius:25px;
@@ -27,16 +27,13 @@
         font-size:45px;
         text-align: center;
       }
-
       .text-center{
         text-align:center;
       }
-
       .topnav {
   overflow: hidden;
   background-color: #333;
 }
-
 .topnav a {
   float: left;
   display: block;
@@ -46,21 +43,17 @@
   text-decoration: none;
   font-size: 17px;
 }
-
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .topnav a.active {
   background-color: orange;
   color: white;
 }
-
 .topnav .icon {
   display: none;
 }
-
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -68,7 +61,6 @@
     display: block;
   }
 }
-
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -91,7 +83,6 @@
     background-color:#333;
     color: white;  
 }
-
 .help-tip{
     position: static;
     text-align: center;
@@ -103,22 +94,17 @@
     line-height: 26px;
     cursor: default;
 }
-
 .help-tip:before{
     content:'?';
     font-weight: bold;
     color:#fff;
 }
-
 .help-tip:hover p{
     display:block;
     transform-origin: 100% 0%;
-
     -webkit-animation: fadeIn 0.3s ease-in-out;
     animation: fadeIn 0.3s ease-in-out;
-
 }
-
 .help-tip p{    /* The tooltip */
     display: none;
     text-align: center;
@@ -133,7 +119,6 @@
     font-size: 13px;
     line-height: 1.4;
 }
-
 .help-tip p:before{ /* The pointer of the tooltip */
     float: right;
     content: '';
@@ -144,7 +129,6 @@
     right:10px;
     top:-12px;
 }
-
 .help-tip p:after{ /* Prevents the tooltip from being hidden */
     width:100%;
     height:40px;
@@ -153,29 +137,21 @@
     top:-40px;
     left:0;
 }
-
 /* CSS animation */
 @-webkit-keyframes fadeIn {
     0% { 
         opacity:0; 
         transform: scale(0.6);
     }
-
     100% {
         opacity:100%;
         transform: scale(1);
     }
 }
-
 @keyframes fadeIn {
     0% { opacity:0; }
     100% { opacity:100%; }
 }
-
-
-
-
-
    </style>
   </head>
 
@@ -183,10 +159,10 @@
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="homePage.html" class="active">Home</a>
-    <a href="couponpromo.html">Promotions</a>
-    <a href="userLogin.html">Login</a>
-    <a href="viewcart.html">View Cart</a>
+    <a href="homePage.jsp" class="active">Home</a>
+    <a href="couponpromo.jsp">Promotions</a>
+    <a href="userLogin.jsp">Login</a>
+    <a href="viewcart.jsp">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -194,70 +170,80 @@
 
 
   <div class="title">
-    Registration Page
+    Signup Page
 </div>
 
 <div class="registration">
   <%--@elvariable id="login" type=""--%>
   <form:form method="POST" modelAttribute="accountForm">
     <div class="MyForm form-group">
-      
-  <!-- Email input -->
-        <div class="form-outline mb-4">   <div class="help-tip">
-          <p>Input a valid email address which will be used as your username credential</p>
-      </div> 
-      <form:input type="email" class="form-control" id="email" path="password" placeholder="Enter email address" />
-                <label class="form-label" for="form2Example1">Email address</label>    
-        </div>        
-       
-      
-        <!-- Password input -->
-        <div class="form-outline mb-4">   <div class="help-tip">
-          <p>Enter a secure password that will be used as your login credential</p>
-      </div> 
-          <form:input type="password" id="registrationPassword" class="form-control" />
-          <form:label class="form-label" for="form2Example2">Password</form:label>
-        </div>
-      
-          <!-- Password input2 -->
-          <div class="form-outline mb-4">   <div class="help-tip">
-            <p>Reinput the same password to confirm the password as your login</p>
-        </div> 
-    
-        <form:input type="password" id="registrationPasswordConfirmation" class="form-control" />
-            <form:label class="form-label" for="form2Example2">Confirm Password</form:label>
-          </div>
-        
-          <!-- PhoneNumber input2 -->
-          <div class="form-outline mb-4">   <div class="help-tip">
-            <p>Input a personal cell number for promotions and reminders</p>
-        </div> 
-            <form:input type="password" id="registrationPasswordConfirmation" class="form-control" />
-            <form:label class="form-label" for="form2Example2">Phone Number</form:label>
-          </div>
-        
 
-        <!-- 2 column grid layout for inline styling -->
-        <div class="row mb-4">
-          <div class="col d-flex justify-content-center">
-            <!-- Checkbox -->
-          </div>
+
+      <div class="form-outline mb-4"></div>
+                <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="Enter email address" />
+                <label class="form-label" for="form2Example1">First Name</label>    
+            </div>
+
+            <div class="form-outline mb-4"></div>
+                <form:input type="email" class="form-control" id="lastName" path="lastName" placeholder="Enter email address" />
+                <label class="form-label" for="form2Example1">Last name</label>    
+            </div>
+
+            <div class="form-outline mb-4"></div>
+                <form:input type="email" class="form-control" id="billingAddress" path="billingAddress" placeholder="Enter email address" />
+                <label class="form-label" for="form2Example1">Billing Adress</label>    
+            </div>
+        
+        
+            <!-- Email input -->
+            <div class="form-outline mb-4"></div>
+                <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter email address" />
+                <label class="form-label" for="form2Example1">Email address</label>    
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <form:input type="password" id="password" class="form-control"  placeholder="Enter password" autocomplete="false" path="password"/>
+                <label class="form-label" for="form2Example2">Password</label>
+            </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <div class="form-check">
+                    <form:checkbox path="promotionSubscribe" />
+                    <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
+                </div>
+            </div>
+
+            <div class="col">
+                <!-- Simple link -->
+                <a href="#!">Forgot password?</a>
+            </div>
         </div>
-      
-      
+
         <!-- Submit button -->
-        <form:button type="button" class="btn btn-secondary btn-block mb-4">Register</form:button>
-      
-      
+        <form:button type="submit" class="btn btn-secondary btn-block mb-4">Sign in</form:button>
+
         <!-- Register buttons -->
         <div class="text-center">
-            <p> Already a Member? <a href="userLogin">Login</a></p>
+            <p>Not a member? <a href="userRegistration.jsp">Register</a></p>
+            <p>Continue as guest? <a href="homePage.jsp">Continue</a></p>
+            <p>Admin Login? <a href="adminLogin.jsp">Login</a></p>
+        </div>
+    </form>
+    </div>
 
-            </div>
-          </form:form>
-          
+    <div class="footer">
+        <br>
+        <small>Copyright - Company Name</small>
+        <br><br>
+    </div>
+    </div>
+</form:form>
 </div>
-<br><br><br>
+
 
 <div class="footer">
   <br>
