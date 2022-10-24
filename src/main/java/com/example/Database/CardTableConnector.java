@@ -1,4 +1,4 @@
-package Database_Test;
+package Database;
 
 import java.sql.Connection;
 
