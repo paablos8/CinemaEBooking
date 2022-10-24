@@ -119,6 +119,87 @@ h5{
 
 }
 
+.help-tip{
+    position: static;
+    text-align: center;
+    background-color: #BCDBEA;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+}
+
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+
+}
+
+.help-tip p{    /* The tooltip */
+    display: none;
+    text-align: center;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -4px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.help-tip p:before{ /* The pointer of the tooltip */
+    float: right;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+
+/* CSS animation */
+@-webkit-keyframes fadeIn {
+    0% { 
+        opacity:0; 
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+
     </style>
   </head>
 
@@ -169,7 +250,9 @@ h5{
 
       Showing Avalible:
       <form>
-          <div class="col-auto my-1">
+        <div class="help-tip">
+          <p>Select your viewing day for your movie selction</p>
+      </div> <div class="col-auto my-1">
             <label class="mr-sm-2" for="ticketDayOfWeek">Day</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
               <option selected>Day</option>
@@ -179,6 +262,9 @@ h5{
               <option value="3">Saturday</option>
             </select>
           </div>
+          <div class="help-tip">
+            <p>Select your viewing time for your movie selction</p>
+            </div>
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="ticketTime">Time</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
@@ -187,11 +273,17 @@ h5{
               <option value="2">8pm</option>
               <option value="3">9pm</option>
             </select>
-          </div>          
+          </div>
+          <div class="help-tip">
+            <p>Enter the amount of tickets for your movie selction</p>
+            </div>          
           <div class="form-outline">
             <label class="form-label" for="numberOfTickets">Number of Tickets:</label>
             <input type="number" id="typeNumber" class="form-control" />
-          </div>  
+          </div>
+          <div class="help-tip">
+            <p>Select your viewing section for your movie selction</p>
+            </div>  
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="ticketTime">Section Letter</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
@@ -201,7 +293,10 @@ h5{
               <option value="3">C</option>
               <option value="4">D</option>
             </select>
-          </div>          
+          </div>
+          <div class="help-tip">
+            <p>Select your seat number for your movie selction</p>
+            </div>          
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="ticketTime">Seat Number</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">

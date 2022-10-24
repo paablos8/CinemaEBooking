@@ -93,62 +93,24 @@
 <body>
 
 
-    <div class="topnav" id="myTopnav">
-        <a href="homePage.jsp" class="active">Home</a>
-        <a href="couponpromo.jsp">Promotions</a>
-        <a href="userLogin.jsp">Login</a>
-        <a href="viewcart.jsp">View Cart</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-     </a>
-    </div>
-
     <div class="title">
-        Login Page
+        Reset Password
     </div>
     <div class="login">
-    <%--@elvariable id="login" type=""--%>
     <form:form method="POST" modelAttribute="login">
     <div class="MyForm form-group">
         
         
-            <!-- Email input -->
+            <!-- new password input -->
             <div class="form-outline mb-4"></div>
                 <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter email address" />
-                <label class="form-label" for="form2Example1">Email address</label>    
+                <label class="form-label" for="form2Example1">New Password</label>    
             </div>
 
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-                <form:input type="password" id="password" class="form-control"  placeholder="Enter password" autocomplete="false" path="password"/>
-                <label class="form-label" for="form2Example2">Password</label>
-            </div>
-
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                <!-- Checkbox -->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                    <label class="form-check-label" for="form2Example31"> Remember me </label>
-                </div>
-            </div>
-
-            <div class="col">
-                <!-- Simple link -->
-                <a href="forgotPassword">Forgot password?</a>
-            </div>
-        </div>
 
         <!-- Submit button -->
-        <form:button type="submit" class="btn btn-secondary btn-block mb-4">Sign in</form:button>
-
-        <!-- Register buttons -->
-        <div class="text-center">
-            <p>Not a member? <a href="userRegistration.jsp">Register</a></p>
-            <p>Continue as guest? <a href="homePage.jsp">Continue</a></p>
-            <p>Admin Login? <a href="adminLogin.jsp">Login</a></p>
-        </div>
+        <form:button type="submit" class="btn btn-secondary btn-block mb-4"><a href="userLogin.jsp"></a>confirm back to login</form:button>
+        
     </form>
     </div>
 
@@ -162,14 +124,5 @@
 </div>
 
 </body>
-    <script>
-        function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
-        }
-        </script>
+    
 </html>
