@@ -5,15 +5,16 @@ public class Customer extends User{
     private String lastName;
     private PaymentCard[] paymentCards;
     private String billingAddress;
+    private boolean promotionSubscribe;
     //private Booking[] bookings;
 
 
     //constructor
-    public Customer(String firstName, String lastName) {
+    /*public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         PaymentCard[] paymentCards = new PaymentCard[3];
-    }
+    }*/
 
     public String getFirstName() {
         return firstName;
@@ -65,6 +66,14 @@ public class Customer extends User{
 
     public void setBillingAddress(String billingAddress) {
         this.billingAddress = billingAddress;
+    }
+
+    public boolean getPromotionSubscribe() {
+        return promotionSubscribe;
+    }
+
+    public void setPromotionSubscribe(boolean promotionSubscribe){
+        this.promotionSubscribe = promotionSubscribe;
     }
 
     
