@@ -1,7 +1,7 @@
 package com.example.CinemaEBooking;
 
-import com.example.DatabaseConnector;
-import com.example.CinemaEBooking.entities.User;
+import com.example.Database.DatabaseConnector;
+import com.example.CinemaEBooking.entities.Customer;
 //import Database.*;
 
 import java.io.IOException;
