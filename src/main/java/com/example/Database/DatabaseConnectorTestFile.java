@@ -1,4 +1,4 @@
-package com.example.Database;
+package Database;
 
 /**
  * This is used to test the Database Connection.

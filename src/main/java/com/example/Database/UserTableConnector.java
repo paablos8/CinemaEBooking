@@ -524,7 +524,7 @@ public class UserTableConnector
      */
     public boolean changeStatus(int userID,Status status)
     {
-        int stat = 0;
+        int stat;
         switch(status)
         {
             case ACTIVE:stat = 1;

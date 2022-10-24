@@ -19,6 +19,37 @@ public class AddressTableConnector
     public AddressTableConnector(Connection conn) {this.conn = conn;}
 
     /**
+     * Returns the user's address given their ID.
+     * @param userID user's ID
+     * @return first name
+     */
+    public String getStreetAddress(int userID)
+    {
+        String stAdd = "";
+        ResultSet rs;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT [User ID] , [Street Address] FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    stAdd = rs.getString("Street Address");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return stAdd;
+    }
+
+    /**
      * Updates the user's street address
      * @param userID user's ID
      * @param stAdd user's new street address

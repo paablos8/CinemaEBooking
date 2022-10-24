@@ -83,6 +83,7 @@ public class DatabaseConnector
     //Card Methods
 
     //Address Methods
+    public String getStreetAddress(int userID){return atc.getStreetAddress(userID);}
     public boolean createNewAddress(int userID,String stAdd,String city,String state,String country,int zip)
     {return atc.createNewAddress(userID,stAdd,city,state,country,zip);}
     public boolean changeStreetAddress(int userID,String stAdd){return atc.changeStreetAddress(userID,stAdd);}
