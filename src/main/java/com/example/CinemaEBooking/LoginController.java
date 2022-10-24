@@ -5,6 +5,8 @@ import com.example.CinemaEBooking.entities.User;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
    
     DatabaseConnector db = new DatabaseConnector();
+    HttpSession mySession; //to gain access or to create a new session
 
     @RequestMapping(value = "/userLogin", method = RequestMethod.GET)
     public String showLoginPage(ModelMap model) {
@@ -35,13 +38,17 @@ public class LoginController {
 
         switch(loginResult)
         {
-            case(0):System.out.println("Login successful");
-            return "/loginSuccess";
+            case(0):System.out.println("Something went wrong");
+            break;
             case(-1):System.out.println("Incorrect password");
             break;
             case(-2):System.out.println("Email not found");
             break;
-            default:System.out.println("Something went wrong");
+            default:System.out.println("Successfully logged in");
+            int userId = loginResult; //once youre logged in, you get your unique UserID returned!
+            System.out.println(userId);
+            return "/loginSuccess";
+            
         }
         return "/userLogin";
 
