@@ -1,9 +1,12 @@
-package com.example.Database;
+package Database;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import com.example.CinemaEBooking.entities.Status;
+import com.example.CinemaEBooking.entities.User;
 
 /**
  * These are the functions to access the User Table
@@ -155,6 +158,37 @@ public class UserTableConnector
     }
 
     /**
+     * Returns the User's email given their ID.
+     * @param userID user's ID
+     * @return email
+     */
+    public String getUserEmail(int userID)
+    {
+        String email = "";
+        ResultSet rs;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT [User ID] , Email FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    email = rs.getString("Email");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return email;
+    }
+
+    /**
          * Returns true if the user is an admin, given their ID.
          * @param userID user's ID
          * @return true if the user is an admin
@@ -218,10 +252,11 @@ public class UserTableConnector
 
     /**
      * Returns the User's Promotion Opinion given their ID.
+     *
      * @param userID user's ID
      * @return user status, corresponds with the enum
      */
-    public int getUserStatus(int userID)
+    public Status getUserStatus(int userID)
     {
         int status = 0;
         ResultSet rs;
@@ -243,8 +278,46 @@ public class UserTableConnector
         {
             e.printStackTrace();
         }
-        return status;
+
+        switch (status)
+        {
+            case(1):return Status.ACTIVE;
+            case(2):return Status.INACTIVE;
+            default:return Status.SUSPENDED;
+        }
     }
+
+    /**
+     * Returns the User's password given their ID.
+     * @param userID user's ID
+     * @return password
+     */
+    public String getUserPassword(int userID)
+    {
+        String email = "";
+        ResultSet rs;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT [User ID] , Password FROM Users");
+
+            while(rs.next())
+            {
+                if(userID == rs.getInt("User ID"))
+                {
+                    email = rs.getString("Password");
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return email;
+    }
+
 
     /**
      * Creates a new user.
@@ -274,6 +347,23 @@ public class UserTableConnector
             e.printStackTrace();
         }
         return true;
+    }
+
+    /**
+     * Creates a User Object based on a given ID
+     * @param userID user's id
+     * @return user object
+     */
+    public User createUserObject(int userID)
+    {
+        User user = new User();
+
+        user.setUserId(userID);
+        user.setEmail(getUserEmail(userID));
+        user.setPassword(getUserPassword(userID));
+        user.setStatus(getUserStatus(userID));
+
+        return user;
     }
 
     /**
@@ -432,8 +522,17 @@ public class UserTableConnector
      * @param status user's new status id
      * @return true if successful
      */
-    public boolean changeStatus(int userID,int status)
+    public boolean changeStatus(int userID,Status status)
     {
+        int stat = 0;
+        switch(status)
+        {
+            case ACTIVE:stat = 1;
+                break;
+            case INACTIVE:stat = 2;
+                break;
+            default: stat = 3;
+        }
         ResultSet rs;
         try
         {
@@ -444,7 +543,7 @@ public class UserTableConnector
             {
                 if(userID == rs.getInt("User ID"))
                 {
-                    rs.updateInt("User Status", status);
+                    rs.updateInt("User Status", stat);
                     rs.updateRow();
                 }
             }
