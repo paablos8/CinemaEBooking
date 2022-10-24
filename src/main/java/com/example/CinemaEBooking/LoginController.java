@@ -1,6 +1,6 @@
 package com.example.CinemaEBooking;
 
-import com.example.DatabaseConnector;
+import com.example.Database.DatabaseConnector;
 import com.example.CinemaEBooking.entities.User;
 
 import java.util.List;

@@ -3,13 +3,14 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>editCard    
+    <title>editProfile    
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
-        background-color: grey;
+        background:linear-gradient(grey,orange);
+        height:110%;
       }
       .login{
         border-radius:25px;
@@ -98,6 +99,41 @@
     background-color:#333;
     color: white;  
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');*
+{padding: 0;
+  margin: 0;
+  font-family:'Poppins', sans-serif}
+  .container{
+    
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+    .card{
+      width:350px;
+      height:75vh;
+      background-color:#fff;
+      box-shadow:0px 15px 30px rgba(0,0,0,0.1);
+      border-radius:10px;
+            
+    }
+      .card .info
+      {padding:15px;display:flex;justify-content:space-between;border-bottom:1px solid #e1dede;
+        background-color:#e5e5e5}
+        .card .info button
+        {height:30px;width:80px;border:none;
+          color:#fff;border-radius:4px;background-color:#000;
+          cursor:pointer;text-transform:uppercase}
+          .card .forms
+          {padding:15px}
+          .card .inputs
+          {display:flex;flex-direction:column;margin-bottom:10px}
+          .card .inputs span{font-size:12px}
+          .card .inputs input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
+          .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+
+
     </style>
   </head>
 
@@ -112,35 +148,45 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
-
-
+  
   <div class="title">
-    Edit Profile
+    Edit Account
 </div>
 
-<div class="login">
-  <div class="row">
-    <div class="column" style="background-color:#aaa; text-align: right;">
-      <p>Name</p>
-      <br>
-      <p>Card Number</p>
-      <p></p>
-      <p>Expires:</p>
-      <p></p>
-      <br>
-    </div>
-    <div class="column" style="background-color:#bbb; text-align: left;">
-      <p>SampleFirstName SampleLastName</p>
-      <p>0000-0000-0000-0000</p>
-      <p></p>
-    
-    </div>
-  </div>
-    <br>
-  <a href="editProfile.jsp">
-    <button" class="btn btn-secondary btn-block mb-4">Back to Account Information</button>
-</a>
+<div class="container">
+    <div class="card"> <div class="info"> 
+      <span>Edit Account Information</span> 
+      <button id="savebutton">edit</button> </div> 
+      <div class="forms"> 
+      <div class="inputs"> 
+      <span>Name</span> 
+      <input type="text" readonly value="SampleFirst"> </div> 
+      <div class="inputs"> 
+      <span>Address</span> 
+      <input type="text" readonly value="SampleAddress"> </div> 
+      <div class="inputs"> 
+      <span>City</span> 
+       <input type="text" readonly value="City"> </div> 
+       <div class="inputs"> 
+        <span>State</span> 
+        <input type="text" readonly value="State"> </div> 
+        <div class="inputs"> 
+        <span>Country</span>
+        <input type="text" readonly value="Country"> </div> 
+        
+      
+        <a href="editProfile.jsp">
+          <button" class="btn btn-secondary btn-block mb-4">Confirm Changes</button>
+      </a>
+      </div>
+
+
   
+
+  
+  
+</div>
+
 </div>
 
 <div class="footer">
@@ -159,6 +205,22 @@
           x.className = "topnav";
         }
       }
+
+      var savebutton = document.getElementById('savebutton');
+var readonly = true;
+var inputs = document.querySelectorAll('input[type="text"]');
+savebutton.addEventListener('click',function(){
+    
+     for (var i=0; i<inputs.length; i++) {
+     inputs[i].toggleAttribute('readonly');
+     };
+
+    if (savebutton.innerHTML == "edit") {
+      savebutton.innerHTML = "save";
+         } else {
+      savebutton.innerHTML = "edit";
+      }  
+});
       </script>
       
 

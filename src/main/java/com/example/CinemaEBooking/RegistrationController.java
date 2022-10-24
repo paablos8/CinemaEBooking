@@ -1,6 +1,6 @@
 package com.example.CinemaEBooking;
 
-import com.example.DatabaseConnector;
+import com.example.Database.DatabaseConnector;
 import com.example.CinemaEBooking.entities.User;
 //import Database.*;
 
@@ -47,7 +47,7 @@ public class RegistrationController {
         model.addAttribute("accountForm", new DatabaseConnector());
 
         System.out.println("Sending Email...");
-            sendEmail("pablo.muller@uga.edu");
+            //sendEmail("pablo.muller@uga.edu");
         System.out.println("Done");
 
         

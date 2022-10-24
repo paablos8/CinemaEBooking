@@ -1,4 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
     
@@ -11,7 +11,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:auto;
       }
       .registration{
         border-radius:25px;
@@ -183,10 +183,10 @@
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="homePage.jsp" class="active">Home</a>
-    <a href="couponpromo.jsp">Promotions</a>
-    <a href="userLogin.jsp">Login</a>
-    <a href="viewcart.jsp">View Cart</a>
+    <a href="homePage.html" class="active">Home</a>
+    <a href="couponpromo.html">Promotions</a>
+    <a href="userLogin.html">Login</a>
+    <a href="viewcart.html">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -194,19 +194,20 @@
 
 
   <div class="title">
-    Signup Page
+    Registration Page
 </div>
 
 <div class="registration">
-
+  <%--@elvariable id="login" type=""--%>
   <form:form method="POST" modelAttribute="accountForm">
-        <!-- Email input -->
-
+    <div class="MyForm form-group">
+      
+  <!-- Email input -->
         <div class="form-outline mb-4">   <div class="help-tip">
           <p>Input a valid email address which will be used as your username credential</p>
       </div> 
-          <form:input type="email" id="" class="form-control" />
-          <label class="form-label" for="form2Example1">Email address</label>
+      <form:input type="email" class="form-control" id="email" path="password" placeholder="Enter email address" />
+                <label class="form-label" for="form2Example1">Email address</label>    
         </div>        
        
       
@@ -215,17 +216,25 @@
           <p>Enter a secure password that will be used as your login credential</p>
       </div> 
           <form:input type="password" id="registrationPassword" class="form-control" />
-          <label class="form-label" for="form2Example2">Password</label>
+          <form:label class="form-label" for="form2Example2">Password</form:label>
         </div>
       
           <!-- Password input2 -->
           <div class="form-outline mb-4">   <div class="help-tip">
             <p>Reinput the same password to confirm the password as your login</p>
         </div> 
-            <form:input type="password" id="registrationPasswordConfirmation" class="form-control" />
-            <label class="form-label" for="form2Example2">Confirm Password</label>
+    
+        <form:input type="password" id="registrationPasswordConfirmation" class="form-control" />
+            <form:label class="form-label" for="form2Example2">Confirm Password</form:label>
           </div>
         
+          <!-- PhoneNumber input2 -->
+          <div class="form-outline mb-4">   <div class="help-tip">
+            <p>Input a personal cell number for promotions and reminders</p>
+        </div> 
+            <form:input type="password" id="registrationPasswordConfirmation" class="form-control" />
+            <form:label class="form-label" for="form2Example2">Phone Number</form:label>
+          </div>
         
 
         <!-- 2 column grid layout for inline styling -->
@@ -246,8 +255,9 @@
 
             </div>
           </form:form>
+          
 </div>
-
+<br><br><br>
 
 <div class="footer">
   <br>
