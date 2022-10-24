@@ -33,7 +33,7 @@ public class RegistrationController {
     private JavaMailSender javaMailSender;
 
     //@Autowired
-    private DatabaseConnector dbConnector = new DatabaseConnector();
+    private DatabaseConnector db = new DatabaseConnector();
 
 
     /*public RegistrationController(DatabaseConnector dbConnector) {
@@ -57,6 +57,7 @@ public class RegistrationController {
                                     String firstName = accountForm.getFirstName();
                                     String lastName = accountForm.getLastName();
                                     String billingAddress = accountForm.getBillingAddress();
+                                    int phone = accountForm.getPhone();
                                     String email = accountForm.getEmail();
                                     String password = accountForm.getPassword();
                                     Boolean promotionSubscribe = accountForm.getPromotionSubscribe();
@@ -65,7 +66,9 @@ public class RegistrationController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
 
-        System.out.println(promotionSubscribe);
+        db.createNewUser(firstName, lastName, phone, email, promotionSubscribe, false, password);
+
+        System.out.println("user created");
 
 
 

@@ -185,13 +185,18 @@
             </div>
 
             <div class="form-outline mb-4"></div>
-                <form:input type="email" class="form-control" id="lastName" path="lastName" placeholder="Enter email address" />
+                <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="Enter email address" />
                 <label class="form-label" for="form2Example1">Last name</label>    
             </div>
 
             <div class="form-outline mb-4"></div>
-                <form:input type="email" class="form-control" id="billingAddress" path="billingAddress" placeholder="Enter email address" />
+                <form:input type="adress" class="form-control" id="billingAddress" path="billingAddress" placeholder="Enter email address" />
                 <label class="form-label" for="form2Example1">Billing Adress</label>    
+            </div>
+
+            <div class="form-outline mb-4"></div>
+                <form:input type="number" class="form-control" id="phone" path="phone" placeholder="Enter email address" />
+                <label class="form-label" for="form2Example1"></label>phone </label>    
             </div>
         
         
