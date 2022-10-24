@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Objects;
 
 import com.example.CinemaEBooking.entities.Status;
 import com.example.CinemaEBooking.entities.User;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * These are the functions to access the User Table
@@ -76,6 +78,11 @@ class UserTableConnector extends SQL_GetSet
                           String email, boolean promoOp, boolean isAdmin,
                           String password)
     {
+        if(!(verifyEmail(email)&&verifyPhoneNum(pNum)&&verifyString(fName)&&verifyString(lName)&verifyString(password)))
+        {
+            return false;
+        }
+
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Users VALUES ('"
@@ -110,6 +117,7 @@ class UserTableConnector extends SQL_GetSet
 
     boolean resetPassword(String email,String password)
     {
+        if(!verifyEmail(email)||!verifyString(password))return false;
         ResultSet rs;
         try
         {
@@ -118,7 +126,7 @@ class UserTableConnector extends SQL_GetSet
 
             while(rs.next())
             {
-                if(email == rs.getString("Email"))
+                if((email.equals(rs.getString("Email"))))
                 {
                     rs.updateString("Password", (String) password);
                     rs.updateRow();
@@ -205,7 +213,7 @@ class UserTableConnector extends SQL_GetSet
      * @return true if successful
      */
     boolean changeFirstName(int userID,String fName)
-    {return update(userID,"Users","User ID","First Name",fName);}
+    {if(verifyString(fName))return false;return update(userID,"Users","User ID","First Name",fName);}
 
     /**
      * Updates the user's last name
@@ -214,7 +222,7 @@ class UserTableConnector extends SQL_GetSet
      * @return true if successful
      */
     boolean changeLastName(int userID,String lName)
-    {return update(userID,"Users","User ID","Last Name",lName);}
+    {if(verifyString(lName))return false;return update(userID,"Users","User ID","Last Name",lName);}
 
     /**
      * Updates the user's phone number
@@ -223,7 +231,10 @@ class UserTableConnector extends SQL_GetSet
      * @return true if successful
      */
     boolean changePhoneNumber(int userID,long pNum)
-    {return update(userID,"Users","User ID","Phone Number",pNum);}
+    {
+        if(verifyPhoneNum(pNum))return false;
+        return update(userID,"Users","User ID","Phone Number",pNum);
+    }
 
     /**
      * Updates the user's promotion opinion
@@ -242,6 +253,7 @@ class UserTableConnector extends SQL_GetSet
      */
     boolean changeStatus(int userID,Status status)
     {
+        if(status == null) return false;
         int stat;
         switch(status)
         {
@@ -262,5 +274,19 @@ class UserTableConnector extends SQL_GetSet
      * @return true if successful
      */
     boolean changePassword(int userID,String password)
-    {return update(userID,"Users","User ID","Password",password);}
+    {
+        if(verifyString(password))
+            return false;
+        return update(userID,"Users","User ID","Password",password);
+    }
+
+    boolean verifyEmail(String email)
+    {
+        if(verifyString(email))return false;
+        int at = email.indexOf('@');
+        return at >= 1 && at != email.length() - 1;
+    }
+
+    boolean verifyPhoneNum(long pNum){return pNum >= 1000000000;}
+    boolean verifyString(String str){return str.length() >= 1;}
 }
