@@ -5,10 +5,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * These are the functions to access the User Table
+ */
 public class UserTableConnector
 {
     private Connection conn;
 
+    /**
+     * Creates UserTable Connector with given connection.
+     * Connection should be linked to server prior to creating this object.
+     * @param conn Valid connection
+     */
     public UserTableConnector(Connection conn)
     {
         this.conn = conn;
@@ -24,7 +32,7 @@ public class UserTableConnector
      */
     public int verifyLogin(String email, String password)
     {
-        ResultSet rs = null;
+        ResultSet rs;
         try
         {
             Statement stmt = conn.createStatement();
@@ -61,7 +69,7 @@ public class UserTableConnector
     public String getUserFirstName(int userID)
     {
         String name = "";
-        ResultSet rs = null;
+        ResultSet rs;
 
         try
         {
@@ -92,7 +100,7 @@ public class UserTableConnector
     public String getUserLastName(int userID)
     {
         String name = "";
-        ResultSet rs = null;
+        ResultSet rs;
 
         try
         {
@@ -123,7 +131,7 @@ public class UserTableConnector
     public long getUserPhoneNumber(int userID)
     {
         long phoneNum = 0;
-        ResultSet rs = null;
+        ResultSet rs;
 
         try
         {
@@ -154,7 +162,7 @@ public class UserTableConnector
     public boolean getUserType(int userID)
     {
         boolean isAdmin = false;
-        ResultSet rs = null;
+        ResultSet rs;
 
         try
         {
@@ -185,7 +193,7 @@ public class UserTableConnector
     public boolean getPromoOp(int userID)
     {
         boolean promoOp = false;
-        ResultSet rs = null;
+        ResultSet rs;
 
         try
         {
@@ -216,7 +224,7 @@ public class UserTableConnector
     public int getUserStatus(int userID)
     {
         int status = 0;
-        ResultSet rs = null;
+        ResultSet rs;
 
         try
         {
@@ -253,7 +261,7 @@ public class UserTableConnector
                                  String email, boolean promoOp, boolean isAdmin,
                                  String password)
     {
-        try(Statement stmt = conn.createStatement();)
+        try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Users VALUES ('"
                     +fName+"','"+lName+"',"+pNum+",'"+email+"','"+
@@ -276,7 +284,7 @@ public class UserTableConnector
      */
     public boolean changeFirstName(int userID,String fName)
     {
-        ResultSet rs = null;
+        ResultSet rs;
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
@@ -306,7 +314,7 @@ public class UserTableConnector
      */
     public boolean changeLastName(int userID,String lName)
     {
-        ResultSet rs = null;
+        ResultSet rs;
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
@@ -336,7 +344,7 @@ public class UserTableConnector
      */
     public boolean changePhoneNumber(int userID,long pNum)
     {
-        ResultSet rs = null;
+        ResultSet rs;
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
@@ -366,7 +374,7 @@ public class UserTableConnector
      */
     public boolean changePromoOpinion(int userID,Boolean promoOp)
     {
-        ResultSet rs = null;
+        ResultSet rs;
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
@@ -396,7 +404,7 @@ public class UserTableConnector
      */
     public boolean changePassword(int userID,String password)
     {
-        ResultSet rs = null;
+        ResultSet rs;
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
@@ -426,7 +434,7 @@ public class UserTableConnector
      */
     public boolean changeStatus(int userID,int status)
     {
-        ResultSet rs = null;
+        ResultSet rs;
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE);
