@@ -1,8 +1,11 @@
-package com.example.Database;
+package Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import com.example.CinemaEBooking.entities.Status;
+import com.example.CinemaEBooking.entities.User;
 
 /**
  * This is an object that can connect and disconnect from the server.
@@ -64,17 +67,18 @@ public class DatabaseConnector
     public long getUserPhoneNumber(int userID){return  utc.getUserPhoneNumber(userID);}
     public boolean getUserType(int userID){return utc.getUserType(userID);}
     public boolean getPromoOp(int userID){return utc.getPromoOp(userID);}
-    public int getUserStatus(int userID){return utc.getUserStatus(userID);}
+    public Status getUserStatus(int userID){return utc.getUserStatus(userID);}
     public boolean createNewUser(String fName, String lName, long pNum,
                                  String email, boolean promoOp, boolean isAdmin,
                                  String password)
     {return utc.createNewUser(fName,lName,pNum,email,promoOp,isAdmin,password);}
+    public User createUserObject(int userID){return utc.createUserObject(userID);}
     public boolean changeFirstName(int userID,String fName){return utc.changeFirstName(userID,fName);}
     public boolean changeLastName(int userID,String lName){return utc.changeLastName(userID,lName);}
     public boolean changePhoneNumber(int userID,Long pNum){return utc.changePhoneNumber(userID,pNum);}
     public boolean changePromotionOpinion(int userID,Boolean promoOp){return utc.changePromoOpinion(userID,promoOp);}
     public boolean changePassword(int userID,String password){return utc.changePassword(userID,password);}
-    public boolean changeStatus(int userID,int status){return utc.changeStatus(userID,status);}
+    public boolean changeStatus(int userID, Status status){return utc.changeStatus(userID,status);}
 
     //Card Methods
 
