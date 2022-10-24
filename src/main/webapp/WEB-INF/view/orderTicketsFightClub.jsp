@@ -126,10 +126,10 @@ h5{
 
   
   <div class="topnav" id="myTopnav">
-    <a href="homePage.html" class="active">Home</a>
-    <a href="couponpromo.html">Promotions</a>
-    <a href="userLogin.html">Login</a>
-    <a href="viewcart.html">View Cart</a>
+    <a href="homePage.jsp" class="active">Home</a>
+    <a href="couponpromo.jsp">Promotions</a>
+    <a href="userLogin.jsp">Login</a>
+    <a href="viewcart.jsp">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -223,7 +223,7 @@ h5{
 
           
           
-            <a href="orderSummary.html">
+            <a href="orderSummary.jsp">
             <button" class="btn btn-secondary btn-block mb-4">Submit</button>
         </a>
         <div><img src="movieCovers/seatingChart.png" alt="image not found"
@@ -238,7 +238,7 @@ h5{
     
 
     <br>
-  <a href="homePage.html">
+  <a href="homePage.jsp">
     <button" class="btn btn-secondary btn-block mb-4">Back to Home</button>
 </a>
 

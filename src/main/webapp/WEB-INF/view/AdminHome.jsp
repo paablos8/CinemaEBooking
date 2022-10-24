@@ -92,10 +92,10 @@
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="homePage.html" class="active">Home</a>
-    <a href="couponpromo.html">Promotions</a>
-    <a href="userLogin.html">Login</a>
-    <a href="viewcart.html">View Cart</a>
+    <a href="homePage.jsp" class="active">Home</a>
+    <a href="couponpromo.jsp">Promotions</a>
+    <a href="userLogin.jsp">Login</a>
+    <a href="viewcart.jsp">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -111,7 +111,7 @@
   <h2>Movie Management</h2>
   <div>
       <div>
-        <a href="AdminManaMovies.html"><button role= "EditMovie-butt">Edit Movie Database</button></a>
+        <a href="AdminManaMovies.jsp"><button role= "EditMovie-butt">Edit Movie Database</button></a>
       </div>
       <hr> 
   </div>
@@ -121,7 +121,7 @@
   <h2>Promo Management</h2>
   <div>
       <div>
-        <a href="AdminAddNewPromo.html"><button role= "EditHome-butt">Edit Promotions</button></a>
+        <a href="AdminAddNewPromo.jsp"><button role= "EditHome-butt">Edit Promotions</button></a>
       </div>
       <hr> 
   </div>

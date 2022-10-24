@@ -120,11 +120,12 @@ h5{
 
 <body>
 
-  <div class="topnav" id="myTopnav">
-    <a href="homePage.html" class="active">Home</a>
-    <a href="couponpromo.html">Promotions</a>
-    <a href="userLogin.html">Login</a>
-    <a href="viewcart.html">View Cart</a>
+  <div class="topnav"
+   id="myTopnav">
+    <a href="homePage.jsp" class="active">Home</a>
+    <a href="couponpromo.jsp">Promotions</a>
+    <a href="userLogin.jsp">Login</a>
+    <a href="viewcart.jsp">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -148,7 +149,7 @@ h5{
   Friday  : 7pm 8pm 9pm <br>
   Saturday: 7pm 8pm 9pm <br>
   <a href="https://www.youtube.com/watch?v=qtRKdVHc-cE" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTicketsFightClub.html" target="_blank">Order Tickets Here</a>
+  <br><a href="orderTicketsFightClub.jsp" target="_blank">Order Tickets Here</a>
 </h5>
 <div><img src="movieCovers/TheGodfather.jpg" alt="image not found"
   width="150" height="225"></div>
@@ -159,7 +160,7 @@ h5{
   Friday  : 7pm 8pm 9pm <br>
   Saturday: 7pm 8pm 9pm <br>
   <a href="https://www.youtube.com/watch?v=UaVTIH8mujA" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTickets.html" target="_blank">Order Tickets Here</a>
+  <br><a href="orderTickets.jsp" target="_blank">Order Tickets Here</a>
 </h5>
 <div><img src="movieCovers/TheDarkKnight.jpg" alt="image not found"
   width="150" height="225"></div>
@@ -170,7 +171,7 @@ h5{
   Friday  : 7pm 8pm 9pm <br>
   Saturday: 7pm 8pm 9pm <br>
   <a href="https://www.youtube.com/watch?v=EXeTwQWrcwY" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTickets.html" target="_blank">Order Tickets Here</a>
+  <br><a href="orderTickets.jsp" target="_blank">Order Tickets Here</a>
 </div>
 
 

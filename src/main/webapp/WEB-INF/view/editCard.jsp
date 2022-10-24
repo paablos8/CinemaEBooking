@@ -104,10 +104,10 @@
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="homePage.html" class="active">Home</a>
-    <a href="couponpromo.html">Promotions</a>
-    <a href="userLogin.html">Login</a>
-    <a href="viewcart.html">View Cart</a>
+    <a href="homePage.jsp" class="active">Home</a>
+    <a href="couponpromo.jsp">Promotions</a>
+    <a href="userLogin.jsp">Login</a>
+    <a href="viewcart.jsp">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -137,7 +137,7 @@
     </div>
   </div>
     <br>
-  <a href="editProfile.html">
+  <a href="editProfile.jsp">
     <button" class="btn btn-secondary btn-block mb-4">Back to Account Information</button>
 </a>
   

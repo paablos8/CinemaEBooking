@@ -93,10 +93,10 @@
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="homePage.html" class="active">Home</a>
-    <a href="couponpromo.html">Promotions</a>
-    <a href="userLogin.html">Login</a>
-    <a href="viewcart.html">View Cart</a>
+    <a href="homePage.jsp" class="active">Home</a>
+    <a href="couponpromo.jsp">Promotions</a>
+    <a href="userLogin.jsp">Login</a>
+    <a href="viewcart.jsp">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -138,14 +138,14 @@
         </div>
       
         <!-- Submit button -->
-        <a href="AdminHome.html">
+        <a href="AdminHome.jsp">
           <button" class="btn btn-secondary btn-block mb-4">Sign in</button>
       </a>
         <!-- Register buttons -->
         <div class="text-center">
-          <p>Not a member? <a href="userRegistration.html">Register</a></p>
-          <p>Continue as guest? <a href="homePage.html">Continue</a></p>
-          <p>Customer Login? <a href="userLogin.html">Login</a></p>
+          <p>Not a member? <a href="userRegistration.jsp">Register</a></p>
+          <p>Continue as guest? <a href="homePage.jsp">Continue</a></p>
+          <p>Customer Login? <a href="userLogin.jsp">Login</a></p>
       
         </div>
       </form>
