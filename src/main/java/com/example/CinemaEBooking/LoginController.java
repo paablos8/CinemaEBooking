@@ -1,6 +1,6 @@
 package com.example.CinemaEBooking;
 
-import com.example.DatabaseConnector;
+import com.example.Database.DatabaseConnector;
 import com.example.CinemaEBooking.entities.User;
 
 import java.util.List;
@@ -23,6 +23,12 @@ public class LoginController {
     public String showLoginPage(ModelMap model) {
         model.addAttribute("login", new User());
         return "userLogin";
+    }
+
+    @RequestMapping(value = "/forgotPassword", method = RequestMethod.GET)
+    public String showForgotPasswordPage(ModelMap model) {
+        model.addAttribute("login", new User());
+        return "forgotPassword";
     }
 
     
