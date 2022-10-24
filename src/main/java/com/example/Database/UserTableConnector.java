@@ -4,11 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Objects;
 
 import com.example.CinemaEBooking.entities.Status;
 import com.example.CinemaEBooking.entities.User;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * These are the functions to access the User Table
@@ -128,7 +126,7 @@ class UserTableConnector extends SQL_GetSet
             {
                 if((email.equals(rs.getString("Email"))))
                 {
-                    rs.updateString("Password", (String) password);
+                    rs.updateString("Password", password);
                     rs.updateRow();
                 }
             }
