@@ -264,6 +264,7 @@ h5{
           </div>
           <div class="help-tip">
             <p>Select your viewing time for your movie selction</p>
+            </div>
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="ticketTime">Time</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
@@ -274,13 +275,15 @@ h5{
             </select>
           </div>
           <div class="help-tip">
-            <p>Enter the amount of tickets for your movie selction</p>          
+            <p>Enter the amount of tickets for your movie selction</p>
+            </div>          
           <div class="form-outline">
             <label class="form-label" for="numberOfTickets">Number of Tickets:</label>
             <input type="number" id="typeNumber" class="form-control" />
           </div>
           <div class="help-tip">
-            <p>Select your viewing section for your movie selction</p>  
+            <p>Select your viewing section for your movie selction</p>
+            </div>  
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="ticketTime">Section Letter</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
@@ -292,7 +295,8 @@ h5{
             </select>
           </div>
           <div class="help-tip">
-            <p>Select your seat number for your movie selction</p>          
+            <p>Select your seat number for your movie selction</p>
+            </div>          
           <div class="col-auto my-1">
             <label class="mr-sm-2" for="ticketTime">Seat Number</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">

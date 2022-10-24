@@ -17,7 +17,7 @@ public class CustomUserDetailsService implements UserDetailsService{
         String userFirstName = utc.getUserFirstName(userIdInt);
         String userLastName = utc.getUserLastName(userIdInt);
         long userPhoneNumber = utc.getUserPhoneNumber(userIdInt);
-        int userStatus= utc.getUserStatus(userIdInt);
+     //   int userStatus= utc.getUserStatus(userIdInt);
         boolean userType = utc.getUserType(userIdInt);
         System.out.println(userFirstName);
             
