@@ -189,14 +189,12 @@
         <span>Country</span>
         <input type="text" readonly value="${country}"> </div> 
         
-      
-        <div class="button">
-          <button class="btn btn-secondary btn-block mb-4" button id="savebutton" >Edit</button>
-        </div>
-      </a>  
         <a href="editPassword.jsp">
-        <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
-      </a>
+          <div class="button">
+            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
+        </a>
+      </div>
+        
       </div>
 
       
@@ -225,14 +223,14 @@
       <span>Card Expiration Date</span> 
       <input type="text" readonly value="${cardExpire}"> </div> 
       <div class="inputs"> 
-      <span>Country</span>
-      <input type="text" readonly value="${cardCountry}"> </div> 
+      <span>Zip Code</span>
+      <input type="text" readonly value="${cardZip}"> </div> 
       
-    
-      <a href="editProfile.jsp">
-        <button" class="btn btn-secondary btn-block mb-4">Confirm Changes</button>
-    </a>  
-
+    <div class="button">
+          <button class="btn btn-secondary btn-block mb-4" button id="savebutton" >Edit</button>
+        </div>
+      </a>  
+        
 </div>
 
 <div class="footer">
