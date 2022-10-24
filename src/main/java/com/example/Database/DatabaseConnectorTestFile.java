@@ -15,7 +15,7 @@ public class DatabaseConnectorTestFile
         DatabaseConnector c1 = new DatabaseConnector();
 
         System.out.println(c1.getUserFirstName(3));
-        c1.changeFirstName(1,"Tori");
+        c1.createNewAddress(1,"437 Wittington Dr","Chesapeake","Virginia","USA",23322);
 
         c1.close();
     }

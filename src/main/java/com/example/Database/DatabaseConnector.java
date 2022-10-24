@@ -1,4 +1,4 @@
-package Database_Test;
+package Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,6 +12,7 @@ public class DatabaseConnector
     private Connection conn;
     private UserTableConnector utc = null;
     private CardTableConnector ctc = null;
+    private AddressTableConnector atc = null;
 
     /**
      * Creates DatabaseConnector object and connects to server.
@@ -34,6 +35,7 @@ public class DatabaseConnector
             System.out.println("Connected");
             utc = new UserTableConnector(conn);
             ctc = new CardTableConnector(conn);
+            atc = new AddressTableConnector(conn);
         }
     }
 
@@ -73,4 +75,15 @@ public class DatabaseConnector
     public boolean changePromotionOpinion(int userID,Boolean promoOp){return utc.changePromoOpinion(userID,promoOp);}
     public boolean changePassword(int userID,String password){return utc.changePassword(userID,password);}
     public boolean changeStatus(int userID,int status){return utc.changeStatus(userID,status);}
+
+    //Card Methods
+
+    //Address Methods
+    public boolean createNewAddress(int userID,String stAdd,String city,String state,String country,int zip)
+    {return atc.createNewAddress(userID,stAdd,city,state,country,zip);}
+    public boolean changeStreetAddress(int userID,String stAdd){return atc.changeStreetAddress(userID,stAdd);}
+    public boolean changeCityCounty(int userID,String city){return atc.changeCityCounty(userID,city);}
+    public boolean changeStateRegion(int userID,String state){return atc.changeStateRegion(userID,state);}
+    public boolean changeCountry(int userID,String country){return atc.changeCountry(userID,country);}
+    public boolean changeZipCode(int userID,int zip){return atc.changeZipCode(userID,zip);}
 }
