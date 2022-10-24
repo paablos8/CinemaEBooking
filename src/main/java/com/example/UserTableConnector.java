@@ -28,7 +28,7 @@ public class UserTableConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT Email, Password, User ID FROM Users");
+            rs = stmt.executeQuery("SELECT Email, Password, [User ID] FROM Users");
 
             while(rs.next())
             {
@@ -66,7 +66,7 @@ public class UserTableConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , First Name FROM Users");
+            rs = stmt.executeQuery("SELECT [User ID] , [First Name] FROM Users");
 
             while(rs.next())
             {
@@ -97,7 +97,7 @@ public class UserTableConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , Last Name FROM Users");
+            rs = stmt.executeQuery("SELECT [User ID] , [Last Name] FROM Users");
 
             while(rs.next())
             {
@@ -128,7 +128,7 @@ public class UserTableConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , Phone Number FROM Users");
+            rs = stmt.executeQuery("SELECT [User ID] , [Phone Number] FROM Users");
 
             while(rs.next())
             {
@@ -159,7 +159,7 @@ public class UserTableConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , Is Admin FROM Users");
+            rs = stmt.executeQuery("SELECT [User ID] , [Is Admin] FROM Users");
 
             while(rs.next())
             {
@@ -190,7 +190,7 @@ public class UserTableConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , Promotion Opinion FROM Users");
+            rs = stmt.executeQuery("SELECT [User ID] , [Promotion Opinion] FROM Users");
 
             while(rs.next())
             {
@@ -221,7 +221,7 @@ public class UserTableConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , User Status FROM Users");
+            rs = stmt.executeQuery("SELECT [User ID] , [User Status] FROM Users");
 
             while(rs.next())
             {
@@ -274,11 +274,12 @@ public class UserTableConnector
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT User ID , Email FROM Users");
+            rs = stmt.executeQuery("SELECT [User ID] , Email FROM Users");
 
             while(rs.next())
             {
-                if(rs.getInt("User ID") == userID) {
+                if(userID == rs.getInt("User ID"))
+                {
                     rs.updateString("Email", email);
                     rs.updateRow();
                 }
