@@ -285,6 +285,6 @@ public class UserTableConnector extends SQL_GetSet
         return at >= 1 && at != email.length() - 1;
     }
 
-    boolean verifyPhoneNum(long pNum){return pNum >= 1000000000;}
-    boolean verifyString(String str){return str.length() >= 1;}
+    private boolean verifyPhoneNum(long pNum){return pNum >= 1000000000;}
+    private boolean verifyString(String str){return str.length() >= 1;}
 }
