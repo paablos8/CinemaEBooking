@@ -103,7 +103,7 @@
         
             <!-- new password input -->
             <div class="form-outline mb-4"></div>
-                <form:input type="text" class="form-control" id="password" path="password" placeholder="Enter new password" />
+                <form:input type="password" class="form-control" id="password" path="password" placeholder="Enter new password" />
                 <label class="form-label" for="form2Example1">New Password</label>    
             </div>
 
