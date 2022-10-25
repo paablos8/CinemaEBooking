@@ -15,13 +15,13 @@ public class ResetPasswordController {
     
     @RequestMapping(value = "/resetPassword", method = RequestMethod.GET)
     public String showResetPage(Model model) {
-        model.addAttribute("password", new User());
+        model.addAttribute("resetPassword", new User());
         return "resetPassword";
     }
 
     @RequestMapping(value = "/resetPassword", method = RequestMethod.POST)
-    public Object resetPassword(@ModelAttribute("password") User resetPassword, Model model) {
-        String newPassword = resetPassword.getPassword();
+    public Object resetPassword(@ModelAttribute("resetPassword") User password, Model model) {
+        String password = password.getPassword();
         return "login";
     }
 }

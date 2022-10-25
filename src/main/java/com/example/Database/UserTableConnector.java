@@ -11,7 +11,7 @@ import com.example.CinemaEBooking.entities.User;
 /**
  * These are the functions to access the User Table
  */
-class UserTableConnector extends SQL_GetSet
+public class UserTableConnector extends SQL_GetSet
 {
     private Connection conn;
 
