@@ -20,8 +20,8 @@ public class DatabaseConnector
      */
     public DatabaseConnector()
     {
-        String serverName = "8.tcp.ngrok.io:15791;";
-        String loginCredentials = "user=sa;password=Team_C2;";
+        String serverName = "8.tcp.ngrok.io:15791";
+        String loginCredentials = ";user=sa;password=Team_C2;";
         String settings = "encrypt=true;trustServerCertificate=true";
         String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
         try
@@ -82,6 +82,9 @@ public class DatabaseConnector
     public boolean changeStatus(int userID, Status status){return utc.changeStatus(userID,status);}
 
     //Card Methods
+    public boolean createNewCard(int month, int year, int cvv, long cardNum,String cardType, int userID)
+    {return ctc.createNewCard(month,year,cvv,cardNum,cardType,userID);}
+    public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
 
     //Address Methods
     public String getStreetAddress(int userID){return atc.getStreetAddress(userID);}

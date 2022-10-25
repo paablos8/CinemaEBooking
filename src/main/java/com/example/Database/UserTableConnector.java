@@ -11,7 +11,7 @@ import com.example.CinemaEBooking.entities.User;
 /**
  * These are the functions to access the User Table
  */
-public class UserTableConnector extends SQL_GetSet
+class UserTableConnector extends SQL_GetSet
 {
     private Connection conn;
 
@@ -280,7 +280,8 @@ public class UserTableConnector extends SQL_GetSet
 
     boolean verifyEmail(String email)
     {
-        if(verifyString(email))return false;
+        if(!verifyString(email))
+        {System.out.println("String fail"); return false;}
         int at = email.indexOf('@');
         return at >= 1 && at != email.length() - 1;
     }

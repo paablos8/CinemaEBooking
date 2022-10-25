@@ -109,7 +109,7 @@ class SQL_GetSet
         return ret;
     }
 
-    <T> boolean update(int id, String table, String idField, String eField, T entry)
+    <T,S> boolean update(S id, String table, String idField, String eField, T entry)
     {
         ResultSet rs;
         try
@@ -131,6 +131,20 @@ class SQL_GetSet
             e.printStackTrace();
         }
         return true;
+    }
+
+    <T> void deleteRecord(T id, String table, String idField)
+    {
+        ResultSet rs;
+        try
+        {
+            Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+            stmt.executeUpdate("DELETE FROM "+table+" WHERE "+idField+" = "+id);
+        }
+        catch (SQLException e)
+        {
+
+        }
     }
 
     private <T> boolean verifyField (ResultSet rs, T id, String idField)

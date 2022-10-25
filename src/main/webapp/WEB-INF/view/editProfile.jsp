@@ -189,7 +189,7 @@
         <span>Country</span>
         <input type="text" readonly value="${country}"> </div> 
         
-        <a href="editPassword.jsp">
+        <a href="resetPassword.jsp">
           <div class="button">
             <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
         </a>
