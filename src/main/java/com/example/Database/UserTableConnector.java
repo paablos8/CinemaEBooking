@@ -280,7 +280,8 @@ class UserTableConnector extends SQL_GetSet
 
     boolean verifyEmail(String email)
     {
-        if(verifyString(email))return false;
+        if(!verifyString(email))
+        {System.out.println("String fail"); return false;}
         int at = email.indexOf('@');
         return at >= 1 && at != email.length() - 1;
     }
