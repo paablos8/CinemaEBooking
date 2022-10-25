@@ -20,8 +20,8 @@ public class DatabaseConnector
      */
     public DatabaseConnector()
     {
-        String serverName = "2.tcp.ngrok.io:14804;";
-        String loginCredentials = "user=sa;password=Team_C2;";
+        String serverName = "2.tcp.ngrok.io:13938";
+        String loginCredentials = ";user=sa;password=Team_C2;";
         String settings = "encrypt=true;trustServerCertificate=true";
         String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
         try
