@@ -97,19 +97,19 @@
         Reset Password
     </div>
     <div class="login">
-    <form:form method="POST" modelAttribute="login">
+    <form:form method="POST" modelAttribute="resetPassword">
     <div class="MyForm form-group">
         
         
             <!-- new password input -->
             <div class="form-outline mb-4"></div>
-                <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter email address" />
+                <form:input type="email" class="form-control" id="password" path="resetPassword" placeholder="Enter email address" />
                 <label class="form-label" for="form2Example1">New Password</label>    
             </div>
 
 
         <!-- Submit button -->
-        <form:button type="submit" class="btn btn-secondary btn-block mb-4"><a href="userLogin.jsp"></a>confirm back to login</form:button>
+        <form:button type="submit" class="btn btn-secondary btn-block mb-4"></a>confirm back to login</form:button>
         
     </form>
     </div>

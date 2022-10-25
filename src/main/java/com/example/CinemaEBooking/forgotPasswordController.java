@@ -31,7 +31,6 @@ public class forgotPasswordController {
 
         if (loginResult == -1)  {
             System.out.println("succes");
-
         }
 
         
