@@ -42,7 +42,7 @@ public class ResetPasswordController {
         String email = new String(decodedBytes);
         System.out.println(email);
         System.out.println(password);
-        db.resetPassword("dorhasenbroek@gmail.com", "test2");
+        db.resetPassword(email, password);
         return "homePage";
     }
 }

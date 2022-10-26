@@ -13,7 +13,6 @@ public class DatabaseConnectorTestFile
     {
         //private DatabaseConnector dbConnector = new DatabaseConnector();
         DatabaseConnector c1 = new DatabaseConnector();
-
         c1.close();
     }
 }

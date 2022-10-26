@@ -17,4 +17,10 @@ public class ExampleController {
 
         return "homePage";
     }
+
+    @RequestMapping("/registrationConfirmation")
+    public String registrationConfirmation(){
+
+        return "registrationConfirmation";
+    }
 }

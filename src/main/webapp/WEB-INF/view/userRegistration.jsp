@@ -189,8 +189,23 @@
             
 
             <div class="form-outline mb-4"></div>
-                <form:input type="adress" class="form-control" id="billingAddress" path="billingAddress" placeholder="Enter Billing Address" />
-                <label class="form-label" for="form2Example1">Billing Adress</label>    
+                <form:input type="adress" class="form-control" id="street" path="street" placeholder="Enter Street" />
+                <label class="form-label" for="form2Example1">Street</label>
+                
+            <div class="form-outline mb-4"></div>
+                <form:input type="text" class="form-control" id="city" path="city" placeholder="Enter city" />
+                <label class="form-label" for="form2Example1">City</label>  
+
+            <div class="form-outline mb-4"></div>
+                <form:input type="text" class="form-control" id="state" path="city" placeholder="Enter state" />
+                <label class="form-label" for="form2Example1">State</label>  
+
+            <div class="form-outline mb-4"></div>
+                <form:input type="text" class="form-control" id="zipcode" path="zipcode" placeholder="Enter zipcode" />
+                <label class="form-label" for="form2Example1">Zipcode</label>  
+
+
+                
             
 
             <div class="form-outline mb-4"></div>
@@ -222,12 +237,12 @@
 
             <div class="col">
                 <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
+                <a href="/forgotPassword">Forgot password?</a>
             </div>
         </div>
 
         <!-- Submit button -->
-        <form:button type="submit" class="btn btn-secondary btn-block mb-4">Sign in</form:button>
+        <form:button type="submit" class="btn btn-secondary btn-block mb-4">Register</form:button>
 
         <!-- Register buttons -->
         <div class="text-center">
