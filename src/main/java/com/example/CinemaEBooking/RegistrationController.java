@@ -69,8 +69,7 @@ public class RegistrationController {
         db.createNewUser(firstName, lastName, phone, email, promotionSubscribe, false, password);
 
         System.out.println("user created");
-
-
+        sendEmail(email);
 
      return "/registrationConfirmation";
 
