@@ -181,7 +181,7 @@
   </div>
   
   <div class="title">
-    View Account
+    Hi ${firstName}, that is your Account!
 </div>
 
 <div class="container1">

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -24,8 +25,8 @@ public class EditProfileController {
     
 
     @RequestMapping(value = "/editProfile", method = RequestMethod.GET)
-    public String showEditProfilePage(ModelMap model) {
-        model.addAttribute("editProfile", customer); //later this has to be the logged in user! We have to identify who is logged in!
+    public String showEditProfilePage(ModelMap model, @RequestParam String firstName) {
+        model.addAttribute("firstName", firstName); //later this has to be the logged in user! We have to identify who is logged in!
         return "editProfile";
 
     }

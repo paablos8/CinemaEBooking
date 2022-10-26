@@ -42,7 +42,7 @@ public class LoginController {
         String email = userForm.getEmail();
         String password = userForm.getPassword();
         System.out.println(email);
-        //model.put("email", email); //whatever is stored in the model will be directly accessible for the view
+        //whatever is stored in the model will be directly accessible for the view
 
         int loginResult = db.verifyLogin(email, password);
 
@@ -56,8 +56,11 @@ public class LoginController {
             break;
             default:System.out.println("Successfully logged in");
             int userId = loginResult; //once youre logged in, you get your unique UserID returned!
+            User currentUser = db.createUserObject(userId);
             String firstName = db.getUserFirstName(userId);
-            model.put("firstName", firstName);
+        
+            model.put("firstName", firstName);//whatever is stored in the model will be directly accessible for the view
+            model.put("currentUser", currentUser);
             return "/loginSuccess";
             
         }
