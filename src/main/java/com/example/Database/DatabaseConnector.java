@@ -82,9 +82,19 @@ public class DatabaseConnector
     public boolean changeStatus(int userID, Status status){return utc.changeStatus(userID,status);}
 
     //Card Methods
-    public boolean createNewCard(int month, int year, int cvv, long cardNum,String cardType, int userID)
-    {return ctc.createNewCard(month,year,cvv,cardNum,cardType,userID);}
+    public boolean createNewCard(String date, int cvv, long cardNum,String cardType, int userID)
+    {return ctc.createNewCard(date,cvv,cardNum,cardType,userID);}
     public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
+    public long[] getCardNumbers(int userID){return ctc.getCardNumbers(userID);}
+    public String[] getCardExpDates(int userID){return  ctc.getCardExpDates(userID);}
+    public String[] getCardNames(int userID){return  ctc.getCardNames(userID);}
+    public int[] getCardZips(int userID){return  ctc.getCardZips(userID);}
+    public boolean changeCardNumber(long oldCardNum, long newCardNum)
+    {return ctc.changeCardNumber(oldCardNum,newCardNum);}
+    public boolean changeCardExpDate(long cardNum, String newDate){return ctc.changeCardExpDate(cardNum,newDate);}
+    public boolean changeCardName(long cardNum, String name){return ctc.changeCardName(cardNum,name);}
+    public boolean changeCardCVV(long cardNum, int zip){return ctc.changeCardCVV(cardNum,zip);}
+    public boolean changeCardZip(long cardNum, int zip){return ctc.changeCardZip(cardNum,zip);}
 
     //Address Methods
     public String getStreetAddress(int userID){return atc.getStreetAddress(userID);}

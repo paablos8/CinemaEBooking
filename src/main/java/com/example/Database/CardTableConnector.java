@@ -1,6 +1,8 @@
 package com.example.Database;
 
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 /**
  *  These are the functions to access the Card Table
@@ -18,23 +20,23 @@ public class CardTableConnector extends SQL_GetSet
 
     /**
      * Creates a new card entry.
-     * @param month month card expires
-     * @param year year card expires
+     * @param date the expiration date
      * @param cvv security code
      * @param cardNum card number (16 digits)
      * @param cardType visa, mastercard, etc
      * @param userID user's id
      * @return true if it worked
      */
-    public boolean createNewCard(int month, int year, int cvv, long cardNum,String cardType, int userID)
+    public boolean createNewCard(String date, int cvv, long cardNum,String cardType, int userID)
     {
-        String str = ""+year+"-"+month+"-"+"28";
-        Date expDate = Date.valueOf(str);
+        Date expDate = Date.valueOf(date);
         // convert month,year to Date
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Cards VALUES ("
                     +expDate+","+cvv+","+cardNum+",'"+cardType+"')";
+            stmt.executeUpdate(SQL);
+            SQL = "INSERT INTO [User Cards] VALUES ('"+userID+"')";
             stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
@@ -58,7 +60,7 @@ public class CardTableConnector extends SQL_GetSet
 
         for(int i = 0; i < numOfCards; i++)
         {
-            cardNums[i] = (long) get(cardIDS[i],"Cards","Card ID","Card Number");
+            cardNums[i] = get(cardIDS[i],"Cards","Card ID","Card Number");
         }
 
         return cardNums;
@@ -67,22 +69,125 @@ public class CardTableConnector extends SQL_GetSet
     /**
      * Given a user id, returns an array of their expiration dates
      * @param userID user's id
-     * @return long array of user's card numbers
+     * @return String array of user's card expiration dates
      */
     public String[] getCardExpDates(int userID)
     {
         int numOfCards = getNumOf(userID,"User Cards","User ID");
-        String[] cardDates = new String[numOfCards];
+        String[] toRet = new String[numOfCards];
+        Date[] cardDates = new Date[numOfCards];
         Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
 
         for(int i = 0; i < numOfCards; i++)
         {
-            cardDates[i] = (String) get(cardIDS[i],"Cards","Card ID","Card Number");
+            cardDates[i] = get(cardIDS[i],"Cards","Card ID","Expiration Date");
+
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
+            toRet[i] = dateFormat.format(cardDates[i]);
         }
 
-        return cardDates;
+        return toRet;
     }
 
+    /**
+     * Given a user id, returns an array of the names for their cards
+     * @param userID user's id
+     * @return String array of the names on the user's cards
+     */
+    public String[] getCardNames(int userID)
+    {
+        int numOfCards = getNumOf(userID,"User Cards","User ID");
+        String[] cardNames = new String[numOfCards];
+        Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
+
+        for(int i = 0; i < numOfCards; i++)
+        {
+            cardNames[i] = get(cardIDS[i],"Cards","Card ID","Name On Card");
+        }
+
+        return cardNames;
+    }
+
+    /**
+     * Given a user id, returns an array of the zip codes for their cards
+     * @param userID user's id
+     * @return int array of the zip codes for the user's cards
+     */
+    public int[] getCardZips(int userID)
+    {
+        int numOfCards = getNumOf(userID,"User Cards","User ID");
+        int[] cardZips = new int[numOfCards];
+        Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
+
+        for(int i = 0; i < numOfCards; i++)
+        {
+            cardZips[i] = get(cardIDS[i],"Cards","Card ID","Zip Code");
+        }
+
+        return cardZips;
+    }
+
+    /**
+     * Replaces a card number with a new one
+     * @param oldCardNum the old card number
+     * @param newCardNum the new card number
+     * @return true if it worked
+     */
+    public boolean changeCardNumber(long oldCardNum, long newCardNum)
+    {
+        return update(oldCardNum,"Users","Card Number","Card Number",newCardNum);
+    }
+
+    /**
+     * Replaces the expiration date given a card number
+     * @param cardNum the card number
+     * @param newDate the new card date
+     * @return true if it worked
+     */
+    public boolean changeCardExpDate(long cardNum, String newDate)
+    {
+        Date expDate = Date.valueOf(newDate);
+        return update(cardNum,"Users","Card Number","Expiration Date",expDate);
+    }
+
+    /**
+     * Replaces the name for a card given the card number
+     * @param cardNum the card number
+     * @param name the new card name
+     * @return true if it worked
+     */
+    public boolean changeCardName(long cardNum, String name)
+    {
+        return update(cardNum,"Users","Card Number","Name on Card",name);
+    }
+
+    /**
+     * Replaces the security code for a card given the card number
+     * @param cardNum the card number
+     * @param cvv the new card security code
+     * @return true if it worked
+     */
+    public boolean changeCardCVV(long cardNum, int cvv)
+    {
+        return update(cardNum,"Users","Card Number","CVV",cvv);
+    }
+
+    /**
+     * Replaces the zip code for a card given the card number
+     * @param cardNum the card number
+     * @param zip the new card zip code
+     * @return true if it worked
+    */
+    public boolean changeCardZip(long cardNum, int zip)
+    {
+        return update(cardNum,"Users","Card Number","Zip Code",zip);
+    }
+
+    /**
+     * Deletes a card from the database given the card number
+     * @param cardNum the card number
+     * @return true if it worked
+     */
     public boolean deleteCard(long cardNum)
     {
         int cardID = get(cardNum,"Cards","Card Number","Card ID");
