@@ -111,10 +111,10 @@
 
 <div class="login">
     <br>
-    <a href="homePage.jsp">
+    <a href="homePage">
       <button" class="btn btn-secondary btn-block mb-4">View Movie Showtimes</button>
   </a>
-  <a href="editProfile.jsp">
+  <a href="editProfile">
     <button" class="btn btn-secondary btn-block mb-4">Edit Profile</button>
 </a>
 </div>

@@ -11,4 +11,10 @@ public class ExampleController {
 
         return "homePage";
     }
+
+    @RequestMapping("/homePage")
+    public String homePage (){
+
+        return "homePage";
+    }
 }
