@@ -225,7 +225,7 @@
       <input type="text" readonly value="${currentUser.lastName}"> </div> 
       <div class="inputs"> 
       <span>Email address</span> 
-       <input type="text" readonly value="${currentUser.email}"> </div> 
+       <label type="text" readonly value="${currentUser.email}"> </div> 
        <div class="inputs"> 
       <span>City</span> 
       <input type="text" readonly value="${state}"> </div> 
