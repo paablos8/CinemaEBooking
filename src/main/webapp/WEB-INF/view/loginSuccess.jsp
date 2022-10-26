@@ -11,7 +11,7 @@
     <style>
        body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:750px;
       }
       
       .login{
@@ -35,6 +35,15 @@
 
 .topnav a {
   float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topNavLogout a {
+  float: right;
   display: block;
   color: #f2f2f2;
   text-align: center;
@@ -96,8 +105,10 @@
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
     <a href="#promotions">Promotions</a>
-    <a href="userLogin">Login</a>
     <a href="viewcart">View Cart</a>
+    <div class="topNavLogout" id="logout">
+    <a href="logoutSuccess">Logout</a>
+  </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -118,11 +129,13 @@
     <button" class="btn btn-secondary btn-block mb-4">Edit Profile</button>
 </a>
 </div>
+
 <div class="footer">
   <br>
   <small>Copyright - Company Name</small>
   <br><br>
-
+</div>
+</body>
     <script>
       function myFunction() {
         var x = document.getElementById("myTopnav");
