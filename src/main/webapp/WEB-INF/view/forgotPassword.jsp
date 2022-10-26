@@ -115,9 +115,6 @@
     <a href="#promotions">Promotions</a>
     <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
-    <a href="userLogin">Login</a>
-  </div>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>

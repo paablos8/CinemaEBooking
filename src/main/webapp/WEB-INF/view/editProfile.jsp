@@ -166,6 +166,7 @@
           .card .inputs span{font-size:12px}
           .card .inputs input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
           .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+          
 
           .button{
             padding-left: 25%;
@@ -178,6 +179,9 @@
             align-content:center;
             margin-left: 30%;
             margin-right: 30%;
+          }
+          .containerCheck {
+           text-align: center;
           }
     </style>
   </head>
@@ -201,7 +205,7 @@
 </div>
 
       
-<div class="button">
+<div class="buttonCenter">
   <button class="btn btn-secondary btn-block mb-4" button id="savebutton" >Edit</button>
 </div>  
 
@@ -210,31 +214,37 @@
     <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
 </a>
 </div>
+<div class="containerCheck">
+<div class="form-check">
+  <input type="checkbox" path="promotionSubscribe" />
+  <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
+  <br><br>
+
+</div>
+</div>
 
 
 <div class="container1">
     <div class="card"> <div class="info"> 
       <span>Account Information</span> 
      </div>
+     
       <div class="forms">
+        <div class="inputs"> 
+          <span>Email address</span> 
+      <form:input type="text" readonly value="${currentUser.email}"> </div> 
       <div class="inputs">
       <span>Fist Name</span> 
       <input type="text" readonly value="${currentUser.firstName}"> </div> 
       <div class="inputs"> 
       <span>Last Name</span> 
       <input type="text" readonly value="${currentUser.lastName}"> </div> 
-      <div class="inputs"> 
-      <span>Email address</span> 
-       <label type="text" readonly value="${currentUser.email}"> </div> 
        <div class="inputs"> 
       <span>City</span> 
       <input type="text" readonly value="${state}"> </div> 
       <div class="inputs"> 
       <span>Country</span>
-      <input type="text" readonly value="${country}"> </div> 
-       
-        
-        
+      <input type="text" readonly value="${country}"> </div>
       </div>
 
     
@@ -341,7 +351,7 @@ var readonly = true;
 var inputs = document.querySelectorAll('input[type="text"]');
 savebutton.addEventListener('click',function(){
     
-     for (var i=0; i<inputs.length; i++) {
+     for (var i=1; i<inputs.length; i++) {
      inputs[i].toggleAttribute('readonly');
      };
 
