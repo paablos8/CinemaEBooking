@@ -228,7 +228,7 @@ h5{
 </div>
 
 <div class="flex-container">
-<div><img src="movieCovers/fightClub.jpg" alt="image not found"
+<div><img src="https://m.media-amazon.com/images/I/81D+KJkO4SL._AC_UF894,1000_QL80_.jpg" alt="image not found"
   width="200" height="300"></div>
   <br>
   Showtimes <br> <br>
@@ -321,7 +321,7 @@ h5{
             <a href="orderSummary">
             <button" class="btn btn-secondary btn-block mb-4">Submit</button>
         </a>
-        <div><img src="movieCovers/seatingChart.png" alt="image not found"
+        <div><img src="https://conceptdraw.com/a1607c3/p1/preview/640/pict--movie-theater-seat-layout-cinema-seating-plan.png--diagram-flowchart-example.png" alt="image not found"
           width="200" height="300" ></div>
       </div>
       

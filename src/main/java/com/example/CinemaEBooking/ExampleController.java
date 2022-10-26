@@ -23,4 +23,10 @@ public class ExampleController {
 
         return "registrationConfirmation";
     }
+
+    @RequestMapping("/orderTicketsFightClub")
+    public String orderTicks(){
+
+        return "orderTicketsFightClub";
+    }
 }
