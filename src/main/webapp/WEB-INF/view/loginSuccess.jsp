@@ -106,7 +106,7 @@
 
 
   <div class="title">
-    You are now logged in!
+    You are now logged in! Welcome, ${firstName} !
 </div>
 
 <div class="login">
