@@ -198,9 +198,9 @@
 <div class="container1">
     <div class="card"> <div class="info"> 
       <span>Account Information</span> 
-      </div> 
-      <div class="forms"> 
-      <div class="inputs"> 
+     </div>
+      <div class="forms">
+      <div class="inputs">
       <span>Name</span> 
       <input type="text" readonly value="${name}"> </div> 
       <div class="inputs"> 
@@ -210,12 +210,12 @@
       <span>City</span> 
        <input type="text" readonly value="${city}"> </div> 
        <div class="inputs"> 
-        <span>State</span> 
-        <input type="text" readonly value="${state}"> </div> 
-        <div class="inputs"> 
-        <span>Country</span>
-        <input type="text" readonly value="${country}"> </div> 
-        
+      <span>State</span> 
+      <input type="text" readonly value="${state}"> </div> 
+      <div class="inputs"> 
+      <span>Country</span>
+      <input type="text" readonly value="${country}"> </div> 
+       
         <a href="forgotPassword">
           <div class="button">
             <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
