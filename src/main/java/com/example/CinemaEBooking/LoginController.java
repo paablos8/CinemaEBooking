@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@SessionAttributes("userId")
+@SessionAttributes("currentUser")
 public class LoginController {
    
     DatabaseConnector db = new DatabaseConnector();
@@ -73,6 +73,7 @@ public class LoginController {
             */
             model.put("firstName", firstName);//whatever is stored in the model will be directly accessible for the view
             model.put("userId", userId);
+            model.put("currentUser", currentUser);
 
             return "/loginSuccess";
             

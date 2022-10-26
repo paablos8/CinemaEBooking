@@ -20,13 +20,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@SessionAttributes("userId")
+@SessionAttributes("currentUser")
 public class EditProfileController {
 
     DatabaseConnector db = new DatabaseConnector();    
 
     @RequestMapping(value = "/editProfile", method = RequestMethod.GET)
     public String showEditProfilePage(ModelMap model) {
+
         /*
         String firstName = db.getUserFirstName(userId);
         String lastName = db.getUserLastName(userId);
