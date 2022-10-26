@@ -245,7 +245,6 @@
                     <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
                 </div>
             </div>
-
             <div class="col">
                 <!-- Simple link -->
                 <a href="/forgotPassword">Forgot password?</a>
