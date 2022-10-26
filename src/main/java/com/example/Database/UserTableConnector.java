@@ -109,6 +109,10 @@ class UserTableConnector extends SQL_GetSet
         user.setEmail(getUserEmail(userID));
         user.setPassword(getUserPassword(userID));
         user.setStatus(getUserStatus(userID));
+        user.setFirstName(getUserFirstName(userID));
+        user.setLastName(getUserLastName(userID));
+        //user.setPhone(getUserPhoneNumber(userID));
+
 
         return user;
     }

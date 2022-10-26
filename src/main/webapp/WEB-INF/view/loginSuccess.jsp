@@ -117,7 +117,7 @@
 
 
   <div class="title">
-    You are now logged in as a ${userType}! Welcome, ${firstName}, with userID ${userId} ! <BR/>
+    You are now logged in! Welcome, ${firstName} with userID ${userId}! <BR/>
 </div>
 
 <div class="login">
