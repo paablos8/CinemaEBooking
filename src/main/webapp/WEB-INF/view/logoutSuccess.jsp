@@ -105,10 +105,9 @@
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
     <a href="#promotions">Promotions</a>
-    <a href="userLogin">Login</a>
     <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
-    <a href="logoutSuccess">Logout</a>
+    <a href="userLogin">Login</a>
   </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>

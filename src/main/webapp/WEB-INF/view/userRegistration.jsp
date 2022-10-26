@@ -11,7 +11,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:120%;
+        height:180%;
       }
       .registration{
         border-radius:25px;
@@ -36,6 +36,15 @@
 }
 .topnav a {
   float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topNavLogout a {
+  float: right;
   display: block;
   color: #f2f2f2;
   text-align: center;
@@ -156,16 +165,18 @@
    </style>
   </head>
 <body>
-
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
-    <a href="couponpromo">Promotions</a>
-    <a href="userLogin">Login</a>
+    <a href="#promotions">Promotions</a>
     <a href="viewcart">View Cart</a>
+    <div class="topNavLogout" id="logout">
+    <a href="userLogin">Login</a>
+  </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
+
 
 
   <div class="title">
@@ -259,6 +270,7 @@
     </div>
 </form:form>
 </div>
+<br><br><br><br>
 
 
 <div class="footer">
