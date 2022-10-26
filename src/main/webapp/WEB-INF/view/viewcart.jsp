@@ -88,10 +88,10 @@
     </style>
     <body>  
       <div class="topnav" id="myTopnav">
-        <a href="homePage.jsp" class="active">Home</a>
-        <a href="couponpromo.jsp">Promotions</a>
-        <a href="userLogin.jsp">Login</a>
-        <a href="viewcart.jsp">View Cart</a>
+        <a href="homePage" class="active">Home</a>
+        <a href="couponpromo">Promotions</a>
+        <a href="userLogin">Login</a>
+        <a href="viewcart">View Cart</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -114,7 +114,7 @@
                 <span class='thin'>Adult Ticket</span>
                   <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
                   <button role= "RemoveBut">Remove</button>
-                  <a href="orderTicketsFightClub.jsp">
+                  <a href="orderTicketsFightClub">
                   <button role= "EditBut">Edit</button>
                   </a>
                 </td>
@@ -138,7 +138,7 @@
                 <span class='thin'>Youth Ticket</span>
                 <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
                 <button role= "RemoveBut">Remove</button>
-                <a href="orderTicketsFightClub.jsp">
+                <a href="orderTicketsFightClub">
                   <button role= "EditBut">Edit</button>
                   </a>
                 </td>
@@ -160,7 +160,7 @@
                 <span class='thin'>Senior Ticket</span>
                 <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
                 <button role= "RemoveBut">Remove</button>
-                <a href="orderTicketsFightClub.jsp">
+                <a href="orderTicketsFightClub">
                   <button role= "EditBut">Edit</button>
                   </a>
   

@@ -103,12 +103,12 @@
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="homePage.jsp" class="active">Home</a>
+    <a href="homePage" class="active">Home</a>
     <a href="#promotions">Promotions</a>
-    <a href="userLogin.jsp">Login</a>
-    <a href="viewcart.jsp">View Cart</a>
+    <a href="userLogin">Login</a>
+    <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
-    <a href="logoutSuccess.jsp">Logout</a>
+    <a href="logoutSuccess">Logout</a>
   </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -123,10 +123,10 @@
 
 <div class="login">
     <br>
-    <a href="homePage.jsp">
+    <a href="homePage">
       <button" class="btn btn-secondary btn-block mb-4">View Movie Showtimes</button>
   </a>
-  <a href="userLogin.jsp">
+  <a href="userLogin">
     <button" class="btn btn-secondary btn-block mb-4">Login</button>
 </a>
 </div>
