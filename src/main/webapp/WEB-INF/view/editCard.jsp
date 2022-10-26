@@ -166,13 +166,13 @@
       <input type="text" readonly value="SampleAddress"> </div> 
       <div class="inputs"> 
       <span>City</span> 
-       <input type="text" readonly value="City"> </div> 
-       <div class="inputs"> 
-        <span>State</span> 
-        <input type="text" readonly value="State"> </div> 
-        <div class="inputs"> 
-        <span>Country</span>
-        <input type="text" readonly value="Country"> </div> 
+      <input type="text" readonly value="City"> </div> 
+      <div class="inputs"> 
+      <span>State</span> 
+      <input type="text" readonly value="State"> </div> 
+      <div class="inputs"> 
+      <span>Country</span>
+      <input type="text" readonly value="Country"> </div> 
         
       
         <a href="editProfile">

@@ -40,6 +40,15 @@
   text-decoration: none;
   font-size: 17px;
 }
+.topNavLogout a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
 .topnav a:hover {
   background-color: #ddd;
@@ -172,9 +181,11 @@
 
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
-    <a href="couponpromo">Promotions</a>
-    <a href="userLogin">Login</a>
+    <a href="#promotions">Promotions</a>
     <a href="viewcart">View Cart</a>
+    <div class="topNavLogout" id="logout">
+    <a href="logoutSuccess">Logout</a>
+  </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -244,6 +255,7 @@
         
 </div>
 </div>
+<br>
 </div>
 
 <div class="container3">
