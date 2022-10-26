@@ -174,6 +174,11 @@
             padding-left:auto;
             align-items:center;
           }
+          .buttonCenter {
+            align-content:center;
+            margin-left: 30%;
+            margin-right: 30%;
+          }
     </style>
   </head>
 
@@ -194,6 +199,18 @@
   <div class="title">
     Hi ${firstName}, that is your Account!
 </div>
+
+      
+<div class="button">
+  <button class="btn btn-secondary btn-block mb-4" button id="savebutton" >Edit</button>
+</div>  
+
+<a href="forgotPassword">
+  <div class="buttonCenter">
+    <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
+</a>
+</div>
+
 
 <div class="container1">
     <div class="card"> <div class="info"> 
@@ -216,17 +233,14 @@
       <span>Country</span>
       <input type="text" readonly value="${country}"> </div> 
        
-        <a href="forgotPassword">
-          <div class="button">
-            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
-        </a>
-      </div>
+        
         
       </div>
 
     
   
 </div>
+
 <div class="container2">
   <div class="card"> <div class="info"> 
     <span>Primary Card Information</span> 
@@ -247,11 +261,7 @@
       <div class="inputs"> 
       <span>Zip Code</span>
       <input type="text" readonly value="${cardZip}"> </div> 
-      
-    <div class="button">
-          <button class="btn btn-secondary btn-block mb-4" button id="savebutton" >Edit</button>
-        </div>
-      </a>  
+
         
 </div>
 </div>
@@ -278,12 +288,7 @@
       <div class="inputs"> 
       <span>Zip Code</span>
       <input type="text" readonly value="${cardZip}"> </div> 
-      
-    <div class="button">
-          <button class="btn btn-secondary btn-block mb-4" button id="savebutton2" >Edit</button>
-        </div>
-      </a>  
-        
+         
 </div>
 </div>
 </div>
@@ -308,11 +313,7 @@
       <div class="inputs"> 
       <span>Zip Code</span>
       <input type="text" readonly value="${cardZip}"> </div> 
-      
-    <div class="button">
-          <button class="btn btn-secondary btn-block mb-4" button id="savebutton3" >Edit</button>
-        </div>
-      </a>  
+
         
 </div>
 </div>
