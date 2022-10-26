@@ -5,7 +5,45 @@ public class Customer extends User{
     private String lastName;
     int phone;
     private PaymentCard[] paymentCards;
-    private String billingAddress;
+    
+    private String street;
+    private String state;
+    private String city;
+    private int zipcode;
+
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(int zipcode) {
+        this.zipcode = zipcode;
+    }
+
     private boolean promotionSubscribe;
     //private Booking[] bookings;
 
@@ -60,14 +98,6 @@ public class Customer extends User{
         this.bookings = bookings;
     }
     */
-
-    public String getBillingAddress() {
-        return billingAddress;
-    }
-
-    public void setBillingAddress(String billingAddress) {
-        this.billingAddress = billingAddress;
-    }
 
     public boolean getPromotionSubscribe() {
         return promotionSubscribe;

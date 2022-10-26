@@ -56,7 +56,11 @@ public class RegistrationController {
 
                                     String firstName = accountForm.getFirstName();
                                     String lastName = accountForm.getLastName();
-                                    String billingAddress = accountForm.getBillingAddress();
+                                    String street = accountForm.getStreet();
+                                    String state = accountForm.getState();
+                                    String city = accountForm.getCity();
+                                    int zipcode = accountForm.getZipcode();
+
                                     int phone = accountForm.getPhone();
                                     String email = accountForm.getEmail();
                                     String password = accountForm.getPassword();
@@ -67,11 +71,13 @@ public class RegistrationController {
         }
 
         db.createNewUser(firstName, lastName, phone, email, promotionSubscribe, false, password);
+        int userID = db.verifyLogin(email, password);
+        db.createNewAddress(userID, street, city, state, "USA", zipcode);
 
         System.out.println("user created");
         sendEmail(email);
 
-     return "/registrationConfirmation";
+     return "redirect:/registrationConfirmation";
 
     
 }
