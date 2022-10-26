@@ -230,9 +230,9 @@
      </div>
      
       <div class="forms">
-        <div class="inputs"> 
-          <span>Email address</span> 
-      <form:input type="text" readonly value="${currentUser.email}"> </div> 
+      <div class="inputs"> 
+      <span>Email address</span> 
+      <input type="text" readonly value="${currentUser.email}"> </div> 
       <div class="inputs">
       <span>Fist Name</span> 
       <input type="text" readonly value="${currentUser.firstName}"> </div> 
