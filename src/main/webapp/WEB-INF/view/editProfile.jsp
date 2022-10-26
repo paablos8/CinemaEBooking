@@ -197,7 +197,7 @@
   </div>
   
   <div class="title">
-    Hi ${firstName}, that is your Account!
+    Hi ${currentUser.firstName}, that is your Account!
 </div>
 
       
@@ -218,16 +218,16 @@
      </div>
       <div class="forms">
       <div class="inputs">
-      <span>Name</span> 
-      <input type="text" readonly value="${firstName}"> </div> 
+      <span>Fist Name</span> 
+      <input type="text" readonly value="${currentUser.firstName}"> </div> 
       <div class="inputs"> 
-      <span>Address</span> 
-      <input type="text" readonly value="${address}"> </div> 
+      <span>Last Name</span> 
+      <input type="text" readonly value="${currentUser.lastName}"> </div> 
       <div class="inputs"> 
-      <span>City</span> 
-       <input type="text" readonly value="${city}"> </div> 
+      <span>Email address</span> 
+       <input type="text" readonly value="${currentUser.email}"> </div> 
        <div class="inputs"> 
-      <span>State</span> 
+      <span>City</span> 
       <input type="text" readonly value="${state}"> </div> 
       <div class="inputs"> 
       <span>Country</span>

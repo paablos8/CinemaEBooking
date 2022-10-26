@@ -3,7 +3,7 @@ package com.example.CinemaEBooking.entities;
 public class Customer extends User{
     private String firstName;
     private String lastName;
-    int phone;
+    private int phone;
     private PaymentCard[] paymentCards;
     
     private String street;
@@ -111,7 +111,8 @@ public class Customer extends User{
         this.phone = phone;
     }
 
-    public int getPhone(){
+    /*public int getPhone(){
         return phone;
     }
+    */
 }

@@ -28,6 +28,7 @@ public class LoginController {
    
     DatabaseConnector db = new DatabaseConnector();
     int userId;
+    String userType;
 
 
     
@@ -61,9 +62,10 @@ public class LoginController {
             int userId = loginResult; //once youre logged in, you get your unique UserID returned!
             User currentUser = db.createUserObject(userId);
             String firstName = db.getUserFirstName(userId);
-            //boolean isAdmin = db.getUserType(userId);
             
             /*
+            boolean isAdmin = db.getUserType(userId);
+            
             if(isAdmin == true) {
                 userType = "Admin";
             }
@@ -71,6 +73,7 @@ public class LoginController {
                 userType = "Customer";
             }
             */
+
             model.put("firstName", firstName);//whatever is stored in the model will be directly accessible for the view
             model.put("userId", userId);
             model.put("currentUser", currentUser);
