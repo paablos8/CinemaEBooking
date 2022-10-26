@@ -140,7 +140,7 @@ h5{
 </div>
 
 <div class="flex-container">
-<div><img src="movieCovers/fightClub.jpg" alt="image not found"
+<div><img src= "/src/main/webapp/WEB-INF/movieCovers/fightClub.jpg" alt="image not found"
   width="150" height="225"></div>
 <h5>Fight Club <br> <br>
   Showtimes <br> <br>

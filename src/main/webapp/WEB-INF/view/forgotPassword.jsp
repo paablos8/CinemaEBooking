@@ -23,6 +23,16 @@
             margin-top: 50px;
             text-align:center;
           }
+          .forgotPassword{
+            border-radius:25px;
+            background-color:lightgrey;
+            width:50%;
+            padding: 14px 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            text-align:center;
+          }
           .title{
             font-size:50px;
             text-align: center;
@@ -103,8 +113,9 @@
         
             <!-- Email input -->
             <div class="form-outline mb-4"></div>
+                <label class="form-label" for="form2Example1">Email address</label> 
                 <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter email address" />
-                <label class="form-label" for="form2Example1">Email address</label>    
+                   
             </div>
 
 
