@@ -106,7 +106,7 @@
 
 
   <div class="title">
-    You are now logged in! Welcome, ${firstName} ! <BR/>
+    You are now logged in as a ${userType}! Welcome, ${firstName}, with userID ${userId} ! <BR/>
 </div>
 
 <div class="login">
@@ -114,7 +114,7 @@
     <a href="homePage">
       <button" class="btn btn-secondary btn-block mb-4">View Movie Showtimes</button>
   </a>
-  <a href="editProfile?firstName=${firstName}">
+  <a href="editProfile">
     <button" class="btn btn-secondary btn-block mb-4">Edit Profile</button>
 </a>
 </div>

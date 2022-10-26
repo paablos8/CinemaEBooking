@@ -19,12 +19,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@SessionAttributes("userId")
 public class LoginController {
    
     DatabaseConnector db = new DatabaseConnector();
+    int userId;
 
 
     
@@ -58,9 +61,19 @@ public class LoginController {
             int userId = loginResult; //once youre logged in, you get your unique UserID returned!
             User currentUser = db.createUserObject(userId);
             String firstName = db.getUserFirstName(userId);
-        
+            //boolean isAdmin = db.getUserType(userId);
+            
+            /*
+            if(isAdmin == true) {
+                userType = "Admin";
+            }
+            else if (isAdmin == false) {
+                userType = "Customer";
+            }
+            */
             model.put("firstName", firstName);//whatever is stored in the model will be directly accessible for the view
-            model.put("currentUser", currentUser);
+            model.put("userId", userId);
+
             return "/loginSuccess";
             
         }
