@@ -124,7 +124,7 @@ h5{
    id="myTopnav">
     <a href="homePage.jsp" class="active">Home</a>
     <a href="couponpromo.jsp">Promotions</a>
-    <a href="userLogin.jsp">Login</a>
+    <a href="userLogin">Login</a>
     <a href="viewcart.jsp">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -140,7 +140,7 @@ h5{
 </div>
 
 <div class="flex-container">
-<div><img src="movieCovers/fightClub.jpg" alt="image not found"
+<div><img src="https://m.media-amazon.com/images/I/81D+KJkO4SL._AC_UF894,1000_QL80_.jpg" alt="image not found"
   width="150" height="225"></div>
 <h5>Fight Club <br> <br>
   Showtimes <br> <br>
@@ -151,7 +151,7 @@ h5{
   <a href="https://www.youtube.com/watch?v=qtRKdVHc-cE" target="_blank">>Movie Trailer</a>
   <br><a href="orderTicketsFightClub.jsp" target="_blank">Order Tickets Here</a>
 </h5>
-<div><img src="movieCovers/TheGodfather.jpg" alt="image not found"
+<div><img src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="image not found"
   width="150" height="225"></div>
 <h5>The Godfather <br> <br>
   Showtimes <br> <br>
@@ -162,7 +162,7 @@ h5{
   <a href="https://www.youtube.com/watch?v=UaVTIH8mujA" target="_blank">>Movie Trailer</a>
   <br><a href="orderTickets.jsp" target="_blank">Order Tickets Here</a>
 </h5>
-<div><img src="movieCovers/TheDarkKnight.jpg" alt="image not found"
+<div><img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg" alt="image not found"
   width="150" height="225"></div>
 <h5>The Dark Knight<br> <br>
   Showtimes <br> <br>
@@ -184,19 +184,19 @@ h5{
 
 
 <div class="flex-container">
-  <div><img src="movieCovers/12AngryMen.jpg" alt="image not found"
+  <div><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg" alt="image not found"
     width="150" height="225"></div>
   <h5>12 Angry Men<br>
     <br>
     <a href="https://www.youtube.com/watch?v=_13J_9B5jEk" target="_blank">>Movie Trailer</a>
   </h5>
-    <div><img src="movieCovers/ForrestGump.jpg" alt="image not found"
+    <div><img src="https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg" alt="image not found"
     width="150" height="225"></div>
   <h5>Forrest Gump<br>
    <br>
     <a href="https://www.youtube.com/watch?v=bLvqoHBptjg" target="_blank">>Movie Trailer</a>
   </h5>
-  <div><img src="movieCovers/pulpFiction.jpg" alt="image not found"
+  <div><img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg" alt="image not found"
     width="150" height="225"></div>
   <h5>Pulp Fiction<br>
     <br>
@@ -228,8 +228,4 @@ h5{
         }
       }
       </script>
-      
-
-
-
 </html>
