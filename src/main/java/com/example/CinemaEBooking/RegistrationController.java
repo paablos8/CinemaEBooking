@@ -61,14 +61,15 @@ public class RegistrationController {
                                     String city = accountForm.getCity();
                                     int zipcode = accountForm.getZipcode();
 
-                                    int phone = accountForm.getPhone();
+                                    long phone = accountForm.getPhone();
                                     String email = accountForm.getEmail();
                                     String password = accountForm.getPassword();
                                     Boolean promotionSubscribe = accountForm.getPromotionSubscribe();
 
-        if (bindingResult.hasErrors()) {
+        /*if (bindingResult.hasErrors()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
+        */
 
         db.createNewUser(firstName, lastName, phone, email, promotionSubscribe, false, password);
         int userID = db.verifyLogin(email, password);
