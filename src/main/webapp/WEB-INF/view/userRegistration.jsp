@@ -222,12 +222,12 @@
 
             <div class="col">
                 <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
+                <a href="/forgotPassword">Forgot password?</a>
             </div>
         </div>
 
         <!-- Submit button -->
-        <form:button type="submit" class="btn btn-secondary btn-block mb-4">Sign in</form:button>
+        <form:button type="submit" class="btn btn-secondary btn-block mb-4">Register</form:button>
 
         <!-- Register buttons -->
         <div class="text-center">

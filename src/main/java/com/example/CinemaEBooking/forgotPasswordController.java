@@ -31,6 +31,7 @@ public class forgotPasswordController {
         return "forgotPassword";
     }
 
+    
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
     public Object forgotPassword(@ModelAttribute("emailBox") User user, Model model) {
         String email = user.getEmail();
@@ -42,7 +43,7 @@ public class forgotPasswordController {
 
         }
 
-        return "homePage";
+        return "redirect:/userLogin";
     }
 
     @Autowired
