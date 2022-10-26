@@ -202,7 +202,7 @@
       <div class="forms">
       <div class="inputs">
       <span>Name</span> 
-      <input type="text" readonly value="${name}"> </div> 
+      <input type="text" readonly value="${firstName}"> </div> 
       <div class="inputs"> 
       <span>Address</span> 
       <input type="text" readonly value="${address}"> </div> 
@@ -255,7 +255,7 @@
         
 </div>
 </div>
-<br>
+
 </div>
 
 <div class="container3">
