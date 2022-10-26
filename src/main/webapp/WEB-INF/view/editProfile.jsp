@@ -192,7 +192,7 @@
   </div>
   
   <div class="title">
-    Hi ${currentUserfirstName}, that is your Account!
+    Hi ${currentUser.firstName}, that is your Account!
 </div>
 
 <div class="container1">
