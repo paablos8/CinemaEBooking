@@ -82,8 +82,9 @@ public class DatabaseConnector
     public boolean changeStatus(int userID, Status status){return utc.changeStatus(userID,status);}
 
     //Card Methods
-    public boolean createNewCard(String date, int cvv, long cardNum,String cardType, int userID)
-    {return ctc.createNewCard(date,cvv,cardNum,cardType,userID);}
+    public boolean createNewCard(String date, int cvv, long cardNum,String cardType, int userID,
+    String streetAddress,String cityCounty,String stateRegion,String country,int zip)
+    {return ctc.createNewCard(date,cvv,cardNum,cardType,userID,streetAddress,cityCounty,stateRegion,country,zip);}
     public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
     public long[] getCardNumbers(int userID){return ctc.getCardNumbers(userID);}
     public String[] getCardExpDates(int userID){return  ctc.getCardExpDates(userID);}
@@ -94,7 +95,16 @@ public class DatabaseConnector
     public boolean changeCardExpDate(long cardNum, String newDate){return ctc.changeCardExpDate(cardNum,newDate);}
     public boolean changeCardName(long cardNum, String name){return ctc.changeCardName(cardNum,name);}
     public boolean changeCardCVV(long cardNum, int zip){return ctc.changeCardCVV(cardNum,zip);}
-    public boolean changeCardZip(long cardNum, int zip){return ctc.changeCardZip(cardNum,zip);}
+    public boolean changeStreetAddress(long cardNum, String streetAddress)
+    {return ctc.changeStreetAddress(cardNum,streetAddress);}
+    public boolean changeCityCounty(long cardNum, String cityCounty)
+    {return ctc.changeCityCounty(cardNum,cityCounty);}
+    public boolean changeStateRegion(long cardNum, String stateRegion)
+    {return ctc.changeStateRegion(cardNum,stateRegion);}
+    public boolean changeCountry(long cardNum, String country)
+    {return ctc.changeCountry(cardNum,country);}
+    public boolean changeZipCode(long cardNum, int zipCode)
+    {return ctc.changeZipCode(cardNum,zipCode);}
 
     //Address Methods
     public String getStreetAddress(int userID){return atc.getStreetAddress(userID);}

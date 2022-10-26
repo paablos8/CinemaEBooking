@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * These are generic methods for SQL calls.
  * Basis for every table connector class.
  */
-class SQL_GetSet
+class SQL_GetSet extends Encryptor
 {
     private Connection conn;
 

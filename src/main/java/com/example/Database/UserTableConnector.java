@@ -25,7 +25,7 @@ class UserTableConnector extends SQL_GetSet
     /**
      * Verifies a login using a given email and password.
      * Returns User ID if valid login, -1 if incorrect password,
-     * or -2 if invalid email.
+     * or -2 if invalid email. Returns -3 if user is inactive.
      *
      * @param email The user's email.
      * @param password The user's password
@@ -36,14 +36,18 @@ class UserTableConnector extends SQL_GetSet
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT Email, Password, [User ID] FROM Users");
+            rs = stmt.executeQuery("SELECT Email, Password, [User ID], [User Status] FROM Users");
 
             while(rs.next())
             {
                 if(email.equals(rs.getString("Email")))
                 {
-                    if (password.equals(rs.getString("Password")))
+                    if (password.equals(decrypt(rs.getString("Password"))))
                     {
+                        if(rs.getInt("User Status") != 2)
+                        {
+                            return -3;
+                        }
                         return rs.getInt("User ID");
                     }
                     else
@@ -76,16 +80,17 @@ class UserTableConnector extends SQL_GetSet
                           String email, boolean promoOp, boolean isAdmin,
                           String password)
     {
-        if(!(verifyEmail(email)&&verifyPhoneNum(pNum)&&verifyString(fName)&&verifyString(lName)&verifyString(password)))
+        if(!(verifyEmail(email)&&verifyPhoneNum(pNum)&&verifyString(fName)&&verifyString(lName)&&verifyString(password)))
         {
             return false;
         }
 
+        String encPass = encrypt(password);
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Users VALUES ('"
                     +fName+"','"+lName+"',"+pNum+",'"+email+"','"+
-                    promoOp+"',"+2+",'"+isAdmin+"','"+password+"')";
+                    promoOp+"',"+2+",'"+isAdmin+"','"+encPass+"')";
             stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
@@ -109,10 +114,6 @@ class UserTableConnector extends SQL_GetSet
         user.setEmail(getUserEmail(userID));
         user.setPassword(getUserPassword(userID));
         user.setStatus(getUserStatus(userID));
-        user.setFirstName(getUserFirstName(userID));
-        user.setLastName(getUserLastName(userID));
-        //user.setPhone(getUserPhoneNumber(userID));
-
 
         return user;
     }
@@ -130,7 +131,8 @@ class UserTableConnector extends SQL_GetSet
             {
                 if((email.equals(rs.getString("Email"))))
                 {
-                    rs.updateString("Password", password);
+                    String encPass = encrypt(password);
+                    rs.updateString("Password", encPass);
                     rs.updateRow();
                 }
             }
@@ -206,7 +208,11 @@ class UserTableConnector extends SQL_GetSet
      * @param userID user's id
      * @return password
      */
-    String getUserPassword(int userID) {return get(userID,"Users","User ID","Password");}
+    String getUserPassword(int userID)
+    {
+        String encPass =  get(userID,"Users","User ID","Password");
+        return decrypt(encPass);
+    }
 
     /**
      * Updates the user's first name
@@ -279,7 +285,8 @@ class UserTableConnector extends SQL_GetSet
     {
         if(verifyString(password))
             return false;
-        return update(userID,"Users","User ID","Password",password);
+        String encPass = encrypt(password);
+        return update(userID,"Users","User ID","Password",encPass);
     }
 
     boolean verifyEmail(String email)

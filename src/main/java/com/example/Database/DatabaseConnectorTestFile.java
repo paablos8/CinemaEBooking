@@ -11,8 +11,12 @@ public class DatabaseConnectorTestFile
      */
     public static void main(String[] args)
     {
+
         //private DatabaseConnector dbConnector = new DatabaseConnector();
         DatabaseConnector c1 = new DatabaseConnector();
+
         c1.close();
+
+        //Encryptor enc = new Encryptor();
     }
 }

@@ -27,7 +27,8 @@ public class CardTableConnector extends SQL_GetSet
      * @param userID user's id
      * @return true if it worked
      */
-    public boolean createNewCard(String date, int cvv, long cardNum,String cardType, int userID)
+    public boolean createNewCard(String date, int cvv, long cardNum,String cardType,
+               int userID,String streetAddress,String cityCounty,String stateRegion,String country,int zip)
     {
         Date expDate = Date.valueOf(date);
         // convert month,year to Date
@@ -37,6 +38,11 @@ public class CardTableConnector extends SQL_GetSet
                     +expDate+","+cvv+","+cardNum+",'"+cardType+"')";
             stmt.executeUpdate(SQL);
             SQL = "INSERT INTO [User Cards] VALUES ('"+userID+"')";
+            stmt.executeUpdate(SQL);
+            int id = get(cardNum,"Cards","Card Number","Card ID");
+            id += 1000;
+            SQL = "INSERT INTO [Addresses] VALUES ("+id+",'"+streetAddress+"','"+cityCounty+"','"+stateRegion+
+                    "','"+country+"',"+zip;
             stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
@@ -172,15 +178,35 @@ public class CardTableConnector extends SQL_GetSet
         return update(cardNum,"Users","Card Number","CVV",cvv);
     }
 
-    /**
-     * Replaces the zip code for a card given the card number
-     * @param cardNum the card number
-     * @param zip the new card zip code
-     * @return true if it worked
-    */
-    public boolean changeCardZip(long cardNum, int zip)
+    public boolean changeStreetAddress(long cardNum, String streetAddress)
     {
-        return update(cardNum,"Users","Card Number","Zip Code",zip);
+        int id = get(cardNum,"Cards","Card Number","Card ID");
+        id += 1000;
+        return update(id,"Addresses","UserID","Street Address",streetAddress);
+    }
+    public boolean changeCityCounty(long cardNum, String cityCounty)
+    {
+        int id = get(cardNum,"Cards","Card Number","Card ID");
+        id += 1000;
+        return update(id,"Addresses","UserID","City/County",cityCounty);
+    }
+    public boolean changeStateRegion(long cardNum, String stateRegion)
+    {
+        int id = get(cardNum,"Cards","Card Number","Card ID");
+        id += 1000;
+        return update(id,"Addresses","UserID","State/Region",stateRegion);
+    }
+    public boolean changeCountry(long cardNum, String country)
+    {
+        int id = get(cardNum,"Cards","Card Number","Card ID");
+        id += 1000;
+        return update(id,"Addresses","UserID","Country",country);
+    }
+    public boolean changeZipCode(long cardNum, int zipCode)
+    {
+        int id = get(cardNum,"Cards","Card Number","Card ID");
+        id += 1000;
+        return update(id,"Addresses","UserID","Zip Code",zipCode);
     }
 
     /**
