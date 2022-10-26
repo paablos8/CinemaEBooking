@@ -118,6 +118,22 @@
     justify-content:center;
     align-items:center;
   }
+
+  .container3{
+    
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .container4{
+    
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
   
   .card{
       width:350px;
@@ -155,10 +171,10 @@
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="homePage.jsp" class="active">Home</a>
-    <a href="couponpromo.jsp">Promotions</a>
-    <a href="userLogin.jsp">Login</a>
-    <a href="viewcart.jsp">View Cart</a>
+    <a href="homePage" class="active">Home</a>
+    <a href="couponpromo">Promotions</a>
+    <a href="userLogin">Login</a>
+    <a href="viewcart">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -189,7 +205,7 @@
         <span>Country</span>
         <input type="text" readonly value="${country}"> </div> 
         
-        <a href="resetPassword.jsp">
+        <a href="resetPassword">
           <div class="button">
             <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
         </a>
@@ -197,17 +213,12 @@
         
       </div>
 
-      
-      
-       
-  
-
-  
+    
   
 </div>
 <div class="container2">
   <div class="card"> <div class="info"> 
-    <span>Card Information</span> 
+    <span>Primary Card Information</span> 
     </div> 
     <div class="forms"> 
     <div class="inputs"> 
@@ -232,6 +243,68 @@
       </a>  
         
 </div>
+</div>
+</div>
+
+<div class="container3">
+  <div class="card"> <div class="info"> 
+    <span> Secondary Card Information</span> 
+    </div> 
+    <div class="forms"> 
+    <div class="inputs"> 
+    <span>Name on Card</span> 
+    <input type="text" readonly value="${nameOnCard}"> </div> 
+    <div class="inputs"> 
+    <span>Number</span> 
+    <input type="text" readonly value="${cardNumber}"> </div> 
+    <div class="inputs"> 
+    <span>CVN</span> 
+     <input type="text" readonly value="${cardCVN}"> </div> 
+     <div class="inputs"> 
+      <span>Card Expiration Date</span> 
+      <input type="text" readonly value="${cardExpire}"> </div> 
+      <div class="inputs"> 
+      <span>Zip Code</span>
+      <input type="text" readonly value="${cardZip}"> </div> 
+      
+    <div class="button">
+          <button class="btn btn-secondary btn-block mb-4" button id="savebutton2" >Edit</button>
+        </div>
+      </a>  
+        
+</div>
+</div>
+</div>
+
+<div class="container4">
+  <div class="card"> <div class="info"> 
+    <span> Third Card Information</span> 
+    </div> 
+    <div class="forms"> 
+    <div class="inputs"> 
+    <span>Name on Card</span> 
+    <input type="text" readonly value="${nameOnCard}"> </div> 
+    <div class="inputs"> 
+    <span>Number</span> 
+    <input type="text" readonly value="${cardNumber}"> </div> 
+    <div class="inputs"> 
+    <span>CVN</span> 
+     <input type="text" readonly value="${cardCVN}"> </div> 
+     <div class="inputs"> 
+      <span>Card Expiration Date</span> 
+      <input type="text" readonly value="${cardExpire}"> </div> 
+      <div class="inputs"> 
+      <span>Zip Code</span>
+      <input type="text" readonly value="${cardZip}"> </div> 
+      
+    <div class="button">
+          <button class="btn btn-secondary btn-block mb-4" button id="savebutton3" >Edit</button>
+        </div>
+      </a>  
+        
+</div>
+</div>
+
 
 <div class="footer">
   <br>
