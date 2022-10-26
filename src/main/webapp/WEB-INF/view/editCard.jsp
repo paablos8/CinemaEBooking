@@ -140,10 +140,10 @@
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="homePage.jsp" class="active">Home</a>
-    <a href="couponpromo.jsp">Promotions</a>
-    <a href="userLogin.jsp">Login</a>
-    <a href="viewcart.jsp">View Cart</a>
+    <a href="homePage" class="active">Home</a>
+    <a href="couponpromo">Promotions</a>
+    <a href="userLogin">Login</a>
+    <a href="viewcart">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -175,7 +175,7 @@
         <input type="text" readonly value="Country"> </div> 
         
       
-        <a href="editProfile.jsp">
+        <a href="editProfile">
           <button" class="btn btn-secondary btn-block mb-4">Confirm Changes</button>
       </a>
       </div>
