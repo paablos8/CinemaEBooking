@@ -20,7 +20,7 @@ import com.example.CinemaEBooking.entities.User;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
-@Controller
+@Controller("ForgotPasswordController")
 public class forgotPasswordController {
 
     DatabaseConnector db = new DatabaseConnector();
