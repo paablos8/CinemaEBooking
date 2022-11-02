@@ -41,7 +41,7 @@ class UserTableConnector extends SQL_GetSet
             while(rs.next())
             {
                 if(email.equals(rs.getString("Email")))
-                {
+                {/*
                     if (password.equals(decrypt(rs.getString("Password"))))
                     {
                         if(rs.getInt("User Status") != 2)
@@ -53,7 +53,7 @@ class UserTableConnector extends SQL_GetSet
                     else
                     {
                         return -1;
-                    }
+                    }*/
                 }
             }
         }
@@ -85,7 +85,8 @@ class UserTableConnector extends SQL_GetSet
             return false;
         }
 
-        String encPass = encrypt(password);
+        //String encPass = encrypt(password);
+        String encPass = password;
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Users VALUES ('"
@@ -131,7 +132,8 @@ class UserTableConnector extends SQL_GetSet
             {
                 if((email.equals(rs.getString("Email"))))
                 {
-                    String encPass = encrypt(password);
+                    //String encPass = encrypt(password);
+                    String encPass = password;
                     rs.updateString("Password", encPass);
                     rs.updateRow();
                 }
@@ -211,7 +213,8 @@ class UserTableConnector extends SQL_GetSet
     String getUserPassword(int userID)
     {
         String encPass =  get(userID,"Users","User ID","Password");
-        return decrypt(encPass);
+        //return decrypt(encPass);
+        return encPass;
     }
 
     /**
@@ -285,7 +288,8 @@ class UserTableConnector extends SQL_GetSet
     {
         if(verifyString(password))
             return false;
-        String encPass = encrypt(password);
+        //String encPass = encrypt(password);
+        String encPass = password;
         return update(userID,"Users","User ID","Password",encPass);
     }
 
