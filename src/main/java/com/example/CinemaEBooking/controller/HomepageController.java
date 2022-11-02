@@ -1,10 +1,10 @@
-package com.example.CinemaEBooking;
+package com.example.CinemaEBooking.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ExampleController {
+public class HomepageController {
     
     @RequestMapping("/")
     public String home (){

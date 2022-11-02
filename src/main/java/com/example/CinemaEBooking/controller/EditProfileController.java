@@ -1,4 +1,4 @@
-package com.example.CinemaEBooking;
+package com.example.CinemaEBooking.controller;
 
 import com.example.Database.DatabaseConnector;
 import com.example.CinemaEBooking.entities.Customer;

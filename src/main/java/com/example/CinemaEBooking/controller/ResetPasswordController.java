@@ -1,4 +1,4 @@
-package com.example.CinemaEBooking;
+package com.example.CinemaEBooking.controller;
 
 import java.util.Base64;
 

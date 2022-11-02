@@ -1,6 +1,7 @@
-package com.example.CinemaEBooking;
+package com.example.CinemaEBooking.controller;
 
 import com.example.Database.DatabaseConnector;
+import com.example.CinemaEBooking.entities.Status;
 import com.example.CinemaEBooking.entities.User;
 
 import java.util.List;
@@ -58,10 +59,19 @@ public class LoginController {
             break;
             case(-2):System.out.println("Email not found");
             break;
+            case(-3):System.out.println("Your account was set to INACTIVE");
+            break;
+
             default:System.out.println("Successfully logged in");
             int userId = loginResult; //once youre logged in, you get your unique UserID returned!
+            
             User currentUser = db.createUserObject(userId);
             String firstName = db.getUserFirstName(userId);
+            currentUser.setStreet(db.getCityCounty(userId));
+            currentUser.setCountry(db.getCityCounty(userId));
+
+            Status status = Status.ACTIVE;
+            db.changeStatus(userId, status);
             
             /*
             boolean isAdmin = db.getUserType(userId);

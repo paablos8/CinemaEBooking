@@ -1,4 +1,4 @@
-package com.example.CinemaEBooking;
+package com.example.CinemaEBooking.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
