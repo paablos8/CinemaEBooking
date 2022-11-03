@@ -29,12 +29,15 @@ class Encryptor
             e.printStackTrace();
         }
 
-        key = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
+        //key = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
 
+        /*
         String enc = encrypt("Toby");
         System.out.println(enc);
         System.out.println(decrypt(enc));
+        */
 
+        
         /*
         SecretKey key = generateKey();
         byte[] keyBytes = key.getEncoded();
