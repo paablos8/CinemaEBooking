@@ -208,7 +208,7 @@ h5{
   
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
-    <a href="couponpromo">Promotions</a>
+    <a href="promotionHome">Promotions</a>
     <a href="userLogin">Login</a>
     <a href="viewcart">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
