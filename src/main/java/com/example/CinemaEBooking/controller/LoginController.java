@@ -10,10 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpUtils;
 
-import org.apache.tomcat.util.http.parser.MediaType;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,8 +29,6 @@ public class LoginController {
     String userType;
 
 
-    
-
     @RequestMapping(value = "/userLogin", method = RequestMethod.GET)
     public String showLoginPage(ModelMap model) {
         model.addAttribute("login", new User());
@@ -47,7 +42,10 @@ public class LoginController {
         String email = userForm.getEmail();
         String password = userForm.getPassword();
         System.out.println(email);
-        //whatever is stored in the model will be directly accessible for the view
+
+        Status status = Status.ACTIVE;
+        db.changeStatus(userId, status);
+        System.out.println(status);
 
         int loginResult = db.verifyLogin(email, password);
 
@@ -60,18 +58,34 @@ public class LoginController {
             case(-2):System.out.println("Email not found");
             break;
             case(-3):System.out.println("Your account was set to INACTIVE");
+            System.out.println(status);
             break;
 
+
+            //we have to implement another case, where the logged-in user is an admin         
             default:System.out.println("Successfully logged in");
             int userId = loginResult; //once youre logged in, you get your unique UserID returned!
+            System.out.println(loginResult);
             
+            //pull values for the current user session from the database, after he is successfully logged-in
             User currentUser = db.createUserObject(userId);
-            String firstName = db.getUserFirstName(userId);
-            currentUser.setStreet(db.getCityCounty(userId));
-            currentUser.setCountry(db.getCityCounty(userId));
+            currentUser.setFirstName(db.getUserFirstName(userId));
+            currentUser.setLastName(db.getUserLastName(userId));
+            currentUser.setStatus(db.getUserStatus(userId));
+            currentUser.setStreet(db.getStreetAddress(userId));
+            currentUser.setCity(db.getCityCounty(userId));
+            currentUser.setCountry(db.getCountry(userId));
 
-            Status status = Status.ACTIVE;
-            db.changeStatus(userId, status);
+            //currentUser.setPhone(db.getUserPhoneNumber(userId));
+
+            System.out.println(db.getUserStatus(userId));
+            System.out.println(db.getUserLastName(userId));
+            System.out.println(db.getStreetAddress(userId));
+            System.out.println(db.getCityCounty(userId));
+            System.out.println(db.getCountry(userId));
+
+
+           
             
             /*
             boolean isAdmin = db.getUserType(userId);
@@ -84,7 +98,7 @@ public class LoginController {
             }
             */
 
-            model.put("firstName", firstName);//whatever is stored in the model will be directly accessible for the view
+            model.put("firstName", currentUser.getFirstName());//whatever is stored in the model will be directly accessible for the view
             model.put("userId", userId);
             model.put("currentUser", currentUser);
 
