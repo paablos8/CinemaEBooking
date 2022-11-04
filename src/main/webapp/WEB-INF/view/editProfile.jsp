@@ -10,7 +10,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:110%;
+        height:140%;
       }
       .login{
         border-radius:25px;
@@ -112,8 +112,9 @@
 {padding: 0;
   margin: 0;
   font-family:'Poppins', sans-serif}
+  
   .container1{
-    
+    padding-bottom: 150px;
     height:auto;
     display:flex;
     justify-content:center;
@@ -122,7 +123,7 @@
   
   .container2{
     
-    height:auto;
+    height:200%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -138,7 +139,7 @@
 
   .container4{
     
-    height:auto;
+    height:125%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -230,21 +231,41 @@
      </div>
      
       <div class="forms">
-      <div class="inputs"> 
+      
+     <div class="inputs"> 
       <span>Email address</span> 
       <input type="text" readonly value="${currentUser.email}"> </div> 
-      <div class="inputs">
+      
+    <div class="inputs">
       <span>Fist Name</span> 
       <input type="text" readonly value="${currentUser.firstName}"> </div> 
-      <div class="inputs"> 
+      
+    <div class="inputs"> 
       <span>Last Name</span> 
       <input type="text" readonly value="${currentUser.lastName}"> </div> 
-       <div class="inputs"> 
-      <span>City</span> 
-      <input type="text" readonly value="${state}"> </div> 
+   
       <div class="inputs"> 
-      <span>Country</span>
-      <input type="text" readonly value="${country}"> </div>
+        <span>Phone Number</span>
+        <input type="text" readonly value="${currentUser.phone}"> </div>
+
+
+      <div class="inputs"> 
+        <span>Street</span>
+        <input type="text" readonly value="${currentuser.street}"> </div>
+
+
+    <div class="inputs"> 
+      <span>City</span> 
+      <input type="text" readonly value="${currentUser.city}"> </div> 
+     
+    <div class="inputs"> 
+      <span>State</span>
+      <input type="text" readonly value="${currentUser.state}"> </div>
+        
+      <div class="inputs"> 
+        <span>Country</span>
+        <input type="text" readonly value="${currentUser.country}"> </div>
+      <br><br>
       </div>
 
     
@@ -259,19 +280,23 @@
     <div class="inputs"> 
     <span>Name on Card</span> 
     <input type="text" readonly value="${nameOnCard}"> </div> 
+    
     <div class="inputs"> 
     <span>Number</span> 
     <input type="text" readonly value="${cardNumber}"> </div> 
+    
     <div class="inputs"> 
     <span>CVN</span> 
      <input type="text" readonly value="${cardCVN}"> </div> 
+     
      <div class="inputs"> 
       <span>Card Expiration Date</span> 
       <input type="text" readonly value="${cardExpire}"> </div> 
+      
       <div class="inputs"> 
       <span>Zip Code</span>
       <input type="text" readonly value="${cardZip}"> </div> 
-
+      
         
 </div>
 </div>
