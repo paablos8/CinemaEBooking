@@ -48,35 +48,54 @@ public class AddressTableConnector extends SQL_GetSet
      * @return street address
      */
     public String getStreetAddress(int userID)
-    {return get(userID,"Addresses","User ID","Street Address");}
+    {
+        int addID = get(userID,"Users","User ID","Address ID");
+        return get(addID,"Addresses","Address ID","Street Address");
+    }
 
     /**
      * Returns the user's city or county given their id
      * @param userID user's ID
      * @return city or county name
      */
-    public String getCityCounty(int userID){return get(userID,"Addresses","User ID","City/County");}
+    public String getCityCounty(int userID)
+    {
+        int addID = get(userID,"Users","User ID","Address ID");
+        return get(addID,"Addresses","Address ID","City/County");
+    }
 
     /**
      * Returns the user's state or region given their id
      * @param userID user's ID
      * @return state or region name
      */
-    public String getStateRegion(int userID){return get(userID,"Addresses","User ID","State/Region");}
+    public String getStateRegion(int userID)
+    {
+        int addID = get(userID,"Users","User ID","Address ID");
+        return get(addID,"Addresses","Address ID","State/Region");
+    }
 
     /**
      * Returns the user's country given their id
      * @param userID user's ID
      * @return country
      */
-    public String getCountry(int userID){return get(userID,"Addresses","User ID","Country");}
+    public String getCountry(int userID)
+    {
+        int addID = get(userID,"Users","User ID","Address ID");
+        return get(addID,"Addresses","Address ID","Country");
+    }
 
     /**
      * Returns the user's zip code given their id
      * @param userID user's ID
      * @return zip code
      */
-    public int getZipCode(int userID){return get(userID,"Addresses","User ID","Zip Code");}
+    public int getZipCode(int userID)
+    {
+        int addID = get(userID,"Users","User ID","Address ID");
+        return get(addID,"Addresses","Address ID","Zip Code");
+    }
 
     /**
      * Updates the user's street address given a user id
