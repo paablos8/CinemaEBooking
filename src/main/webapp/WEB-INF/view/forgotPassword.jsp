@@ -118,7 +118,7 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
-
+</div>
     <div class="title">
         Forgot Password?
     </div>
