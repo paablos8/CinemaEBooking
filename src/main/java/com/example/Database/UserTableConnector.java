@@ -54,6 +54,18 @@ class UserTableConnector extends SQL_GetSet
                     {
                         return -1;
                     }*/
+                    if (password.equals(rs.getString("Password")))
+                    {
+                        if(rs.getInt("User Status") != 2)
+                        {
+                            return -3;
+                        }
+                        return rs.getInt("User ID");
+                    }
+                    else
+                    {
+                        return -1;
+                    }
                 }
             }
         }
@@ -302,5 +314,4 @@ class UserTableConnector extends SQL_GetSet
     }
 
     private boolean verifyPhoneNum(long pNum){return pNum >= 1000000000;}
-    private boolean verifyString(String str){return str.length() >= 1;}
 }
