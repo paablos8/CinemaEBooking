@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class AddPromotionController {
-
-    @RequestMapping(value = "/addPromotion", method = RequestMethod.GET)
-    public String showAddPromotionPage(ModelMap model) {
-        return "addPromotion";
+public class AdminHomeController {
+    @RequestMapping(value = "/adminHome", method = RequestMethod.GET)
+    public String showAdminHomePage(ModelMap model) {
+        return "adminHome";
     }
+    
 }

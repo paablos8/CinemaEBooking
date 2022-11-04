@@ -111,7 +111,7 @@
   <h2>Movie Management</h2>
   <div>
       <div>
-        <a href="AdminManaMovies"><button role= "EditMovie-butt">Edit Movie Database</button></a>
+        <a href="adminManageMovies"><button role= "EditMovie-butt">Edit Movie Database</button></a>
       </div>
       <hr> 
   </div>
@@ -121,7 +121,7 @@
   <h2>Promo Management</h2>
   <div>
       <div>
-        <a href="AdminAddNewPromo"><button role= "EditHome-butt">Edit Promotions</button></a>
+        <a href="editPromotion"><button role= "EditHome-butt">Edit Promotions</button></a>
       </div>
       <hr> 
   </div>
