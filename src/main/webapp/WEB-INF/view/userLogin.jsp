@@ -10,7 +10,7 @@
         <style>
           body{
             background:linear-gradient(grey,orange);
-            height:100%;
+            height:120%;
           }
           .login{
             border-radius:25px;
@@ -105,9 +105,9 @@
     <a href="homePage" class="active">Home</a>
     <a href="#promotions">Promotions</a>
     <a href="viewcart">View Cart</a>
-    <div class="topNavLogout" id="logout">
+    <!--<div class="topNavLogout" id="logout">
     <a href="userLogin">Login</a>
-  </div>
+  </div>!-->
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -158,8 +158,9 @@
         <div class="text-center">
             <p>Not a member? <a href="userRegistration">Register</a></p>
             <p>Continue as guest? <a href="homePage">Continue</a></p>
-            <p>Admin Login? <a href="adminLogin">Login</a></p>
+            <p>Login as Admin? <a href="adminLogin">Login</a></p>
         </div>
+        <br><br>
     </form>
     </div>
 
