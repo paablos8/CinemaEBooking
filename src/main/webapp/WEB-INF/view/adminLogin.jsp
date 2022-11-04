@@ -138,7 +138,7 @@
         </div>
       
         <!-- Submit button -->
-        <a href="AdminHome">
+        <a href="adminHome">
           <button" class="btn btn-secondary btn-block mb-4">Sign in</button>
       </a>
         <!-- Register buttons -->
