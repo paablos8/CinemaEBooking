@@ -14,7 +14,6 @@ public class DatabaseConnector
     private UserTableConnector utc = null;
     private CardTableConnector ctc = null;
     private AddressTableConnector atc = null;
-    private MovieTableConnector mtc = null;
 
     /**
      * Creates DatabaseConnector object and connects to server.
@@ -38,7 +37,6 @@ public class DatabaseConnector
             utc = new UserTableConnector(conn);
             ctc = new CardTableConnector(conn);
             atc = new AddressTableConnector(conn);
-            mtc = new MovieTableConnector(conn);
         }
     }
 
@@ -114,7 +112,7 @@ public class DatabaseConnector
     public String getStateRegion(int userID){return atc.getStateRegion(userID);}
     public String getCountry(int userID){return atc.getCountry(userID);}
     public int getZipCode(int userID){return atc.getZipCode(userID);}
-    public boolean createNewAddress(int userID,String stAdd,String city,String state,String country,int zip)
+    public int createNewAddress(int userID,String stAdd,String city,String state,String country,int zip)
     {return atc.createNewAddress(userID,stAdd,city,state,zip);}
     public boolean changeStreetAddress(int userID,String stAdd){return atc.changeUserStreetAddress(userID,stAdd);}
     public boolean changeCityCounty(int userID,String city){return atc.changeUserCityCounty(userID,city);}
@@ -122,10 +120,4 @@ public class DatabaseConnector
     public boolean changeCountry(int userID,String country){return atc.changeUserCountry(userID,country);}
     public boolean changeZipCode(int userID,int zip){return atc.changeUserZipCode(userID,zip);}
 
-    //Movie Methods
-    public boolean createNewMovie(String title,String ageRating,int yearRelease,String producer,String director,String cast,
-                                  int IMDBRating,int RTRating,String trailerURL,String posterURL,int categoryID,
-                                  String synopsis,int durationMin)
-    {return mtc.createNewMovie(title,ageRating,yearRelease,producer,director,cast,IMDBRating,RTRating,trailerURL,
-            posterURL,categoryID,synopsis,durationMin);}
 }

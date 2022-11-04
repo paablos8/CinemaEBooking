@@ -17,11 +17,16 @@ public class AddressTableConnector extends SQL_GetSet
      */
     public AddressTableConnector(Connection conn) {super(conn);this.conn = conn;}
 
-    public boolean createNewAddress(int userID, String stAdd, String city,
+    public int createNewAddress(int userID, String stAdd, String city,
                                     String state, int zip)
     {
-        if(!(verifyString(stAdd) && verifyString(city) && verifyString(state) && zip >= 500))
-        {return false;}
+        if(!verifyString(stAdd))
+        {System.out.println("Street address bad");return -1;}
+        else if(!verifyString(city))
+        {System.out.println("City/County bad");return -2;}
+        else if (verifyString(state))
+        {System.out.println("State bad");return -3;}
+        else if (zip >= 500) {return -4;}
 
         try(Statement stmt = conn.createStatement())
         {
@@ -39,7 +44,7 @@ public class AddressTableConnector extends SQL_GetSet
 
         update(userID,"Users","User ID","Address ID",addID);
 
-        return true;
+        return 0;
     }
 
     /**
