@@ -208,7 +208,7 @@
                 <label class="form-label" for="form2Example1">City</label>  
 
             <div class="form-outline mb-4"></div>
-                <form:input type="text" class="form-control" id="state" path="city" placeholder="Enter state" />
+                <form:input type="text" class="form-control" id="state" path="state" placeholder="Enter state" />
                 <label class="form-label" for="form2Example1">State</label>  
 
             <div class="form-outline mb-4"></div>

@@ -76,7 +76,7 @@ public class RegistrationController {
         db.createNewAddress(userID, street, city, state, "USA", zipcode);
 
         System.out.println("user created with email:" + email + " and password: " + password);
-        sendEmail(email);
+        //sendEmail(email);
 
      return "redirect:/registrationConfirmation";
 
