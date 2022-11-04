@@ -18,15 +18,15 @@ public class AddressTableConnector extends SQL_GetSet
     public AddressTableConnector(Connection conn) {super(conn);this.conn = conn;}
 
     public boolean createNewAddress(int userID, String stAdd, String city,
-                                    String state, String country, int zip)
+                                    String state, int zip)
     {
-        if(!(verifyString(stAdd) && verifyString(city) && verifyString(state) && verifyString(country) && zip >= 500))
+        if(!(verifyString(stAdd) && verifyString(city) && verifyString(state) && zip >= 500))
         {return false;}
 
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Addresses VALUES ("
-                    +stAdd+"','"+city+"','"+state+"','"+country+"',"+zip+")";
+                    +stAdd+"','"+city+"','"+state+"','Zimbabwe',"+zip+")";
             stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
