@@ -42,6 +42,31 @@ class SQL_GetSet extends Encryptor
         return ret;
     }
 
+    <T,S> boolean exists(S id, String table, String idField, String eField)
+    {
+        T ret = null;
+        ResultSet rs;
+
+        try {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT [" + idField + "] , [" + eField + "] FROM " + table);
+
+            while (rs.next())
+            {
+                if (verifyField(rs,id,idField))
+                {
+                    return true;
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     <T> int getNumOf(T id, String table, String idField)
     {
         int numOf = 0;
@@ -98,6 +123,32 @@ class SQL_GetSet extends Encryptor
                     {
                         break;
                     }
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return ret;
+    }
+
+    <T,S,G> T getComboKey(S id1, G id2, String table, String idField1, String idField2, String eField)
+    {
+        T ret = null;
+        ResultSet rs;
+
+        try {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT [" + idField1 + "],["+idField2+"] , [" + eField + "] FROM " + table);
+
+            while (rs.next())
+            {
+                if (verifyField(rs,id1,idField1) && verifyField(rs,id2,idField2))
+                {
+                    ret = getField(rs,eField);
+                    break;
                 }
             }
         }
@@ -184,4 +235,6 @@ class SQL_GetSet extends Encryptor
             throw new RuntimeException(e);
         }
     }
+
+    boolean verifyString(String str){return str.length() >= 1;}
 }

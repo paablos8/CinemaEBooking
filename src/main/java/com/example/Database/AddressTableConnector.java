@@ -20,9 +20,12 @@ public class AddressTableConnector extends SQL_GetSet
     public boolean createNewAddress(int userID, String stAdd, String city,
                                     String state, String country, int zip)
     {
+        if(!(verifyString(stAdd) && verifyString(city) && verifyString(state) && verifyString(country) && zip >= 500))
+        {return false;}
+
         try(Statement stmt = conn.createStatement())
         {
-            String SQL = "INSERT INTO Addresses VALUES ("+userID+",'"
+            String SQL = "INSERT INTO Addresses VALUES ("
                     +stAdd+"','"+city+"','"+state+"','"+country+"',"+zip+")";
             stmt.executeUpdate(SQL);
         }
@@ -31,6 +34,11 @@ public class AddressTableConnector extends SQL_GetSet
         {
             e.printStackTrace();
         }
+
+        int addID = getComboKey(stAdd,city,"Addresses","Street Address","City/County","Address ID");
+
+        update(userID,"Users","User ID","Address ID",addID);
+
         return true;
     }
 
@@ -76,8 +84,17 @@ public class AddressTableConnector extends SQL_GetSet
      * @param stAdd user's new street address
      * @return true if successful
      */
-    public boolean changeStreetAddress(int userID,String stAdd)
-    {return update(userID,"Addresses","User ID","Street Address",stAdd);}
+    public boolean changeUserStreetAddress(int userID,String stAdd)
+    {
+        if(!verifyString(stAdd)) {return false;}
+        int addid = get(userID,"Users","User ID","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","Street Address",stAdd);
+    }
 
     /**
      * Updates the user's city or county given a user id
@@ -85,8 +102,17 @@ public class AddressTableConnector extends SQL_GetSet
      * @param city user's new city or county
      * @return true if successful
      */
-    public boolean changeCityCounty(int userID,String city)
-    {return update(userID,"Addresses","User ID","City/County",city);}
+    public boolean changeUserCityCounty(int userID,String city)
+    {
+        if(!verifyString(city)) {return false;}
+        int addid = get(userID,"Users","User ID","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","City/County",city);
+    }
 
     /**
      * Updates the user's state or region
@@ -94,8 +120,17 @@ public class AddressTableConnector extends SQL_GetSet
      * @param state user's new state or region
      * @return true if successful
      */
-    public boolean changeStateRegion(int userID,String state)
-    {return update(userID,"Addresses","User ID","State/Region",state);}
+    public boolean changeUserStateRegion(int userID,String state)
+    {
+        if(!verifyString(state)) {return false;}
+        int addid = get(userID,"Users","User ID","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","State/Region",state);
+    }
 
     /**
      * Updates the user's country
@@ -103,8 +138,17 @@ public class AddressTableConnector extends SQL_GetSet
      * @param country user's new country
      * @return true if successful
      */
-    public boolean changeCountry(int userID,String country)
-    {return update(userID,"Addresses","User ID","Country",country);}
+    public boolean changeUserCountry(int userID,String country)
+    {
+        if(!verifyString(country)) {return false;}
+        int addid = get(userID,"Users","User ID","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","Country",country);
+    }
 
     /**
      * Updates the user's zip code
@@ -112,6 +156,14 @@ public class AddressTableConnector extends SQL_GetSet
      * @param zip user's new zip code
      * @return true if successful
      */
-    public boolean changeZipCode(int userID,int zip)
-    {return update(userID,"Addresses","User ID","Zip Code",zip);}
+    public boolean changeUserZipCode(int userID,int zip)
+    {
+        if(zip < 500) {return false;}
+        int addid = get(userID,"Users","User ID","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","Zip Code",zip);}
 }
