@@ -56,7 +56,7 @@ class UserTableConnector extends SQL_GetSet
                     }*/
                     if (password.equals(rs.getString("Password")))
                     {
-                        if(rs.getInt("User Status") != 2)
+                        if(rs.getInt("User Status") > 2)
                         {
                             return -3;
                         }
