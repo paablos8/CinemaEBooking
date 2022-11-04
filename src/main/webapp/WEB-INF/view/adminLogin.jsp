@@ -10,7 +10,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:120%;
       }
       .login{
         border-radius:25px;
@@ -145,9 +145,9 @@
         <div class="text-center">
           <p>Not a member? <a href="userRegistration">Register</a></p>
           <p>Continue as guest? <a href="homePage">Continue</a></p>
-          <p>Customer Login? <a href="userLogin">Login</a></p>
-      
+          <p>Login as Customer ? <a href="userLogin">Login</a></p>
         </div>
+        <br><br>
       </form>
     </div>
     <div class="footer">

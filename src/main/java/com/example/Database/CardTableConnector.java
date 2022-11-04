@@ -2,7 +2,9 @@ package com.example.Database;
 
 import java.sql.*;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  *  These are the functions to access the Card Table
@@ -23,26 +25,23 @@ public class CardTableConnector extends SQL_GetSet
      * @param date the expiration date
      * @param cvv security code
      * @param cardNum card number (16 digits)
-     * @param cardType visa, mastercard, etc
      * @param userID user's id
      * @return true if it worked
      */
-    public boolean createNewCard(String date, int cvv, long cardNum,String cardType,
-               int userID,String streetAddress,String cityCounty,String stateRegion,String country,int zip)
+    public boolean createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
+                                 String streetAddress, String cityCounty, String stateRegion, String country, int zip)
     {
-        Date expDate = Date.valueOf(date);
-        // convert month,year to Date
         try(Statement stmt = conn.createStatement())
         {
-            String SQL = "INSERT INTO Cards VALUES ("
-                    +expDate+","+cvv+","+cardNum+",'"+cardType+"')";
+            String SQL = "INSERT INTO [Addresses] VALUES ('"+streetAddress+"','"+cityCounty+"','"+stateRegion+
+                    "','"+country+"',"+zip+")";
             stmt.executeUpdate(SQL);
+            int addID = getComboKey(streetAddress,cityCounty,"Addresses","Street Address",
+                    "City/County","Address ID");
+            SQL = "INSERT INTO Cards VALUES ('"+date+"',"+cvv+","+cardNum+",'"+nameOnCard+"',"+addID+")";
+            stmt.executeUpdate(SQL);
+
             SQL = "INSERT INTO [User Cards] VALUES ('"+userID+"')";
-            stmt.executeUpdate(SQL);
-            int id = get(cardNum,"Cards","Card Number","Card ID");
-            id += 1000;
-            SQL = "INSERT INTO [Addresses] VALUES ("+id+",'"+streetAddress+"','"+cityCounty+"','"+stateRegion+
-                    "','"+country+"',"+zip;
             stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
@@ -66,7 +65,8 @@ public class CardTableConnector extends SQL_GetSet
 
         for(int i = 0; i < numOfCards; i++)
         {
-            cardNums[i] = get(cardIDS[i],"Cards","Card ID","Card Number");
+            String temp = get(cardIDS[i],"Cards","Card ID","Card Number");
+            cardNums[i] = Long.parseLong(temp);
         }
 
         return cardNums;
@@ -178,36 +178,94 @@ public class CardTableConnector extends SQL_GetSet
         return update(cardNum,"Users","Card Number","CVV",cvv);
     }
 
-    public boolean changeStreetAddress(long cardNum, String streetAddress)
+    /**
+     * Updates a card's street address given a card number
+     * @param cardNum card number
+     * @param stAdd card's new street address
+     * @return true if successful
+     */
+    public boolean changeCardStreetAddress(long cardNum,String stAdd)
     {
-        int id = get(cardNum,"Cards","Card Number","Card ID");
-        id += 1000;
-        return update(id,"Addresses","UserID","Street Address",streetAddress);
+        if(!verifyString(stAdd)) {return false;}
+        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("This doesn't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","Street Address",stAdd);
     }
-    public boolean changeCityCounty(long cardNum, String cityCounty)
+
+    /**
+     * Updates a card's street address given a card number
+     * @param cardNum card number
+     * @param city card's new street address
+     * @return true if successful
+     */
+    public boolean changeCardCityCounty(long cardNum,String city)
     {
-        int id = get(cardNum,"Cards","Card Number","Card ID");
-        id += 1000;
-        return update(id,"Addresses","UserID","City/County",cityCounty);
+        if(!verifyString(city)) {return false;}
+        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","City/County",city);
     }
-    public boolean changeStateRegion(long cardNum, String stateRegion)
+
+    /**
+     * Updates a card's street address given a card number
+     * @param cardNum card number
+     * @param state card's new street address
+     * @return true if successful
+     */
+    public boolean changeCardStateRegion(long cardNum,String state)
     {
-        int id = get(cardNum,"Cards","Card Number","Card ID");
-        id += 1000;
-        return update(id,"Addresses","UserID","State/Region",stateRegion);
+        if(!verifyString(state)) {return false;}
+        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","State/Region",state);
     }
-    public boolean changeCountry(long cardNum, String country)
+
+    /**
+     * Updates a card's street address given a card number
+     * @param cardNum card number
+     * @param country card's new street address
+     * @return true if successful
+     */
+    public boolean changeCardCountry(long cardNum,String country)
     {
-        int id = get(cardNum,"Cards","Card Number","Card ID");
-        id += 1000;
-        return update(id,"Addresses","UserID","Country",country);
+        if(!verifyString(country)) {return false;}
+        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","Country",country);
     }
-    public boolean changeZipCode(long cardNum, int zipCode)
+
+    /**
+     * Updates a card's street address given a card number
+     * @param cardNum card number
+     * @param zip card's new street address
+     * @return true if successful
+     */
+    public boolean changeCardZipCode(long cardNum,int zip)
     {
-        int id = get(cardNum,"Cards","Card Number","Card ID");
-        id += 1000;
-        return update(id,"Addresses","UserID","Zip Code",zipCode);
-    }
+        if(zip < 500) {return false;}
+        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        if (addid == 0)
+        {
+            System.out.println("You don't have an address yet.");
+            return false;
+        }
+        return update(addid,"Addresses","Address ID","Zip Code",zip);}
 
     /**
      * Deletes a card from the database given the card number

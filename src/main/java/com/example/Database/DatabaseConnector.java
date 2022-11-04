@@ -82,9 +82,9 @@ public class DatabaseConnector
     public boolean changeStatus(int userID, Status status){return utc.changeStatus(userID,status);}
 
     //Card Methods
-    public boolean createNewCard(String date, int cvv, long cardNum,String cardType, int userID,
-    String streetAddress,String cityCounty,String stateRegion,String country,int zip)
-    {return ctc.createNewCard(date,cvv,cardNum,cardType,userID,streetAddress,cityCounty,stateRegion,country,zip);}
+    public boolean createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
+                                 String streetAddress, String cityCounty, String stateRegion, String country, int zip)
+    {return ctc.createNewCard(date,cvv,cardNum,nameOnCard,userID,streetAddress,cityCounty,stateRegion,country,zip);}
     public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
     public long[] getCardNumbers(int userID){return ctc.getCardNumbers(userID);}
     public String[] getCardExpDates(int userID){return  ctc.getCardExpDates(userID);}
@@ -96,15 +96,15 @@ public class DatabaseConnector
     public boolean changeCardName(long cardNum, String name){return ctc.changeCardName(cardNum,name);}
     public boolean changeCardCVV(long cardNum, int zip){return ctc.changeCardCVV(cardNum,zip);}
     public boolean changeStreetAddress(long cardNum, String streetAddress)
-    {return ctc.changeStreetAddress(cardNum,streetAddress);}
+    {return ctc.changeCardStreetAddress(cardNum,streetAddress);}
     public boolean changeCityCounty(long cardNum, String cityCounty)
-    {return ctc.changeCityCounty(cardNum,cityCounty);}
+    {return ctc.changeCardCityCounty(cardNum,cityCounty);}
     public boolean changeStateRegion(long cardNum, String stateRegion)
-    {return ctc.changeStateRegion(cardNum,stateRegion);}
+    {return ctc.changeCardStateRegion(cardNum,stateRegion);}
     public boolean changeCountry(long cardNum, String country)
-    {return ctc.changeCountry(cardNum,country);}
+    {return ctc.changeCardCountry(cardNum,country);}
     public boolean changeZipCode(long cardNum, int zipCode)
-    {return ctc.changeZipCode(cardNum,zipCode);}
+    {return ctc.changeCardZipCode(cardNum,zipCode);}
 
     //Address Methods
     public String getStreetAddress(int userID){return atc.getStreetAddress(userID);}
@@ -114,9 +114,9 @@ public class DatabaseConnector
     public int getZipCode(int userID){return atc.getZipCode(userID);}
     public boolean createNewAddress(int userID,String stAdd,String city,String state,String country,int zip)
     {return atc.createNewAddress(userID,stAdd,city,state,country,zip);}
-    public boolean changeStreetAddress(int userID,String stAdd){return atc.changeStreetAddress(userID,stAdd);}
-    public boolean changeCityCounty(int userID,String city){return atc.changeCityCounty(userID,city);}
-    public boolean changeStateRegion(int userID,String state){return atc.changeStateRegion(userID,state);}
-    public boolean changeCountry(int userID,String country){return atc.changeCountry(userID,country);}
-    public boolean changeZipCode(int userID,int zip){return atc.changeZipCode(userID,zip);}
+    public boolean changeStreetAddress(int userID,String stAdd){return atc.changeUserStreetAddress(userID,stAdd);}
+    public boolean changeCityCounty(int userID,String city){return atc.changeUserCityCounty(userID,city);}
+    public boolean changeStateRegion(int userID,String state){return atc.changeUserStateRegion(userID,state);}
+    public boolean changeCountry(int userID,String country){return atc.changeUserCountry(userID,country);}
+    public boolean changeZipCode(int userID,int zip){return atc.changeUserZipCode(userID,zip);}
 }
