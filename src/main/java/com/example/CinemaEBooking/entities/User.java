@@ -9,12 +9,32 @@ public class User {
     private String firstName;
     private String lastName;
     private long phone;
+    private String street;
     private String city;
+    private String state;
+    private String country;
+    private int zipCode;
+    private boolean promotionSubscribe;
+    
+    
+    
+    
 
   //constructor
   public User() {
     this.status = Status.ACTIVE;
 }
+  
+  
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+
 
     public String getFirstName() {
         return firstName;
@@ -30,6 +50,15 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public boolean isPromotionSubscribe() {
+        return promotionSubscribe;
+    }
+
+
+    public void setPromotionSubscribe(boolean promotionSubscribe) {
+        this.promotionSubscribe = promotionSubscribe;
     }
 
     public long getPhone() {
@@ -48,7 +77,15 @@ public class User {
         this.city = city;
     }
 
-    private String country;
+    public String getState() {
+        return state;
+    }
+
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
 
     public String getCountry() {
         return country;
