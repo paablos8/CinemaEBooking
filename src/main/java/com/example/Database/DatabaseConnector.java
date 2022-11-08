@@ -15,6 +15,7 @@ public class DatabaseConnector
     private CardTableConnector ctc = null;
     private AddressTableConnector atc = null;
     private MovieTableConnector mtc = null;
+    private PromotionTableConnector ptc = null;
 
     /**
      * Creates DatabaseConnector object and connects to server.
@@ -39,6 +40,7 @@ public class DatabaseConnector
             ctc = new CardTableConnector(conn);
             atc = new AddressTableConnector(conn);
             mtc = new MovieTableConnector(conn);
+            ptc = new PromotionTableConnector(conn);
         }
     }
 
@@ -86,7 +88,7 @@ public class DatabaseConnector
     //Card Methods
     public boolean createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
                                  String streetAddress, String cityCounty, String stateRegion, String country, int zip)
-    {return ctc.createNewCard(date,cvv,cardNum,nameOnCard,userID,streetAddress,cityCounty,stateRegion,country,zip);}
+    {return ctc.createNewCard(date,cvv,cardNum,nameOnCard,userID,streetAddress,cityCounty,stateRegion,zip);}
     public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
     public long[] getCardNumbers(int userID){return ctc.getCardNumbers(userID);}
     public String[] getCardExpDates(int userID){return  ctc.getCardExpDates(userID);}
@@ -156,4 +158,21 @@ public class DatabaseConnector
     boolean changeCategory(String title,String category){return mtc.changeCategory(title,category);}
     boolean changeSynopsis(String title,String synopsis){return mtc.changeSynopsis(title,synopsis);}
     boolean changeDuration(String title,int duration){return mtc.changeDuration(title,duration);}
+
+    //Promotion Methods
+    boolean createDraftPromotion(String dateStart, String dateEnd, int percentOff)
+    {return ptc.createDraftPromotion(dateStart,dateEnd,percentOff);}
+    int getPercentOff (String startDate, String endDate)
+    {return ptc.getPercentOff(startDate,endDate);}
+    boolean isDraftPromotion(String startDate,String endDate)
+    {return ptc.isDraftPromotion(startDate,endDate);}
+    String[][] getAllStartEndDates() {return ptc.getAllStartEndDates();}
+    boolean changePercentOff (String startDate, String endDate, int percentOff)
+    {return ptc.changePercentOff(startDate,endDate,percentOff);}
+    boolean changeStartDate(String oldStartDate, String endDate, String newStartDate)
+    {return ptc.changeStartDate(oldStartDate,endDate,newStartDate);}
+    boolean changeEndDate(String startDate, String oldEndDate, String newEndDate)
+    {return ptc.changeEndDate(startDate,oldEndDate,newEndDate);}
+    void activatePromotion(String startDate,String endDate)
+    {ptc.activatePromotion(startDate,endDate);}
 }

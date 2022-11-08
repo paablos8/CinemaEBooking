@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class MovieTableConnector extends SQL_GetSet
+class MovieTableConnector extends SQL_GetSet
 {
     private Connection conn;
     /**
@@ -26,7 +26,7 @@ public class MovieTableConnector extends SQL_GetSet
 
         try(Statement stmt = conn.createStatement())
         {
-            String SQL = "INSERT INTO Movie Titles VALUES ('"+title+"',"+ageRating+","+yearRelease+",'"+producer+"','"
+            String SQL = "INSERT INTO [Movie Titles] VALUES ('"+title+"',"+ageRating+","+yearRelease+",'"+producer+"','"
                     +cast+"','"+director+","+IMDBRating+","+RTRating+",'"+trailerURL+"','"+category+
                     "','"+synopsis+"',"+durationMin+",'"+posterURL+"'"+")";
             stmt.executeUpdate(SQL);

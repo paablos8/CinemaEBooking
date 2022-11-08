@@ -92,6 +92,28 @@ class SQL_GetSet extends Encryptor
         return numOf;
     }
 
+    <T> int getNumOf(String table)
+    {
+        int numOf = 0;
+        ResultSet rs;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM [" + table + "]");
+
+            while (rs.next())
+            {
+                    numOf++;
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return numOf;
+    }
+
     <T, S> T[] getMany(S id, String table, String idField, String eField)
     {
         int numOf = getNumOf(id, table, idField);
@@ -123,6 +145,45 @@ class SQL_GetSet extends Encryptor
                     {
                         break;
                     }
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return ret;
+    }
+
+    <T, S> T[] getAll(String table, String eField)
+    {
+        int numOf = getNumOf(table);
+        int i = 0;
+
+        ArrayList<T> retAL = new ArrayList<T>(numOf);
+
+        for (int z = 0;z < numOf;z++)
+        {
+            retAL.add(null);
+        }
+
+        T[] ret = (T[]) retAL.toArray();
+
+        ResultSet rs;
+
+        try
+        {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM " + table);
+
+            while (rs.next())
+            {
+                ret[i] = getField(rs,eField);
+                i++;
+                if (i == numOf)
+                {
+                    break;
                 }
             }
         }
@@ -171,6 +232,30 @@ class SQL_GetSet extends Encryptor
             while (rs.next())
             {
                 if (verifyField(rs,id,idField))
+                {
+                    updateField(rs,entry,eField);
+                    rs.updateRow();
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    <T,S,G> boolean updateComboKey(S id1, G id2, String table, String idField1, String idField2, String eField, T entry)
+    {
+        ResultSet rs;
+        try
+        {
+            Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT [" + idField1 + "],["+idField2+"],[" + eField + "] FROM " + table);
+
+            while (rs.next())
+            {
+                if (verifyField(rs,id1,idField1) && verifyField(rs,id2,idField2))
                 {
                     updateField(rs,entry,eField);
                     rs.updateRow();
@@ -236,5 +321,37 @@ class SQL_GetSet extends Encryptor
         }
     }
 
-    boolean verifyString(String str){return str.length() >= 1;}
+    boolean verifyString(String str)
+    {
+        try{
+        return str.length() >= 1;}
+        catch (NullPointerException e)
+        {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    boolean verifyDate(String date)
+    {
+        if(!verifyString(date))return false;
+        if(date.charAt(1) != '/' || date.charAt(2) != '/') return false;
+        if(date.charAt(5) != '/' || date.charAt(4) != '/' || date.charAt(3) != '/') return false;
+        if(date.length() < 7) return false;
+
+        try
+        {
+            int month = Integer.parseInt(date.substring(0,date.indexOf('/')));
+            if (month > 12 || month < 1)return false;
+            int day = Integer.parseInt(date.substring(3,date.substring(3).indexOf('/')));
+            if (day > 31 || day < 1)return false;
+            int year = Integer.parseInt(date.substring(date.substring(3).indexOf('/')));
+            if (year < 2022) return false;
+        }
+        catch (NumberFormatException nfe)
+        {
+            return false;
+        }
+        return true;
+    }
 }

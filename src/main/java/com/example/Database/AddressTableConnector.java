@@ -24,7 +24,7 @@ public class AddressTableConnector extends SQL_GetSet
         {System.out.println("Street address bad");return -1;}
         else if(!verifyString(city))
         {System.out.println("City/County bad");return -2;}
-        else if (verifyString(state))
+        else if (!verifyString(state))
         {System.out.println("State bad");return -3;}
         else if (zip >= 500) {return -4;}
 

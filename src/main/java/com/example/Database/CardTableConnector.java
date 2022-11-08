@@ -29,12 +29,15 @@ public class CardTableConnector extends SQL_GetSet
      * @return true if it worked
      */
     public boolean createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
-                                 String streetAddress, String cityCounty, String stateRegion, String country, int zip)
+                                 String streetAddress, String cityCounty, String stateRegion, int zip)
     {
+        if(!(verifyDate(date)&&verifyString(nameOnCard)&&verifyString(streetAddress)&&verifyString(cityCounty)
+        &&verifyString(stateRegion)&&zip>500&&cardNum>999999999999999L&&cardNum<9999999999999999L)) return false;
+
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO [Addresses] VALUES ('"+streetAddress+"','"+cityCounty+"','"+stateRegion+
-                    "','"+country+"',"+zip+")";
+                    "','Zimbabwe',"+zip+")";
             stmt.executeUpdate(SQL);
             int addID = getComboKey(streetAddress,cityCounty,"Addresses","Street Address",
                     "City/County","Address ID");
@@ -152,6 +155,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardExpDate(long cardNum, String newDate)
     {
+        if(!verifyDate(newDate))return false;
         Date expDate = Date.valueOf(newDate);
         return update(cardNum,"Users","Card Number","Expiration Date",expDate);
     }
