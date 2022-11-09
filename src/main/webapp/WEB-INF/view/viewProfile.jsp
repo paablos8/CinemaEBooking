@@ -205,9 +205,10 @@
     Hi ${currentUser.firstName}, that is your Account!
 </div>
 
-      
+<a href="editProfile">
 <div class="buttonCenter">
-  <button class="btn btn-secondary btn-block mb-4" button id="savebutton" >Edit</button>
+  <button class="btn btn-secondary btn-block mb-4">Edit Profile</button>
+</a>
 </div>  
 
 <a href="forgotPassword">
