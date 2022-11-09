@@ -11,14 +11,7 @@ public class PaymentCard {
     
     //private Booking[] bookings; //not consistent to our UML diagram, but I think an array to store the bookings would be more appropriate
 
-//constructor
 
-public PaymentCard (String nameOnCard, int cardNumber, int cvv, Date expirationDate) {
-    this.nameOnCard = nameOnCard;
-    this.cardNumber = cardNumber;
-    this.cvv = cvv;
-    this.expirationDate = expirationDate;
-}
     
     //getter and setter
     

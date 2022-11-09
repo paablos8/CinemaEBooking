@@ -209,7 +209,7 @@
 </div>
 <div class="registration1">
     <%--@elvariable id="login" type=""--%>
-    <form:form method="POST" modelAttribute="editAccountForm">
+    <form:form method="POST" modelAttribute="editCardForm">
         <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.firstName}" />
         <label class="form-label" for="form2Example1">First Name</label> 
     
@@ -228,7 +228,7 @@
 </div>
 
 <%--@elvariable id="login" type=""--%>
-    <form:form method="POST" modelAttribute="editAccountForm">
+    <form:form method="POST" modelAttribute="editCardForm">
     <div class="registration2">
         <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.street}" />
         <label class="form-label" for="form2Example1">Street</label> 
