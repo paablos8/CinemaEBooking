@@ -135,7 +135,7 @@ h5{
     <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
     <a href="userLogin">Login</a>
-    <a href="viewProfile">${currentUser.firstName}</a>
+    <a href="loginSuccess">${currentUser.firstName}</a>
   </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>

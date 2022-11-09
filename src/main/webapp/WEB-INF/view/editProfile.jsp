@@ -176,6 +176,18 @@
     0% { opacity:0; }
     100% { opacity:100%; }
 }
+.buttonCenter {
+            margin-top:45px;
+            align-content:center;
+            margin-left: 30%;
+            margin-right: 30%;
+          }
+.buttonPassword {
+            align-content:center;
+            margin-left: 10%;
+            margin-right: 10%;
+            padding-bottom: 10px;
+          }
 
    </style>
   </head>
@@ -185,7 +197,8 @@
     <a href="#promotions">Promotions</a>
     <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
-    <a href="userLogin">Login</a>
+    
+    <a href="logoutSuccess">Logout</a>
   </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -203,8 +216,11 @@
         <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.lastName}" />
         <label class="form-label" for="form2Example1">Last Name</label> 
     
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.phone}" />
-        <label class="form-label" for="form2Example1">Phone Number</label> 
+        <a href="forgotPassword">
+          <div class="buttonPassword">
+            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
+        </div>
+          </a> 
 
         <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.phone}" />
         <label class="form-label" for="form2Example1">Phone Number</label> 
@@ -225,12 +241,14 @@
 
         <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
         <label class="form-label" for="form2Example1">Zip</label> 
-    </form:form>
+    
 </div>
-
-   <!-- Submit button -->
-   <form:button type="submit" class="btn btn-secondary btn-block mb-4">Register</form:button>
-
+<br><br>  
+<!-- Submit button -->
+   <div class="buttonCenter">
+   <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
+  </form:form>
+  
 <div class="footer">
   <br>
   <small>Copyright - Company Name</small>

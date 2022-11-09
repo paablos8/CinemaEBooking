@@ -3,6 +3,7 @@ package com.example.Database;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 
 class MovieTableConnector extends SQL_GetSet
 {
@@ -47,7 +48,8 @@ class MovieTableConnector extends SQL_GetSet
 
     String [] getAllTitles()
     {
-        return getAll("Movie Titles","Title");
+        Object [] temp = getAll("Movie Titles","Title");
+        return Arrays.copyOf(temp,temp.length,String[].class);
     }
 
     // ageRating

@@ -29,6 +29,7 @@ public class AdminManageMovieController {
         return "adminManageMovies";
     }
 
+//Method to get all the entered values when a 
     @RequestMapping(value = "/adminManageMovies", method = RequestMethod.POST)
     public Object addMovies(@ModelAttribute("movieForm") Movie movieForm, BindingResult bindingResult,
                                   Model model, HttpServletRequest request) throws UnsupportedEncodingException, MBeanException {

@@ -4,16 +4,16 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>EditProfile   
+    <title>Add Movie   
     </title>
     <meta name="viewport" content="width=device-width">
 
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:180%;
       }
-      .registration1{
+      .addMovie{
         border-radius:25px;
         background-color:lightgrey;
         width:50%;
@@ -21,22 +21,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 15px;
-        padding-bottom: 5px;
-
         text-align:center;
-        float:left;
-      }
-      .registration2{
-        border-radius:25px;
-        background-color:lightgrey;
-        width:50%;
-        padding: 14px 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 15px;
-        padding-bottom: 20px;
-        text-align:center;
-        float:right;
       }
       .title{
         font-size:45px;
@@ -176,18 +161,6 @@
     0% { opacity:0; }
     100% { opacity:100%; }
 }
-.buttonCenter {
-            margin-top:45px;
-            align-content:center;
-            margin-left: 30%;
-            margin-right: 30%;
-          }
-.buttonPassword {
-            align-content:center;
-            margin-left: 10%;
-            margin-right: 10%;
-            padding-bottom: 10px;
-          }
 
    </style>
   </head>
@@ -197,63 +170,82 @@
     <a href="#promotions">Promotions</a>
     <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
-    
-    <a href="logoutSuccess">Logout</a>
+    <a href="userLogin">Login</a>
   </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
-  <div class="title">
-    Edit Profile
+
+<div class="title">
+    Add Movie
 </div>
-<div class="registration1">
+
+<div class="addMovie">
     <%--@elvariable id="login" type=""--%>
-    <form:form method="POST" modelAttribute="editAccountForm">
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.firstName}" />
-        <label class="form-label" for="form2Example1">First Name</label> 
-    
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.lastName}" />
-        <label class="form-label" for="form2Example1">Last Name</label> 
-    
-        <a href="forgotPassword">
-          <div class="buttonPassword">
-            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
-        </div>
-          </a> 
+  <form:form method="POST" modelAttribute="addMovieForm">
+    <div class="MyForm form-group">
 
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.phone}" />
-        <label class="form-label" for="form2Example1">Phone Number</label> 
- </form:form>
-</div>
+<!-- Movie Title input -->
+        <div class="form-outline mb-4"></div>
+            <form:input type="name" class="form-control" id="movieTitle" path="movieTitle" placeholder="Enter Movie Title" />
+            <label class="form-label" for="form2Example1">Movie Title</label>    
+    <!-- Category input -->
+        <div class="form-outline mb-4"></div>
+            <form:input type="text" class="form-control" id="category" path="category" placeholder="Enter Category" />
+            <label class="form-label" for="form2Example1">Category</label>    
+<!-- Director input -->
+        <div class="form-outline mb-4"></div>
+            <form:input type="name" class="form-control" id="director" path="director" placeholder="Enter Dircetor" />
+            <label class="form-label" for="form2Example1">Director</label>  
+<!-- Producer input -->  
+        <div class="form-outline mb-4"></div>
+            <form:input type="name" class="form-control" id="producer" path="producer" placeholder="Enter Producer" />
+            <label class="form-label" for="form2Example1">Producer</label>  
+<!-- Synopsis input -->   
+        <div class="form-outline mb-4"></div>
+            <form:input type="name" class="form-control" id="synopsis" path="synopsis" placeholder="Enter Synopsis" />
+            <label class="form-label" for="form2Example1">Synopsis</label> 
+<!-- Trailer Picture input -->    
+        <div class="form-outline mb-4"></div>
+            <form:input type="name" class="form-control" id="trailerPicture" path="trailerPicture" placeholder="Upload Trailer Picture" />
+            <label class="form-label" for="form2Example1">Trailer Picture</label>  
+<!-- Movie Trailer input -->     
+        <div class="form-outline mb-4"></div>
+            <form:input type="name" class="form-control" id="trailerVideo" path="trailerVideo" placeholder="Enter URL for the Movie Trailer" />
+            <label class="form-label" for="form2Example1">Movie Trailer</label> 
+<!-- Film Rating input -->  
+        <div class="form-outline mb-4"></div>
+            <form:input type="name" class="form-control" id="filmRatingCode" path="filmRatingCode" placeholder="Enter Film Rating Code" />
+            <label class="form-label" for="form2Example1">Film Rating Code</label>    
+            <br>
+            <br>
 
-<%--@elvariable id="login" type=""--%>
-    <form:form method="POST" modelAttribute="editAccountForm">
-    <div class="registration2">
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.street}" />
-        <label class="form-label" for="form2Example1">Street</label> 
-        
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.city}" />
-        <label class="form-label" for="form2Example1">City</label> 
-        
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.state}" />
-        <label class="form-label" for="form2Example1">State</label> 
+ <!-- Submit button -->
+ <form:button type="submit" class="btn btn-secondary btn-block mb-4">Add new Movie</form:button>
 
-        <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
-        <label class="form-label" for="form2Example1">Zip</label> 
-    
-</div>
-<br><br>  
-<!-- Submit button -->
-   <div class="buttonCenter">
-   <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
-  </form:form>
   
+    
+        </form:form>
+</div>
+
 <div class="footer">
-  <br>
-  <small>Copyright - Company Name</small>
-  <br><br>
+    <br>
+    <small>Copyright - Company Name</small>
+    <br><br>
+</div>
+</div>
+</div>
+<br><br><br><br>
+
+
+<div class="footer">
+<br>
+<small>Copyright - Company Name</small>
+<br><br>
 
 </div>
 
-</html>
+
+
+

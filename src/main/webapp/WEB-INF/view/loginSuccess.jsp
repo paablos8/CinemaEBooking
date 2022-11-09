@@ -128,6 +128,12 @@
   <a href="viewProfile">
     <button" class="btn btn-secondary btn-block mb-4">View Profile</button>
 </a>
+<a href="editProfile">
+  <button" class="btn btn-secondary btn-block mb-4">Edit Profile</button>
+</a>
+<a href="editCard">
+  <button" class="btn btn-secondary btn-block mb-4">Edit Card</button>
+</a>
 </div>
 
 <div class="footer">
