@@ -26,7 +26,7 @@ class MovieTableConnector extends SQL_GetSet
 
         try(Statement stmt = conn.createStatement())
         {
-            String SQL = "INSERT INTO [Movie Titles] VALUES ('"+title+"',"+ageRating+","+yearRelease+",'"+producer+"','"
+            String SQL = "INSERT INTO [Movie Titles] VALUES ('"+title+"','"+ageRating+"',"+yearRelease+",'"+producer+"','"
                     +cast+"','"+director+"',"+IMDBRating+","+RTRating+",'"+trailerURL+"','"+category+
                     "','"+synopsis+"',"+durationMin+",'"+posterURL+"')";
             stmt.executeUpdate(SQL);

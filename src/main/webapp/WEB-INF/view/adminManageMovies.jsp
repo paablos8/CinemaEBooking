@@ -243,61 +243,8 @@
  
 
 <section>
-  <%--@elvariable id="login" type=""--%>
-      <form:form method="POST" modelAttribute="movie">
-    <div class='movive-info-content'>
-      
-        <table class='half-input-table'>
-          <tr><td>To add or edit, please enter new movie information: </td></tr>
-        </table>
-        
-        Movie Title
-        <input type="text" path="movieTitle" placeholder="Enter Movie Title" />
-        <table class='half-input-table'>
-          <tr>
 
-            <td> Category
-              <input class='input-field' placeholder="Enter Category"></input>
-            </td>
-
-            <td> Cast 
-              <input class='input-field' placeholder="Add Cast"></input>
-            </td>
-
-            <td> Director 
-              <input class='input-field' placeholder="Enter Director"></input>
-            </td>
-            
-            <td> Producer
-              <input class='input-field' placeholder="Enter Producer"></input>
-            </td>
-
-            <td> Synopsis 
-              <input class='input-field' placeholder="Enter Synopsis"></input>
-            </td>
-
-            <td> Review 
-              <input class='input-field' placeholder="Enter Review"></input>
-            </td>
-
-            <td> Trailer Picture
-              <input class='input-field' placeholder="Insert TrailerPicture"></input>
-            </td>
-
-            <td> Trailer Video 
-              <input class='input-field' placeholder="Enter link to an trailer video"></input>
-            </td>
-
-            <td> Film Rating Code
-              <input class='input-field' placeholder="Film Rating COde"></input>
-            </td>
-            
-            <td>Showtimes
-                <input class='input-field' placeholder="Select Showtimes"></input>
-              </td>
-          </tr>
-        </table>
-        <button class='add-btn'>Add New Movie</button>
+        <a href="addMovie"><button class='add-btn'>Add New Movie</button></a>
 
       </div>
       <br><br><br>

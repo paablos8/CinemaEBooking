@@ -23,7 +23,7 @@ class SQL_GetSet extends Encryptor
 
         try {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT [" + idField + "] , [" + eField + "] FROM " + table);
+            rs = stmt.executeQuery("SELECT [" + idField + "] , [" + eField + "] FROM [" + table+"]");
 
             while (rs.next())
             {
@@ -133,7 +133,7 @@ class SQL_GetSet extends Encryptor
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT [" + idField + "] , [" + eField + "] FROM " + table);
+            rs = stmt.executeQuery("SELECT [" + idField + "] , [" + eField + "] FROM [" + table+"]");
 
             while (rs.next())
             {
@@ -156,7 +156,7 @@ class SQL_GetSet extends Encryptor
         return ret;
     }
 
-    <T, S> T[] getAll(String table, String eField)
+    <T> T[] getAll(String table, String eField)
     {
         int numOf = getNumOf(table);
         int i = 0;
@@ -175,7 +175,7 @@ class SQL_GetSet extends Encryptor
         try
         {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM " + table);
+            rs = stmt.executeQuery("SELECT * FROM [" + table+"]");
 
             while (rs.next())
             {
@@ -227,7 +227,7 @@ class SQL_GetSet extends Encryptor
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
-            rs = stmt.executeQuery("SELECT [" + idField + "] ,[" + eField + "] FROM " + table);
+            rs = stmt.executeQuery("SELECT [" + idField + "] ,[" + eField + "] FROM [" + table+"]");
 
             while (rs.next())
             {
@@ -251,7 +251,7 @@ class SQL_GetSet extends Encryptor
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
-            rs = stmt.executeQuery("SELECT [" + idField1 + "],["+idField2+"],[" + eField + "] FROM " + table);
+            rs = stmt.executeQuery("SELECT [" + idField1 + "],["+idField2+"],[" + eField + "] FROM [" + table+"]");
 
             while (rs.next())
             {
@@ -275,7 +275,7 @@ class SQL_GetSet extends Encryptor
         try
         {
             Statement stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
-            stmt.executeUpdate("DELETE FROM "+table+" WHERE "+idField+" = "+id);
+            stmt.executeUpdate("DELETE FROM ["+table+"] WHERE ("+idField+") = "+id);
         }
         catch (SQLException e)
         {
