@@ -28,17 +28,17 @@ public class EditProfileController {
 
     DatabaseConnector db = new DatabaseConnector();    
 
-    @RequestMapping(value = "/editProfile", method = RequestMethod.GET)
+    @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
     public String showEditProfilePage(ModelMap model) {
         model.addAttribute("editAccountForm", new Customer());
-        return "editProfile";
+        return "viewProfile";
 
     }
 
     
 
-    @RequestMapping(value = "/editProfile", method = RequestMethod.POST)
-    public Object editProfileSubmit(@ModelAttribute("editAccountForm") User user, Model model, HttpServletRequest request) {
+    @RequestMapping(value = "/viewProfile", method = RequestMethod.POST)
+    public Object viewProfileSubmit(@ModelAttribute("editAccountForm") User user, Model model, HttpServletRequest request) {
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
         int userId = currentUser.getUserId();

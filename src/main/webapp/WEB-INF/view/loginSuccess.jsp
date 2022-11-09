@@ -125,7 +125,7 @@
     <a href="homePage">
       <button" class="btn btn-secondary btn-block mb-4">View Movie Showtimes</button>
   </a>
-  <a href="editProfile">
+  <a href="viewProfile">
     <button" class="btn btn-secondary btn-block mb-4">Edit Profile</button>
 </a>
 </div>
