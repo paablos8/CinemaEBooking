@@ -88,14 +88,15 @@ class UserTableConnector extends SQL_GetSet
      * @param password new user's password
      * @return true if successful
      */
-    boolean createNewUser(String fName, String lName, long pNum,
+    int createNewUser(String fName, String lName, long pNum,
                           String email, boolean promoOp, boolean isAdmin,
                           String password)
     {
-        if(!(verifyEmail(email)&&verifyPhoneNum(pNum)&&verifyString(fName)&&verifyString(lName)&&verifyString(password)))
-        {
-            return false;
-        }
+        if(!(verifyEmail(email))){return -1;}
+        else if(!verifyPhoneNum(pNum)){return -2;}
+        else if(!verifyString(fName)){return -3;}
+        else if(!verifyString(lName)){return -4;}
+        else if(!verifyString(password)){return -5;}
 
         //String encPass = encrypt(password);
         String encPass = password;
@@ -111,7 +112,7 @@ class UserTableConnector extends SQL_GetSet
         {
             e.printStackTrace();
         }
-        return true;
+        return 0;
     }
 
     /**
@@ -131,9 +132,10 @@ class UserTableConnector extends SQL_GetSet
         return user;
     }
 
-    boolean resetPassword(String email,String password)
+    int resetPassword(String email,String password)
     {
-        if(!verifyEmail(email)||!verifyString(password))return false;
+        if(!verifyEmail(email)){return -1;}
+        else if(!verifyString(password)){return -2;}
         ResultSet rs;
         try
         {
@@ -155,7 +157,7 @@ class UserTableConnector extends SQL_GetSet
         {
             e.printStackTrace();
         }
-        return true;
+        return 0;
     }
 
     /**
@@ -236,7 +238,7 @@ class UserTableConnector extends SQL_GetSet
      * @return true if successful
      */
     boolean changeFirstName(int userID,String fName)
-    {if(verifyString(fName))return false;return update(userID,"Users","User ID","First Name",fName);}
+    {if(!verifyString(fName))return false;return update(userID,"Users","User ID","First Name",fName);}
 
     /**
      * Updates the user's last name
@@ -245,7 +247,7 @@ class UserTableConnector extends SQL_GetSet
      * @return true if successful
      */
     boolean changeLastName(int userID,String lName)
-    {if(verifyString(lName))return false;return update(userID,"Users","User ID","Last Name",lName);}
+    {if(!verifyString(lName))return false;return update(userID,"Users","User ID","Last Name",lName);}
 
     /**
      * Updates the user's phone number
@@ -255,7 +257,7 @@ class UserTableConnector extends SQL_GetSet
      */
     boolean changePhoneNumber(int userID,long pNum)
     {
-        if(verifyPhoneNum(pNum))return false;
+        if(!verifyPhoneNum(pNum))return false;
         return update(userID,"Users","User ID","Phone Number",pNum);
     }
 
@@ -298,7 +300,7 @@ class UserTableConnector extends SQL_GetSet
      */
     boolean changePassword(int userID,String password)
     {
-        if(verifyString(password))
+        if(!verifyString(password))
             return false;
         //String encPass = encrypt(password);
         String encPass = password;
