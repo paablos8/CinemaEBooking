@@ -9,7 +9,7 @@ public class HomepageController {
     @RequestMapping("/")
     public String home (){
 
-        return "homePage";
+        return "redirect:/homePage";
     }
 
     @RequestMapping("/homePage")
