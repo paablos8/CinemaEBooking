@@ -29,10 +29,9 @@ public class EditProfileController {
     DatabaseConnector db = new DatabaseConnector();    
 
     @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
-    public String showEditProfilePage(ModelMap model) {
+    public String showViewProfilePage(ModelMap model) {
         model.addAttribute("editAccountForm", new Customer());
         return "viewProfile";
-
     }
 
     
@@ -56,4 +55,11 @@ public class EditProfileController {
 
         return model;
     }
+
+    @RequestMapping(value = "/editProfile", method = RequestMethod.GET)
+    public String showEditProfilePage(ModelMap model) {
+        model.addAttribute("editAccountForm", new Customer());
+        return "editProfile";
+    }
+
 }
