@@ -132,47 +132,47 @@ public class DatabaseConnector
         return mtc.createNewMovie(title,ageRating,yearRelease,producer,director,cast,IMDBRating,RTRating,trailerURL
         ,posterURL,category,synopsis,durationMin);
     }
-    String [] getTitlesInCategory(String category){return mtc.getTitlesInCategory(category);}
-    String [] getAllTitles(){return mtc.getAllTitles();}
-    String getAgeRating(String title){return mtc.getAgeRating(title);}
-    int getYearRelease(String title){return mtc.getYearRelease(title);}
-    String getProducer(String title){return mtc.getProducer(title);}
-    String getCast(String title){return mtc.getCast(title);}
-    String getDirector(String title){return mtc.getDirector(title);}
-    int getIMDBRating(String title){return mtc.getIMDBRating(title);}
-    int getRTRating(String title){return mtc.getRTRating(title);}
-    String getTrailerURL(String title){return mtc.getTrailerURL(title);}
-    String getPosterURL(String title){return mtc.getPosterURL(title);}
-    String getCategory(String title){return mtc.getCategory(title);}
-    String getSynopsis(String title){return mtc.getSynopsis(title);}
-    int getDuration(String title){return mtc.getDuration(title);}
-    boolean changeAgeRating(String title,String ageRate){return mtc.changeAgeRating(title,ageRate);}
-    boolean changeYearRelease(String title,int yearRelease){return mtc.changeYearRelease(title,yearRelease);}
-    boolean changeProducer(String title,String producer){return mtc.changeProducer(title,producer);}
-    boolean changeCast(String title,String cast){return mtc.changeCast(title,cast);}
-    boolean changeDirector(String title,String director){return mtc.changeDirector(title,director);}
-    boolean changeIMDBRating(String title,int IMDBRating){return mtc.changeIMDBRating(title,IMDBRating);}
-    boolean changeRTRating(String title,int RTRating){return mtc.changeRTRating(title,RTRating);}
-    boolean changeTrailerURL(String title,String trailerURL){return mtc.changeTrailerURL(title,trailerURL);}
-    boolean changePosterURL(String title,String posterURL){return mtc.changePosterURL(title,posterURL);}
-    boolean changeCategory(String title,String category){return mtc.changeCategory(title,category);}
-    boolean changeSynopsis(String title,String synopsis){return mtc.changeSynopsis(title,synopsis);}
-    boolean changeDuration(String title,int duration){return mtc.changeDuration(title,duration);}
+    public String [] getTitlesInCategory(String category){return mtc.getTitlesInCategory(category);}
+    public String [] getAllTitles(){return mtc.getAllTitles();}
+    public String getAgeRating(String title){return mtc.getAgeRating(title);}
+    public int getYearRelease(String title){return mtc.getYearRelease(title);}
+    public String getProducer(String title){return mtc.getProducer(title);}
+    public String getCast(String title){return mtc.getCast(title);}
+    public String getDirector(String title){return mtc.getDirector(title);}
+    public int getIMDBRating(String title){return mtc.getIMDBRating(title);}
+    public int getRTRating(String title){return mtc.getRTRating(title);}
+    public String getTrailerURL(String title){return mtc.getTrailerURL(title);}
+    public String getPosterURL(String title){return mtc.getPosterURL(title);}
+    public String getCategory(String title){return mtc.getCategory(title);}
+    public String getSynopsis(String title){return mtc.getSynopsis(title);}
+    public int getDuration(String title){return mtc.getDuration(title);}
+    public boolean changeAgeRating(String title,String ageRate){return mtc.changeAgeRating(title,ageRate);}
+    public boolean changeYearRelease(String title,int yearRelease){return mtc.changeYearRelease(title,yearRelease);}
+    public boolean changeProducer(String title,String producer){return mtc.changeProducer(title,producer);}
+    public boolean changeCast(String title,String cast){return mtc.changeCast(title,cast);}
+    public boolean changeDirector(String title,String director){return mtc.changeDirector(title,director);}
+    public boolean changeIMDBRating(String title,int IMDBRating){return mtc.changeIMDBRating(title,IMDBRating);}
+    public boolean changeRTRating(String title,int RTRating){return mtc.changeRTRating(title,RTRating);}
+    public boolean changeTrailerURL(String title,String trailerURL){return mtc.changeTrailerURL(title,trailerURL);}
+    public boolean changePosterURL(String title,String posterURL){return mtc.changePosterURL(title,posterURL);}
+    public boolean changeCategory(String title,String category){return mtc.changeCategory(title,category);}
+    public boolean changeSynopsis(String title,String synopsis){return mtc.changeSynopsis(title,synopsis);}
+    public boolean changeDuration(String title,int duration){return mtc.changeDuration(title,duration);}
 
     //Promotion Methods
-    boolean createDraftPromotion(String dateStart, String dateEnd, int percentOff)
+    public boolean createDraftPromotion(String dateStart, String dateEnd, int percentOff)
     {return ptc.createDraftPromotion(dateStart,dateEnd,percentOff);}
-    int getPercentOff (String startDate, String endDate)
+    public int getPercentOff (String startDate, String endDate)
     {return ptc.getPercentOff(startDate,endDate);}
-    boolean isDraftPromotion(String startDate,String endDate)
+    public boolean isDraftPromotion(String startDate,String endDate)
     {return ptc.isDraftPromotion(startDate,endDate);}
-    String[][] getAllStartEndDates() {return ptc.getAllStartEndDates();}
-    boolean changePercentOff (String startDate, String endDate, int percentOff)
+    public String[][] getAllStartEndDates() {return ptc.getAllStartEndDates();}
+    public boolean changePercentOff (String startDate, String endDate, int percentOff)
     {return ptc.changePercentOff(startDate,endDate,percentOff);}
-    boolean changeStartDate(String oldStartDate, String endDate, String newStartDate)
+    public boolean changeStartDate(String oldStartDate, String endDate, String newStartDate)
     {return ptc.changeStartDate(oldStartDate,endDate,newStartDate);}
-    boolean changeEndDate(String startDate, String oldEndDate, String newEndDate)
+    public boolean changeEndDate(String startDate, String oldEndDate, String newEndDate)
     {return ptc.changeEndDate(startDate,oldEndDate,newEndDate);}
-    void activatePromotion(String startDate,String endDate)
+    public void activatePromotion(String startDate,String endDate)
     {ptc.activatePromotion(startDate,endDate);}
 }
