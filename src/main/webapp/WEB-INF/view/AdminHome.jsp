@@ -127,6 +127,16 @@
   </div>
 </section>
 
+<section>
+  <h2>User Management</h2>
+  <div>
+      <div>
+        <button role= "EditHome-butt">Manage Users</button></a>
+      </div>
+      <hr> 
+  </div>
+</section>
+
 <div class="footer">
   <br>
   <small>Copyright - Company Name</small>
