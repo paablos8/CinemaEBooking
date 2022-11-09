@@ -22,7 +22,7 @@ public class DatabaseConnector
      */
     public DatabaseConnector()
     {
-        String serverName = "6.tcp.ngrok.io:15118";
+        String serverName = "2.tcp.ngrok.io:17037";
         String loginCredentials = ";user=sa;password=Team_C2;";
         String settings = "encrypt=true;trustServerCertificate=true";
         String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
@@ -63,7 +63,7 @@ public class DatabaseConnector
     }
 
     //User Methods
-    public boolean createNewUser(String fName, String lName, long pNum,
+    public int createNewUser(String fName, String lName, long pNum,
                                  String email, boolean promoOp, boolean isAdmin,
                                  String password)
     {return utc.createNewUser(fName,lName,pNum,email,promoOp,isAdmin,password);}
@@ -77,7 +77,7 @@ public class DatabaseConnector
     public String getUserEmail(int userID){return utc.getUserEmail(userID);}
     public String getUserPassword(int userID){return utc.getUserPassword(userID);}
     public User createUserObject(int userID){return utc.createUserObject(userID);}
-    public boolean resetPassword(String email,String password){return utc.resetPassword(email,password);}
+    public int resetPassword(String email,String password){return utc.resetPassword(email,password);}
     public boolean changeFirstName(int userID,String fName){return utc.changeFirstName(userID,fName);}
     public boolean changeLastName(int userID,String lName){return utc.changeLastName(userID,lName);}
     public boolean changePhoneNumber(int userID,Long pNum){return utc.changePhoneNumber(userID,pNum);}
