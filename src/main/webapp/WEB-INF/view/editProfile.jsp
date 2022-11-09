@@ -10,7 +10,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:140%;
+        height:175%;
       }
       .login{
         border-radius:25px;
@@ -114,7 +114,7 @@
   font-family:'Poppins', sans-serif}
   
   .container1{
-    padding-bottom: 150px;
+    
     height:auto;
     display:flex;
     justify-content:center;
@@ -123,7 +123,7 @@
   
   .container2{
     
-    height:200%;
+    height:auto;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -139,7 +139,7 @@
 
   .container4{
     
-    height:125%;
+    height:auto;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -147,7 +147,7 @@
   
   .card{
       width:350px;
-      height:75vh;
+      height:350x;
       background-color:#fff;
       box-shadow:0px 15px 30px rgba(0,0,0,0.1);
       border-radius:10px;
@@ -234,7 +234,7 @@
       
      <div class="inputs"> 
       <span>Email address</span> 
-      <input type="text" readonly value="${currentUser.email}"> </div> 
+      <input type="text" readonly value="${currentUser.email}"/> </div> 
       
     <div class="inputs">
       <span>Fist Name</span> 
@@ -248,10 +248,19 @@
         <span>Phone Number</span>
         <input type="text" readonly value="${currentUser.phone}"> </div>
 
-
+    
+    </div>
+  </div>
+  <div class="container1">
+    <div class="card"> <div class="info"> 
+      <span>Address Information</span> 
+     </div>
+     
+      <div class="forms">
+     
       <div class="inputs"> 
         <span>Street</span>
-        <input type="text" readonly value="${currentuser.street}"> </div>
+        <input type="text" readonly value="${currentUser.street}"> </div>
 
 
     <div class="inputs"> 
@@ -265,17 +274,18 @@
       <div class="inputs"> 
         <span>Country</span>
         <input type="text" readonly value="${currentUser.country}"> </div>
-      <br><br>
-      </div>
-
-    
-  
+      
+    </div>
+  </div>
+  </div>
 </div>
+
 
 <div class="container2">
   <div class="card"> <div class="info"> 
     <span>Primary Card Information</span> 
     </div> 
+    
     <div class="forms"> 
     <div class="inputs"> 
     <span>Name on Card</span> 
@@ -298,11 +308,11 @@
       <input type="text" readonly value="${cardZip}"> </div> 
       
         
-</div>
-</div>
+
+
 
 </div>
-
+</div>
 <div class="container3">
   <div class="card"> <div class="info"> 
     <span> Secondary Card Information</span> 
@@ -349,10 +359,14 @@
       <span>Zip Code</span>
       <input type="text" readonly value="${cardZip}"> </div> 
 
-        
 </div>
 </div>
-
+</div>
+</div>
+<br>
+<div class="buttonCenter">
+<form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
+</div>  
 
 <div class="footer">
   <br>
@@ -374,11 +388,14 @@
       var savebutton = document.getElementById('savebutton');
 var readonly = true;
 var inputs = document.querySelectorAll('input[type="text"]');
+
 savebutton.addEventListener('click',function(){
-    
+      
+
      for (var i=1; i<inputs.length; i++) {
      inputs[i].toggleAttribute('readonly');
      };
+     savebutton.style.visibility = 'hidden';
 
     if (savebutton.innerHTML == "Edit") {
       savebutton.innerHTML = "Save";
@@ -387,8 +404,4 @@ savebutton.addEventListener('click',function(){
       }  
 });
       </script>
-      
-
-
-
 </html>
