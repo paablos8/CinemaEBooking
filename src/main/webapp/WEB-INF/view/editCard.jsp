@@ -1,36 +1,54 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>viewProfile    
+    <title>EditProfile   
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width">
+
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:110%;
+        height:100%;
       }
-      .login{
+      .registration1{
         border-radius:25px;
         background-color:lightgrey;
         width:50%;
         padding: 14px 20px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 50px;
+        margin-top: 15px;
+        padding-bottom: 5px;
+
         text-align:center;
+        float:left;
+      }
+      .registration2{
+        border-radius:25px;
+        background-color:lightgrey;
+        width:50%;
+        padding: 14px 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        padding-bottom: 20px;
+        text-align:center;
+        float:right;
       }
       .title{
-        font-size:50px;
+        font-size:45px;
         text-align: center;
+      }
+      .text-center{
+        text-align:center;
       }
       .topnav {
   overflow: hidden;
   background-color: #333;
 }
-
 .topnav a {
   float: left;
   display: block;
@@ -40,21 +58,26 @@
   text-decoration: none;
   font-size: 17px;
 }
-
+.topNavLogout a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .topnav a.active {
   background-color: orange;
   color: white;
 }
-
 .topnav .icon {
   display: none;
 }
-
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -62,7 +85,6 @@
     display: block;
   }
 }
-
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -76,20 +98,6 @@
     text-align: left;
   }
 }
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  border-radius:25px;
-}
-
 .footer{
     position:fixed;
     left:0;
@@ -99,131 +107,153 @@
     background-color:#333;
     color: white;  
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');*
-{padding: 0;
-  margin: 0;
-  font-family:'Poppins', sans-serif}
-  .container{
-    
-    height:auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-  }
-    .card{
-      width:350px;
-      height:75vh;
-      background-color:#fff;
-      box-shadow:0px 15px 30px rgba(0,0,0,0.1);
-      border-radius:10px;
-            
+.help-tip{
+    position: static;
+    text-align: center;
+    background-color: #BCDBEA;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+}
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+.help-tip p{    /* The tooltip */
+    display: none;
+    text-align: center;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -4px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+.help-tip p:before{ /* The pointer of the tooltip */
+    float: right;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+/* CSS animation */
+@-webkit-keyframes fadeIn {
+    0% { 
+        opacity:0; 
+        transform: scale(0.6);
     }
-      .card .info
-      {padding:15px;display:flex;justify-content:space-between;border-bottom:1px solid #e1dede;
-        background-color:#e5e5e5}
-        .card .info button
-        {height:30px;width:80px;border:none;
-          color:#fff;border-radius:4px;background-color:#000;
-          cursor:pointer;text-transform:uppercase}
-          .card .forms
-          {padding:15px}
-          .card .inputs
-          {display:flex;flex-direction:column;margin-bottom:10px}
-          .card .inputs span{font-size:12px}
-          .card .inputs input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
-          .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+.buttonCenter {
+            margin-top:45px;
+            align-content:center;
+            margin-left: 30%;
+            margin-right: 30%;
+          }
+.buttonPassword {
+            align-content:center;
+            margin-left: 10%;
+            margin-right: 10%;
+            padding-bottom: 10px;
+          }
 
-
-    </style>
+   </style>
   </head>
-
 <body>
-
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
-    <a href="promotionHome">Promotions</a>
-    <a href="userLogin">Login</a>
+    <a href="#promotions">Promotions</a>
     <a href="viewcart">View Cart</a>
+    <div class="topNavLogout" id="logout">
+    
+    <a href="logoutSuccess">Logout</a>
+  </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
-  
   <div class="title">
-    Edit Account
+    Edit Profile
+</div>
+<div class="registration1">
+    <%--@elvariable id="login" type=""--%>
+    <form:form method="POST" modelAttribute="editAccountForm">
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.firstName}" />
+        <label class="form-label" for="form2Example1">First Name</label> 
+    
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.lastName}" />
+        <label class="form-label" for="form2Example1">Last Name</label> 
+    
+        <a href="forgotPassword">
+          <div class="buttonPassword">
+            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
+        </div>
+          </a> 
+
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.phone}" />
+        <label class="form-label" for="form2Example1">Phone Number</label> 
+ </form:form>
 </div>
 
-<div class="container">
-    <div class="card"> <div class="info"> 
-      <span>Edit Account Information</span> 
-      <button id="savebutton">edit</button> </div> 
-      <div class="forms"> 
-      <div class="inputs"> 
-      <span>Name</span> 
-      <input type="text" readonly value="SampleFirst"> </div> 
-      <div class="inputs"> 
-      <span>Address</span> 
-      <input type="text" readonly value="SampleAddress"> </div> 
-      <div class="inputs"> 
-      <span>City</span> 
-      <input type="text" readonly value="City"> </div> 
-      <div class="inputs"> 
-      <span>State</span> 
-      <input type="text" readonly value="State"> </div> 
-      <div class="inputs"> 
-      <span>Country</span>
-      <input type="text" readonly value="Country"> </div> 
+<%--@elvariable id="login" type=""--%>
+    <form:form method="POST" modelAttribute="editAccountForm">
+    <div class="registration2">
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.street}" />
+        <label class="form-label" for="form2Example1">Street</label> 
         
-      
-        <a href="viewProfile">
-          <button" class="btn btn-secondary btn-block mb-4">Confirm Changes</button>
-      </a>
-      </div>
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.city}" />
+        <label class="form-label" for="form2Example1">City</label> 
+        
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.state}" />
+        <label class="form-label" for="form2Example1">State</label> 
 
-
-  
-
-  
-  
+        <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
+        <label class="form-label" for="form2Example1">Zip</label> 
+    
 </div>
-
-</div>
-
+<br><br>  
+<!-- Submit button -->
+   <div class="buttonCenter">
+   <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
+  </form:form>
+  
 <div class="footer">
   <br>
   <small>Copyright - Company Name</small>
   <br><br>
 
 </div>
-
-    <script>
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-
-      var savebutton = document.getElementById('savebutton');
-var readonly = true;
-var inputs = document.querySelectorAll('input[type="text"]');
-savebutton.addEventListener('click',function(){
-    
-     for (var i=0; i<inputs.length; i++) {
-     inputs[i].toggleAttribute('readonly');
-     };
-
-    if (savebutton.innerHTML == "edit") {
-      savebutton.innerHTML = "save";
-         } else {
-      savebutton.innerHTML = "edit";
-      }  
-});
-      </script>
-      
-
-
 
 </html>
