@@ -10,17 +10,11 @@ public class Movie {
     private String producer;
     private String synopsis;
     private String[] reviews;
-    private URL trailerPicture;
-    private URL trailerVideo;
+    private String trailerPicture;
+    private String trailerVideo;
     private String filmRatingCode;
     private Show[] shows;
     
-
-    //constructor
-    public Movie(String movieTitle) {
-        this.movieTitle = movieTitle;
-    }
-
 
     public String getMovieTitle() {
         return movieTitle;
@@ -92,22 +86,22 @@ public class Movie {
     }
 
 
-    public URL getTrailerPicture() {
+    public String getTrailerPicture() {
         return trailerPicture;
     }
 
 
-    public void setTrailerPicture(URL trailerPicture) {
+    public void setTrailerPicture(String trailerPicture) {
         this.trailerPicture = trailerPicture;
     }
 
 
-    public URL getTrailerVideo() {
+    public String getTrailerVideo() {
         return trailerVideo;
     }
 
 
-    public void setTrailerVideo(URL trailerVideo) {
+    public void setTrailerVideo(String trailerVideo) {
         this.trailerVideo = trailerVideo;
     }
 

@@ -260,6 +260,10 @@
               <input class='input-field' placeholder="Enter Category"></input>
             </td>
 
+            <td> Cast 
+              <input class='input-field' placeholder="Add Cast"></input>
+            </td>
+
             <td> Director 
               <input class='input-field' placeholder="Enter Director"></input>
             </td>
