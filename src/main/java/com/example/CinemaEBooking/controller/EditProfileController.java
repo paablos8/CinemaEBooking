@@ -7,6 +7,9 @@ import com.example.CinemaEBooking.entities.User;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,32 +30,22 @@ public class EditProfileController {
 
     @RequestMapping(value = "/editProfile", method = RequestMethod.GET)
     public String showEditProfilePage(ModelMap model) {
-
-        /*
-        String firstName = db.getUserFirstName(userId);
-        String lastName = db.getUserLastName(userId);
-        long phoneNumber = db.getUserPhoneNumber(userId);
-        String country = db.getCountry(userId);
-        String city = db.getCityCounty(userId);
-        String email = db.getUserEmail(userId);
-       
-
-        model.addAttribute("firstName", firstName);
-        model.addAttribute("lastName", lastName);
-        model.addAttribute("phoneNumber", phoneNumber);
-        model.addAttribute("country", country);
-        model.addAttribute("city", city);
-        model.addAttribute("email", email);
-        model.addAttribute("userId", userId);
-        */
+        model.addAttribute("editAccountForm", new Customer());
         return "editProfile";
 
     }
 
     
-    
+
     @RequestMapping(value = "/editProfile", method = RequestMethod.POST)
-    public Object editProfileSubmit(@ModelAttribute("editCard") User user, Model model) {
+    public Object editProfileSubmit(@ModelAttribute("editAccountForm") User user, Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User currentUser = (User) session.getAttribute("currentUser");
+        int userId = currentUser.getUserId();
+        System.out.println("This is the user ID: " + userId);
+
+        db.changeFirstName(userId, user.getFirstName());
+        
         return "editCard";
     }
 

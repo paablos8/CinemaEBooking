@@ -269,7 +269,7 @@
       </div>
       <br><br><br>
       <div>
-        <a href="AdminHome"><button role= "Back2Home-butt">Back to Admin Home</button></a>
+        <a href="adminHome"><button role= "Back2Home-butt">Back to Admin Home</button></a>
       </div>
       <br><br><br><br><br><br><br>
 

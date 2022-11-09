@@ -1,5 +1,7 @@
 package com.example.CinemaEBooking.entities;
 
+import java.util.Date;
+
 @Entity(name = "user")
 public class User {
     protected int userId;
@@ -15,8 +17,23 @@ public class User {
     private String country;
     private int zipCode;
     private boolean promotionSubscribe;
+    private PaymentCard[] paymentCards = {null, null, null};
     
-    
+    private PaymentCard[] addPaymentInfo (String nameOnCard, int cardNumber, int cvv, Date expirationDate) {
+        PaymentCard paymentCard = new PaymentCard(nameOnCard, cardNumber, cvv, expirationDate);
+        
+        int i = 0;
+        while (i<4) {
+            if(paymentCards[i] == null) {
+                paymentCards[i] = paymentCard;
+            }
+            else {
+                i = i+1;
+            }
+        }
+
+        return paymentCards; 
+    }
     
     
 
