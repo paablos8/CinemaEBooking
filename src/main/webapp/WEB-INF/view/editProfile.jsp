@@ -11,9 +11,9 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:180%;
+        height:100%;
       }
-      .registration{
+      .registration1{
         border-radius:25px;
         background-color:lightgrey;
         width:50%;
@@ -21,7 +21,22 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 15px;
+        padding-bottom: 5px;
+
         text-align:center;
+        float:left;
+      }
+      .registration2{
+        border-radius:25px;
+        background-color:lightgrey;
+        width:50%;
+        padding: 14px 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        padding-bottom: 20px;
+        text-align:center;
+        float:right;
       }
       .title{
         font-size:45px;
@@ -176,9 +191,45 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
+  <div class="title">
+    Edit Profile
+</div>
+<div class="registration1">
+    <%--@elvariable id="login" type=""--%>
+    <form:form method="POST" modelAttribute="editAccountForm">
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.firstName}" />
+        <label class="form-label" for="form2Example1">First Name</label> 
+    
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.lastName}" />
+        <label class="form-label" for="form2Example1">Last Name</label> 
+    
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.phone}" />
+        <label class="form-label" for="form2Example1">Phone Number</label> 
 
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.phone}" />
+        <label class="form-label" for="form2Example1">Phone Number</label> 
+ </form:form>
+</div>
 
+<%--@elvariable id="login" type=""--%>
+    <form:form method="POST" modelAttribute="editAccountForm">
+    <div class="registration2">
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.street}" />
+        <label class="form-label" for="form2Example1">Street</label> 
+        
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.city}" />
+        <label class="form-label" for="form2Example1">City</label> 
+        
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.state}" />
+        <label class="form-label" for="form2Example1">State</label> 
 
+        <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
+        <label class="form-label" for="form2Example1">Zip</label> 
+    </form:form>
+</div>
+
+   <!-- Submit button -->
+   <form:button type="submit" class="btn btn-secondary btn-block mb-4">Register</form:button>
 
 <div class="footer">
   <br>
