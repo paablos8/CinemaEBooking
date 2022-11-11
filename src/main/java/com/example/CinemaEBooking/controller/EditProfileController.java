@@ -34,19 +34,7 @@ public class EditProfileController {
         return "viewProfile";
     }
 
-    
-
-    @RequestMapping(value = "/viewProfile", method = RequestMethod.POST)
-    public Object viewProfileSubmit(@ModelAttribute("editAccountForm") User user, Model model, HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        User currentUser = (User) session.getAttribute("currentUser");
-        int userId = currentUser.getUserId();
-        System.out.println("This is the user ID: " + userId);
-
-        db.changeFirstName(userId, user.getFirstName());
-        
-        return "editCard";
-    }
+  
 
     //"edit"-button gets pressed & the controller returns the "editCard"-File
     @RequestMapping("/editCard")
@@ -56,9 +44,45 @@ public class EditProfileController {
         return model;
     }
 
+
+//Mapping the "editProfile"-page
     @RequestMapping(value = "/editProfile", method = RequestMethod.GET)
-    public String showEditProfilePage(ModelMap model) {
+    public String showEditProfilePage(ModelMap model, HttpServletRequest request) {
         model.addAttribute("editAccountForm", new Customer());
+
+        HttpSession session = request.getSession();
+        User currentUser = (User) session.getAttribute("currentUser");
+        int userId = currentUser.getUserId();
+        System.out.println("This is the user ID: " + userId);
+
+        return "editProfile";
+    }
+
+      
+//Submit the changes made to the profile
+    @RequestMapping(value = "/editProfile", method = RequestMethod.POST)
+    public Object editProfileSubmit(@ModelAttribute("editAccountForm") User user, Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User currentUser = (User) session.getAttribute("currentUser");
+        int userId = currentUser.getUserId();
+        System.out.println("This is the user ID: " + userId);
+
+        db.changeFirstName(userId, user.getFirstName());
+        db.changeLastName(userId, user.getLastName());
+        db.changePhoneNumber(userId, user.getPhone());
+        db.changeStreetAddress(userId, user.getStreet());
+        db.changeCityCounty(userId, user.getCity());
+        db.changeStateRegion(userId, user.getState());
+        //db.changeZipCode(userId, user.getZip());
+
+        System.out.println("Following changes made:");
+        System.out.println("New First Name: " + db.getUserFirstName(userId));
+        System.out.println("New Last Name: " + db.getUserLastName(userId));
+        System.out.println("New Phone Number: " + db.getUserPhoneNumber(userId));
+        System.out.println("New Street: " + db.getStreetAddress(userId));
+        System.out.println("New City: " + db.getCityCounty(userId));
+        System.out.println("New State: " + db.getStateRegion(userId));
+        
         return "editProfile";
     }
 

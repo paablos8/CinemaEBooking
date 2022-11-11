@@ -1,11 +1,5 @@
 package com.example.CinemaEBooking.controller;
 
-import java.io.UnsupportedEncodingException;
-
-import javax.management.MBeanException;
-import javax.print.DocFlavor.URL;
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -27,7 +21,7 @@ public class EditCardController {
     DatabaseConnector db = new DatabaseConnector();
     
     @RequestMapping(value = "/editCard", method = RequestMethod.GET)
-    public String showEditCardPage( ModelMap model) {
+    public String showEditCardPage(ModelMap model) {
         model.addAttribute("editCardForm", new PaymentCard());
         return "editCard";
     }

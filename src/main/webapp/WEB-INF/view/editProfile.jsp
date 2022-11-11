@@ -210,10 +210,10 @@
 <div class="registration1">
     <%--@elvariable id="login" type=""--%>
     <form:form method="POST" modelAttribute="editAccountForm">
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.firstName}" />
+        <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="${currentUser.firstName}" />
         <label class="form-label" for="form2Example1">First Name</label> 
     
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.lastName}" />
+        <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="${currentUser.lastName}" />
         <label class="form-label" for="form2Example1">Last Name</label> 
     
         <a href="forgotPassword">
@@ -222,21 +222,18 @@
         </div>
           </a> 
 
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.phone}" />
+        <form:input type="name" class="form-control" id="phone" path="phone" placeholder="${currentUser.phone}" />
         <label class="form-label" for="form2Example1">Phone Number</label> 
- </form:form>
 </div>
 
-<%--@elvariable id="login" type=""--%>
-    <form:form method="POST" modelAttribute="editAccountForm">
     <div class="registration2">
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.street}" />
+        <form:input type="name" class="form-control" id="street" path="street" placeholder="${currentUser.street}" />
         <label class="form-label" for="form2Example1">Street</label> 
         
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.city}" />
+        <form:input type="name" class="form-control" id="city" path="city" placeholder="${currentUser.city}" />
         <label class="form-label" for="form2Example1">City</label> 
         
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.state}" />
+        <form:input type="name" class="form-control" id="state" path="state" placeholder="${currentUser.state}" />
         <label class="form-label" for="form2Example1">State</label> 
 
         <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
