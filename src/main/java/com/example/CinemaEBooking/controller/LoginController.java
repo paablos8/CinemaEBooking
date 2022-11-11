@@ -60,9 +60,7 @@ public class LoginController {
             case(-3):System.out.println("Your account was set to INACTIVE");
             System.out.println(status);
             break;
-
-
-            //we have to implement another case, where the logged-in user is an admin         
+      
             default:System.out.println("Successfully logged in");
             int userId = loginResult; //once youre logged in, you get your unique UserID returned!
             System.out.println(loginResult);
@@ -79,25 +77,12 @@ public class LoginController {
             currentUser.setCountry(db.getCountry(userId));
             currentUser.setZipCode(db.getZipCode(userId));
 
-            //currentUser.setPhone(db.getUserPhoneNumber(userId));
-
             System.out.println(db.getUserStatus(userId));
             System.out.println(db.getUserLastName(userId));
             
 
 
-           
-            
-            /*
-            boolean isAdmin = db.getUserType(userId);
-            
-            if(isAdmin == true) {
-                userType = "Admin";
-            }
-            else if (isAdmin == false) {
-                userType = "Customer";
-            }
-            */
+    
 
             model.put("firstName", currentUser.getFirstName());//whatever is stored in the model will be directly accessible for the view
             model.put("userId", userId);
