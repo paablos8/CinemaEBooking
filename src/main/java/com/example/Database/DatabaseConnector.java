@@ -162,7 +162,7 @@ public class DatabaseConnector
     public boolean changeDuration(String title,int duration){return mtc.changeDuration(title,duration);}
 
     //Promotion Methods
-    public boolean createDraftPromotion(String dateStart, String dateEnd, int percentOff)
+    public int createDraftPromotion(String dateStart, String dateEnd, int percentOff)
     {return ptc.createDraftPromotion(dateStart,dateEnd,percentOff);}
     public int getPercentOff (String startDate, String endDate)
     {return ptc.getPercentOff(startDate,endDate);}
