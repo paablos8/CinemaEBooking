@@ -77,14 +77,13 @@ public class LoginController {
             currentUser.setState(db.getStateRegion(userId));
             currentUser.setCity(db.getCityCounty(userId));
             currentUser.setCountry(db.getCountry(userId));
+            currentUser.setZipCode(db.getZipCode(userId));
 
             //currentUser.setPhone(db.getUserPhoneNumber(userId));
 
             System.out.println(db.getUserStatus(userId));
             System.out.println(db.getUserLastName(userId));
-            System.out.println(db.getStreetAddress(userId));
-            System.out.println(db.getCityCounty(userId));
-            System.out.println(db.getCountry(userId));
+            
 
 
            

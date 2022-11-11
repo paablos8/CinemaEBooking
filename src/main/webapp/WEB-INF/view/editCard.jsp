@@ -4,14 +4,14 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>EditProfile   
+    <title>EditCard  
     </title>
     <meta name="viewport" content="width=device-width">
 
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:220%;
       }
       .registration1{
         border-radius:25px;
@@ -189,6 +189,10 @@
             padding-bottom: 10px;
           }
 
+.editCardTitle {
+  font-size:35px;
+  text-align: center; 
+}
    </style>
   </head>
 <body>
@@ -205,35 +209,41 @@
     </a>
   </div>
   <div class="title">
-    Edit Profile
+    Edit Card Information
+</div>
+
+<div class="editCardTitle">
+  Card 1
 </div>
 <div class="registration1">
     <%--@elvariable id="login" type=""--%>
-    <form:form method="POST" modelAttribute="editCardForm">
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.firstName}" />
-        <label class="form-label" for="form2Example1">First Name</label> 
-    
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.lastName}" />
-        <label class="form-label" for="form2Example1">Last Name</label> 
-    
-        <a href="forgotPassword">
-          <div class="buttonPassword">
-            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
-        </div>
-          </a> 
+    <label class="form-label" for="form2Example1"><u>Card Information</u></label> 
 
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.phone}" />
-        <label class="form-label" for="form2Example1">Phone Number</label> 
- </form:form>
+    <form:form method="POST" modelAttribute="editCardForm">
+        <form:input type="name" class="form-control" id="" path="" placeholder="Name on Card" />
+        <label class="form-label" for="form2Example1">Name on Card</label> 
+    
+        <form:input type="name" class="form-control" id="" path="" placeholder="Card Number" />
+        <label class="form-label" for="form2Example1">Card Number</label> 
+
+        <form:input type="name" class="form-control" id="" path="" placeholder="CVV" />
+        <label class="form-label" for="form2Example1">CVV</label> 
+ 
+        <form:input type="name" class="form-control" id="" path="" placeholder="Card Expiration Date" />
+        <label class="form-label" for="form2Example1">Card Expiration Date</label> 
+      </form:form>
 </div>
 
 <%--@elvariable id="login" type=""--%>
     <form:form method="POST" modelAttribute="editCardForm">
     <div class="registration2">
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.street}" />
-        <label class="form-label" for="form2Example1">Street</label> 
+      <label class="form-label" for="form2Example1"><u>Billing Address</u></label> 
+
+      <form:input type="name" class="form-control" id="" path="" placeholder="StreetAddress" />
+      <label class="form-label" for="form2Example1">Street Address</label> 
+      
         
-        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.city}" />
+        <form:input type="name" class="form-control" id="" path="" placeholder="Zip" />
         <label class="form-label" for="form2Example1">City</label> 
         
         <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.state}" />
@@ -241,19 +251,120 @@
 
         <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
         <label class="form-label" for="form2Example1">Zip</label> 
-    
+    </form:form>
 </div>
+
 <br><br>  
 <!-- Submit button -->
-   <div class="buttonCenter">
+<form:form method="POST" modelAttribute="editCardForm">   
+<div class="buttonCenter">
    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
   </form:form>
-  
+</div>
+<div class="editCardTitle">
+  Card 1
+</div>
+<div class="registration1">
+    <%--@elvariable id="login" type=""--%>
+    <label class="form-label" for="form2Example1"><u>Card Information</u></label> 
+
+    <form:form method="POST" modelAttribute="editCardForm">
+        <form:input type="name" class="form-control" id="" path="" placeholder="Name on Card" />
+        <label class="form-label" for="form2Example1">Name on Card</label> 
+    
+        <form:input type="name" class="form-control" id="" path="" placeholder="Card Number" />
+        <label class="form-label" for="form2Example1">Card Number</label> 
+
+        <form:input type="name" class="form-control" id="" path="" placeholder="CVV" />
+        <label class="form-label" for="form2Example1">CVV</label> 
+ 
+        <form:input type="name" class="form-control" id="" path="" placeholder="Card Expiration Date" />
+        <label class="form-label" for="form2Example1">Card Expiration Date</label> 
+      </form:form>
+</div>
+
+<%--@elvariable id="login" type=""--%>
+    <form:form method="POST" modelAttribute="editCardForm">
+    <div class="registration2">
+      <label class="form-label" for="form2Example1"><u>Billing Address</u></label> 
+
+      <form:input type="name" class="form-control" id="" path="" placeholder="StreetAddress" />
+      <label class="form-label" for="form2Example1">Street Address</label> 
+      
+        
+        <form:input type="name" class="form-control" id="" path="" placeholder="Zip" />
+        <label class="form-label" for="form2Example1">City</label> 
+        
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.state}" />
+        <label class="form-label" for="form2Example1">State</label> 
+
+        <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
+        <label class="form-label" for="form2Example1">Zip</label> 
+    </form:form>
+</div>
+
+<br><br>  
+<!-- Submit button -->
+<form:form method="POST" modelAttribute="editCardForm">   
+<div class="buttonCenter">
+   <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
+  </form:form>
+</div>
+
+<div class="editCardTitle">
+  Card 1
+</div>
+<div class="registration1">
+    <%--@elvariable id="login" type=""--%>
+    <label class="form-label" for="form2Example1"><u>Card Information</u></label> 
+
+    <form:form method="POST" modelAttribute="editCardForm">
+        <form:input type="name" class="form-control" id="" path="" placeholder="Name on Card" />
+        <label class="form-label" for="form2Example1">Name on Card</label> 
+    
+        <form:input type="name" class="form-control" id="" path="" placeholder="Card Number" />
+        <label class="form-label" for="form2Example1">Card Number</label> 
+
+        <form:input type="name" class="form-control" id="" path="" placeholder="CVV" />
+        <label class="form-label" for="form2Example1">CVV</label> 
+ 
+        <form:input type="name" class="form-control" id="" path="" placeholder="Card Expiration Date" />
+        <label class="form-label" for="form2Example1">Card Expiration Date</label> 
+      </form:form>
+</div>
+
+<%--@elvariable id="login" type=""--%>
+    <form:form method="POST" modelAttribute="editCardForm">
+    <div class="registration2">
+      <label class="form-label" for="form2Example1"><u>Billing Address</u></label> 
+
+      <form:input type="name" class="form-control" id="" path="" placeholder="StreetAddress" />
+      <label class="form-label" for="form2Example1">Street Address</label> 
+      
+        
+        <form:input type="name" class="form-control" id="" path="" placeholder="Zip" />
+        <label class="form-label" for="form2Example1">City</label> 
+        
+        <form:input type="name" class="form-control" id="" path="" placeholder="${currentUser.state}" />
+        <label class="form-label" for="form2Example1">State</label> 
+
+        <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
+        <label class="form-label" for="form2Example1">Zip</label> 
+    </form:form>
+</div>
+
+<br><br>  
+<!-- Submit button -->
+<form:form method="POST" modelAttribute="editCardForm">   
+<div class="buttonCenter">
+   <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
+  </form:form>
+</div>
+<br><br>
 <div class="footer">
   <br>
   <small>Copyright - Company Name</small>
   <br><br>
-
 </div>
 
 </html>

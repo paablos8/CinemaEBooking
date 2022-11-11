@@ -16,6 +16,7 @@ public class DatabaseConnector
     private AddressTableConnector atc = null;
     private MovieTableConnector mtc = null;
     private PromotionTableConnector ptc = null;
+    private ShowtimeTableConnector stc = null;
 
     /**
      * Creates DatabaseConnector object and connects to server.
@@ -41,6 +42,7 @@ public class DatabaseConnector
             atc = new AddressTableConnector(conn);
             mtc = new MovieTableConnector(conn);
             ptc = new PromotionTableConnector(conn);
+            stc = new ShowtimeTableConnector(conn);
         }
     }
 
@@ -84,6 +86,8 @@ public class DatabaseConnector
     public boolean changePromotionOpinion(int userID,Boolean promoOp){return utc.changePromoOpinion(userID,promoOp);}
     public boolean changePassword(int userID,String password){return utc.changePassword(userID,password);}
     public boolean changeStatus(int userID, Status status){return utc.changeStatus(userID,status);}
+    public String [] getAllPromotionEmails() {return utc.getAllPromotionEmails();}
+    public int[] getAllUserIDs() {return utc.getAllUserIDs();}
 
     //Card Methods
     public boolean createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
@@ -133,6 +137,7 @@ public class DatabaseConnector
         ,posterURL,category,synopsis,durationMin);
     }
     public String [] getTitlesInCategory(String category){return mtc.getTitlesInCategory(category);}
+    String [] getTitlesOnDay(String date){return mtc.getTitlesOnDay(date);}
     public String [] getAllTitles(){return mtc.getAllTitles();}
     public String getAgeRating(String title){return mtc.getAgeRating(title);}
     public int getYearRelease(String title){return mtc.getYearRelease(title);}
@@ -160,7 +165,7 @@ public class DatabaseConnector
     public boolean changeDuration(String title,int duration){return mtc.changeDuration(title,duration);}
 
     //Promotion Methods
-    public boolean createDraftPromotion(String dateStart, String dateEnd, int percentOff)
+    public int createDraftPromotion(String dateStart, String dateEnd, int percentOff)
     {return ptc.createDraftPromotion(dateStart,dateEnd,percentOff);}
     public int getPercentOff (String startDate, String endDate)
     {return ptc.getPercentOff(startDate,endDate);}
@@ -175,4 +180,12 @@ public class DatabaseConnector
     {return ptc.changeEndDate(startDate,oldEndDate,newEndDate);}
     public void activatePromotion(String startDate,String endDate)
     {ptc.activatePromotion(startDate,endDate);}
+
+    //Showtime Methods
+    public int createNewShowtime(String movieTitle,int showroomID, String showDate, String showTime)
+    {return stc.createNewShowtime(movieTitle,showroomID,showDate,showTime);}
+    public int[] getAllShowtimeIDs(){return stc.getAllShowtimeIDs();}
+    public String getShowTitle(int showtimeID){return stc.getShowTitle(showtimeID);}
+    public String getShowDate (int showtimeID){return stc.getShowDate(showtimeID);}
+    public String getShowTime (int showtimeID){return stc.getShowTime(showtimeID);}
 }

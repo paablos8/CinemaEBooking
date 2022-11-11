@@ -136,6 +136,16 @@ public class User {
         this.status = status;
     }
 
+    public int getZipCode() {
+        return zipCode;
+    }
+
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
+    }
+
+
     public boolean getPromotionSubscribe() {
         return promotionSubscribe;
     }

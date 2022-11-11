@@ -1,10 +1,13 @@
 package com.example.Database;
 
+/*
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.security.*;
+*/
+
+import java.io.UnsupportedEncodingException;
+
 
 /**
  * This is for encrypting the user's password and card number.
@@ -13,6 +16,8 @@ import java.security.*;
  */
 class Encryptor
 {
+    // This method is irrelevant as long as we aren't using javax.crypto
+    /*
     // I am only using one key. Ideally, there would be many.
     private byte[] decodedKey = {-88,-38,-116,88,-38,32,38,55};
     private SecretKey key;
@@ -20,6 +25,7 @@ class Encryptor
 
     public Encryptor()
     {
+
         try
         {
             cipher = Cipher.getInstance("DES/ECB/NoPadding");
@@ -29,16 +35,14 @@ class Encryptor
             e.printStackTrace();
         }
 
-        //key = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
+        key = new SecretKeySpec(decodedKey, 0, decodedKey.length, "DES");
 
-        /*
+
         String enc = encrypt("Toby");
-        System.out.println(enc);
+        System.out.println("\n"+enc);
         System.out.println(decrypt(enc));
-        */
-
         
-        /*
+
         SecretKey key = generateKey();
         byte[] keyBytes = key.getEncoded();
 
@@ -46,14 +50,19 @@ class Encryptor
         {
             System.out.println(keyBytes[i]);
         }
-        */
-    }
 
+    }
+    */
+/*
     /**
+     * THIS METHOD DOES NOT WORK. I DON'T KNOW WHY.
+     * I THINK IT'S ALL THAT STANDS BETWEEN US AND
+     * HAVING VALID ENCRYPTION.
+     *
      * This encodes a string input properly for encryption.
      * @param input the string to input
      * @return the properly padded byte array
-     */
+
     byte [] pad (String input)
     {
         byte [] temp = null;
@@ -66,26 +75,40 @@ class Encryptor
             e.printStackTrace();
         }
 
+        for(int i = 0; i < temp.length; i ++)
+        {
+            System.out.print(temp[i]);
+        }
+
+        byte [] paddedInput;
+
         if(temp.length %8 == 0)
         {
             return temp;
         }
         else
         {
-            byte [] paddedInput = new byte[(temp.length %8) + temp.length];
+            paddedInput = new byte[(8-(temp.length %8)) + temp.length];
+            System.out.println(paddedInput.length);
             for(int i = 0; i < temp.length; i ++)
             {
                 paddedInput[i] = temp[i];
             }
-            return paddedInput;
         }
+
+        for(int i = 0; i < paddedInput.length; i ++)
+        {
+            System.out.print(paddedInput[i]);
+        }
+
+        return paddedInput;
     }
 
     /**
      * This undoes the padding
      * @param paddedInput
      * @return
-     */
+
     String unpad (byte[] paddedInput)
     {
         int i = 0;
@@ -109,8 +132,11 @@ class Encryptor
         }
     }
 
+    */
+
     String encrypt(String input)
     {
+        /*
         Cipher cipher = null;
         try
         {
@@ -141,10 +167,37 @@ class Encryptor
             e.printStackTrace();
             return null;
         }
+        */
+        byte [] temp;
+        try {
+            temp = input.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+
+        for(int i = 0; i < temp.length; i++)
+        {
+            if(temp[i] > 252)
+            {
+                temp[i] = (byte)(temp[i] - 255 + 3);
+            }
+            else
+            {
+                temp[i] = (byte)(temp[i] + 3);
+            }
+
+        }
+        try {
+            return new String (temp,"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     String decrypt(String cipherText)
     {
+        /*
         Cipher cipher = null;
         try
         {
@@ -178,8 +231,59 @@ class Encryptor
             e.printStackTrace();
         }
         return null;
+         */
+
+        byte [] temp;
+        try {
+            temp = cipherText.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+
+        for(int i = 0; i < temp.length; i++)
+        {
+            if(temp[i] < 2)
+            {
+                temp[i] = (byte)(temp[i] + 255 -3);
+            }
+            else
+            {
+                temp[i] = (byte)(temp[i] - 3);
+            }
+
+        }
+        try {
+            return new String (temp,"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
+    String encrypt(long input)
+    {
+        byte [] temp = new byte[16];
+        for (int i = 16; i >0; i++)
+        {
+            temp [i] = (byte)(input % 10);
+            input = input / 10L;
+        }
+
+        String ret = "";
+        for(int i = 0;i < 16; i += 2)
+        {
+            ret += (char) ((temp[i] & 0xFF) + (temp[i+1] & 0xFF)) ;
+        }
+        return encrypt(ret);
+    }
+
+    long decryptLong(String cipherText)
+    {
+
+        long temp = Long.parseLong(cipherText);
+        return temp;
+    }
+/*
     SecretKey generateKey()
     {
         SecretKey key = null;
@@ -193,5 +297,5 @@ class Encryptor
         }
         return key;
     }
-
+ */
 }
