@@ -30,7 +30,7 @@ public class AddressTableConnector extends SQL_GetSet
 
         try(Statement stmt = conn.createStatement())
         {
-            String SQL = "INSERT INTO Addresses VALUES ("
+            String SQL = "INSERT INTO Addresses VALUES ('"
                     +stAdd+"','"+city+"','"+state+"','Zimbabwe',"+zip+")";
             stmt.executeUpdate(SQL);
         }

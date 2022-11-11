@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 
 import com.example.CinemaEBooking.entities.Status;
 import com.example.CinemaEBooking.entities.User;
@@ -130,6 +131,13 @@ class UserTableConnector extends SQL_GetSet
         user.setStatus(getUserStatus(userID));
 
         return user;
+    }
+
+    int[] getAllUserIDs()
+    {
+        Object [] temp = getAll("Users","User ID");
+        Integer [] temp2 = Arrays.copyOf(temp,temp.length,Integer[].class);
+        return Arrays.stream(temp2).mapToInt(Integer::intValue).toArray();
     }
 
     int resetPassword(String email,String password)
