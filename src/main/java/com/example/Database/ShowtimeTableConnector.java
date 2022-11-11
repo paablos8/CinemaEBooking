@@ -17,9 +17,11 @@ public class ShowtimeTableConnector extends SQL_GetSet
         else if (showroomID < 1 || showroomID > 3) return -3;
         else if (!exists(movieTitle,"Movie Titles","Title")) return -4;
 
+        int movieID = get(movieTitle,"Movie Titles","Title","Movie ID");
+
         try(Statement stmt = conn.createStatement())
         {
-            String SQL = "INSERT INTO Showtimes VALUES ('"+movieTitle+"','"+showroomID+
+            String SQL = "INSERT INTO Showtimes VALUES ('"+movieID+"','"+showroomID+
                     "','"+showDate+"','"+showTime+"')";
             stmt.executeUpdate(SQL);
         }
@@ -40,20 +42,20 @@ public class ShowtimeTableConnector extends SQL_GetSet
         return Arrays.stream(i).mapToInt(Integer::intValue).toArray();
     }
 
-    //showroomID
-    int getShowroomID (String showtimeID)
+    String getShowTitle(int showtimeID)
     {
-        return get(showtimeID,"Showtimes","Showtime ID","Showroom ID");
+        int movieID =  get(showtimeID,"Showtimes","Showtime ID","Movie ID");
+        return get(movieID,"Movie Titles","Movie ID","Movie Title");
     }
 
     //show date
-    String getShowDate (String showtimeID)
+    String getShowDate (int showtimeID)
     {
         return get(showtimeID,"Showtimes","Showtime ID","Show Date");
     }
 
     //show time
-    String getShowTime (String showtimeID)
+    String getShowTime (int showtimeID)
     {
         return get(showtimeID,"Showtimes","Showtime ID","Show Time");
     }

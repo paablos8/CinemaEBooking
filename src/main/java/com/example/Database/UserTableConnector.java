@@ -140,6 +140,12 @@ class UserTableConnector extends SQL_GetSet
         return Arrays.stream(temp2).mapToInt(Integer::intValue).toArray();
     }
 
+    String [] getAllPromotionEmails()
+    {
+        Object [] temp = getMany(true,"Users","Promotion Opinion","Email");
+        return Arrays.copyOf(temp,temp.length,String[].class);
+    }
+
     int resetPassword(String email,String password)
     {
         if(!verifyEmail(email)){return -1;}

@@ -86,6 +86,8 @@ public class DatabaseConnector
     public boolean changePromotionOpinion(int userID,Boolean promoOp){return utc.changePromoOpinion(userID,promoOp);}
     public boolean changePassword(int userID,String password){return utc.changePassword(userID,password);}
     public boolean changeStatus(int userID, Status status){return utc.changeStatus(userID,status);}
+    public String [] getAllPromotionEmails() {return utc.getAllPromotionEmails();}
+    public int[] getAllUserIDs() {return utc.getAllUserIDs();}
 
     //Card Methods
     public boolean createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
@@ -135,6 +137,7 @@ public class DatabaseConnector
         ,posterURL,category,synopsis,durationMin);
     }
     public String [] getTitlesInCategory(String category){return mtc.getTitlesInCategory(category);}
+    String [] getTitlesOnDay(String date){return mtc.getTitlesOnDay(date);}
     public String [] getAllTitles(){return mtc.getAllTitles();}
     public String getAgeRating(String title){return mtc.getAgeRating(title);}
     public int getYearRelease(String title){return mtc.getYearRelease(title);}
@@ -182,7 +185,7 @@ public class DatabaseConnector
     public int createNewShowtime(String movieTitle,int showroomID, String showDate, String showTime)
     {return stc.createNewShowtime(movieTitle,showroomID,showDate,showTime);}
     public int[] getAllShowtimeIDs(){return stc.getAllShowtimeIDs();}
-    public int getShowroomID (String showtimeID){return stc.getShowroomID(showtimeID);}
-    public String getShowDate (String showtimeID){return stc.getShowDate(showtimeID);}
-    public String getShowTime (String showtimeID){return stc.getShowTime(showtimeID);}
+    public String getShowTitle(int showtimeID){return stc.getShowTitle(showtimeID);}
+    public String getShowDate (int showtimeID){return stc.getShowDate(showtimeID);}
+    public String getShowTime (int showtimeID){return stc.getShowTime(showtimeID);}
 }

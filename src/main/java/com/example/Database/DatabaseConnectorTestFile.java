@@ -11,11 +11,13 @@ public class DatabaseConnectorTestFile
      */
     public static void main(String[] args)
     {
-
+/*
         //private DatabaseConnector dbConnector = new DatabaseConnector();
         DatabaseConnector c1 = new DatabaseConnector();
         System.out.println(c1.getAllTitles()[1]);
         c1.close();
+
+ */
 
 /*
         Encryptor enc = new Encryptor();
