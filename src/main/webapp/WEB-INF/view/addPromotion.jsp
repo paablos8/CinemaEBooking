@@ -186,38 +186,27 @@
   <form:form method="POST" modelAttribute="addPromotionForm">
     <div class="MyForm form-group">
 
-<!-- Movie Title input -->
+<!-- Promotion Title input -->
         <div class="form-outline mb-4"></div>
-            <form:input type="name" class="form-control" id="" path="" placeholder="Enter Movie Title" />
-            <label class="form-label" for="form2Example1">Movie Title</label>    
-    <!-- Category input -->
+            <form:input type="name" class="form-control" id="promotionName" path="promotionName" placeholder="Enter Promotion Title" />
+            <label class="form-label" for="form2Example1">Promotion Name</label>    
+    <!-- Description input -->
         <div class="form-outline mb-4"></div>
-            <form:input type="text" class="form-control" id="" path="" placeholder="Enter Category" />
-            <label class="form-label" for="form2Example1">Category</label>    
-<!-- Director input -->
+            <form:input type="text" class="form-control" id="description" path="description" placeholder="Enter Description" />
+            <label class="form-label" for="form2Example1">Description</label>    
+<!-- Start Date input -->
         <div class="form-outline mb-4"></div>
-            <form:input type="name" class="form-control" id="" path="" placeholder="Enter Dircetor" />
-            <label class="form-label" for="form2Example1">Director</label>  
-<!-- Producer input -->  
+            <form:input type="name" class="form-control" id="startDate" path="startDate" placeholder="Enter Start Date" />
+            <label class="form-label" for="form2Example1">Start Date</label>  
+<!-- Expiration Date input -->  
         <div class="form-outline mb-4"></div>
-            <form:input type="name" class="form-control" id="" path="" placeholder="Enter Producer" />
-            <label class="form-label" for="form2Example1">Producer</label>  
-<!-- Synopsis input -->   
+            <form:input type="name" class="form-control" id="expirationDate" path="expirationDate" placeholder="Enter Expiration Date" />
+            <label class="form-label" for="form2Example1">Expiration Date</label>  
+<!-- Code input -->   
         <div class="form-outline mb-4"></div>
-            <form:input type="name" class="form-control" id="" path="" placeholder="Enter Synopsis" />
-            <label class="form-label" for="form2Example1">Synopsis</label> 
-<!-- Trailer Picture input -->    
-        <div class="form-outline mb-4"></div>
-            <form:input type="name" class="form-control" id="" path="" placeholder="Upload Trailer Picture" />
-            <label class="form-label" for="form2Example1">Trailer Picture</label>  
-<!-- Movie Trailer input -->     
-        <div class="form-outline mb-4"></div>
-            <form:input type="name" class="form-control" id="" path="" placeholder="Enter URL for the Movie Trailer" />
-            <label class="form-label" for="form2Example1">Movie Trailer</label> 
-<!-- Film Rating input -->  
-        <div class="form-outline mb-4"></div>
-            <form:input type="name" class="form-control" id="" path="" placeholder="Enter Film Rating Code" />
-            <label class="form-label" for="form2Example1">Film Rating Code</label>    
+            <form:input type="name" class="form-control" id="code" path="code" placeholder="Enter Code" />
+            <label class="form-label" for="form2Example1">Code</label> 
+
             <br>
             <br>
 

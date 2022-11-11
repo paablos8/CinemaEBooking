@@ -69,15 +69,6 @@ public class User {
         this.lastName = lastName;
     }
 
-    public boolean isPromotionSubscribe() {
-        return promotionSubscribe;
-    }
-
-
-    public void setPromotionSubscribe(boolean promotionSubscribe) {
-        this.promotionSubscribe = promotionSubscribe;
-    }
-
     public long getPhone() {
         return phone;
     }
@@ -145,4 +136,12 @@ public class User {
         this.status = status;
     }
 
+    public boolean getPromotionSubscribe() {
+        return promotionSubscribe;
+    }
+
+    public void setPromotionSubscribe(boolean promotionSubscribe) {
+        this.promotionSubscribe = promotionSubscribe;
+    }
+ 
 }

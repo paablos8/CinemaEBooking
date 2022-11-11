@@ -28,4 +28,23 @@ public class AddPromotionController {
     model.addAttribute("addPromotionForm", new Promotion());
         return "addPromotion";
     }    
+
+    //Add new Promotion
+@RequestMapping(value = "/addPromotion", method = RequestMethod.POST)
+public Object addPromotion (@ModelAttribute("addPromotionForm") Promotion addPromotionForm, BindingResult bindingResult,
+Model model, HttpServletRequest request) throws UnsupportedEncodingException, MBeanException {
+
+                                    String promotionName = addPromotionForm.getPromotionName();
+                                    String description = addPromotionForm.getDescription();
+                                    String startDate = addPromotionForm.getStartDate();
+                                    String expirationDate = addPromotionForm.getExpirationDate();
+                                    String code = addPromotionForm.getCode(); 
+
+        
+        System.out.println("Movie created with title:" + promotionName);
+
+
+
+    return "redirect:/editPromotion";
+}
 }
