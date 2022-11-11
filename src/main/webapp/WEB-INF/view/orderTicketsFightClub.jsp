@@ -235,8 +235,9 @@ h5{
   Tuesday : 7pm 8pm 9pm <br>
   Thursday: 7pm 8pm 9pm <br>
   Friday  : 7pm 8pm 9pm <br>
-  Saturday: 7pm 8pm 9pm <br>
-  
+  Saturday: 7pm 8pm 9pm <br> <br>
+Rating: R <br><br>
+  <a href="MovieDetailsFightClub" target="_blank">Movie Details Here</a><br>
 </h5>
 
 
