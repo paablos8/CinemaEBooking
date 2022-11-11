@@ -212,8 +212,8 @@
                 <label class="form-label" for="form2Example1">State</label>  
 
             <div class="form-outline mb-4"></div>
-                <form:input type="text" class="form-control" id="zipcode" path="zipcode" placeholder="Enter zipcode" />
-                <label class="form-label" for="form2Example1">Zipcode</label>  
+                <form:input type="text" class="form-control" id="zipCode" path="zipCode" placeholder="Enter zipcode" />
+                <label class="form-label" for="form2Example1">Zip Code</label>  
 
 
                 

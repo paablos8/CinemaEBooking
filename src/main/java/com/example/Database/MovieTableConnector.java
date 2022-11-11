@@ -46,6 +46,20 @@ class MovieTableConnector extends SQL_GetSet
         return getMany(category,"Movie Titles","Category","Title");
     }
 
+    String [] getTitlesOnDay(String date)
+    {
+        Object [] temp = getMany(date,"Showtimes","Show Date","Movie Title");
+        Integer [] temp2 = Arrays.copyOf(temp,temp.length,Integer[].class);
+        int [] ids = Arrays.stream(temp2).mapToInt(Integer::intValue).toArray();
+        String [] toRet = new String [ids.length];
+
+        for (int i = 0; i < ids.length; i++)
+        {
+            toRet[i] = get(ids[i],"Movie Titles","Movie ID","Movie Title");
+        }
+        return toRet;
+    }
+
     String [] getAllTitles()
     {
         Object [] temp = getAll("Movie Titles","Title");

@@ -77,6 +77,7 @@ public class EditProfileController {
         db.changeStateRegion(userId, user.getState());
         db.changeCountry(userId, user.getCountry());
         db.changePromotionOpinion(userId, user.getPromotionSubscribe());
+        db.changeZipCode(userId, user.getZipCode());
 
 
         System.out.println("Following changes made:");
@@ -88,6 +89,7 @@ public class EditProfileController {
         System.out.println("New State: " + db.getStateRegion(userId));
         System.out.println("New Country: " + db.getCountry(userId));
         System.out.println("New PromotionSubscribe: " + db.getPromoOp(userId));
+        System.out.println("New Zip Code: " + db.getZipCode(userId));
 
         
         return "editProfile";

@@ -260,6 +260,10 @@
     <div class="inputs"> 
       <span>City</span> 
       <input type="text" readonly value="${currentUser.city}"> </div> 
+
+    <div class="inputs"> 
+        <span>Zip Code</span>
+        <input type="text" readonly value="${currentUser.zipCode}"> </div>
      
     <div class="inputs"> 
       <span>State</span>

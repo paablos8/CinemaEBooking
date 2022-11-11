@@ -9,12 +9,11 @@ class PromotionTableConnector extends SQL_GetSet
     private Connection conn;
     PromotionTableConnector(Connection conn){super(conn); this.conn = conn;}
 
-    boolean createDraftPromotion(String dateStart, String dateEnd, int percentOff)
+    int createDraftPromotion(String dateStart, String dateEnd, int percentOff)
     {
-        if(!(verifyDate(dateEnd)&&verifyDate(dateStart)&&(percentOff < 100)&&(percentOff>0)))
-        {
-            return false;
-        }
+        if(!(verifyDate(dateEnd))) return -1;
+        if(!verifyDate(dateStart)) return -2;
+        if((percentOff < 100)&&(percentOff>0)) return -3;
 
         try(Statement stmt = conn.createStatement())
         {
@@ -26,7 +25,7 @@ class PromotionTableConnector extends SQL_GetSet
         {
             e.printStackTrace();
         }
-        return true;
+        return 0;
     }
 
     boolean isDraftPromotion(String startDate,String endDate)

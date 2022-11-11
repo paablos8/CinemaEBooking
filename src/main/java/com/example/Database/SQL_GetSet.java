@@ -42,14 +42,14 @@ class SQL_GetSet extends Encryptor
         return ret;
     }
 
-    <T,S> boolean exists(S id, String table, String idField, String eField)
+    <T,S> boolean exists(S id, String table, String idField)
     {
         T ret = null;
         ResultSet rs;
 
         try {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT [" + idField + "] , [" + eField + "] FROM " + table);
+            rs = stmt.executeQuery("SELECT [" + idField + "] FROM [" + table+"]");
 
             while (rs.next())
             {
