@@ -156,29 +156,8 @@
 </section>
 <section>
     <div class='coupon-info-content'>
-        <table class='half-input-table'>
-          <tr><td>To add or edit, please enter new promotion information: </td></tr>
-        </table>
-        
-        Coupon Title
-        <input class='input-field'></input>
-        Description
-        <input class='input-field'></input>
-        <table class='half-input-table'>
-          <tr>
-            <td> Discount Percentage 
-              <input class='input-field'></input>
-            </td>
-            <td> Start date
-                <input class='input-field'></input>
-              </td>
-            <td>End date
-              <input class='input-field'></input>
-            </td>
-        
-          </tr>
-        </table>
-        <button class='add-btn'>Add New Coupon</button>
+    
+        <a href="addPromotion"><button class='add-btn'>Add New Promotion</button></a>
 
       </div>
 </section>
