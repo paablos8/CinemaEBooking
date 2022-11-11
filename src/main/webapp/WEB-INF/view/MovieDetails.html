@@ -91,16 +91,34 @@
 .movieDET{
         border-radius:25px;
         background-color:orange;
-        width:50%;
+        width:100%;
         padding: 14px 20px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 15px;
         padding-bottom: 5px;
+        font-size: 25px;
 
         text-align:center;
         float:left;
-      }
+}
+        .movieDET .inputs span{font-size:24px;}
+        .movieDET .inputs input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
+        .movieDET .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+        .movieDET .inputs span{float: left;}
+        .movieDET .inputs input{float:center;}
+        .movieDET .inputs2 span{font-size: 24px;}
+        .movieDET .inputs2 input{height:40px;padding:0px 10px;font-size:14px;box-shadow:none;outline:none}
+        .movieDET .inputs2 input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+        .movieDET .inputs2 span{float: left;}
+        .movieDET .inputs2 input{float:center;}
+        .movieDET .inputs3 span{font-size: 20px;}
+        .movieDET .inputs3 input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
+        .movieDET .inputs3 input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+        .movieDET .inputs3 span{float: left;}
+        .movieDET .inputs3 input{float:center;}
+      
+
 
 .flex-container > div {
   background: orange;
@@ -256,28 +274,28 @@ h5{
 <br>
 <div class="inputs"> 
   <span>Cast:</span> 
-  <input type="text" readonly value="${.}"/> </div> 
+  <input type="text" readonly value="${.}"/> </div> <br><br>
   
 <div class="inputs">
   <span>Director:</span> 
-  <input type="text" readonly value="${.}"> </div> 
+  <input type="text" readonly value="${.}"> </div> <br><br>
   
 <div class="inputs"> 
   <span>Producer:</span> 
-  <input type="text" readonly value="${.}"> </div> 
+  <input type="text" readonly value="${.}"> </div> <br><br>
 
-<div class="inputs"> 
-    <span>Synopsis:</span>
-    <input type="text" readonly value="${.}"> </div>
-    
 <div class="inputs"> 
       <span>Reviews:</span> 
-      <input type="text" readonly value="${.}"> </div> 
+      <input type="text" readonly value="${.}"> </div> <br><br>
     
-<div class="inputs"> 
-        <span>MPAA-US film rating code:</span>
-        <input type="text" readonly value="${.}"> </div>
+<div class="inputs3"> 
+        <span>MPAA-US code:</span>
+        <input type="text" readonly value="${.}"> </div> <br><br>
 
+<div class="inputs2"> 
+    <span>Synopsis:</span>
+    <input type="text" readonly value="${.}"> </div> <br><br>
+  
     
         
           </a> 
