@@ -16,6 +16,7 @@ public class DatabaseConnector
     private AddressTableConnector atc = null;
     private MovieTableConnector mtc = null;
     private PromotionTableConnector ptc = null;
+    private ShowtimeTableConnector stc = null;
 
     /**
      * Creates DatabaseConnector object and connects to server.
@@ -41,6 +42,7 @@ public class DatabaseConnector
             atc = new AddressTableConnector(conn);
             mtc = new MovieTableConnector(conn);
             ptc = new PromotionTableConnector(conn);
+            stc = new ShowtimeTableConnector(conn);
         }
     }
 
@@ -175,4 +177,12 @@ public class DatabaseConnector
     {return ptc.changeEndDate(startDate,oldEndDate,newEndDate);}
     public void activatePromotion(String startDate,String endDate)
     {ptc.activatePromotion(startDate,endDate);}
+
+    //Showtime Methods
+    public int createNewShowtime(String movieTitle,int showroomID, String showDate, String showTime)
+    {return stc.createNewShowtime(movieTitle,showroomID,showDate,showTime);}
+    public int[] getAllShowtimeIDs(){return stc.getAllShowtimeIDs();}
+    public int getShowroomID (String showtimeID){return stc.getShowroomID(showtimeID);}
+    public String getShowDate (String showtimeID){return stc.getShowDate(showtimeID);}
+    public String getShowTime (String showtimeID){return stc.getShowTime(showtimeID);}
 }
