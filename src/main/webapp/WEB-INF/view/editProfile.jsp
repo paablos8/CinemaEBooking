@@ -243,11 +243,9 @@
 
         <div class="containerCheck">
           <div class="form-check">
-            <input type="checkbox" path="promotionSubscribe" />
+            <form:checkbox path="promotionSubscribe" />
             <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
-            <br><br>
-          
-          </div>
+        </div>
           </div>
       </div>
     
