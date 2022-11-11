@@ -22,7 +22,7 @@ public class DatabaseConnector
      */
     public DatabaseConnector()
     {
-        String serverName = "4.tcp.ngrok.io:18774";
+        String serverName = "4.tcp.ngrok.io:13759";
         String loginCredentials = ";user=sa;password=Team_C2;";
         String settings = "encrypt=true;trustServerCertificate=true";
         String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
