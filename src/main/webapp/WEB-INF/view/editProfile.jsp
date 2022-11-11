@@ -226,6 +226,13 @@
             <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
         </div>
           </a> 
+
+        <div class="containerCheck">
+            <div class="form-check">
+              <form:checkbox path="promotionSubscribe" />
+              <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
+          </div>
+        </div>
 </div>
 
     <div class="registration2">
@@ -233,7 +240,10 @@
         <label class="form-label" for="form2Example1">Street</label> 
         
         <form:input type="name" class="form-control" id="city" path="city" placeholder="${currentUser.city}" />
-        <label class="form-label" for="form2Example1">City</label> 
+        <label class="form-label" for="form2Example1">City</label>
+        
+        <form:input type="name" class="form-control" id="zipCode" path="zipCode" placeholder="${currentUser.zipCode}" />
+        <label class="form-label" for="form2Example1">Zip Code</label> 
         
         <form:input type="name" class="form-control" id="state" path="state" placeholder="${currentUser.state}" />
         <label class="form-label" for="form2Example1">State</label> 
@@ -241,12 +251,7 @@
         <form:input type="name" class="form-control" id="country" path="country" placeholder="${currentUser.country}" />
         <label class="form-label" for="form2Example1">Country</label> 
 
-        <div class="containerCheck">
-          <div class="form-check">
-            <form:checkbox path="promotionSubscribe" />
-            <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
-        </div>
-          </div>
+        
       </div>
     
 <br><br><br><br><br><br>   
