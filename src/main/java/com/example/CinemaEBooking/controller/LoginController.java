@@ -73,6 +73,8 @@ public class LoginController {
             currentUser.setLastName(db.getUserLastName(userId));
             currentUser.setStatus(db.getUserStatus(userId));
             currentUser.setStreet(db.getStreetAddress(userId));
+            currentUser.setPhone(db.getUserPhoneNumber(userId));
+            currentUser.setState(db.getStateRegion(userId));
             currentUser.setCity(db.getCityCounty(userId));
             currentUser.setCountry(db.getCountry(userId));
 

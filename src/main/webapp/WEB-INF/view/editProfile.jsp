@@ -210,20 +210,22 @@
 <div class="registration1">
     <%--@elvariable id="login" type=""--%>
     <form:form method="POST" modelAttribute="editAccountForm">
+
+
         <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="${currentUser.firstName}" />
         <label class="form-label" for="form2Example1">First Name</label> 
     
         <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="${currentUser.lastName}" />
         <label class="form-label" for="form2Example1">Last Name</label> 
-    
+
+        <form:input type="name" class="form-control" id="phone" path="phone" placeholder="${currentUser.phone}" />
+        <label class="form-label" for="form2Example1">Phone Number</label> 
+
         <a href="forgotPassword">
           <div class="buttonPassword">
             <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
         </div>
           </a> 
-
-        <form:input type="name" class="form-control" id="phone" path="phone" placeholder="${currentUser.phone}" />
-        <label class="form-label" for="form2Example1">Phone Number</label> 
 </div>
 
     <div class="registration2">
@@ -236,15 +238,25 @@
         <form:input type="name" class="form-control" id="state" path="state" placeholder="${currentUser.state}" />
         <label class="form-label" for="form2Example1">State</label> 
 
-        <form:input type="name" class="form-control" id="" path="" placeholder="Need to implement ZIP" />
-        <label class="form-label" for="form2Example1">Zip</label> 
+        <form:input type="name" class="form-control" id="country" path="country" placeholder="${currentUser.country}" />
+        <label class="form-label" for="form2Example1">Country</label> 
+
+        <div class="containerCheck">
+          <div class="form-check">
+            <input type="checkbox" path="promotionSubscribe" />
+            <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
+            <br><br>
+          
+          </div>
+          </div>
+      </div>
     
-</div>
-<br><br>  
+<br><br><br><br><br><br>   
 <!-- Submit button -->
    <div class="buttonCenter">
    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
   </form:form>
+
   
 <div class="footer">
   <br>

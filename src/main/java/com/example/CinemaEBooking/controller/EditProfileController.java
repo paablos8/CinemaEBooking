@@ -53,7 +53,9 @@ public class EditProfileController {
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
         int userId = currentUser.getUserId();
+        long phone = db.getUserPhoneNumber(userId);
         System.out.println("This is the user ID: " + userId);
+        System.out.println("This is the phone number:" + phone);
 
         return "editProfile";
     }
@@ -73,7 +75,7 @@ public class EditProfileController {
         db.changeStreetAddress(userId, user.getStreet());
         db.changeCityCounty(userId, user.getCity());
         db.changeStateRegion(userId, user.getState());
-        //db.changeZipCode(userId, user.getZip());
+        db.changeCountry(userId, user.getCountry());
 
         System.out.println("Following changes made:");
         System.out.println("New First Name: " + db.getUserFirstName(userId));
@@ -82,6 +84,8 @@ public class EditProfileController {
         System.out.println("New Street: " + db.getStreetAddress(userId));
         System.out.println("New City: " + db.getCityCounty(userId));
         System.out.println("New State: " + db.getStateRegion(userId));
+        System.out.println("New Country: " + db.getCountry(userId));
+
         
         return "editProfile";
     }

@@ -216,14 +216,7 @@
     <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
 </a>
 </div>
-<div class="containerCheck">
-<div class="form-check">
-  <input type="checkbox" path="promotionSubscribe" />
-  <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
-  <br><br>
 
-</div>
-</div>
 
 
 <div class="container1">
@@ -365,9 +358,6 @@
 </div>
 </div>
 <br>
-<div class="buttonCenter">
-<form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
-</div>  
 
 <div class="footer">
   <br>
