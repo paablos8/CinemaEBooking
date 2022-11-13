@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonAppend.Prop;
 
 public class PaymentCard {
     private String nameOnCard;
-    private int cardNumber;
+    private Long cardNumber;
     private int cvv;
     private String expirationDate;
     private String street;
@@ -65,11 +65,11 @@ public class PaymentCard {
         this.nameOnCard = nameOnCard;
     }
 
-    public int getCardNumber() {
+    public Long getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(int cardNumber) {
+    public void setCardNumber(Long cardNumber) {
         this.cardNumber = cardNumber;
     }
 
