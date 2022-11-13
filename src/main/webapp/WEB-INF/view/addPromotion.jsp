@@ -190,10 +190,10 @@
         <div class="form-outline mb-4"></div>
             <form:input type="name" class="form-control" id="promotionName" path="promotionName" placeholder="Enter Promotion Title" />
             <label class="form-label" for="form2Example1">Promotion Name</label>    
-    <!-- Description input -->
+    <!-- Discount input -->
         <div class="form-outline mb-4"></div>
-            <form:input type="text" class="form-control" id="description" path="description" placeholder="Enter Description" />
-            <label class="form-label" for="form2Example1">Description</label>    
+            <form:input type="text" class="form-control" id="percentOff" path="percentOff" placeholder="Enter Discount (in %)" />
+            <label class="form-label" for="form2Example1"> DIscount </label>    
 <!-- Start Date input -->
         <div class="form-outline mb-4"></div>
             <form:input type="name" class="form-control" id="startDate" path="startDate" placeholder="Enter Start Date" />

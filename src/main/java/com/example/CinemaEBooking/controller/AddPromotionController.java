@@ -6,6 +6,9 @@ import java.io.UnsupportedEncodingException;
 import javax.management.MBeanException;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -20,7 +23,11 @@ import com.example.Database.DatabaseConnector;
 public class AddPromotionController {
 
     private DatabaseConnector db = new DatabaseConnector();
-
+    //private SendEMailController emailController = new SendEMailController();
+   
+    @Autowired
+    private JavaMailSender javaMailSender;
+    String[] promotionMailAddresses;
     
 
     @RequestMapping(value = "/addPromotion", method = RequestMethod.GET)
@@ -35,16 +42,40 @@ public Object addPromotion (@ModelAttribute("addPromotionForm") Promotion addPro
 Model model, HttpServletRequest request) throws UnsupportedEncodingException, MBeanException {
 
                                     String promotionName = addPromotionForm.getPromotionName();
-                                    String description = addPromotionForm.getDescription();
+                                    int percentOff = addPromotionForm.getPercentOff();
                                     String startDate = addPromotionForm.getStartDate();
                                     String expirationDate = addPromotionForm.getExpirationDate();
                                     String code = addPromotionForm.getCode(); 
-
+                                         
         
-        System.out.println("Movie created with title:" + promotionName);
+        db.createDraftPromotion(startDate, expirationDate, percentOff);
+          System.out.println("Promotion created with starting date: " + startDate + " and Expiration Date: " + expirationDate);
+          System.out.println("The discount is : -" + percentOff);
+
+        //emailController.sendPromotionEmail(startDate, expirationDate, percentOff);
+        //sendPromotionEmail(startDate, expirationDate, percentOff);
+
+        return "redirect:/editPromotion";
+    }
 
 
+    void sendPromotionEmail(String startDate, String expirationDate, int percentOff) {
 
-    return "redirect:/editPromotion";
+        SimpleMailMessage msg = new SimpleMailMessage();
+        promotionMailAddresses = db.getAllPromotionEmails();
+    
+        
+        for (int i=0; i < promotionMailAddresses.length; i++) {
+            System.out.println(promotionMailAddresses[i]);
+            msg.setTo(promotionMailAddresses[i]);
+
+            msg.setSubject("New Promotion available");
+            msg.setText("A new promotion has just been released!      It is active from " + startDate + " until " + expirationDate + "!  Make sure to get your -" + percentOff + "% when buying your tickets!");
+        
+            javaMailSender.send(msg);
+        }
+    }
+    
+    
 }
-}
+

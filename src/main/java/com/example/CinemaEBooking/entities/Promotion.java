@@ -2,7 +2,7 @@ package com.example.CinemaEBooking.entities;
 
 public class Promotion {
     private String promotionName;
-    private String description;
+    private int percentOff;
     private String startDate;
     private String expirationDate;
     private String code;
@@ -18,12 +18,12 @@ public class Promotion {
         this.promotionName = promotionName;
     }
 
-    public String getDescription() {
-        return description;
+    public int getPercentOff() {
+        return percentOff;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPercentOff(int percentOff) {
+        this.percentOff = percentOff;
     }
 
     public String getStartDate() {
