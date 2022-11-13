@@ -54,7 +54,7 @@ public class ShowtimeTableConnector extends SQL_GetSet
      */
     int[] getAllShowtimeIDs()
     {
-        Object[] temp = getAll("Showtimes","ShowtimeID");
+        Object[] temp = getAll("Showtimes","Showtime ID");
         Integer [] i =  Arrays.copyOf(temp,temp.length,Integer[].class);
         return Arrays.stream(i).mapToInt(Integer::intValue).toArray();
     }
