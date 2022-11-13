@@ -17,15 +17,17 @@ class PromotionTableConnector extends SQL_GetSet
      * @return -1 if start date invalid, -2 if end date invalid
      * -3 if percentage invalid, 0 if it worked
      */
-    int createDraftPromotion(String dateStart, String dateEnd, int percentOff)
+    int createDraftPromotion(String dateStart, String dateEnd, int percentOff, String code)
     {
         if(!(verifyDate(dateEnd))) return -1;
         if(!verifyDate(dateStart)) return -2;
         if((percentOff < 100)&&(percentOff>0)) return -3;
+        if(!verifyString(code)) return -4;
 
         try(Statement stmt = conn.createStatement())
         {
-            String SQL = "INSERT INTO Promotions VALUES ('"+dateStart+"','"+dateEnd+"',"+percentOff+","+false+")";
+            String SQL = "INSERT INTO Promotions VALUES ('"+dateStart+"','"+
+                    dateEnd+"',"+percentOff+","+false+",'"+code+"')";
             stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
@@ -38,60 +40,65 @@ class PromotionTableConnector extends SQL_GetSet
 
     /**
      * Returns true if the promotion is still a draft
-     * @param startDate start date of promotion
-     * @param endDate end date of promotion
+     * @param code code for promotion
      * @return true if a draft
      */
-    boolean isDraftPromotion(String startDate,String endDate)
+    boolean isDraftPromotion(String code)
     {
-        int id = getComboKey(startDate,endDate,"Promotions","Date Start","Date End","Promotion ID");
-        return !(boolean)(get(id,"Promotions","Promotion ID","isActive"));
+        return !(boolean)(get(code,"Promotions","Code","isActive"));
     }
 
     /**
      * Sets a promtion to active. Irreversable
-     * @param startDate start date of promotion
-     * @param endDate end date of promotion
+     * @param code start date of promotion
      */
-    void activatePromotion(String startDate,String endDate)
+    void activatePromotion(String code)
     {
-        int id = getComboKey(startDate,endDate,"Promotions","Date Start","Date End","Promotion ID");
-        update(id,"Promotions","Promotion ID","isActive",true);
+        update(code,"Promotions","Code","isActive",true);
     }
 
     /**
-     * Promotions have a combination-key, start and end date
-     * @return string array. [i][i] will refer to one date
+     * Promotion codes are a primary key
+     * @return string array of codes
      */
-    String[][] getAllStartEndDates()
+    String[] getAllPromotionCodes()
     {
-        String [] starts = getAll("Promotions","Date Start");
-        String [] ends = getAll("Promotions","Date End");
-
-        String [][] ret = new String [starts.length][2];
-
-        for (int i = 1; i < starts.length;i++)
-        {
-            ret [i][0] = starts[i];
-            ret [i][1] = ends[i];
-        }
-
-        return ret;
+        return getAll("Promotions","Code");
     }
 
     /**
      * Returns the percentage off of a promotion
-     * @param startDate start date of promotion
-     * @param endDate end date of promotion
+     * @param code code for promotion
      * @return the percentage off, as an int 0 - 100
      */
-    int getPercentOff (String startDate, String endDate)
+    int getPercentOff (String code)
     {
-        return getComboKey(startDate,endDate,"Promotions","Date Start","Date End","Percent Off");
+        return get(code,"Promotions","Code","Percent Off");
     }
-    boolean changePercentOff (String startDate, String endDate, int percentOff)
+
+    /**
+     * Returns the start date of a promotion
+     * @param code code for promotion
+     * @return the start date
+     */
+    String getDateStart (String code) {return get(code,"Promotions","Code","Date Start");}
+
+    /**
+     * Returns the end date of a promotion
+     * @param code code for promotion
+     * @return the end date
+     */
+    String getDateEnd (String code) {return get(code,"Promotions","Code","Date End");}
+
+    /**
+     * Changes percent off
+     * @param code code for promotion
+     * @param percentOff new percent off
+     * @return true if it worked
+     */
+    boolean changePercentOff (String code, int percentOff)
     {
-        if(getComboKey(startDate,endDate,"Promotions","Date Start","Date End","isActive"))
+        if(get(code,"Promotions","Code","isActive"))
         {
             return false;
         }
@@ -101,20 +108,18 @@ class PromotionTableConnector extends SQL_GetSet
             return false;
         }
 
-        return updateComboKey(startDate,endDate,"Promotions","Date Start","Date End",
-                "Percent Off",percentOff);
+        return update(code,"Promotions","Code","Percent Off",percentOff);
     }
 
     /**
-     * 
-     * @param oldStartDate
-     * @param endDate
-     * @param newStartDate
-     * @return
+     * Changes Start Date
+     * @param code code for promotion
+     * @param newStartDate new start date
+     * @return true if it worked
      */
-    boolean changeStartDate(String oldStartDate, String endDate, String newStartDate)
+    boolean changeStartDate(String code, String newStartDate)
     {
-        if(getComboKey(oldStartDate,endDate,"Promotions","Date Start","Date End","isActive"))
+        if(get(code,"Promotions","Code","isActive"))
         {
             return false;
         }
@@ -124,20 +129,18 @@ class PromotionTableConnector extends SQL_GetSet
             return false;
         }
 
-        return updateComboKey(oldStartDate,endDate,"Promotions","Date Start","Date End",
-                "Date Start",newStartDate);
+        return update(code,"Promotions","Code","Date Start",newStartDate);
     }
 
     /**
      * Changes the end date of a draft promotion
-     * @param startDate start date of promotion
-     * @param oldEndDate old end date of promotion
+     * @param code code for promotion
      * @param newEndDate new end date of promotion
      * @return true if it worked
      */
-    boolean changeEndDate(String startDate, String oldEndDate, String newEndDate)
+    boolean changeEndDate(String code, String newEndDate)
     {
-        if(getComboKey(startDate,oldEndDate,"Promotions","Date Start","Date End","isActive"))
+        if(get(code,"Promotions","Code","isActive"))
         {
             return false;
         }
@@ -147,7 +150,27 @@ class PromotionTableConnector extends SQL_GetSet
             return false;
         }
 
-        return updateComboKey(startDate,oldEndDate,"Promotions","Date Start","Date End",
-                "Date Start",newEndDate);
+        return update(code,"Promotions","Code","Date Start",newEndDate);
+    }
+
+    /**
+     * Changes the code of a draft promotion
+     * @param oldCode old code for promotion
+     * @param newCode new code of promotion
+     * @return true if it worked
+     */
+    boolean changeCode(String oldCode, String newCode)
+    {
+        if(get(oldCode,"Promotions","Code","isActive"))
+        {
+            return false;
+        }
+
+        if(!verifyString(newCode))
+        {
+            return false;
+        }
+
+        return update(oldCode,"Promotions","Code","Code",newCode);
     }
 }

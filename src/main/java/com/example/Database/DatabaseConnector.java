@@ -171,21 +171,18 @@ public class DatabaseConnector
     public boolean changeDuration(String title,int duration){return mtc.changeDuration(title,duration);}
 
     //Promotion Methods
-    public int createDraftPromotion(String dateStart, String dateEnd, int percentOff)
-    {return ptc.createDraftPromotion(dateStart,dateEnd,percentOff);}
-    public int getPercentOff (String startDate, String endDate)
-    {return ptc.getPercentOff(startDate,endDate);}
-    public boolean isDraftPromotion(String startDate,String endDate)
-    {return ptc.isDraftPromotion(startDate,endDate);}
-    public String[][] getAllStartEndDates() {return ptc.getAllStartEndDates();}
-    public boolean changePercentOff (String startDate, String endDate, int percentOff)
-    {return ptc.changePercentOff(startDate,endDate,percentOff);}
-    public boolean changeStartDate(String oldStartDate, String endDate, String newStartDate)
-    {return ptc.changeStartDate(oldStartDate,endDate,newStartDate);}
-    public boolean changeEndDate(String startDate, String oldEndDate, String newEndDate)
-    {return ptc.changeEndDate(startDate,oldEndDate,newEndDate);}
-    public void activatePromotion(String startDate,String endDate)
-    {ptc.activatePromotion(startDate,endDate);}
+    public int createDraftPromotion(String dateStart, String dateEnd, int percentOff, String code)
+    {return ptc.createDraftPromotion(dateStart,dateEnd,percentOff,code);}
+    public int getPercentOff (String code){return ptc.getPercentOff(code);}
+    public String getDateStart (String code){return ptc.getDateStart(code);}
+    public String getDateEnd(String code){return ptc.getDateEnd(code);}
+    public boolean isDraftPromotion(String code){return ptc.isDraftPromotion(code);}
+    public String[] getAllPromotionCodes() {return ptc.getAllPromotionCodes();}
+    public boolean changePercentOff (String code, int percentOff){return ptc.changePercentOff(code,percentOff);}
+    public boolean changeStartDate(String code, String newStartDate){return ptc.changeStartDate(code,newStartDate);}
+    public boolean changeEndDate(String code, String newEndDate){return ptc.changeEndDate(code,newEndDate);}
+    public boolean changeCode(String oldCode, String newCode){return ptc.changeCode(oldCode,newCode);}
+    public void activatePromotion(String code){ptc.activatePromotion(code);}
 
     //Showtime Methods
     public int createNewShowtime(String movieTitle,int showroomID, String showDate, String showTime)
