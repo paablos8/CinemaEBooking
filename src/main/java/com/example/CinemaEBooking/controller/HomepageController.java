@@ -37,9 +37,7 @@ public class HomepageController {
             model.addAttribute(name, title);
             model.addAttribute(name + "_img",db.getPosterURL(title));
             model.addAttribute(name + "_trailer",db.getTrailerURL(title));
-          }
-        
-        
+          } 
 
         return "homePage";
     }
@@ -48,11 +46,5 @@ public class HomepageController {
     public String registrationConfirmation(){
 
         return "registrationConfirmation";
-    }
-
-    @RequestMapping("/orderTicketsFightClub")
-    public String orderTicks(){
-
-        return "orderTicketsFightClub";
     }
 }
