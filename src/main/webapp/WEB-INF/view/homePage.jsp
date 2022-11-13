@@ -155,14 +155,14 @@ h5{
   width="150" height="225"></div>
 <h5>${active0}<br> <br>
   <a href="${active0_trailer}" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTickets" target="_blank">Order Tickets Here</a>
+  <br><a href="orderTickets?movie=${active0}" target="_blank">Order Tickets Here</a>
 </h5>
 
 <div><img src="${active1_img}" alt="image not found"
   width="150" height="225"></div>
 <h5>${active1}<br> <br>
    <a href="${active1_trailer}" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTickets" target="_blank">Order Tickets Here</a>
+  <br><a href="orderTickets?movie=${active1}" target="_blank">Order Tickets Here</a>
 </div>
 
 
@@ -171,7 +171,7 @@ h5{
     width="150" height="225"></div>  
     <h5>${active2} <br> <br>
     <a href="${active2_trailer}" target="_blank">>Movie Trailer</a>
-    <br><a href="orderTicketsFightClub" target="_blank">Order Tickets Here</a>
+    <br><a href="orderTickets?movie=${active2}" target="_blank">Order Tickets Here</a>
   </h5>
 
 
@@ -179,7 +179,7 @@ h5{
     width="150" height="225"></div>
   <h5>${active3} <br> <br>  
     <a href="${active3_trailer}" target="_blank">>Movie Trailer</a>
-    <br><a href="orderTickets" target="_blank">Order Tickets Here</a>
+    <br><a href="orderTickets?movie=${active3}" target="_blank">Order Tickets Here</a>
   </h5>
 
 
@@ -187,7 +187,7 @@ h5{
     width="150" height="225"></div>
   <h5>${active4}<br> <br>
     <a href="${active4_trailer}" target="_blank">>Movie Trailer</a>
-    <br><a href="orderTickets" target="_blank">Order Tickets Here</a>
+    <br><a href="orderTickets?movie=${active4}" target="_blank">Order Tickets Here</a>
   </div>
 
 
