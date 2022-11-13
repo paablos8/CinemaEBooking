@@ -211,7 +211,7 @@
             <br>
 
  <!-- Submit button -->
- <form:button type="submit" class="btn btn-secondary btn-block mb-4">Add new Promotion</form:button>
+ <form:button type="submit" class="btn btn-secondary btn-block mb-4">Add new Promotion & send eMail to customers</form:button>
 
   
     

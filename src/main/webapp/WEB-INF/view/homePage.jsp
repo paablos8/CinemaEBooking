@@ -123,7 +123,6 @@ h5{
 
 
 
-
     </style>
   </head>
 
@@ -152,40 +151,44 @@ h5{
 </div>
 
 <div class="flex-container">
-<div><img src="https://m.media-amazon.com/images/I/81D+KJkO4SL._AC_UF894,1000_QL80_.jpg" alt="image not found"
+<div><img src="${activeMovie1.imageUrl}" alt="image not found"
   width="150" height="225"></div>
-<h5>Fight Club <br> <br>
-  Showtimes <br> <br>
-  Tuesday : 7pm 8pm 9pm <br>
-  Thursday: 7pm 8pm 9pm <br>
-  Friday  : 7pm 8pm 9pm <br>
-  Saturday: 7pm 8pm 9pm <br>
-  <a href="https://www.youtube.com/watch?v=qtRKdVHc-cE" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTicketsFightClub" target="_blank">Order Tickets Here</a>
-</h5>
-<div><img src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="image not found"
-  width="150" height="225"></div>
-<h5>The Godfather <br> <br>
-  Showtimes <br> <br>
-  Tuesday : 7pm 8pm 9pm <br>
-  Thursday: 7pm 8pm 9pm <br>
-  Friday  : 7pm 8pm 9pm <br>
-  Saturday: 7pm 8pm 9pm <br>
-  <a href="https://www.youtube.com/watch?v=UaVTIH8mujA" target="_blank">>Movie Trailer</a>
+<h5>${activeMovie1.title}<br> <br>
+  <a href="${activeMovie1.trailerURL}" target="_blank">>Movie Trailer</a>
   <br><a href="orderTickets" target="_blank">Order Tickets Here</a>
 </h5>
-<div><img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg" alt="image not found"
+
+<div><img src="${activeMovie2.imageUrl}" alt="image not found"
   width="150" height="225"></div>
-<h5>The Dark Knight<br> <br>
-  Showtimes <br> <br>
-  Tuesday : 7pm 8pm 9pm <br>
-  Thursday: 7pm 8pm 9pm <br>
-  Friday  : 7pm 8pm 9pm <br>
-  Saturday: 7pm 8pm 9pm <br>
-  <a href="https://www.youtube.com/watch?v=EXeTwQWrcwY" target="_blank">>Movie Trailer</a>
+<h5>${activeMovie2.title}<br> <br>
+   <a href="${activeMovie2.trailerUrl}" target="_blank">>Movie Trailer</a>
   <br><a href="orderTickets" target="_blank">Order Tickets Here</a>
 </div>
 
+
+<div class="flex-container">
+  <div><img src="${activeMovie3.imageUrl}" alt="image not found"
+    width="150" height="225"></div>  
+    <h5>${activeMovie3.title} <br> <br>
+    <a href="${activeMovie3.trailerUrl}" target="_blank">>Movie Trailer</a>
+    <br><a href="orderTicketsFightClub" target="_blank">Order Tickets Here</a>
+  </h5>
+
+
+  <div><img src="${activeMovie4.imageUrl}" alt="image not found"
+    width="150" height="225"></div>
+  <h5>${activeMovie4.title} <br> <br>  
+    <a href="${activeMovie4.imageUrl}" target="_blank">>Movie Trailer</a>
+    <br><a href="orderTickets" target="_blank">Order Tickets Here</a>
+  </h5>
+
+
+  <div><img src="${activeMovie5.imageUrl}" alt="image not found"
+    width="150" height="225"></div>
+  <h5>${activeMovie5.title}<br> <br>
+    <a href="${activeMovie5.trailerUrl}" target="_blank">>Movie Trailer</a>
+    <br><a href="orderTickets" target="_blank">Order Tickets Here</a>
+  </div>
 
 
 <div class="title">
@@ -196,28 +199,43 @@ h5{
 
 
 <div class="flex-container">
-  <div><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg" alt="image not found"
+  <div><img src="${upcomingMovie1.imageUrl}" alt="image not found"
     width="150" height="225"></div>
-  <h5>12 Angry Men<br>
+  <h5>${upcomingMovie1.title}<br>
     <br>
-    <a href="https://www.youtube.com/watch?v=_13J_9B5jEk" target="_blank">>Movie Trailer</a>
+    <a href="${upcomingMovie1.trailerUrl}" target="_blank">>Movie Trailer</a>
   </h5>
-    <div><img src="https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg" alt="image not found"
+    <div><img src="${upcomingMovie2.imageUrl}" alt="image not found"
     width="150" height="225"></div>
-  <h5>Forrest Gump<br>
+  <h5>${upcomingMovie2.title}<br>
    <br>
-    <a href="https://www.youtube.com/watch?v=bLvqoHBptjg" target="_blank">>Movie Trailer</a>
+    <a href="${upcomingMovie2.trailerUrl}" target="_blank">>Movie Trailer</a>
   </h5>
-  <div><img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg" alt="image not found"
+
+  <div><img src="${upcomingMovie3.imageUrl}" alt="image not found"
     width="150" height="225"></div>
-  <h5>Pulp Fiction<br>
+  <h5>${upcomingMovie3.imageUrl}<br>
     <br>
-    <a href="https://www.youtube.com/watch?v=s7EdQ4FqbhY" target="_blank">>Movie Trailer</a>
+    <a href="${upcomingMovie3.trailerUrl}" target="_blank">>Movie Trailer</a>
 </h5>
 </div>
-<br>
-<br>
 
+<div class="flex-container">
+    <div><img src="${upcomingMovie4.imageUrl}" alt="image not found"
+    width="150" height="225"></div>
+  <h5>${upcomingMovie4.title}<br>
+   <br>
+    <a href="${upcomingMovie4.trailerUrl}" target="_blank">>Movie Trailer</a>
+  </h5>
+
+  <div><img src="${upcomingMovie5.imageUrl}" alt="image not found"
+    width="150" height="225"></div>
+  <h5>${upcomingMovie5.imageUrl}<br>
+    <br>
+    <a href="${upcomingMovie5.imageUrl}" target="_blank">>Movie Trailer</a>
+</h5>
+</div>
+<br><br>
 
 
 

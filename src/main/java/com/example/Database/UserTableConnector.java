@@ -231,7 +231,7 @@ class UserTableConnector extends SQL_GetSet
      * @param userID user's ID
      * @return true if the user is an admin
      */
-    boolean getUserType(int userID){return get(userID,"Users","User ID","User Type");}
+    boolean getUserType(int userID){return get(userID,"Users","User ID","Is Admin");}
 
     /**
      * Gets user's password from database given their ID.
