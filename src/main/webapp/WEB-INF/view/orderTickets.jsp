@@ -103,6 +103,12 @@ h5{
   text-align:center;
 }
 
+.buttonCentering {
+            margin-top:45px;
+            align-content:center;
+            margin-left: 30%;
+            margin-right: 30%;
+          }
 
 .footer{
     position:fixed;
@@ -237,14 +243,14 @@ h5{
   Friday  : 7pm 8pm 9pm <br>
   Saturday: 7pm 8pm 9pm <br> <br>
 Rating: R <br><br>
-  <a href="MovieDetailsFightClub" target="_blank">Movie Details Here</a><br>
+  
 </h5>
 
-
-
-
-
 </div>
+
+<div class="buttonCentering">
+  <a href="MovieDetails"><button" class="btn btn-secondary btn-block mb-4">Additional Movie Details Here</button></a> 
+  </div>
 
 
 <div class="login">
