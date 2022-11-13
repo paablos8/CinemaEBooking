@@ -2,6 +2,7 @@ package com.example.Database;
 
 import java.sql.*;
 
+import com.example.CinemaEBooking.entities.PaymentCard;
 import com.example.CinemaEBooking.entities.Status;
 import com.example.CinemaEBooking.entities.User;
 
@@ -23,7 +24,7 @@ public class DatabaseConnector
      */
     public DatabaseConnector()
     {
-        String serverName = "0.tcp.ngrok.io:17093";
+        String serverName = "6.tcp.ngrok.io:17406";
         String loginCredentials = ";user=sa;password=Team_C2;";
         String settings = "encrypt=true;trustServerCertificate=true";
         String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
@@ -90,14 +91,19 @@ public class DatabaseConnector
     public int[] getAllUserIDs() {return utc.getAllUserIDs();}
 
     //Card Methods
-    public boolean createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
+    public int createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
                                  String streetAddress, String cityCounty, String stateRegion, String country, int zip)
     {return ctc.createNewCard(date,cvv,cardNum,nameOnCard,userID,streetAddress,cityCounty,stateRegion,zip);}
     public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
+    PaymentCard[] createCardObjects(int userID){return ctc.createCardObjects(userID);}
     public long[] getCardNumbers(int userID){return ctc.getCardNumbers(userID);}
+    public int[] getCardCVVs(int userID){return ctc.getCardCVVs(userID);}
     public String[] getCardExpDates(int userID){return  ctc.getCardExpDates(userID);}
     public String[] getCardNames(int userID){return  ctc.getCardNames(userID);}
-    public int[] getCardZips(int userID){return  ctc.getCardZips(userID);}
+    public String[] getCardStreetAddress(int userID){return  ctc.getCardStreetAddress(userID);}
+    public String[] getCardCityCounty(int userID){return  ctc.getCardCityCounty(userID);}
+    public String[] getCardStateRegion(int userID){return  ctc.getCardStateRegion(userID);}
+    public int[] getCardZipCodes(int userID){return  ctc.getCardZipCodes(userID);}
     public boolean changeCardNumber(long oldCardNum, long newCardNum)
     {return ctc.changeCardNumber(oldCardNum,newCardNum);}
     public boolean changeCardExpDate(long cardNum, String newDate){return ctc.changeCardExpDate(cardNum,newDate);}

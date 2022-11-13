@@ -1,5 +1,7 @@
 package com.example.Database;
 
+import com.example.CinemaEBooking.entities.PaymentCard;
+
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -28,11 +30,16 @@ public class CardTableConnector extends SQL_GetSet
      * @param userID user's id
      * @return true if it worked
      */
-    public boolean createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
+    public int createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
                                  String streetAddress, String cityCounty, String stateRegion, int zip)
     {
-        if(!(verifyDate(date)&&verifyString(nameOnCard)&&verifyString(streetAddress)&&verifyString(cityCounty)
-        &&verifyString(stateRegion)&&zip>500&&cardNum>999999999999999L&&cardNum<9999999999999999L)) return false;
+        if(!verifyDate(date)) return -1;
+        if (!verifyString(nameOnCard)) return -2;
+        if (!verifyString(streetAddress)) return -3;
+        if (!verifyString(cityCounty)) return -4;
+        if (!verifyString(stateRegion)) return -5;
+        if (zip<501) return -6;
+        if (cardNum>999999999999999L&&cardNum<9999999999999999L) return -7;
 
         try(Statement stmt = conn.createStatement())
         {
@@ -52,7 +59,40 @@ public class CardTableConnector extends SQL_GetSet
         {
             e.printStackTrace();
         }
-        return true;
+        return 0;
+    }
+
+    /**
+     * Creates an array of a user's card objects
+     * @param userID the user's id
+     * @return the cards they hold
+     */
+    PaymentCard [] createCardObjects(int userID)
+    {
+        long [] cardNums = getCardNumbers(userID);
+        String [] cardNames = getCardNames(userID);
+        int [] cardCVVs = getCardZipCodes(userID);
+        String [] expDates = getCardExpDates(userID);
+        String [] streets = getCardStreetAddress(userID);
+        String [] counties = getCardCityCounty(userID);
+        String [] states = getCardStateRegion(userID);
+        int [] zip = getCardZipCodes(userID);
+
+        PaymentCard [] cards = new PaymentCard[cardNums.length];
+
+        for (int i = 0; i < cardNums.length; i ++)
+        {
+            cards[i].setCardNumber(cardNums[i]);
+            cards[i].setNameOnCard(cardNames[i]);
+            cards[i].setZip(zip[i]);
+            cards[i].setCvv(cardCVVs[i]);
+            cards[i].setExpirationDate(expDates[i]);
+            cards[i].setStreet(streets[i]);
+            cards[i].setCity(counties[i]);
+            cards[i].setState(states[i]);
+        }
+
+        return cards;
     }
 
     /**
@@ -73,6 +113,26 @@ public class CardTableConnector extends SQL_GetSet
         }
 
         return cardNums;
+    }
+
+    /**
+     * Given a user id, returns an array of their card cvvs
+     * @param userID user's id
+     * @return int array of user's card cvvs
+     */
+    public int[] getCardCVVs(int userID)
+    {
+        int numOfCards = getNumOf(userID,"User Cards","User ID");
+        int[] cardCVVs = new int[numOfCards];
+        Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
+
+        for(int i = 0; i < numOfCards; i++)
+        {
+            String temp = get(cardIDS[i],"Cards","Card ID","CVV");
+            cardCVVs[i] = Integer.parseInt(temp);
+        }
+
+        return cardCVVs;
     }
 
     /**
@@ -118,19 +178,88 @@ public class CardTableConnector extends SQL_GetSet
     }
 
     /**
-     * Given a user id, returns an array of the zip codes for their cards
+     * Given a user id, returns an array of street addresses for their cards
      * @param userID user's id
      * @return int array of the zip codes for the user's cards
      */
-    public int[] getCardZips(int userID)
+    public String[] getCardStreetAddress(int userID)
     {
         int numOfCards = getNumOf(userID,"User Cards","User ID");
-        int[] cardZips = new int[numOfCards];
+        int [] cardAddIDs = new int[numOfCards];
+        String[] cardSts = new String[numOfCards];
+
         Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
 
         for(int i = 0; i < numOfCards; i++)
         {
-            cardZips[i] = get(cardIDS[i],"Cards","Card ID","Zip Code");
+            cardAddIDs[i] = get(cardIDS[i],"Cards","Card ID","Address ID");
+            cardSts = get(cardAddIDs[i],"Addresses","Address ID","Street Address");
+        }
+
+        return cardSts;
+    }
+
+    /**
+     * Given a user id, returns an array of cities or counties for their cards
+     * @param userID user's id
+     * @return int array of the zip codes for the user's cards
+     */
+    public String[] getCardCityCounty(int userID)
+    {
+        int numOfCards = getNumOf(userID,"User Cards","User ID");
+        int [] cardAddIDs = new int[numOfCards];
+        String[] cardCounties = new String[numOfCards];
+
+        Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
+
+        for(int i = 0; i < numOfCards; i++)
+        {
+            cardAddIDs[i] = get(cardIDS[i],"Cards","Card ID","Address ID");
+            cardCounties = get(cardAddIDs[i],"Addresses","Address ID","City/County");
+        }
+
+        return cardCounties;
+    }
+
+    /**
+     * Given a user id, returns an array of states or regions for their cards
+     * @param userID user's id
+     * @return int array of states or regions for the user's cards
+     */
+    public String[] getCardStateRegion(int userID)
+    {
+        int numOfCards = getNumOf(userID,"User Cards","User ID");
+        int [] cardAddIDs = new int[numOfCards];
+        String[] cardSts = new String[numOfCards];
+
+        Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
+
+        for(int i = 0; i < numOfCards; i++)
+        {
+            cardAddIDs[i] = get(cardIDS[i],"Cards","Card ID","Address ID");
+            cardSts = get(cardAddIDs[i],"Addresses","Address ID","State/Region");
+        }
+
+        return cardSts;
+    }
+
+    /**
+     * Given a user id, returns an array of zip codes for their cards
+     * @param userID user's id
+     * @return int array of zip codes for the user's cards
+     */
+    public int[] getCardZipCodes(int userID)
+    {
+        int numOfCards = getNumOf(userID,"User Cards","User ID");
+        int [] cardAddIDs = new int[numOfCards];
+        int[] cardZips = new int[numOfCards];
+
+        Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
+
+        for(int i = 0; i < numOfCards; i++)
+        {
+            cardAddIDs[i] = get(cardIDS[i],"Cards","Card ID","Address ID");
+            cardZips = get(cardAddIDs[i],"Addresses","Address ID","Zip Code");
         }
 
         return cardZips;

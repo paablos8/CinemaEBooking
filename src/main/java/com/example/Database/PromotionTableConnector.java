@@ -9,6 +9,14 @@ class PromotionTableConnector extends SQL_GetSet
     private Connection conn;
     PromotionTableConnector(Connection conn){super(conn); this.conn = conn;}
 
+    /**
+     * Creates a new promotion. Always created as a draft
+     * @param dateStart start date
+     * @param dateEnd end date
+     * @param percentOff percentage off, as an int 0 - 100
+     * @return -1 if start date invalid, -2 if end date invalid
+     * -3 if percentage invalid, 0 if it worked
+     */
     int createDraftPromotion(String dateStart, String dateEnd, int percentOff)
     {
         if(!(verifyDate(dateEnd))) return -1;
@@ -28,18 +36,33 @@ class PromotionTableConnector extends SQL_GetSet
         return 0;
     }
 
+    /**
+     * Returns true if the promotion is still a draft
+     * @param startDate start date of promotion
+     * @param endDate end date of promotion
+     * @return true if a draft
+     */
     boolean isDraftPromotion(String startDate,String endDate)
     {
         int id = getComboKey(startDate,endDate,"Promotions","Date Start","Date End","Promotion ID");
         return !(boolean)(get(id,"Promotions","Promotion ID","isActive"));
     }
 
+    /**
+     * Sets a promtion to active. Irreversable
+     * @param startDate start date of promotion
+     * @param endDate end date of promotion
+     */
     void activatePromotion(String startDate,String endDate)
     {
         int id = getComboKey(startDate,endDate,"Promotions","Date Start","Date End","Promotion ID");
         update(id,"Promotions","Promotion ID","isActive",true);
     }
 
+    /**
+     * Promotions have a combination-key, start and end date
+     * @return string array. [i][i] will refer to one date
+     */
     String[][] getAllStartEndDates()
     {
         String [] starts = getAll("Promotions","Date Start");
@@ -56,6 +79,12 @@ class PromotionTableConnector extends SQL_GetSet
         return ret;
     }
 
+    /**
+     * Returns the percentage off of a promotion
+     * @param startDate start date of promotion
+     * @param endDate end date of promotion
+     * @return the percentage off, as an int 0 - 100
+     */
     int getPercentOff (String startDate, String endDate)
     {
         return getComboKey(startDate,endDate,"Promotions","Date Start","Date End","Percent Off");
@@ -76,6 +105,13 @@ class PromotionTableConnector extends SQL_GetSet
                 "Percent Off",percentOff);
     }
 
+    /**
+     * 
+     * @param oldStartDate
+     * @param endDate
+     * @param newStartDate
+     * @return
+     */
     boolean changeStartDate(String oldStartDate, String endDate, String newStartDate)
     {
         if(getComboKey(oldStartDate,endDate,"Promotions","Date Start","Date End","isActive"))
@@ -92,6 +128,13 @@ class PromotionTableConnector extends SQL_GetSet
                 "Date Start",newStartDate);
     }
 
+    /**
+     * Changes the end date of a draft promotion
+     * @param startDate start date of promotion
+     * @param oldEndDate old end date of promotion
+     * @param newEndDate new end date of promotion
+     * @return true if it worked
+     */
     boolean changeEndDate(String startDate, String oldEndDate, String newEndDate)
     {
         if(getComboKey(startDate,oldEndDate,"Promotions","Date Start","Date End","isActive"))

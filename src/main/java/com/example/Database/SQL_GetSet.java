@@ -16,6 +16,16 @@ class SQL_GetSet extends Encryptor
 
     SQL_GetSet(Connection conn) {this.conn = conn;}
 
+    /**
+     * Gets a field value of a record given a primary key
+     * @param id primary key
+     * @param table table record is in
+     * @param idField field of primary key
+     * @param eField field of desired value
+     * @return value in given filed
+     * @param <T> strings, ints, doubles, anything that this table uses
+     * @param <S> strings, ints, doubles, anything that this table uses
+     */
     <T,S> T get(S id, String table, String idField, String eField)
     {
         T ret = null;
@@ -42,6 +52,15 @@ class SQL_GetSet extends Encryptor
         return ret;
     }
 
+    /**
+     * Checks if a record exists with a primary key
+     * @param id primary key
+     * @param table desired table
+     * @param idField field of id
+     * @return true if it exists
+     * @param <T> strings, ints, doubles, anything that this table uses
+     * @param <S> strings, ints, doubles, anything that this table uses
+     */
     <T,S> boolean exists(S id, String table, String idField)
     {
         T ret = null;
@@ -67,6 +86,54 @@ class SQL_GetSet extends Encryptor
         return false;
     }
 
+    /**
+     * Checks if a record exists with a specific combination of values
+     * @param id1 identifying field 1
+     * @param id2 identifying field 2
+     * @param id3 identifying field 3
+     * @param table desired table
+     * @param idField1 field of id1
+     * @param idField2 field of id2
+     * @param idField3 field of id3
+     * @return true if that record exists already
+     * @param <T> strings, ints, doubles, anything that this table uses
+     * @param <S> strings, ints, doubles, anything that this table uses
+     * @param <G> strings, ints, doubles, anything that this table uses
+     * @param <H> strings, ints, doubles, anything that this table uses
+     */
+    <T,S,G,H> boolean existsCombo(S id1, G id2, H id3, String table, String idField1, String idField2, String idField3)
+    {
+        T ret = null;
+        ResultSet rs;
+
+        try {
+            Statement stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT [" + idField1 + "] FROM [" + table+"]");
+
+            while (rs.next())
+            {
+                if (verifyField(rs,id1,idField1)&& verifyField(rs,id2,idField2) && verifyField(rs,id3,idField3))
+                {
+                    return true;
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    /**
+     * Returns number of records in a table with a specific value
+     * @param id identifying value
+     * @param table desired table
+     * @param idField field of id
+     * @return number of records with that value
+     * @param <T> strings, ints, doubles, anything that this table uses
+     */
     <T> int getNumOf(T id, String table, String idField)
     {
         int numOf = 0;
@@ -92,7 +159,12 @@ class SQL_GetSet extends Encryptor
         return numOf;
     }
 
-    <T> int getNumOf(String table)
+    /**
+     * Returns number of entries in a table
+     * @param table desired table
+     * @return number of records
+     */
+    int getNumOf(String table)
     {
         int numOf = 0;
         ResultSet rs;
@@ -114,6 +186,16 @@ class SQL_GetSet extends Encryptor
         return numOf;
     }
 
+    /**
+     * Returns values from multiple records
+     * @param id identifying field
+     * @param table table records are in
+     * @param idField field of id
+     * @param eField desired field
+     * @return object array of the field's entries
+     * @param <T> strings, ints, doubles, anything that this table uses
+     * @param <S> strings, ints, doubles, anything that this table uses
+     */
     <T, S> T[] getMany(S id, String table, String idField, String eField)
     {
         int numOf = getNumOf(id, table, idField);
@@ -156,6 +238,13 @@ class SQL_GetSet extends Encryptor
         return ret;
     }
 
+    /**
+     * Returns all values in a field
+     * @param table table to get values from
+     * @param eField desired field
+     * @return object array of entries
+     * @param <T> strings, ints, doubles, anything that this table uses
+     */
     <T> T[] getAll(String table, String eField)
     {
         int numOf = getNumOf(table);
@@ -195,6 +284,19 @@ class SQL_GetSet extends Encryptor
         return ret;
     }
 
+    /**
+     * Gets value of a record based on a combination key
+     * @param id1 identifying field 1
+     * @param id2 identifying field 2
+     * @param table table record is in
+     * @param idField1 field of id1
+     * @param idField2 field of id2
+     * @param eField desired field
+     * @return value in desired field and record
+     * @param <T> strings, ints, doubles, anything that this table uses
+     * @param <S> strings, ints, doubles, anything that this table uses
+     * @param <G> strings, ints, doubles, anything that this table uses
+     */
     <T,S,G> T getComboKey(S id1, G id2, String table, String idField1, String idField2, String eField)
     {
         T ret = null;
@@ -221,6 +323,17 @@ class SQL_GetSet extends Encryptor
         return ret;
     }
 
+    /**
+     * Updates a record based on a primary key
+     * @param id primary key
+     * @param table table record is in
+     * @param idField field of primary key
+     * @param eField field of entry
+     * @param entry value to update record with
+     * @return true if it worked
+     * @param <T> strings, ints, doubles, anything that this table uses
+     * @param <S> strings, ints, doubles, anything that this table uses
+     */
     <T,S> boolean update(S id, String table, String idField, String eField, T entry)
     {
         ResultSet rs;
@@ -241,10 +354,25 @@ class SQL_GetSet extends Encryptor
         catch (SQLException e)
         {
             e.printStackTrace();
+            return false;
         }
         return true;
     }
 
+    /**
+     * Updates an entry in a field based on a combination key
+     * @param id1 identifying field 1
+     * @param id2 identifying field 2
+     * @param table table record is in
+     * @param idField1 field name of id1
+     * @param idField2 field name of id2
+     * @param eField field of entry
+     * @param entry item to update record with
+     * @return true if it worked
+     * @param <T> strings, ints, doubles, anything that this table uses
+     * @param <S> strings, ints, doubles, anything that this table uses
+     * @param <G> strings, ints, doubles, anything that this table uses
+     */
     <T,S,G> boolean updateComboKey(S id1, G id2, String table, String idField1, String idField2, String eField, T entry)
     {
         ResultSet rs;
@@ -265,10 +393,18 @@ class SQL_GetSet extends Encryptor
         catch (SQLException e)
         {
             e.printStackTrace();
+            return false;
         }
         return true;
     }
 
+    /**
+     * Used to delete records from a table
+     * @param id identifying field of record
+     * @param table table record is in
+     * @param idField id's field
+     * @param <T> strings, ints, doubles, anything that this table uses
+     */
     <T> void deleteRecord(T id, String table, String idField)
     {
         ResultSet rs;
@@ -283,6 +419,14 @@ class SQL_GetSet extends Encryptor
         }
     }
 
+    /**
+     * Used to check if a field has a specific value
+     * @param rs Result set from which to check
+     * @param id item to check
+     * @param idField identifying field name
+     * @return true if the id = the entry in specified field
+     * @param <T> strings, ints, doubles, anything that this table uses
+     */
     private <T> boolean verifyField (ResultSet rs, T id, String idField)
     {
         try
@@ -297,6 +441,12 @@ class SQL_GetSet extends Encryptor
         return false;
     }
 
+    /**
+     * Used to execute 'get' SQL calls
+     * @param rs result set on which to get
+     * @param eField field to get from
+     * @param <T> strings, ints, doubles, anything that this table uses
+     */
     private <T> T getField(ResultSet rs, String eField)
     {
         try
@@ -309,6 +459,13 @@ class SQL_GetSet extends Encryptor
         }
     }
 
+    /**
+     * Used to execute 'update' SQL calls
+     * @param rs result set on which to update
+     * @param entry new entry
+     * @param eField field to enter
+     * @param <T> strings, ints, doubles, anything that this table uses
+     */
     private <T> void updateField(ResultSet rs, T entry, String eField)
     {
         try
@@ -321,6 +478,11 @@ class SQL_GetSet extends Encryptor
         }
     }
 
+    /**
+     * Verifies that a string is not null
+     * @param str string to check
+     * @return true if ok
+     */
     boolean verifyString(String str)
     {
         try{
@@ -332,6 +494,11 @@ class SQL_GetSet extends Encryptor
         return false;
     }
 
+    /**
+     * Verifies that a date is in a valid format
+     * @param date date to verify
+     * @return true if it's valid
+     */
     boolean verifyDate(String date)
     {
         if(!verifyString(date))return false;
