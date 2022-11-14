@@ -29,7 +29,6 @@ public class AdminManageMovieController {
 
         String titles[] = db.getAllTitles();
         int[] shows = db.getAllShowtimeIDs();
-        //String show = db.getShowDate(shows[0]);
         String time = db.getShowTime(shows[0]);
         
         
