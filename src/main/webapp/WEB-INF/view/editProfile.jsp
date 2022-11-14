@@ -218,7 +218,7 @@
         <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="${currentUser.lastName}" />
         <label class="form-label" for="form2Example1">Last Name</label> 
 
-        <form:input type="name" class="form-control" id="phone" path="phone" placeholder="${currentUser.phone}" />
+        <form:input type="tel" value="${currentUser.phone}" class="form-control" id="phone" path="phone" placeholder="${currentUser.phone}" />
         <label class="form-label" for="form2Example1">Phone Number</label> 
 
         <a href="forgotPassword">
@@ -242,7 +242,7 @@
         <form:input type="name" class="form-control" id="city" path="city" placeholder="${currentUser.city}" />
         <label class="form-label" for="form2Example1">City</label>
         
-        <form:input type="name" class="form-control" id="zipCode" path="zipCode" placeholder="${currentUser.zipCode}" />
+        <form:input type="num" value="${currentUser.zipCode}" class="form-control" id="zipCode" path="zipCode" placeholder="${currentUser.zipCode}" />
         <label class="form-label" for="form2Example1">Zip Code</label> 
         
         <form:input type="name" class="form-control" id="state" path="state" placeholder="${currentUser.state}" />
