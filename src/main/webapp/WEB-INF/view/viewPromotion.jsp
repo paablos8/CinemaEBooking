@@ -115,6 +115,7 @@
       </div>
     <div>
       <button role= "RemoveBut">Remove</button>
+      <a href="editPromotion?promotion=${promo0}" target="_blank">Edit Promotion</a>
       <button role= "EditBut">Edit this Coupon</button>
   </div>
       <hr> 

@@ -121,7 +121,7 @@
   <h2>Promo Management</h2>
   <div>
       <div>
-        <a href="editPromotion"><button role= "EditHome-butt">Edit Promotions</button></a>
+        <a href="viewPromotion"><button role= "EditHome-butt">Edit Promotions</button></a>
       </div>
       <hr> 
   </div>

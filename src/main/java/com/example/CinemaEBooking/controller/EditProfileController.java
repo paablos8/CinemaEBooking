@@ -92,7 +92,7 @@ public class EditProfileController {
         System.out.println("New Zip Code: " + db.getZipCode(userId));
 
         
-        return "editProfile";
+        return "viewProfile";
     }
 
 

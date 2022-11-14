@@ -2,6 +2,8 @@ package com.example.CinemaEBooking.entities;
 
 import java.util.Date;
 
+import com.example.Database.DatabaseConnector;
+
 @Entity(name = "user")
 public class User {
     protected int userId;
@@ -18,9 +20,14 @@ public class User {
     private int zipCode;
     private boolean promotionSubscribe;
     private PaymentCard[] paymentCards = {null, null, null};
+
     
-    private PaymentCard[] addPaymentInfo (String nameOnCard, int cardNumber, int cvv, Date expirationDate) {
-        PaymentCard paymentCard = new PaymentCard(nameOnCard, cardNumber, cvv, expirationDate);
+    DatabaseConnector db = new DatabaseConnector();
+
+    private PaymentCard[] addPaymentInfo (int userId, String nameOnCard, long cardNumber, int cvv, String expirationDate, String street, String city, String state, int zip) {
+        db.createNewCard(expirationDate, cvv, cardNumber, nameOnCard, userId, street, city, state, "country - tbd", zip);
+        
+        PaymentCard paymentCard = new PaymentCard();
         
         int i = 0;
         while (i<4) {
@@ -153,5 +160,15 @@ public class User {
     public void setPromotionSubscribe(boolean promotionSubscribe) {
         this.promotionSubscribe = promotionSubscribe;
     }
- 
+
+    public PaymentCard[] getPaymentCards() {
+        return paymentCards;
+    }
+
+
+
+    public void setPaymentCards(PaymentCard[] paymentCards) {
+        this.paymentCards = paymentCards;
+    }
+
 }
