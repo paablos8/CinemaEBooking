@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>Admin Home    
+    <title> Edit Promos    
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -76,7 +75,6 @@
     text-align: left;
   }
 }
-
 .footer{
     position:fixed;
     left:0;
@@ -104,38 +102,72 @@
 
 
   <div class="title">
-    <h1>Admin Home</h1>
-      
+    <h1>Coupons and Promotions</h1>
+       <h5>Available coupons are limited to one coupon per cart and showtime</h5>
 </div>
 <section>
-  <h2>Movie Management</h2>
+  <h2>${promo0}</h2>
   <div>
       <div>
-        <a href="adminManageMovies"><button role= "EditMovie-butt">Edit Movie Database</button></a>
+       <p> <h3>${promo0_percentOff} % off!!</h3>
+      <br>
+      Starts at: ${promo0_startDate} and expires at: ${promo0_expirationDate}</p><br>
       </div>
+    <div>
+      <button role= "RemoveBut">Remove</button>
+      <a href="editPromotion?promotion=${promo0}" target="_blank">Edit Promotion</a>
+      <button role= "EditBut">Edit this Coupon</button>
+  </div>
       <hr> 
   </div>
 </section>
 
 <section>
-  <h2>Promo Management</h2>
+  <h2>${promo1}</h2>
   <div>
       <div>
-        <a href="viewPromotion"><button role= "EditHome-butt">Edit Promotions</button></a>
+       <p> <h3>${promo1_percentOff} % off!!</h3>
+      <br>
+       (Present order confirmation reciept in order to redeem.)
+       <br>
+       Starts at: ${promo1_startDate} and expires at: ${promo1_expirationDate}</p><br>
       </div>
+    <div>
+      <button role= "RemoveBut">Remove</button>
+      <button role= "EditBut">Edit this Coupon</button>
+  </div>
       <hr> 
   </div>
 </section>
 
 <section>
-  <h2>User Management</h2>
+  <h2>${promo2}</h2>
   <div>
       <div>
-        <button role= "EditHome-butt">Manage Users</button></a>
+       <p> <h3>${promo1_percentOff} % off!!</h3>
+      <br>
+      Starts at: ${promo2_startDate} and expires at: ${promo2_expirationDate}</p><br>
       </div>
+      <div>
+        <button role= "RemoveBut">Remove</button>
+        <button role= "EditBut">Edit this Coupon</button>
+    </div>
       <hr> 
   </div>
 </section>
+<section>
+    <div class='coupon-info-content'>
+    
+        <a href="addPromotion"><button class='add-btn'>Add New Promotion</button></a>
+
+      </div>
+</section>
+
+<br><br><br>
+      <div>
+        <a href="AdminHome"><button role= "Back2Home-butt">Back to Admin Home</button></a>
+      </div>
+      <br><br><br><br><br><br><br>
 
 <div class="footer">
   <br>
@@ -155,7 +187,4 @@
       </script>
       
 
-
-
 </html>
-       

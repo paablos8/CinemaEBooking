@@ -41,7 +41,6 @@ public class AddPromotionController {
 public Object addPromotion (@ModelAttribute("addPromotionForm") Promotion addPromotionForm, BindingResult bindingResult,
 Model model, HttpServletRequest request) throws UnsupportedEncodingException, MBeanException {
 
-                                    String promotionName = addPromotionForm.getPromotionName();
                                     int percentOff = addPromotionForm.getPercentOff();
                                     String startDate = addPromotionForm.getStartDate();
                                     String expirationDate = addPromotionForm.getExpirationDate();
@@ -52,10 +51,10 @@ Model model, HttpServletRequest request) throws UnsupportedEncodingException, MB
           System.out.println("Promotion created with starting date: " + startDate + " and Expiration Date: " + expirationDate);
           System.out.println("Use code " + code + " to get -" + percentOff + " off!");
 
-        //emailController.sendPromotionEmail(startDate, expirationDate, percentOff);
+        //emailController.sendPromotionEmail(startDate, expirationDate, percentOff, code);
         //sendPromotionEmail(startDate, expirationDate, percentOff, code);
 
-        return "redirect:/editPromotion";
+        return "redirect:/viewPromotion";
     }
 
 
