@@ -1,7 +1,6 @@
 package com.example.CinemaEBooking.entities;
 
 public class Promotion {
-    private String promotionName;
     private int percentOff;
     private String startDate;
     private String expirationDate;
@@ -10,14 +9,6 @@ public class Promotion {
    
 
     //Getter and Setter
-    public String getPromotionName() {
-        return promotionName;
-    }
-
-    public void setPromotionName(String promotionName) {
-        this.promotionName = promotionName;
-    }
-
     public int getPercentOff() {
         return percentOff;
     }
