@@ -104,23 +104,11 @@
     Mangage Movies
 </div>
   <section>
-    <h2>Fight Club</h2>
-    <div>
-        <div>
-         <p> <h3>Showtimes <br>
-            Tuesday : 7pm 8pm 9pm <br>
-            Thursday: 7pm 8pm 9pm <br>
-            Friday : 7pm 8pm 9pm <br>
-            Saturday: 7pm 8pm 9pm <br>
-        <br>
-        Directed by: David Fincher</p><br>
-        </div>
-        <div>
-            Genre: Action
-        </div>
-      <div>
-        <button role= "RemoveBut">Remove</button>
-        <button role= "EditBut">Edit Movie details</button>
+    <h2>${movie0}</h2>
+    
+        <a href="link.com" target="_blank">${remove0}</a>
+        <a href="link.com" target="_blank">${edit0}</a>
+        <a href="link.com" target="_blank">${schedule0}</a>
     </div>
         <hr> 
     </div>

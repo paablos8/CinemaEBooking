@@ -25,32 +25,20 @@ public class AdminManageMovieController {
     
     @RequestMapping(value = "/adminManageMovies", method = RequestMethod.GET)
     public String showAdminManageMoviesPage(ModelMap model) {
-        model.addAttribute("movieForm", new Movie());
+        
+
+        String titles[] = db.getAllTitles();
+        
+        
+        for (int i = 0; i < titles.length; i++) {
+            String name = "movie" + i;
+            String title = titles[i];
+            model.addAttribute(name, title);
+          }
+
+       
         return "adminManageMovies";
     }
 
 //Method to get all the entered values when a 
-    @RequestMapping(value = "/adminManageMovies", method = RequestMethod.POST)
-    public Object addMovies(@ModelAttribute("movieForm") Movie movieForm, BindingResult bindingResult,
-                                  Model model, HttpServletRequest request) throws UnsupportedEncodingException, MBeanException {
-
-                                    String movieTitle = movieForm.getMovieTitle();
-                                    String category = movieForm.getCategory();
-                                    //String cast = movieForm.getCast();
-                                    String director = movieForm.getDirector();
-                                    String producer = movieForm.getProducer();
-                                    String synopsis = movieForm.getSynopsis();
-                                    //String reviews = movieForm.getReviews();
-                                    String trailerPicture = movieForm.getTrailerPicture();
-                                    String trailerVideo = movieForm.getTrailerVideo();
-                                    String filmRatingCode = movieForm.getFilmRatingCode();
-                                //input field is currently still a String
-                                    //Show[] shows = getShows();
-
-        db.createNewMovie(movieTitle, filmRatingCode, 0, producer, director, "tbd", 0,0, trailerVideo, trailerPicture, category, synopsis, 120);
-
-        System.out.println("Movie created with title:" + movieTitle);
-
-        return "redirect:/adminManageMovies";
-    }
 }
