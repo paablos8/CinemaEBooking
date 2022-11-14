@@ -29,7 +29,9 @@
   overflow: hidden;
   background-color: #333;
 }
-
+a{
+color: black;
+}
 .topnav a {
   float: left;
   display: block;
@@ -115,115 +117,99 @@
   </section>
 
   <section>
-    <h2>Forrest Gump</h2>
-    <div>
-        <div>
-         <p> <h3>Showtimes <br>
-            Tuesday : 7pm 8pm 9pm <br>
-            Thursday: 7pm 8pm 9pm <br>
-            Friday : 7pm 8pm 9pm <br>
-            Saturday: 7pm 8pm 9pm <br>
-        <br>
-        Directed by: Robert Zemeckis</p><br>
-        </div>
-        <div>
-            Genre: Comedy
-        </div>
-      <div>
-        <button role= "RemoveBut">Remove</button>
-        <button role= "EditBut">Edit Movie details</button>
+    <h2>${movie1}</h2>
+    
+        <a href="link.com" target="_blank">${remove1}</a>
+        <a href="link.com" target="_blank">${edit1}</a>
+        <a href="link.com" target="_blank">${schedule1}</a>
     </div>
         <hr> 
     </div>
   </section>
 
   <section>
-    <h2>Pulp Fiction</h2>
-    <div>
-        <div>
-         <p> <h3>Showtimes <br>
-            Tuesday : 7pm 8pm 9pm <br>
-            Thursday: 7pm 8pm 9pm <br>
-            Friday : 7pm 8pm 9pm <br>
-            Saturday: 7pm 8pm 9pm <br>
-        <br>
-        Directed by: Quentin Tarantino</p><br>
-        </div>
-        <div>
-            Genre: Action
-        </div>
-      <div>
-        <button role= "RemoveBut">Remove</button>
-        <button role= "EditBut">Edit Movie details</button>
+    <h2>${movie2}</h2>
+    
+        <a href="link.com" target="_blank">${remove2}</a>
+        <a href="link.com" target="_blank">${edit2}</a>
+        <a href="link.com" target="_blank">${schedule2}</a>
     </div>
         <hr> 
     </div>
   </section>
 
   <section>
-    <h2>The Godfather</h2>
-    <div>
-        <div>
-         <p> <h3>Showtimes <br>
-            Tuesday : 7pm 8pm 9pm <br>
-            Thursday: 7pm 8pm 9pm <br>
-            Friday : 7pm 8pm 9pm <br>
-            Saturday: 7pm 8pm 9pm <br>
-        <br>
-        Directed by: Francis Ford Coppola</p><br>
-        </div>
-        <div>
-            Genre: Action, Crime
-        </div>
-      <div>
-        <button role= "RemoveBut">Remove</button>
-        <button role= "EditBut">Edit Movie details</button>
+    <h2>${movie3}</h2>
+    
+        <a href="link.com" target="_blank">${remove3}</a>
+        <a href="link.com" target="_blank">${edit3}</a>
+        <a href="link.com" target="_blank">${schedule3}</a>
     </div>
         <hr> 
     </div>
   </section>
 
   <section>
-    <h2>The Dark Knight</h2>
-    <div>
-        <div>
-         <p> <h3>Showtimes <br>
-            Tuesday : 7pm 8pm 9pm <br>
-            Thursday: 7pm 8pm 9pm <br>
-            Friday : 7pm 8pm 9pm <br>
-            Saturday: 7pm 8pm 9pm <br>
-        <br>
-        Directed by: Christopher Nolan</p><br>
-        </div>
-        <div>
-            Genre: Action, crime
-        </div>
-      <div>
-        <button role= "RemoveBut">Remove</button>
-        <button role= "EditBut">Edit Movie details</button>
+    <h2>${movie4}</h2>
+    
+        <a href="link.com" target="_blank">${remove4}</a>
+        <a href="link.com" target="_blank">${edit4}</a>
+        <a href="link.com" target="_blank">${schedule4}</a>
     </div>
         <hr> 
     </div>
   </section>
 
   <section>
-    <h2>12 Angry Men</h2>
-    <div>
-        <div>
-         <p> <h3>Showtimes <br>
-            Tuesday : 7pm 8pm 9pm <br>
-            Thursday: 7pm 8pm 9pm <br>
-            Friday : 7pm 8pm 9pm <br>
-            Saturday: 7pm 8pm 9pm <br>
-        <br>
-        Directed by: Sidney Lumet</p><br>
-        </div>
-        <div>
-            Genre: Drama
-        </div>
-      <div>
-        <button role= "RemoveBut">Remove</button>
-        <button role= "EditBut">Edit Movie details</button>
+    <h2>${movie5}</h2>
+    
+        <a href="link.com" target="_blank">${remove5}</a>
+        <a href="link.com" target="_blank">${edit5}</a>
+        <a href="link.com" target="_blank">${schedule5}</a>
+    </div>
+        <hr> 
+    </div>
+  </section>
+
+  <section>
+    <h2>${movie6}</h2>
+    
+        <a href="link.com" target="_blank">${remove6}</a>
+        <a href="link.com" target="_blank">${edit6}</a>
+        <a href="link.com" target="_blank">${schedule6}</a>
+    </div>
+        <hr> 
+    </div>
+  </section>
+
+  <section>
+    <h2>${movie7}</h2>
+    
+        <a href="link.com" target="_blank">${remove7}</a>
+        <a href="link.com" target="_blank">${edit7}</a>
+        <a href="link.com" target="_blank">${schedule7}</a>
+    </div>
+        <hr> 
+    </div>
+  </section>
+
+  <section>
+    <h2>${movie8}</h2>
+    
+        <a href="link.com" target="_blank">${remove8}</a>
+        <a href="link.com" target="_blank">${edit8}</a>
+        <a href="link.com" target="_blank">${schedule8}</a>
+    </div>
+        <hr> 
+    </div>
+  </section>
+
+  <section>
+    <h2>${movie9}</h2>
+    
+        <a href="link.com" target="_blank">${remove9}</a>
+        <a href="link.com" target="_blank">${edit9}</a>
+        <a href="link.com" target="_blank">${schedule9}</a>
     </div>
         <hr> 
     </div>

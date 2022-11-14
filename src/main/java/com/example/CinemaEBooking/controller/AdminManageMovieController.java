@@ -28,6 +28,9 @@ public class AdminManageMovieController {
         
 
         String titles[] = db.getAllTitles();
+        int[] shows = db.getAllShowtimeIDs();
+        //String show = db.getShowDate(shows[0]);
+        String time = db.getShowTime(shows[0]);
         
         
         for (int i = 0; i < titles.length; i++) {
@@ -41,6 +44,9 @@ public class AdminManageMovieController {
             model.addAttribute(remove, "remove");
             model.addAttribute(schedule, "schedule");
           }
+
+          //System.out.println(show);
+          System.out.println(time);
 
        
         return "adminManageMovies";
