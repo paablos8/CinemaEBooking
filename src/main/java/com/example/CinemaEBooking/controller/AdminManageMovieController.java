@@ -32,8 +32,14 @@ public class AdminManageMovieController {
         
         for (int i = 0; i < titles.length; i++) {
             String name = "movie" + i;
+            String edit = "edit" + i;
+            String remove = "remove" + i;
+            String schedule = "schedule" + i;
             String title = titles[i];
             model.addAttribute(name, title);
+            model.addAttribute(edit, "edit");
+            model.addAttribute(remove, "remove");
+            model.addAttribute(schedule, "schedule");
           }
 
        
