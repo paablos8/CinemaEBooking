@@ -48,18 +48,18 @@ Model model, HttpServletRequest request) throws UnsupportedEncodingException, MB
                                     String code = addPromotionForm.getCode(); 
                                          
         
-        db.createDraftPromotion(startDate, expirationDate, percentOff);
+        db.createDraftPromotion(startDate, expirationDate, percentOff, code);
           System.out.println("Promotion created with starting date: " + startDate + " and Expiration Date: " + expirationDate);
-          System.out.println("The discount is : -" + percentOff);
+          System.out.println("Use code " + code + " to get -" + percentOff + " off!");
 
         //emailController.sendPromotionEmail(startDate, expirationDate, percentOff);
-        //sendPromotionEmail(startDate, expirationDate, percentOff);
+        //sendPromotionEmail(startDate, expirationDate, percentOff, code);
 
         return "redirect:/editPromotion";
     }
 
 
-    void sendPromotionEmail(String startDate, String expirationDate, int percentOff) {
+    void sendPromotionEmail(String startDate, String expirationDate, int percentOff, String code) {
 
         SimpleMailMessage msg = new SimpleMailMessage();
         promotionMailAddresses = db.getAllPromotionEmails();
@@ -70,7 +70,7 @@ Model model, HttpServletRequest request) throws UnsupportedEncodingException, MB
             msg.setTo(promotionMailAddresses[i]);
 
             msg.setSubject("New Promotion available");
-            msg.setText("A new promotion has just been released!      It is active from " + startDate + " until " + expirationDate + "!  Make sure to get your -" + percentOff + "% when buying your tickets!");
+            msg.setText("A new promotion has just been released!      It is active from " + startDate + " until " + expirationDate + "!  Make sure to use code " + code +" to get your -" + percentOff + "% when buying your tickets!");
         
             javaMailSender.send(msg);
         }
