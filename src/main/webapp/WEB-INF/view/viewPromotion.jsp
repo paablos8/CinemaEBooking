@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
-        background-color: grey;
+        background:linear-gradient(grey,orange);
+        height:auto;
+      }
+      .promotionCard{
+        border-radius:25px;
+        background-color:lightgrey;
+        width:50%;
+        padding: 14px 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        text-align:center;
       }
       .login{
         border-radius:25px;
@@ -84,6 +95,12 @@
     background-color:#333;
     color: white;  
 }
+.buttonCenter {
+            margin-top:45px;
+            align-content:center;
+            margin-left: 30%;
+            margin-right: 30%;
+          }
     </style>
   </head>
 
@@ -106,6 +123,7 @@
        <h5>Available coupons are limited to one coupon per cart and showtime</h5>
 </div>
 <section>
+  <div class="promotionCard">
   <h2>${promo0}</h2>
   <div>
       <div>
@@ -115,8 +133,12 @@
       </div>
     <div>
       <button role= "RemoveBut">Remove</button>
-      <a href="editPromotion?promotion=${promo0}" target="_blank">Edit Promotion</a>
       <button role= "EditBut">Edit this Coupon</button>
+<!--<a href="editPromotion?promotion=${promo0}" target="_blank">Edit Promotion</a>-->  
+      <form action="editPromotion?promotion=${promo0}">
+        <button type="submit">Edit Promotions</button>
+     </form>
+    </div>
   </div>
       <hr> 
   </div>
