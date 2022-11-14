@@ -3,6 +3,7 @@ package com.example.Database;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 
 class PromotionTableConnector extends SQL_GetSet
 {
@@ -63,7 +64,8 @@ class PromotionTableConnector extends SQL_GetSet
      */
     String[] getAllPromotionCodes()
     {
-        return getAll("Promotions","Code");
+        Object [] temp = getAll("Promotions","Code");
+        return Arrays.copyOf(temp,temp.length,String[].class);
     }
 
     /**
