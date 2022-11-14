@@ -219,23 +219,16 @@
             <form:input type="name" class="form-control" id="filmRatingCode" path="filmRatingCode" placeholder="Enter Film Rating Code" />
             <label class="form-label" for="form2Example1">Film Rating Code</label>    
 <!-- Film Time input -->  
-<div class="form-outline mb-4"></div>
-<form:select type="name" class="form-control" id="filmHourTime" path="filmHourTime" placeholder="filmHourTime" />
-      <form:option value="AM" label="AM"/> 
-      <form:option value="PM" label="PM"/> 
-        </form:select>
-
+<div class="form-outline mb-4">
+      
 <label class="form-label" for="form2Example1">Film Rating Code</label>                
-            
+</div>   
             <br>
             <br>
 
  <!-- Submit button -->
  <form:button type="submit" class="btn btn-secondary btn-block mb-4">Add new Movie</form:button>
-
-  
-    
-        </form:form>
+  </form:form>
 </div>
 
 <div class="footer">

@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
-        background-color: grey;
+        background:linear-gradient(grey,orange);
+        height:auto;
       }
       .login{
         border-radius:25px;
