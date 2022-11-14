@@ -274,27 +274,27 @@ h5{
 <br>
 <div class="inputs"> 
   <span>Cast:</span> 
-  <input type="text" readonly value="${.}"/> </div> <br><br>
+  <input type="text" readonly value="${cast}"/> </div> <br><br>
   
 <div class="inputs">
   <span>Director:</span> 
-  <input type="text" readonly value="${.}"> </div> <br><br>
+  <input type="text" readonly value="${director}"> </div> <br><br>
   
 <div class="inputs"> 
   <span>Producer:</span> 
-  <input type="text" readonly value="${.}"> </div> <br><br>
+  <input type="text" readonly value="${producer}"> </div> <br><br>
 
 <div class="inputs"> 
       <span>Reviews:</span> 
-      <input type="text" readonly value="${.}"> </div> <br><br>
+      <input type="text" readonly value="${reviews}"> </div> <br><br>
     
 <div class="inputs3"> 
         <span>MPAA-US code:</span>
-        <input type="text" readonly value="${.}"> </div> <br><br>
+        <input type="text" readonly value="${mpaa}"> </div> <br><br>
 
 <div class="inputs2"> 
     <span>Synopsis:</span>
-    <input type="text" readonly value="${.}"> </div> <br><br>
+    <input type="text" readonly value="${synopsis}"> </div> <br><br>
   
     
         
