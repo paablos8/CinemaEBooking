@@ -105,7 +105,7 @@ class SQL_GetSet extends Encryptor
 
         try {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT [" + idField1 + "] FROM [" + table+"]");
+            rs = stmt.executeQuery("SELECT [" + idField1 + "],["+idField2"] FROM [" + table+"]");
 
             while (rs.next())
             {
