@@ -490,38 +490,4 @@ class SQL_GetSet extends Encryptor
         }
         return false;
     }
-
-    /**
-     * Verifies that a date and time is in a valid format
-     * @param dateAndTime date and time to verify
-     * @return true if it's valid
-     */
-    boolean verifyDate(String dateAndTime)
-    {
-        if(!verifyString(dateAndTime))return false;
-        if(dateAndTime.charAt(1) != '/' || dateAndTime.charAt(2) != '/') return false;
-        if(dateAndTime.charAt(5) != '/' || dateAndTime.charAt(4) != '/' || dateAndTime.charAt(3) != '/') return false;
-        if(dateAndTime.length() < 7) return false;
-
-        try
-        {
-            int year = Integer.parseInt(dateAndTime.substring(0,dateAndTime.indexOf('-')));
-            if (year < 2022)return false;
-            int month = Integer.parseInt(dateAndTime.substring(3,dateAndTime.substring(3).indexOf('-')));
-            if (month > 31 || year < 1)return false;
-            int day = Integer.parseInt(dateAndTime.substring(dateAndTime.substring(3).indexOf('-'),
-                    dateAndTime.indexOf(' ')));
-            if (day < 1 || day > 31) return false;
-
-            int hour = Integer.parseInt(dateAndTime.substring(dateAndTime.indexOf(' '),dateAndTime.indexOf(':')));
-            if (hour < 0 || hour > 23) return false;
-            int minute = Integer.parseInt(dateAndTime.substring(dateAndTime.indexOf(':')));
-            if (minute < 0 || minute > 59) return false;
-        }
-        catch (NumberFormatException nfe)
-        {
-            return false;
-        }
-        return true;
-    }
 }

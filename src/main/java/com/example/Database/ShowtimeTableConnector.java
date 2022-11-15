@@ -20,8 +20,7 @@ public class ShowtimeTableConnector extends SQL_GetSet
      */
     int createNewShowtime(String movieTitle,int showroomID, String showDateAndTime)
     {
-        if(!verifyDate(showDateAndTime)){return -1;}
-        else if (showroomID < 1 || showroomID > 3) return -3;
+        if (showroomID < 1 || showroomID > 3) return -3;
         else if (!exists(movieTitle,"Movie Titles","Title")) return -4;
         else if (existsComboKey(showroomID,showDateAndTime,"Showtimes","Showroom ID","Show Date"
         ))
