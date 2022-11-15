@@ -90,18 +90,15 @@ class SQL_GetSet extends Encryptor
      * Checks if a record exists with a specific combination of values
      * @param id1 identifying field 1
      * @param id2 identifying field 2
-     * @param id3 identifying field 3
      * @param table desired table
      * @param idField1 field of id1
      * @param idField2 field of id2
-     * @param idField3 field of id3
      * @return true if that record exists already
      * @param <T> strings, ints, doubles, anything that this table uses
      * @param <S> strings, ints, doubles, anything that this table uses
      * @param <G> strings, ints, doubles, anything that this table uses
-     * @param <H> strings, ints, doubles, anything that this table uses
      */
-    <T,S,G,H> boolean existsCombo(S id1, G id2, H id3, String table, String idField1, String idField2, String idField3)
+    <T,S,G> boolean existsComboKey(S id1, G id2, String table, String idField1, String idField2)
     {
         T ret = null;
         ResultSet rs;
@@ -112,7 +109,7 @@ class SQL_GetSet extends Encryptor
 
             while (rs.next())
             {
-                if (verifyField(rs,id1,idField1)&& verifyField(rs,id2,idField2) && verifyField(rs,id3,idField3))
+                if (verifyField(rs,id1,idField1)&& verifyField(rs,id2,idField2))
                 {
                     return true;
                 }
@@ -495,25 +492,31 @@ class SQL_GetSet extends Encryptor
     }
 
     /**
-     * Verifies that a date is in a valid format
-     * @param date date to verify
+     * Verifies that a date and time is in a valid format
+     * @param dateAndTime date and time to verify
      * @return true if it's valid
      */
-    boolean verifyDate(String date)
+    boolean verifyDate(String dateAndTime)
     {
-        if(!verifyString(date))return false;
-        if(date.charAt(1) != '/' || date.charAt(2) != '/') return false;
-        if(date.charAt(5) != '/' || date.charAt(4) != '/' || date.charAt(3) != '/') return false;
-        if(date.length() < 7) return false;
+        if(!verifyString(dateAndTime))return false;
+        if(dateAndTime.charAt(1) != '/' || dateAndTime.charAt(2) != '/') return false;
+        if(dateAndTime.charAt(5) != '/' || dateAndTime.charAt(4) != '/' || dateAndTime.charAt(3) != '/') return false;
+        if(dateAndTime.length() < 7) return false;
 
         try
         {
-            int month = Integer.parseInt(date.substring(0,date.indexOf('/')));
-            if (month > 12 || month < 1)return false;
-            int day = Integer.parseInt(date.substring(3,date.substring(3).indexOf('/')));
-            if (day > 31 || day < 1)return false;
-            int year = Integer.parseInt(date.substring(date.substring(3).indexOf('/')));
-            if (year < 2022) return false;
+            int year = Integer.parseInt(dateAndTime.substring(0,dateAndTime.indexOf('-')));
+            if (year < 2022)return false;
+            int month = Integer.parseInt(dateAndTime.substring(3,dateAndTime.substring(3).indexOf('-')));
+            if (month > 31 || year < 1)return false;
+            int day = Integer.parseInt(dateAndTime.substring(dateAndTime.substring(3).indexOf('-'),
+                    dateAndTime.indexOf(' ')));
+            if (day < 1 || day > 31) return false;
+
+            int hour = Integer.parseInt(dateAndTime.substring(dateAndTime.indexOf(' '),dateAndTime.indexOf(':')));
+            if (hour < 0 || hour > 23) return false;
+            int minute = Integer.parseInt(dateAndTime.substring(dateAndTime.indexOf(':')));
+            if (minute < 0 || minute > 59) return false;
         }
         catch (NumberFormatException nfe)
         {

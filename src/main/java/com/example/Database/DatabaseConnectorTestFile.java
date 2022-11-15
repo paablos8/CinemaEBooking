@@ -19,10 +19,9 @@ public class DatabaseConnectorTestFile
 
  */
 
-/*
         Encryptor enc = new Encryptor();
-        String temp= enc.encrypt(1234123412341234L);
+        String temp= enc.encryptLong(1234123412341234L);
         System.out.println(temp);
-        System.out.println(enc.decrypt(temp));*/
+        System.out.println(enc.decryptLong(temp));
     }
 }

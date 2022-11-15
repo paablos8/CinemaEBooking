@@ -185,10 +185,9 @@ public class DatabaseConnector
     public void activatePromotion(String code){ptc.activatePromotion(code);}
 
     //Showtime Methods
-    public int createNewShowtime(String movieTitle,int showroomID, String showDate, String showTime)
-    {return stc.createNewShowtime(movieTitle,showroomID,showDate,showTime);}
+    public int createNewShowtime(String movieTitle,int showroomID, String showDateAndTime)
+    {return stc.createNewShowtime(movieTitle,showroomID,showDateAndTime);}
     public int[] getAllShowtimeIDs(){return stc.getAllShowtimeIDs();}
     public String getShowTitle(int showtimeID){return stc.getShowTitle(showtimeID);}
-    public String getShowDate (int showtimeID){return stc.getShowDate(showtimeID);}
-    public String getShowTime (int showtimeID){return stc.getShowTime(showtimeID);}
+    public String getShowDateAndTime (int showtimeID){return stc.getShowDateAndTime(showtimeID);}
 }
