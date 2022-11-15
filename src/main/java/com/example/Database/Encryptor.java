@@ -263,14 +263,14 @@ class Encryptor
     String encrypt(long input)
     {
         byte [] temp = new byte[16];
-        for (int i = 16; i >0; i++)
+        for (int i = 15; i >0; i--)
         {
             temp [i] = (byte)(input % 10);
             input = input / 10L;
         }
 
         String ret = "";
-        for(int i = 0;i < 16; i += 2)
+        for(int i = 0;i < 15; i += 2)
         {
             ret += (char) ((temp[i] & 0xFF) + (temp[i+1] & 0xFF)) ;
         }
@@ -279,8 +279,14 @@ class Encryptor
 
     long decryptLong(String cipherText)
     {
+        String decrpytStr = decrypt(cipherText);
+        long temp = Long.parseLong(decrpytStr);
+        return temp;
+    }
 
-        long temp = Long.parseLong(cipherText);
+    String encryptLong (long num)
+    {
+        String temp = "";
         return temp;
     }
 /*
