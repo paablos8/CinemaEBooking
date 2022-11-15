@@ -110,7 +110,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove0}</a>
         <a href="link.com" target="_blank">${edit0}</a>
-        <a href="link.com" target="_blank">${schedule0}</a>
+        <a href="scheduleMovie?movie=${movie0}" target="_blank">${schedule0}</a>
     </div>
         <hr> 
     </div>
