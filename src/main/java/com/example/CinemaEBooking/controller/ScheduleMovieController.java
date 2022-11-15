@@ -36,7 +36,8 @@ public class ScheduleMovieController {
         model.addAttribute("scheduleMovieForm", new Show());
         model.addAttribute("title", movie);
         LocalDateTime dateTime = dt.createDT(show.getYear(), show.getMonth(), show.getDay(), show.getHour(), show.getMinute());
-        db.createNewShowtime(movie, 1, dt.toString(dateTime));
+        System.out.println(db.createNewShowtime(movie, 1, dt.toString(dateTime)));
+        
         return "scheduleMovie";
     }
 }
