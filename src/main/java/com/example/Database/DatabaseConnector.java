@@ -143,7 +143,7 @@ public class DatabaseConnector
         ,posterURL,category,synopsis,durationMin);
     }
     public String [] getTitlesInCategory(String category){return mtc.getTitlesInCategory(category);}
-    String [] getTitlesOnDay(String date){return mtc.getTitlesOnDay(date);}
+    public String [] getTitlesOnDay(String date){return mtc.getTitlesOnDay(date);}
     public String [] getAllTitles(){return mtc.getAllTitles();}
     public String getAgeRating(String title){return mtc.getAgeRating(title);}
     public int getYearRelease(String title){return mtc.getYearRelease(title);}
