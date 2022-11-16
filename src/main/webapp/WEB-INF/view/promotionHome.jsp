@@ -108,12 +108,12 @@
        <h5>Available coupons are limited to one coupon per cart and showtime</h5>
 </div>
 <section>
-  <h2>SEASONAL COUPON</h2>
+  <h2>"${promo0_code}"</h2>
   <div>
       <div>
-       <p> <h3>20% off on Tuesday showtimes!!</h3>
+       <p> <h3>"${promo0_percentOff}" % off!!</h3>
       <br>
-      Expires: 0ct. 27, 2022</p><br>
+      Starts: "${promo0_startDate}" and Expires: "${promo0_expirationDate}"</p><br>
       </div>
       <div>
           <button role= "addTo-butt">Add to Cart</button>
@@ -123,14 +123,12 @@
 </section>
 
 <section>
-  <h2>BOGO FREE POPCORN</h2>
+  <h2>${promo1_code}"</h2>
   <div>
       <div>
-       <p> <h3>Get One order of popcorn free with the purchase of an order of popcorn of the same size!!</h3>
+       <p> <h3>"${promo1_percentOff}" % off!!</h3>
       <br>
-       (Present order confirmation reciept in order to redeem.)
-       <br>
-       Expires: 0ct. 14, 2022</p><br>
+      Starts: "${promo1_startDate}" and Expires: "${promo1_expirationDate}"</p><br>
       </div>
       <div>
           <button role= "addTo-butt">Add to Cart</button>
@@ -140,12 +138,12 @@
 </section>
 
 <section>
-  <h2>HOLIDAY SPECIAL</h2>
+  <h2>${promo2_code}"</h2>
   <div>
       <div>
-       <p> <h3>Get 15% off yout total purchase on Holiday and Holiday Weekend bookings!!</h3>
+       <p> <h3>"${promo2_percentOff}" % off!!</h3>
       <br>
-      Expires: Dec. 30, 2022</p><br>
+      Starts: "${promo2_startDate}" and Expires: "${promo2_expirationDate}"</p><br>
       </div>
       <div>
           <button role= "addTo-butt">Add to Cart</button>
