@@ -298,29 +298,12 @@ h5{
 
     <div class="inputs">
       <span>Showtimes:</span> <br><br><br> 
-       <span>${showday1}</span> <br><br><br><br><br> 
     <a href="link.com" target="_blank">${showtime1}</a> <br><br>
     <a href="link.com" target="_blank">${showtime2}</a> <br><br>
     <a href="link.com" target="_blank">${showtime3}</a> <br><br>
     <a href="link.com" target="_blank">${showtime4}</a> <br><br>
 
-    <span>${showday2}</span> <br><br><br><br><br> 
-    <a href="link.com" target="_blank">${showtime1}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime2}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime3}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime4}</a> <br><br>
-
-    <span>${showday3}</span> <br><br><br><br><br> 
-    <a href="link.com" target="_blank">${showtime1}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime2}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime3}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime4}</a> <br><br>
-
-    <span>${showday4}</span> <br><br><br><br><br> 
-    <a href="link.com" target="_blank">${showtime1}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime2}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime3}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime4}</a> <br><br>
+   
 
   </div> <br><br>
     
@@ -332,7 +315,7 @@ h5{
 
   <br><br>
   <a href="homePage"><button" class="btn btn-secondary btn-block mb-4">Back to Home</button></a>    
-  <a href="orderTicketsFightClub"><button" class="btn btn-secondary btn-block mb-4">Order Tickets Here</button></a><br> 
+  
   
 
 
