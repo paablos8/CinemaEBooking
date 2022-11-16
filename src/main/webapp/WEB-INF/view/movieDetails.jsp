@@ -252,9 +252,9 @@ h5{
 
   <div class="title">
     <br>
-    Movie Details: Fight Club
+    ${title}
     <br>
-    <h3> <a href="https://www.youtube.com/watch?v=qtRKdVHc-cE" target="_blank">Movie Trailer</a><br> 
+    <h3> <a href="${trailer}" target="_blank">Movie Trailer</a><br> 
       
     </h3>
     <br>
@@ -262,7 +262,7 @@ h5{
 
 <div class="flex-container">
   <div class="movieDET">
-    <div><img src="https://m.media-amazon.com/images/I/81D+KJkO4SL._AC_UF894,1000_QL80_.jpg" alt="image not found"
+    <div><img src="${image}" alt="image not found"
   width="200" height="300"></div>
   <br>
   <br> <br>
