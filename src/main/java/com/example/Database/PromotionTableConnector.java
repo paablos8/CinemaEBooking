@@ -20,8 +20,6 @@ class PromotionTableConnector extends SQL_GetSet
      */
     int createDraftPromotion(String dateStart, String dateEnd, int percentOff, String code)
     {
-        if(!(verifyDate(dateEnd))) return -1;
-        if(!verifyDate(dateStart)) return -2;
         if((percentOff < 100)&&(percentOff>0)) return -3;
         if(!verifyString(code)) return -4;
 
@@ -125,12 +123,6 @@ class PromotionTableConnector extends SQL_GetSet
         {
             return false;
         }
-
-        if(!verifyDate(newStartDate))
-        {
-            return false;
-        }
-
         return update(code,"Promotions","Code","Date Start",newStartDate);
     }
 
@@ -143,11 +135,6 @@ class PromotionTableConnector extends SQL_GetSet
     boolean changeEndDate(String code, String newEndDate)
     {
         if(get(code,"Promotions","Code","isActive"))
-        {
-            return false;
-        }
-
-        if(!verifyDate(newEndDate))
         {
             return false;
         }

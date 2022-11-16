@@ -33,7 +33,6 @@ public class CardTableConnector extends SQL_GetSet
     public int createNewCard(String date, int cvv, long cardNum, String nameOnCard, int userID,
                                  String streetAddress, String cityCounty, String stateRegion, int zip)
     {
-        if(!verifyDate(date)) return -1;
         if (!verifyString(nameOnCard)) return -2;
         if (!verifyString(streetAddress)) return -3;
         if (!verifyString(cityCounty)) return -4;
@@ -284,7 +283,6 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardExpDate(long cardNum, String newDate)
     {
-        if(!verifyDate(newDate))return false;
         Date expDate = Date.valueOf(newDate);
         return update(cardNum,"Users","Card Number","Expiration Date",expDate);
     }

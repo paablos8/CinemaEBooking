@@ -1,6 +1,7 @@
 package com.example.CinemaEBooking.controller;
 
 import java.io.UnsupportedEncodingException;
+import java.time.LocalDateTime;
 
 import javax.management.MBeanException;
 import javax.print.DocFlavor.URL;
@@ -16,20 +17,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.CinemaEBooking.entities.Movie;
 import com.example.Database.DatabaseConnector;
+import com.example.Database.DateTime;
 
 
 @Controller
 public class AdminManageMovieController {
 
     DatabaseConnector db = new DatabaseConnector();
+    DateTime dt = new DateTime();
     
     @RequestMapping(value = "/adminManageMovies", method = RequestMethod.GET)
     public String showAdminManageMoviesPage(ModelMap model) {
         
 
         String titles[] = db.getAllTitles();
-        int[] shows = db.getAllShowtimeIDs();
-        String time = db.getShowTime(shows[0]);
+       
         
         
         for (int i = 0; i < titles.length; i++) {
@@ -44,8 +46,7 @@ public class AdminManageMovieController {
             model.addAttribute(schedule, "schedule");
           }
 
-          //System.out.println(show);
-          System.out.println(time);
+        
 
        
         return "adminManageMovies";

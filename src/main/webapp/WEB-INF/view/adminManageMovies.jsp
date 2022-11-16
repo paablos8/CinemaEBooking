@@ -110,7 +110,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove0}</a>
         <a href="link.com" target="_blank">${edit0}</a>
-        <a href="link.com" target="_blank">${schedule0}</a>
+        <a href="scheduleMovie?movie=${movie0}" target="_blank">${schedule0}</a>
     </div>
         <hr> 
     </div>
@@ -121,7 +121,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove1}</a>
         <a href="link.com" target="_blank">${edit1}</a>
-        <a href="link.com" target="_blank">${schedule1}</a>
+        <a href="scheduleMovie?movie=${movie1}" target="_blank">${schedule1}</a>
     </div>
         <hr> 
     </div>
@@ -132,7 +132,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove2}</a>
         <a href="link.com" target="_blank">${edit2}</a>
-        <a href="link.com" target="_blank">${schedule2}</a>
+        <a href="scheduleMovie?movie=${movie2}" target="_blank">${schedule2}</a>
     </div>
         <hr> 
     </div>
@@ -143,7 +143,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove3}</a>
         <a href="link.com" target="_blank">${edit3}</a>
-        <a href="link.com" target="_blank">${schedule3}</a>
+        <a href="scheduleMovie?movie=${movie3}" target="_blank">${schedule3}</a>
     </div>
         <hr> 
     </div>
@@ -154,7 +154,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove4}</a>
         <a href="link.com" target="_blank">${edit4}</a>
-        <a href="link.com" target="_blank">${schedule4}</a>
+        <a href="scheduleMovie?movie=${movie4}" target="_blank">${schedule4}</a>
     </div>
         <hr> 
     </div>
@@ -165,7 +165,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove5}</a>
         <a href="link.com" target="_blank">${edit5}</a>
-        <a href="link.com" target="_blank">${schedule5}</a>
+        <a href="scheduleMovie?movie=${movie5}" target="_blank">${schedule5}</a>
     </div>
         <hr> 
     </div>
@@ -176,7 +176,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove6}</a>
         <a href="link.com" target="_blank">${edit6}</a>
-        <a href="link.com" target="_blank">${schedule6}</a>
+        <a href="scheduleMovie?movie=${movie6}" target="_blank">${schedule6}</a>
     </div>
         <hr> 
     </div>
@@ -187,7 +187,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove7}</a>
         <a href="link.com" target="_blank">${edit7}</a>
-        <a href="link.com" target="_blank">${schedule7}</a>
+        <a href="scheduleMovie?movie=${movie7}" target="_blank">${schedule7}</a>
     </div>
         <hr> 
     </div>
@@ -198,7 +198,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove8}</a>
         <a href="link.com" target="_blank">${edit8}</a>
-        <a href="link.com" target="_blank">${schedule8}</a>
+        <a href="scheduleMovie?movie=${movie8}" target="_blank">${schedule8}</a>
     </div>
         <hr> 
     </div>
@@ -209,7 +209,7 @@ color: black;
     
         <a href="link.com" target="_blank">${remove9}</a>
         <a href="link.com" target="_blank">${edit9}</a>
-        <a href="link.com" target="_blank">${schedule9}</a>
+        <a href="scheduleMovie?movie=${movie9}" target="_blank">${schedule9}</a>
     </div>
         <hr> 
     </div>

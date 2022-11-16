@@ -249,7 +249,7 @@ Rating: R <br><br>
 </div>
 
 <div class="buttonCentering">
-  <a href="MovieDetails"><button" class="btn btn-secondary btn-block mb-4">Additional Movie Details Here</button></a> 
+  <a href="movieDetails"><button" class="btn btn-secondary btn-block mb-4">Additional Movie Details Here</button></a> 
   </div>
 
 
