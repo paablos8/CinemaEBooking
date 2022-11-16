@@ -33,7 +33,7 @@ class SQL_GetSet extends Encryptor
 
         try {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT [" + idField + "] , [" + eField + "] FROM [" + table+"]");
+            rs = stmt.executeQuery("SELECT ["+idField+"],["+eField+"] FROM ["+table+"]");
 
             while (rs.next())
             {
@@ -105,7 +105,7 @@ class SQL_GetSet extends Encryptor
 
         try {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT [" + idField1 + "],["+idField2"] FROM [" + table+"]");
+            rs = stmt.executeQuery("SELECT ["+idField1+"],["+idField2+"] FROM ["+table+"]");
 
             while (rs.next())
             {
@@ -301,7 +301,7 @@ class SQL_GetSet extends Encryptor
 
         try {
             Statement stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT [" + idField1 + "],["+idField2+"] , [" + eField + "] FROM " + table);
+            rs = stmt.executeQuery("SELECT ["+idField1+"],["+idField2+"],["+eField+"] FROM ["+table+"]");
 
             while (rs.next())
             {

@@ -22,7 +22,8 @@ public class ShowtimeTableConnector extends SQL_GetSet
     {
         if (showroomID < 1 || showroomID > 3) return -3;
         else if (!exists(movieTitle,"Movie Titles","Title")) return -4;
-        else if (!existsComboKey(showroomID,showDateAndTime,"Showtimes","Showroom ID","Show Date and Time"))
+        else if (existsComboKey(showroomID,showDateAndTime,"Showtimes","Showroom ID","Show Date"
+        ))
         {
             return -5;
         }
@@ -62,7 +63,7 @@ public class ShowtimeTableConnector extends SQL_GetSet
     String getShowTitle(int showtimeID)
     {
         int movieID =  get(showtimeID,"Showtimes","Showtime ID","Movie ID");
-        return get(movieID,"Movie Titles","Movie ID","Movie Title");
+        return get(movieID,"Movie Titles","Movie ID","Title");
     }
 
     /**
@@ -72,6 +73,6 @@ public class ShowtimeTableConnector extends SQL_GetSet
      */
     String getShowDateAndTime (int showtimeID)
     {
-        return get(showtimeID,"Showtimes","Showtime ID","Show Date and Time");
+        return get(showtimeID,"Showtimes","Showtime ID","Show Date");
     }
 }
