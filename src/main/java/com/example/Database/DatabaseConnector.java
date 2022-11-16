@@ -95,7 +95,7 @@ public class DatabaseConnector
                                  String streetAddress, String cityCounty, String stateRegion, String country, int zip)
     {return ctc.createNewCard(date,cvv,cardNum,nameOnCard,userID,streetAddress,cityCounty,stateRegion,zip);}
     public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
-    PaymentCard[] createCardObjects(int userID){return ctc.createCardObjects(userID);}
+    public PaymentCard[] createCardObjects(int userID){return ctc.createCardObjects(userID);}
     public long[] getCardNumbers(int userID){return ctc.getCardNumbers(userID);}
     public int[] getCardCVVs(int userID){return ctc.getCardCVVs(userID);}
     public String[] getCardExpDates(int userID){return  ctc.getCardExpDates(userID);}
