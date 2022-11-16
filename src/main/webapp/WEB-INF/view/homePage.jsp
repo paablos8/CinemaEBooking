@@ -120,6 +120,22 @@ h5{
     color: white;  
 }
 
+.search-container {
+  float: right;
+}
+
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
 
 
 
@@ -141,7 +157,12 @@ h5{
     </a>
   </div>
 
-
+<div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search:" name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
 
 
   <div class="title">
