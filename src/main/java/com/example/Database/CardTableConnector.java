@@ -269,7 +269,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardNumber(long oldCardNum, long newCardNum)
     {
-        return update(oldCardNum,"Users","Card Number","Card Number",newCardNum);
+        return update(oldCardNum,"Cards","Card Number","Card Number",newCardNum);
     }
 
     /**
@@ -281,7 +281,7 @@ public class CardTableConnector extends SQL_GetSet
     public boolean changeCardExpDate(long cardNum, String newDate)
     {
         Date expDate = Date.valueOf(newDate);
-        return update(cardNum,"Users","Card Number","Expiration Date",expDate);
+        return update(cardNum,"Cards","Card Number","Expiration Date",expDate);
     }
 
     /**
@@ -292,7 +292,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardName(long cardNum, String name)
     {
-        return update(cardNum,"Users","Card Number","Name on Card",name);
+        return update(cardNum,"Cards","Card Number","Name on Card",name);
     }
 
     /**
@@ -303,7 +303,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardCVV(long cardNum, int cvv)
     {
-        return update(cardNum,"Users","Card Number","CVV",cvv);
+        return update(cardNum,"Cards","Card Number","CVV",cvv);
     }
 
     /**
