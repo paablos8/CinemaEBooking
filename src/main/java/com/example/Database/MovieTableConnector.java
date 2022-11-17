@@ -43,7 +43,8 @@ class MovieTableConnector extends SQL_GetSet
     // get titles of movies in specific category
     String [] getTitlesInCategory(String category)
     {
-        return getMany(category,"Movie Titles","Category","Title");
+        Object [] temp = getMany(category,"Movie Titles","Category","Title");
+        return Arrays.copyOf(temp,temp.length,String[].class);
     }
 
     String [] getTitlesOnDay(String date)
