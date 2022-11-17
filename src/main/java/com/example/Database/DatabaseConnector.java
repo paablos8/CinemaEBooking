@@ -95,7 +95,7 @@ public class DatabaseConnector
                                  String streetAddress, String cityCounty, String stateRegion, String country, int zip)
     {return ctc.createNewCard(date,cvv,cardNum,nameOnCard,userID,streetAddress,cityCounty,stateRegion,zip);}
     public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
-    PaymentCard[] createCardObjects(int userID){return ctc.createCardObjects(userID);}
+    public PaymentCard[] createCardObjects(int userID){return ctc.createCardObjects(userID);}
     public long[] getCardNumbers(int userID){return ctc.getCardNumbers(userID);}
     public int[] getCardCVVs(int userID){return ctc.getCardCVVs(userID);}
     public String[] getCardExpDates(int userID){return  ctc.getCardExpDates(userID);}
@@ -143,7 +143,7 @@ public class DatabaseConnector
         ,posterURL,category,synopsis,durationMin);
     }
     public String [] getTitlesInCategory(String category){return mtc.getTitlesInCategory(category);}
-    String [] getTitlesOnDay(String date){return mtc.getTitlesOnDay(date);}
+    public String [] getTitlesOnDay(String date){return mtc.getTitlesOnDay(date);}
     public String [] getAllTitles(){return mtc.getAllTitles();}
     public String getAgeRating(String title){return mtc.getAgeRating(title);}
     public int getYearRelease(String title){return mtc.getYearRelease(title);}
