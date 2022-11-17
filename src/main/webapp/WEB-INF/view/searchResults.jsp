@@ -167,116 +167,14 @@ h5{
 
   <div class="title">
     <br>
-    Home Page
+    Search Results
     <br><br>
 </div>
 
 <div class="flex-container">
-<div><img src="${active0_img}" alt="image not found"
+<div><img src="${movie_img}" alt="image not found"
   width="150" height="225"></div>
-<h5>${active0}<br> <br>
-  <a href="${active0_trailer}" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTickets?movie=${active0}" target="_blank">Order Tickets Here</a>
+<h5>${movie}<br> <br>
+  <a href="${movie_trailer}" target="_blank">>Movie Trailer</a>
+  <br><a href="orderTickets?movie=${movie}" target="_blank">Order Tickets Here</a>
 </h5>
-
-<div><img src="${active1_img}" alt="image not found"
-  width="150" height="225"></div>
-<h5>${active1}<br> <br>
-   <a href="${active1_trailer}" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTickets?movie=${active1}" target="_blank">Order Tickets Here</a>
-</div>
-
-
-<div class="flex-container">
-  <div><img src="${active2_img}" alt="image not found"
-    width="150" height="225"></div>  
-    <h5>${active2} <br> <br>
-    <a href="${active2_trailer}" target="_blank">>Movie Trailer</a>
-    <br><a href="orderTickets?movie=${active2}" target="_blank">Order Tickets Here</a>
-  </h5>
-
-
-  <div><img src="${active3_img}" alt="image not found"
-    width="150" height="225"></div>
-  <h5>${active3} <br> <br>  
-    <a href="${active3_trailer}" target="_blank">>Movie Trailer</a>
-    <br><a href="orderTickets?movie=${active3}" target="_blank">Order Tickets Here</a>
-  </h5>
-
-
-  <div><img src="${active4_img}" alt="image not found"
-    width="150" height="225"></div>
-  <h5>${active4}<br> <br>
-    <a href="${active4_trailer}" target="_blank">>Movie Trailer</a>
-    <br><a href="orderTickets?movie=${active4}" target="_blank">Order Tickets Here</a>
-  </div>
-
-
-<div class="title">
-  <br>
-  Films Coming Soon
-  <br> <br>
-</div>
-
-
-<div class="flex-container">
-  <div><img src="${coming0_img}" alt="image not found"
-    width="150" height="225"></div>
-  <h5>${coming0}<br>
-    <br>
-    <a href="${coming0_trailer}" target="_blank">>Movie Trailer</a>
-  </h5>
-    <div><img src="${coming1_img}" alt="image not found"
-    width="150" height="225"></div>
-  <h5>${coming1}<br>
-   <br>
-    <a href="${coming1_trailer}" target="_blank">>Movie Trailer</a>
-  </h5>
-
-  <div><img src="${coming2_img}" alt="image not found"
-    width="150" height="225"></div>
-  <h5>${coming2}<br>
-    <br>
-    <a href="${coming2_trailer}" target="_blank">>Movie Trailer</a>
-</h5>
-</div>
-
-<div class="flex-container">
-    <div><img src="${coming3_img}" alt="image not found"
-    width="150" height="225"></div>
-  <h5>${coming3}<br>
-   <br>
-    <a href="${coming3_trailer}" target="_blank">>Movie Trailer</a>
-  </h5>
-
-  <div><img src="${coming4_img}" alt="image not found"
-    width="150" height="225"></div>
-  <h5>${coming4}<br>
-    <br>
-    <a href="${coming4_trailer}" target="_blank">>Movie Trailer</a>
-</h5>
-</div>
-<br><br>
-
-
-
-    <div class="footer">
-      <br>
-      <small>Copyright - Company Name</small>
-      <br><br>
-    
-  </div>
-   
-
-  </body>
-    <script>
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-      </script>
-</html>
