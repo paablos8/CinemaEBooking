@@ -81,6 +81,7 @@ public class CardTableConnector extends SQL_GetSet
 
         for (int i = 0; i < cardNums.length; i ++)
         {
+            cards[i] = new PaymentCard();
             cards[i].setCardNumber(cardNums[i]);
             cards[i].setNameOnCard(cardNames[i]);
             cards[i].setZip(zip[i]);
@@ -142,19 +143,15 @@ public class CardTableConnector extends SQL_GetSet
     public String[] getCardExpDates(int userID)
     {
         int numOfCards = getNumOf(userID,"User Cards","User ID");
-        String[] toRet = new String[numOfCards];
-        Date[] cardDates = new Date[numOfCards];
+        String[] cardDates = new String[numOfCards];
         Object[] cardIDS = getMany(userID,"User Cards","User ID","Card ID");
 
         for(int i = 0; i < numOfCards; i++)
         {
             cardDates[i] = get(cardIDS[i],"Cards","Card ID","Expiration Date");
-
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
-            toRet[i] = dateFormat.format(cardDates[i]);
         }
 
-        return toRet;
+        return cardDates;
     }
 
     /**
@@ -192,7 +189,7 @@ public class CardTableConnector extends SQL_GetSet
         for(int i = 0; i < numOfCards; i++)
         {
             cardAddIDs[i] = get(cardIDS[i],"Cards","Card ID","Address ID");
-            cardSts = get(cardAddIDs[i],"Addresses","Address ID","Street Address");
+            cardSts[i] = get(cardAddIDs[i],"Addresses","Address ID","Street Address");
         }
 
         return cardSts;
@@ -214,7 +211,7 @@ public class CardTableConnector extends SQL_GetSet
         for(int i = 0; i < numOfCards; i++)
         {
             cardAddIDs[i] = get(cardIDS[i],"Cards","Card ID","Address ID");
-            cardCounties = get(cardAddIDs[i],"Addresses","Address ID","City/County");
+            cardCounties[i] = get(cardAddIDs[i],"Addresses","Address ID","City/County");
         }
 
         return cardCounties;
@@ -236,7 +233,7 @@ public class CardTableConnector extends SQL_GetSet
         for(int i = 0; i < numOfCards; i++)
         {
             cardAddIDs[i] = get(cardIDS[i],"Cards","Card ID","Address ID");
-            cardSts = get(cardAddIDs[i],"Addresses","Address ID","State/Region");
+            cardSts[i] = get(cardAddIDs[i],"Addresses","Address ID","State/Region");
         }
 
         return cardSts;
@@ -257,8 +254,8 @@ public class CardTableConnector extends SQL_GetSet
 
         for(int i = 0; i < numOfCards; i++)
         {
-            cardAddIDs[i] = get(cardIDS[i],"Cards","Card ID","Address ID");
-            cardZips = get(cardAddIDs[i],"Addresses","Address ID","Zip Code");
+            cardAddIDs[i] = get((int)cardIDS[i],"Cards","Card ID","Address ID");
+            cardZips[i] = get(cardAddIDs[i],"Addresses","Address ID","Zip Code");
         }
 
         return cardZips;
