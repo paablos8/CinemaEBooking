@@ -124,20 +124,20 @@
 </div>
 <section>
   <div class="promotionCard">
-  <h2>${promo0}</h2>
+  <h2>${promo1_code}</h2>
   <div>
       <div>
-       <p> <h3>${promo0_percentOff} % off!!</h3>
+       <p> <h3>${promo1_percentOff} % off!!</h3>
       <br>
-      Starts at: ${promo0_startDate} and expires at: ${promo0_expirationDate}</p><br>
+      Starts at: ${promo1_startDate} and expires at: ${promo1_expirationDate}</p><br>
       </div>
     <div>
-      <button role= "RemoveBut">Remove</button>
-      <button role= "EditBut">Edit this Coupon</button>
-<!--<a href="editPromotion?promotion=${promo0}" target="_blank">Edit Promotion</a>-->  
-      <form action="editPromotion?promotion=${promo0}">
-        <button type="submit">Edit Promotions</button>
-     </form>
+      <!--<button role= "RemoveBut">Remove</button>--> 
+      <!--<button role= "EditBut">Edit this Coupon</button>--> 
+<a href="editPromotion?promotion=${promo1_code}" target="_blank">Edit Promotion</a> 
+      <!--<form action="editPromotion?promotion=${promo1_code}">--> 
+        <!--<button type="submit">Edit Promotions</button>--> 
+     <!--</form>--> 
     </div>
   </div>
       <hr> 
@@ -145,25 +145,28 @@
 </section>
 
 <section>
-  <h2>${promo1}</h2>
+  <h2>${promo0_code}</h2>
   <div>
       <div>
-       <p> <h3>${promo1_percentOff} % off!!</h3>
+       <p> <h3>${promo0_percentOff} % off!!</h3>
       <br>
        (Present order confirmation reciept in order to redeem.)
        <br>
-       Starts at: ${promo1_startDate} and expires at: ${promo1_expirationDate}</p><br>
+       Starts at: ${promo0_startDate} and expires at: ${promo0_expirationDate}</p><br>
       </div>
     <div>
       <button role= "RemoveBut">Remove</button>
-      <button role= "EditBut">Edit this Coupon</button>
+      <a href="editPromotion?promotion=${promo0_code}" target="_blank">Edit Promotion</a>
+      <!--<form action="editPromotion?promotion=${promo0_code}">-->
+        <button type="submit">Edit Promotions</button>
+     </form>
   </div>
       <hr> 
   </div>
 </section>
 
 <section>
-  <h2>${promo2}</h2>
+  <h2>${promo2_code}</h2>
   <div>
       <div>
        <p> <h3>${promo1_percentOff} % off!!</h3>
@@ -173,6 +176,7 @@
       <div>
         <button role= "RemoveBut">Remove</button>
         <button role= "EditBut">Edit this Coupon</button>
+        <a href="editPromotion?promotion=${promo2_code}" target="_blank">Edit Promotion</a>
     </div>
       <hr> 
   </div>

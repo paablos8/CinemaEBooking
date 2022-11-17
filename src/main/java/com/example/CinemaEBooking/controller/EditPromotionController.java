@@ -16,29 +16,28 @@ public class EditPromotionController {
 
     @RequestMapping(value = "/viewPromotion", method = RequestMethod.GET)
     public String showAddPromotionPage(ModelMap model) {
-
         model.addAttribute("editPromotionForm", new Promotion());
 
         String[] promotionCodes = db.getAllPromotionCodes();
 
         for (int i = 0; i < promotionCodes.length && i < 5; i++) {
             String promotionCode = promotionCodes[i];
-            String promotionName = "promo" + i;
+            String promotion = "promo" + i;
             int promotionPercentOff = db.getPercentOff(promotionCode);
             String promotionStartDate = db.getDateStart(promotionCode);
             String promotionExpirationDate = db.getDateEnd(promotionCode);
 
-            System.out.println(promotionName);
+            System.out.println(promotion);
             System.out.println(promotionCode);
             System.out.println(promotionPercentOff);
             System.out.println(promotionStartDate);
             System.out.println(promotionExpirationDate);            
 
-
-            model.addAttribute(promotionName, promotionCode);
-            model.addAttribute(promotionName + "_percentOff", promotionPercentOff);
-            model.addAttribute(promotionName + "_startDate", promotionStartDate);
-            model.addAttribute(promotionName + "_expirationDate", promotionExpirationDate);
+            model.addAttribute(promotion, promotion);
+            model.addAttribute(promotion + "_code", promotionCode);
+            model.addAttribute(promotion + "_percentOff", promotionPercentOff);
+            model.addAttribute(promotion + "_startDate", promotionStartDate);
+            model.addAttribute(promotion + "_expirationDate", promotionExpirationDate);
             
           }
 
@@ -47,9 +46,9 @@ public class EditPromotionController {
 
 
     @RequestMapping(value = "/editPromotion", method = RequestMethod.GET)
-    public String showEditPromotionPage(ModelMap model, @RequestParam String promotion) {
+    public String showEditPromotionPage(ModelMap model, @RequestParam (value ="promotion") String promotion) {
         model.addAttribute("editPromotionForm", new Promotion());
-        model.addAttribute("code", promotion);
+        model.addAttribute("promotionCode", promotion);
 
         int percentOff = db.getPercentOff(promotion);
         String startDate = db.getDateStart(promotion);

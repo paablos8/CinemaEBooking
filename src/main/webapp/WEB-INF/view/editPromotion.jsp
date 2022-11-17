@@ -200,7 +200,7 @@
     <%--@elvariable id="editPromotion" type=""--%>
     <form:form method="POST" modelAttribute="editPromotionForm">
 
-        <form:input type="text" class="form-control" id="code" path="code" placeholder="${code}" />
+        <form:input type="text" class="form-control" id="code" path="code" placeholder="${promotionCode}" />
         <label class="form-label" for="form2Example1">Code</label> 
         
         <form:input type="number" class="form-control" id="percentOff" path="percentOff" placeholder="${percentOff}" />
