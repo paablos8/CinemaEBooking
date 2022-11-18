@@ -242,7 +242,7 @@ h5{
   Thursday: 7pm 8pm 9pm <br>
   Friday  : 7pm 8pm 9pm <br>
   Saturday: 7pm 8pm 9pm <br> <br>
-Rating: R <br><br>
+Rating: ${rating} <br><br>
   
 </h5>
 
