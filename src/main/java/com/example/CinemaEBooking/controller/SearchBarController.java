@@ -43,6 +43,7 @@ public class SearchBarController {
                 model.addAttribute(name, title);
                 model.addAttribute(name + "_img",db.getPosterURL(title));
                 model.addAttribute(name + "_trailer",db.getTrailerURL(title));
+                model.addAttribute(name + "_rating", db.getAgeRating(title));
         }
 
     
@@ -67,6 +68,7 @@ public class SearchBarController {
                 model.addAttribute(name, title);
                 model.addAttribute(name + "_img",db.getPosterURL(title));
                 model.addAttribute(name + "_trailer",db.getTrailerURL(title));
+                model.addAttribute(name + "_rating", db.getAgeRating(title));
               }
         }
 
