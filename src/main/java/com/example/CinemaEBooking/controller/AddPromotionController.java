@@ -52,7 +52,7 @@ Model model, HttpServletRequest request) throws UnsupportedEncodingException, MB
           System.out.println("Use code " + code + " to get -" + percentOff + " off!");
 
         //emailController.sendPromotionEmail(startDate, expirationDate, percentOff, code);
-        //sendPromotionEmail(startDate, expirationDate, percentOff, code);
+        sendPromotionEmail(startDate, expirationDate, percentOff, code);
 
         return "redirect:/viewPromotion";
     }
