@@ -287,23 +287,23 @@
     <div class="forms"> 
     <div class="inputs"> 
     <span>Name on Card</span> 
-    <input type="text" readonly value="${nameOnCard}"> </div> 
+    <input type="text" readonly value="${card0.nameOnCard}"> </div> 
     
     <div class="inputs"> 
     <span>Number</span> 
-    <input type="text" readonly value="${cardNumber}"> </div> 
+    <input type="text" readonly value="${card0.cardNumber}"> </div> 
     
     <div class="inputs"> 
     <span>CVN</span> 
-     <input type="text" readonly value="${cardCVN}"> </div> 
+     <input type="text" readonly value="${card0.cvv}"> </div> 
      
      <div class="inputs"> 
       <span>Card Expiration Date</span> 
-      <input type="text" readonly value="${cardExpire}"> </div> 
+      <input type="text" readonly value="${card0.expirationDate}"> </div> 
       
       <div class="inputs"> 
       <span>Zip Code</span>
-      <input type="text" readonly value="${cardZip}"> </div> 
+      <input type="text" readonly value="${card0.zip}"> </div> 
       
         
 
@@ -318,19 +318,19 @@
     <div class="forms"> 
     <div class="inputs"> 
     <span>Name on Card</span> 
-    <input type="text" readonly value="${nameOnCard}"> </div> 
+    <input type="text" readonly value="${card1.nameOnCard}"> </div> 
     <div class="inputs"> 
     <span>Number</span> 
-    <input type="text" readonly value="${cardNumber}"> </div> 
+    <input type="text" readonly value="${card1.cardNumber}"> </div> 
     <div class="inputs"> 
     <span>CVN</span> 
-     <input type="text" readonly value="${cardCVN}"> </div> 
+     <input type="text" readonly value="${card1.cvv}"> </div> 
      <div class="inputs"> 
       <span>Card Expiration Date</span> 
-      <input type="text" readonly value="${cardExpire}"> </div> 
+      <input type="text" readonly value="${card1.expirationDate}"> </div> 
       <div class="inputs"> 
       <span>Zip Code</span>
-      <input type="text" readonly value="${cardZip}"> </div> 
+      <input type="text" readonly value="${card1.zip}"> </div> 
          
 </div>
 </div>
@@ -343,19 +343,19 @@
     <div class="forms"> 
     <div class="inputs"> 
     <span>Name on Card</span> 
-    <input type="text" readonly value="${nameOnCard}"> </div> 
+    <input type="text" readonly value="${card2.nameOnCard}"> </div> 
     <div class="inputs"> 
     <span>Number</span> 
-    <input type="text" readonly value="${cardNumber}"> </div> 
+    <input type="text" readonly value="${card2.cardNumber}"> </div> 
     <div class="inputs"> 
     <span>CVN</span> 
-     <input type="text" readonly value="${cardCVN}"> </div> 
+     <input type="text" readonly value="${card2.cvv}"> </div> 
      <div class="inputs"> 
       <span>Card Expiration Date</span> 
-      <input type="text" readonly value="${cardExpire}"> </div> 
+      <input type="text" readonly value="${card2.expirationDate}"> </div> 
       <div class="inputs"> 
       <span>Zip Code</span>
-      <input type="text" readonly value="${cardZip}"> </div> 
+      <input type="text" readonly value="${card2.zip}"> </div> 
 
 </div>
 </div>
