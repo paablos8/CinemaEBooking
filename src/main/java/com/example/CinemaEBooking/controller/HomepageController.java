@@ -1,5 +1,8 @@
 package com.example.CinemaEBooking.controller;
 import org.springframework.ui.ModelMap;
+
+import java.util.Arrays;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,25 +24,33 @@ public class HomepageController {
     @RequestMapping(value = "/homePage", method = RequestMethod.GET)
     public String homePage (ModelMap model){
         String titles[] = db.getAllTitles();
-        int shows[] = db.getAllShowtimeIDs();
+        int showsId[] = db.getAllShowtimeIDs();
+        String ShowsTitles[] = new String[100];
+        int a = 0;
+        int c = 0;
 
+        for (int i = 0; i < showsId.length; i++){
+            ShowsTitles[i] = db.getShowTitle(showsId[i]);
+        }
 
-        for (int i = 0; i < titles.length && i < 5; i++) {
-            String name = "active" + i;
-            String title = titles[i];
-            model.addAttribute(name, title);
-            model.addAttribute(name + "_img",db.getPosterURL(title));
-            model.addAttribute(name + "_trailer",db.getTrailerURL(title));
-          }
+        for (int j = 0; j < titles.length; j++){
+            if (Arrays.asList(ShowsTitles).contains(titles[j])){
+                String name = "active" + a;
+                String title = titles[j];
+                model.addAttribute(name, title);
+                model.addAttribute(name + "_img",db.getPosterURL(title));
+                model.addAttribute(name + "_trailer",db.getTrailerURL(title));
+                a++;
+            } else{
+                String name = "coming" + c;
+                String title = titles[j];
+                model.addAttribute(name, title);
+                model.addAttribute(name + "_img",db.getPosterURL(title));
+                model.addAttribute(name + "_trailer",db.getTrailerURL(title));
+                c++;
+            }
 
-          for (int i = 5; i < titles.length && i < 10; i++) {
-            int j = i - 5;
-            String name = "coming" + j;
-            String title = titles[i];
-            model.addAttribute(name, title);
-            model.addAttribute(name + "_img",db.getPosterURL(title));
-            model.addAttribute(name + "_trailer",db.getTrailerURL(title));
-          } 
+        }
 
         return "homePage";
     }
