@@ -178,6 +178,7 @@ h5{
   <a href="${movie0_trailer}" target="_blank">>Movie Trailer</a>
   <br><a href="orderTickets?movie=${movie0}" target="_blank">Order Tickets Here</a>
 </h5>
+</div>
 
 <div class="flex-container">
     <div><img src="${movie1_img}" alt="image not found"
@@ -187,6 +188,7 @@ h5{
       <a href="${movie1_trailer}" target="_blank">>Movie Trailer</a>
       <br><a href="orderTickets?movie=${movie1}" target="_blank">Order Tickets Here</a>
     </h5>
+</div>
 
     <div class="flex-container">
         <div><img src="${movie2_img}" alt="image not found"
@@ -196,3 +198,6 @@ h5{
           <a href="${movie2_trailer}" target="_blank">>Movie Trailer</a>
           <br><a href="orderTickets?movie=${movie2}" target="_blank">Order Tickets Here</a>
         </h5>
+    </div>
+
+  
