@@ -121,6 +121,7 @@ h5{
 }
 
 .search-container {
+  margin-top:12px;
   float: right;
 }
 
@@ -128,7 +129,6 @@ h5{
 .search-container button {
   float: right;
   padding: 6px 10px;
-  margin-top: 8px;
   margin-right: 16px;
   background: #ddd;
   font-size: 17px;
@@ -151,19 +151,17 @@ h5{
     <div class="topNavLogout" id="logout">
     <a href="userLogin">Login</a>
     <a href="loginSuccess">${currentUser.firstName}</a>
-  </div>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-
-<div class="search-container">
+    <div class="search-container">
     <form action="/searchResults">
       <input type="text" placeholder="Search:" name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
-
+  </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 
   <div class="title">
     <br>

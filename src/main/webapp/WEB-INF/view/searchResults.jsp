@@ -121,14 +121,13 @@ h5{
 }
 
 .search-container {
-  float: right;
+  margin-left:400px;
+  
 }
 
 
 .search-container button {
-  float: right;
   padding: 6px 10px;
-  margin-top: 8px;
   margin-right: 16px;
   background: #ddd;
   font-size: 17px;
