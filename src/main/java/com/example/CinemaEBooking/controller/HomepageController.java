@@ -21,6 +21,8 @@ public class HomepageController {
     @RequestMapping(value = "/homePage", method = RequestMethod.GET)
     public String homePage (ModelMap model){
         String titles[] = db.getAllTitles();
+        int shows[] = db.getAllShowtimeIDs();
+
 
         for (int i = 0; i < titles.length && i < 5; i++) {
             String name = "active" + i;
