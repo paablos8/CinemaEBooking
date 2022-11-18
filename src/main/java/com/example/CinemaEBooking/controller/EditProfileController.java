@@ -2,6 +2,7 @@ package com.example.CinemaEBooking.controller;
 
 import com.example.Database.DatabaseConnector;
 import com.example.CinemaEBooking.entities.Customer;
+import com.example.CinemaEBooking.entities.PaymentCard;
 import com.example.CinemaEBooking.entities.Status;
 import com.example.CinemaEBooking.entities.User;
 
@@ -29,8 +30,19 @@ public class EditProfileController {
     DatabaseConnector db = new DatabaseConnector();    
 
     @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
-    public String showViewProfilePage(ModelMap model) {
+    public String showViewProfilePage(ModelMap model, HttpServletRequest request) {
         model.addAttribute("editAccountForm", new Customer());
+
+        //Get current logged in user
+        HttpSession session = request.getSession();
+        User currentUser = (User) session.getAttribute("currentUser");
+        int userId = currentUser.getUserId();
+
+        //Get Card data
+        PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
+        for (int i = 0; i < storedPaymentCards.length; i++) {
+            model.addAttribute("card" + i, storedPaymentCards[i]);
+        }
         return "viewProfile";
     }
 
@@ -53,9 +65,7 @@ public class EditProfileController {
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
         int userId = currentUser.getUserId();
-        long phone = db.getUserPhoneNumber(userId);
         System.out.println("This is the user ID: " + userId);
-        System.out.println("This is the phone number:" + phone);
 
         return "editProfile";
     }

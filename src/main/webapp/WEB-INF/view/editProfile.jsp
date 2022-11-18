@@ -260,6 +260,12 @@
    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
   </form:form>
 
+  <a href="editCard">
+    <div class="buttonPassword">
+      <button" class="btn btn-secondary btn-block mb-4">Edit Payment Cards</button>
+  </div>
+    </a> 
+
   
 <div class="footer">
   <br>
