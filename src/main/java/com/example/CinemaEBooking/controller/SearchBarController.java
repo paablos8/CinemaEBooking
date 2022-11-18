@@ -19,38 +19,67 @@ public class SearchBarController {
     @RequestMapping(value = "/searchResults", method = RequestMethod.GET)
     public String showSearchResults (ModelMap model, @RequestParam (value = "search") String search) {
 
+    //Searching by title
         String[] allTitles = db.getAllTitles();
         String matchingTitle = "";
-        boolean matchFound = false;
-
+        boolean matchFoundTitle = false;
+        boolean matchFoundCategory = false;
 
         for (int i = 0; i < allTitles.length; i++) {
-            System.out.println(allTitles[i]);
-            System.out.println(search);
+            //System.out.println(allTitles[i]);
+            System.out.println(db.getCategory(allTitles[i]));
+    
+            
             if(search.equals(allTitles[i])) {
                 matchingTitle = allTitles[i];
-                matchFound = true;
+                matchFoundTitle = true;
                 
             }
-            System.out.println(matchFound);
         }
 
-        if(matchFound == true) {
-  
-            String name = "movie";
-                
-            model.addAttribute(name, matchingTitle);
-            model.addAttribute(name + "_img",db.getPosterURL(matchingTitle));
-            model.addAttribute(name + "_trailer",db.getTrailerURL(matchingTitle));
+        if (matchFoundTitle == true) {
+                String name = "movie" + 0;
+                String title = allTitles[0];
+                model.addAttribute(name, title);
+                model.addAttribute(name + "_img",db.getPosterURL(title));
+                model.addAttribute(name + "_trailer",db.getTrailerURL(title));
+        }
 
+    
+    //Searching by category
+        String[] allTitlesInCategory = db.getTitlesInCategory(search);
+        
+        if(allTitlesInCategory.length != 0) {
+                matchFoundCategory = true;
+        }
+        
+        for (int i = 0; i < allTitlesInCategory.length; i++) {
+            System.out.println(allTitlesInCategory[i]);       
+            }
+
+        
+
+        if(matchFoundCategory == true) {
+
+              for (int j = 0; j < allTitlesInCategory.length; j++) {
+                String name = "movie" + j;
+                String title = allTitlesInCategory[j];
+                model.addAttribute(name, title);
+                model.addAttribute(name + "_img",db.getPosterURL(title));
+                model.addAttribute(name + "_trailer",db.getTrailerURL(title));
+              }
+        }
+
+        if(matchFoundCategory || matchFoundTitle == true) {
             return "searchResults";
         }
         
-
         else {
             
             System.out.println("No movie found!");
             return "redirect:/homePage";
         }
     }
+    
 }
+
