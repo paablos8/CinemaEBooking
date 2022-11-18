@@ -121,14 +121,17 @@ h5{
 }
 
 .search-container {
-  margin-left:400px;
-  
+  border-radius:25px;
+  width:50%;
+  padding: 14px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
 }
 
 
 .search-container button {
   padding: 6px 10px;
-  margin-right: 16px;
   background: #ddd;
   font-size: 17px;
   border: none;
@@ -155,10 +158,13 @@ h5{
       <i class="fa fa-bars"></i>
     </a>
   </div>
-
+<br><br>
+<div class="title" style="font-size:35px">
+  Search Again
+</div>
 <div class="search-container">
     <form action="/searchResults">
-      <input type="text" placeholder="Search:" name="search">
+      <input type="text" placeholder="Search:" name="search" style="width: 300px;">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
