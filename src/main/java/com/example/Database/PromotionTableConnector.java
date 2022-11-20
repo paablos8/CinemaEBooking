@@ -63,7 +63,12 @@ class PromotionTableConnector extends SQL_GetSet
     String[] getAllPromotionCodes()
     {
         Object [] temp = getAll("Promotions","Code");
-        return Arrays.copyOf(temp,temp.length,String[].class);
+        Object [] tempSubset = new Object[temp.length -1];
+        for (int i = 1; i < temp.length; i++)
+        {
+            tempSubset[i-1] = temp[i];
+        }
+        return Arrays.copyOf(tempSubset,tempSubset.length,String[].class);
     }
 
     /**

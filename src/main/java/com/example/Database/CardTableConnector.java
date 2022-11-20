@@ -280,8 +280,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardExpDate(long cardNum, String newDate)
     {
-        Date expDate = Date.valueOf(newDate);
-        return update(cardNum,"Cards","Card Number","Expiration Date",expDate);
+        return update(cardNum,"Cards","Card Number","Expiration Date",newDate);
     }
 
     /**
