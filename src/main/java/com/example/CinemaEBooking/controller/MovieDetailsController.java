@@ -34,11 +34,11 @@ public class MovieDetailsController {
         
         int j = 1;
         for (int i = 1; i <= showIDs.length ; i++){
-            if (db.getShowTitle(i).equals(movie)){
+            if (db.getShowTitle(showIDs[i]).equals(movie)){
                 
                 String dateTime = "showtime" + j;
                 String show = "show" + j;
-                model.addAttribute(dateTime, db.getShowDateAndTime(i));
+                model.addAttribute(dateTime, db.getShowDateAndTime(showIDs[i]));
                 model.addAttribute(show, i);
                 j++;
             }
