@@ -37,7 +37,11 @@ public class ScheduleMovieController {
         model.addAttribute("title", movie);
         LocalDateTime dateTime = dt.createDT(show.getYear(), show.getMonth(), show.getDay(), show.getHour(), show.getMinute());
         System.out.println(dt.toString(dateTime));
-        System.out.println(db.createNewShowtime(movie, 1, dt.toString(dateTime)));
+        if (db.createNewShowtime(movie, 1, dt.toString(dateTime)) == -5){
+            model.addAttribute("error", "movie not scheduled, time slot unavailable");
+        } else {
+            model.addAttribute("error", "movie scheduled succesfully");
+        }
         
         return "scheduleMovie";
     }

@@ -218,13 +218,14 @@
         
 </div>
 
-    
+<b>${error}</b>
     
 <br><br>  
 <!-- Submit button -->
    <div class="buttonCenter">
    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Schedule movie</form:button>
   </form:form>
+
 
   
 <div class="footer">
