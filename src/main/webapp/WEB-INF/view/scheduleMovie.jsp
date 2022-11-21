@@ -178,6 +178,10 @@
             padding-bottom: 10px;
           }
 
+.searchError{
+  text-align:center;
+}
+
    </style>
   </head>
 <body>
@@ -217,9 +221,10 @@
 
         
 </div>
+<div class="searchError">
+  <b>${error}</b>
+</div>
 
-<b>${error}</b>
-    
 <br><br>  
 <!-- Submit button -->
    <div class="buttonCenter">
