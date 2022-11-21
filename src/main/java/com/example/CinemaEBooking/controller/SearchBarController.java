@@ -79,7 +79,7 @@ public class SearchBarController {
         else {
             
             System.out.println("No movie found!");
-            return "redirect:/homePage";
+            return "redirect:/searchError";
         }
     }
     
