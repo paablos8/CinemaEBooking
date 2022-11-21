@@ -33,7 +33,7 @@ public class MovieDetailsController {
         int[] showIDs = db.getAllShowtimeIDs();
         
         int j = 1;
-        for (int i = 1; i <= showIDs.length ; i++){
+        for (int i = 0; i < showIDs.length ; i++){
             if (db.getShowTitle(showIDs[i]).equals(movie)){
                 
                 String dateTime = "showtime" + j;
