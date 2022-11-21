@@ -20,13 +20,13 @@ class PromotionTableConnector extends SQL_GetSet
      */
     int createDraftPromotion(String dateStart, String dateEnd, int percentOff, String code)
     {
-        if((percentOff < 100)&&(percentOff>0)) return -3;
+        if(!((percentOff < 100)&&(percentOff>0))) return -3;
         if(!verifyString(code)) return -4;
 
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Promotions VALUES ('"+dateStart+"','"+
-                    dateEnd+"',"+percentOff+","+false+",'"+code+"')";
+                    dateEnd+"',"+percentOff+","+0+",'"+code+"')";
             stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
