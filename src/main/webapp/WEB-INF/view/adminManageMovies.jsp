@@ -102,7 +102,7 @@ color: black;
   </div>
 
  <div class="title">
-    Mangage Movies
+    Manage Movies
 </div>
   <section>
     <h2>${movie0}</h2>

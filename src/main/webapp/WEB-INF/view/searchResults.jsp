@@ -182,7 +182,7 @@ h5{
 <h5>${movie0}<br>
   <br>Rating is : ${movie0_rating}<br><br>
   <a href="${movie0_trailer}" target="_blank">>Movie Trailer</a>
-  <br><a href="orderTickets?movie=${movie0}" target="_blank">Order Tickets Here</a>
+  <br><a href="movieDetails?movie=${movie0}" target="_blank">Order Tickets Here</a>
 </h5>
 </div>
 
@@ -192,7 +192,7 @@ h5{
     <h5>${movie1}<br>
       <br>Rating is : ${movie1_rating} <br><br>
       <a href="${movie1_trailer}" target="_blank">>Movie Trailer</a>
-      <br><a href="orderTickets?movie=${movie1}" target="_blank">Order Tickets Here</a>
+      <br><a href="movieDetails?movie=${movie1}" target="_blank">Order Tickets Here</a>
     </h5>
 </div>
 
@@ -202,7 +202,7 @@ h5{
         <h5>${movie2}<br>
           <br>Rating is : ${movie2_rating} <br><br>
           <a href="${movie2_trailer}" target="_blank">>Movie Trailer</a>
-          <br><a href="orderTickets?movie=${movie2}" target="_blank">Order Tickets Here</a>
+          <br><a href="movieDetails?movie=${movie2}" target="_blank">Order Tickets Here</a>
         </h5>
     </div>
 

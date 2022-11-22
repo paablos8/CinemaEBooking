@@ -285,7 +285,7 @@ h5{
   <input type="text" readonly value="${producer}"> </div> <br><br>
 
 <div class="inputs"> 
-      <span>Reviews:</span> 
+      <span>Reviews(%):</span> 
       <input type="text" readonly value="${reviews}"> </div> <br><br>
     
 <div class="inputs3"> 

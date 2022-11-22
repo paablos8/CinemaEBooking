@@ -189,7 +189,7 @@
    <!-- Discount input -->
         <div class="form-outline mb-4"></div>
             <form:input type="text" class="form-control" id="percentOff" path="percentOff" placeholder="Enter Discount (in %)" />
-            <label class="form-label" for="form2Example1"> DIscount </label>    
+            <label class="form-label" for="form2Example1"> Discount </label>    
 <!-- Start Date input -->
         <div class="form-outline mb-4"></div>
             <form:input type="name" class="form-control" id="startDate" path="startDate" placeholder="Enter Start Date" />
@@ -207,7 +207,7 @@
             <br>
 
  <!-- Submit button -->
- <form:button type="submit" class="btn btn-secondary btn-block mb-4">Add new Promotion & send eMail to customers</form:button>
+ <form:button type="submit" class="btn btn-secondary btn-block mb-4">Add new Promotion & send e-mail to customers</form:button>
 
   
     
