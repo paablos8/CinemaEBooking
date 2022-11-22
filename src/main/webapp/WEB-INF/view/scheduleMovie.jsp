@@ -4,7 +4,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>Edit Promotion  
+    <title>Schedule Movie  
     </title>
     <meta name="viewport" content="width=device-width">
 
@@ -225,7 +225,7 @@
   <b>${error}</b>
 </div>
 
-<br><br>  
+
 <!-- Submit button -->
    <div class="buttonCenter">
    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Schedule movie</form:button>
