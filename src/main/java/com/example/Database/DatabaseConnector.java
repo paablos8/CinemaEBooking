@@ -24,7 +24,7 @@ public class DatabaseConnector
      */
     public DatabaseConnector()
     {
-        String serverName = "2.tcp.ngrok.io:16258";
+        String serverName = "0.tcp.ngrok.io:17449";
         String loginCredentials = ";user=sa;password=Team_C2;";
         String settings = "encrypt=true;trustServerCertificate=true";
         String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
@@ -95,7 +95,7 @@ public class DatabaseConnector
                                  String streetAddress, String cityCounty, String stateRegion, String country, int zip)
     {return ctc.createNewCard(date,cvv,cardNum,nameOnCard,userID,streetAddress,cityCounty,stateRegion,zip);}
     public boolean deleteCard(long cardNum){return ctc.deleteCard(cardNum);}
-    public PaymentCard[] createCardObjects(int userID){return ctc.createCardObjects(userID);}
+    PaymentCard[] createCardObjects(int userID){return ctc.createCardObjects(userID);}
     public long[] getCardNumbers(int userID){return ctc.getCardNumbers(userID);}
     public int[] getCardCVVs(int userID){return ctc.getCardCVVs(userID);}
     public String[] getCardExpDates(int userID){return  ctc.getCardExpDates(userID);}

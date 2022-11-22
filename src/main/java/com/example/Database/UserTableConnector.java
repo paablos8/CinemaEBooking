@@ -99,8 +99,7 @@ class UserTableConnector extends SQL_GetSet
         else if(!verifyString(lName)){return -4;}
         else if(!verifyString(password)){return -5;}
 
-        //String encPass = encrypt(password);
-        String encPass = password;
+        String encPass = encrypt(password);
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Users VALUES ('"
@@ -241,8 +240,7 @@ class UserTableConnector extends SQL_GetSet
     String getUserPassword(int userID)
     {
         String encPass =  get(userID,"Users","User ID","Password");
-        //return decrypt(encPass);
-        return encPass;
+        return decrypt(encPass);
     }
 
     /**
@@ -316,8 +314,7 @@ class UserTableConnector extends SQL_GetSet
     {
         if(!verifyString(password))
             return false;
-        //String encPass = encrypt(password);
-        String encPass = password;
+        String encPass = encrypt(password);
         return update(userID,"Users","User ID","Password",encPass);
     }
 

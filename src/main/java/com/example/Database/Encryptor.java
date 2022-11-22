@@ -14,6 +14,11 @@ import java.io.UnsupportedEncodingException;
  * It is not using state-of-the-art encryption, but it's better
  * than nothing.
  */
+
+/**
+ * It might only be good for comedic purposes. I apologise,
+ * I have no experience in cryptography.
+ */
 class Encryptor
 {
     // This method is irrelevant as long as we aren't using javax.crypto
@@ -260,34 +265,64 @@ class Encryptor
         return null;
     }
 
-    String encrypt(long input)
-    {
-        byte [] temp = new byte[16];
-        for (int i = 15; i >0; i--)
-        {
-            temp [i] = (byte)(input % 10);
-            input = input / 10L;
-        }
-
-        String ret = "";
-        for(int i = 0;i < 15; i += 2)
-        {
-            ret += (char) ((temp[i] & 0xFF) + (temp[i+1] & 0xFF)) ;
-        }
-        return encrypt(ret);
-    }
-
     long decryptLong(String cipherText)
     {
-        String decrpytStr = decrypt(cipherText);
-        long temp = Long.parseLong(decrpytStr);
-        return temp;
+        String decryptStr = decrypt(cipherText);
+        long ret = 0L;
+        for(int i = 15; i >= 0; i--)
+        {
+            ret *= 10;
+            ret += letterToNum(decryptStr.charAt(i));
+        }
+        return ret;
     }
 
     String encryptLong (long num)
     {
-        String temp = "";
-        return temp;
+        String ret = "";
+        for(int i = 0; i < 16; i++)
+        {
+            long temp = num %10;
+            int numLastDigit = (int) temp;
+
+            ret = ret + numToLetter(numLastDigit);
+            num /= 10;
+        }
+        return encrypt(ret);
+    }
+
+    private char numToLetter (int num)
+    {
+        switch(num)
+        {
+            case(0): return 'a';
+            case(1): return 'b';
+            case(2): return 'c';
+            case(3): return 'd';
+            case(4): return 'e';
+            case(5): return 'f';
+            case(6): return 'g';
+            case(7): return 'h';
+            case(8): return 'i';
+            default: return 'j';
+        }
+    }
+
+    private int letterToNum (char letter)
+    {
+        switch(letter)
+        {
+            case('a'):return 0;
+            case('b'):return 1;
+            case('c'):return 2;
+            case('d'):return 3;
+            case('e'):return 4;
+            case('f'):return 5;
+            case('g'):return 6;
+            case('h'):return 7;
+            case('i'):return 8;
+            default: return 9;
+        }
     }
 /*
     SecretKey generateKey()

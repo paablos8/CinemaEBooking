@@ -47,7 +47,7 @@ public class CardTableConnector extends SQL_GetSet
             stmt.executeUpdate(SQL);
             int addID = getComboKey(streetAddress,cityCounty,"Addresses","Street Address",
                     "City/County","Address ID");
-            SQL = "INSERT INTO Cards VALUES ('"+date+"',"+cvv+","+cardNum+",'"+nameOnCard+"',"+addID+")";
+            SQL = "INSERT INTO Cards VALUES ('"+date+"',"+cvv+","+encryptLong(cardNum)+",'"+nameOnCard+"',"+addID+")";
             stmt.executeUpdate(SQL);
 
             SQL = "INSERT INTO [User Cards] VALUES ('"+userID+"')";
@@ -109,7 +109,7 @@ public class CardTableConnector extends SQL_GetSet
         for(int i = 0; i < numOfCards; i++)
         {
             String temp = get(cardIDS[i],"Cards","Card ID","Card Number");
-            cardNums[i] = Long.parseLong(temp);
+            cardNums[i] = decryptLong(temp);
         }
 
         return cardNums;
@@ -269,7 +269,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardNumber(long oldCardNum, long newCardNum)
     {
-        return update(oldCardNum,"Cards","Card Number","Card Number",newCardNum);
+        return update(encryptLong(oldCardNum),"Cards","Card Number","Card Number",encryptLong(newCardNum));
     }
 
     /**
@@ -280,7 +280,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardExpDate(long cardNum, String newDate)
     {
-        return update(cardNum,"Cards","Card Number","Expiration Date",newDate);
+        return update(encryptLong(cardNum),"Cards","Card Number","Expiration Date",newDate);
     }
 
     /**
@@ -291,7 +291,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardName(long cardNum, String name)
     {
-        return update(cardNum,"Cards","Card Number","Name on Card",name);
+        return update(encryptLong(cardNum),"Cards","Card Number","Name on Card",name);
     }
 
     /**
@@ -302,7 +302,7 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean changeCardCVV(long cardNum, int cvv)
     {
-        return update(cardNum,"Cards","Card Number","CVV",cvv);
+        return update(encryptLong(cardNum),"Cards","Card Number","CVV",cvv);
     }
 
     /**
@@ -314,7 +314,7 @@ public class CardTableConnector extends SQL_GetSet
     public boolean changeCardStreetAddress(long cardNum,String stAdd)
     {
         if(!verifyString(stAdd)) {return false;}
-        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        int addid = get(encryptLong(cardNum),"Cards","Card Number","Address ID");
         if (addid == 0)
         {
             System.out.println("This doesn't have an address yet.");
@@ -332,7 +332,7 @@ public class CardTableConnector extends SQL_GetSet
     public boolean changeCardCityCounty(long cardNum,String city)
     {
         if(!verifyString(city)) {return false;}
-        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        int addid = get(encryptLong(cardNum),"Cards","Card Number","Address ID");
         if (addid == 0)
         {
             System.out.println("You don't have an address yet.");
@@ -350,7 +350,7 @@ public class CardTableConnector extends SQL_GetSet
     public boolean changeCardStateRegion(long cardNum,String state)
     {
         if(!verifyString(state)) {return false;}
-        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        int addid = get(encryptLong(cardNum),"Cards","Card Number","Address ID");
         if (addid == 0)
         {
             System.out.println("You don't have an address yet.");
@@ -368,7 +368,7 @@ public class CardTableConnector extends SQL_GetSet
     public boolean changeCardCountry(long cardNum,String country)
     {
         if(!verifyString(country)) {return false;}
-        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        int addid = get(encryptLong(cardNum),"Cards","Card Number","Address ID");
         if (addid == 0)
         {
             System.out.println("You don't have an address yet.");
@@ -386,7 +386,7 @@ public class CardTableConnector extends SQL_GetSet
     public boolean changeCardZipCode(long cardNum,int zip)
     {
         if(zip < 500) {return false;}
-        int addid = get(cardNum,"Cards","Card Number","Address ID");
+        int addid = get(encryptLong(cardNum),"Cards","Card Number","Address ID");
         if (addid == 0)
         {
             System.out.println("You don't have an address yet.");
@@ -401,8 +401,8 @@ public class CardTableConnector extends SQL_GetSet
      */
     public boolean deleteCard(long cardNum)
     {
-        int cardID = get(cardNum,"Cards","Card Number","Card ID");
-        deleteRecord(cardNum,"Cards","Card Number");
+        int cardID = get(encryptLong(cardNum),"Cards","Card Number","Card ID");
+        deleteRecord(encryptLong(cardNum),"Cards","Card Number");
         deleteRecord(cardID,"User Cards","Card ID");
         return true;
     }
