@@ -11,7 +11,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:120%;
       }
       .registration1{
         border-radius:25px;
