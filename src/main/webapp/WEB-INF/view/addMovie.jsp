@@ -221,14 +221,11 @@
             <form:input type="name" class="form-control" id="trailerVideo" path="trailerVideo" placeholder="Enter URL for the Movie Trailer" />
             <label class="form-label" for="form2Example1">Movie Trailer</label> 
 
-<!-- IMDB Rating input -->  
-        <div class="form-outline mb-4"></div>
-        <form:input type="name" class="form-control" id="imdbRating" path="imdbRating" placeholder="Enter imdbRating (int between 0-10)" />
-        <label class="form-label" for="form2Example1">IMDB Rating</label>
+
 
 <!-- Rotten Tomatoes Rating input -->  
         <div class="form-outline mb-4"></div>
-        <form:input type="name" class="form-control" id="rtRating" path="rtRating" placeholder="Enter Rotten Tomatoes Rating (int between 0-10)" />
+        <form:input type="name" class="form-control" id="rtRating" path="rtRating" placeholder="Enter Rotten Tomatoes Rating (int between 0-100)" />
         <label class="form-label" for="form2Example1">Rotten Tomatoes Rating</label>
 <!-- Film Rating input -->  
         <div class="form-outline mb-4"></div>
