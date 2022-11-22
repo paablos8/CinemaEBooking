@@ -167,10 +167,9 @@
 <body>
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
-    <a href="#promotions">Promotions</a>
-    <a href="viewcart">View Cart</a>
+    <a href="viewPromotion"> Manage Promotions</a>
+    <a href="adminManageMovies">Manage Movies</a>
     <div class="topNavLogout" id="logout">
-    <a href="userLogin">Login</a>
   </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -204,14 +203,10 @@
             <label class="form-label" for="form2Example1">Producer</label>  
 
 <!-- Cast input -->   
-<div class="form-outline mb-4"></div>
-<form:input type="name" class="form-control" id="cast" path="cast" placeholder="Enter Cast" />
-<label class="form-label" for="form2Example1">Cast</label>
+            <div class="form-outline mb-4"></div>
+            <form:input type="name" class="form-control" id="cast" path="cast" placeholder="Enter Cast" />
+            <label class="form-label" for="form2Example1">Cast</label>
 
-<!-- Cast input -->   
-<div class="form-outline mb-4"></div>
-<form:input type="name" class="form-control" id="cast" path="cast" placeholder="Enter Cast" />
-<label class="form-label" for="form2Example1">Cast</label>
 
 <!-- Synopsis input -->   
         <div class="form-outline mb-4"></div>
