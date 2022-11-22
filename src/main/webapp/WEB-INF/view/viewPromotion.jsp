@@ -165,7 +165,7 @@
   <h2>${promo2_code}</h2>
   <div>
       <div>
-       <p> <h3>${promo1_percentOff} % off!!</h3>
+       <p> <h3>${promo2_percentOff} % off!!</h3>
       <br>
       Starts at: ${promo2_startDate} and expires at: ${promo2_expirationDate}</p><br>
       </div>
