@@ -122,7 +122,6 @@
        <h5>Available coupons are limited to one coupon per cart and showtime</h5>
 </div>
 <section>
-  <div class="promotionCard">
   <h2>${promo1_code}</h2>
   <div>
       <div>
@@ -131,16 +130,14 @@
       Starts at: ${promo1_startDate} and expires at: ${promo1_expirationDate}</p><br>
       </div>
     <div>
-      <!--<button role= "RemoveBut">Remove</button>--> 
-      <!--<button role= "EditBut">Edit this Coupon</button>--> 
+      <button role= "RemoveBut">Remove</button>
 <a href="editPromotion?promotion=${promo1_code}" target="_blank">Edit Promotion</a> 
-      <!--<form action="editPromotion?promotion=${promo1_code}">--> 
-        <!--<button type="submit">Edit Promotions</button>--> 
-     <!--</form>--> 
+      <!--<form action="editPromotion?promotion=${promo1_code}">-->
+        <button type="submit">Edit Promotions</button>
+     </form>
     </div>
   </div>
       <hr> 
-  </div>
 </section>
 
 <section>

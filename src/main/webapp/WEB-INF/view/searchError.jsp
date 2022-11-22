@@ -10,7 +10,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:auto;
+        height:100%;
       }
       .login{
         border-radius:25px;
@@ -181,4 +181,12 @@ h5{
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
+
+  <div class="footer">
+    <br>
+    <small>Copyright - Company Name</small>
+    <br><br>
+  
+</div>
+
 </body>
