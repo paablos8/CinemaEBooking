@@ -36,18 +36,19 @@ Model model, HttpServletRequest request) throws UnsupportedEncodingException, MB
 
                                     String movieTitle = addMovieForm.getMovieTitle();
                                     String category = addMovieForm.getCategory();
-                                    //String cast = movieForm.getCast();
+                                    String cast = addMovieForm.getCast();
                                     String director = addMovieForm.getDirector();
                                     String producer = addMovieForm.getProducer();
                                     String synopsis = addMovieForm.getSynopsis();
-                                    //String reviews = movieForm.getReviews();
+                                    int imdbRating = addMovieForm.getImdbRating();
+                                    int rtRating = addMovieForm.getRtRating();
                                     String trailerPicture = addMovieForm.getTrailerPicture();
                                     String trailerVideo = addMovieForm.getTrailerVideo();
                                     String filmRatingCode = addMovieForm.getFilmRatingCode();
                                 //input field is currently still a String
                                     //Show[] shows = getShows();
 
-        System.out.println(db.createNewMovie(movieTitle, filmRatingCode, 0, producer, director, "tbd", 0,0, trailerVideo, trailerPicture, category, synopsis, 120));
+        System.out.println(db.createNewMovie(movieTitle, filmRatingCode, 0, producer, director, cast, imdbRating, rtRating, trailerVideo, trailerPicture, category, synopsis, 120));
 
         System.out.println("Movie created with title:" + movieTitle);
 

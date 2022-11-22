@@ -5,11 +5,12 @@ import java.net.URL;
 public class Movie {
     private String movieTitle;
     private String category;
-    private String[] cast;
+    private String cast;
     private String director;
     private String producer;
     private String synopsis;
-    private String[] reviews;
+    private int imdbRating;
+    private int rtRating;
     private String trailerPicture;
     private String trailerVideo;
     private String filmRatingCode;
@@ -36,12 +37,12 @@ public class Movie {
     }
 
 
-    public String[] getCast() {
+    public String getCast() {
         return cast;
     }
 
 
-    public void setCast(String[] cast) {
+    public void setCast(String cast) {
         this.cast = cast;
     }
 
@@ -76,14 +77,24 @@ public class Movie {
     }
 
 
-    public String[] getReviews() {
-        return reviews;
+    public int getImdbRating() {
+        return imdbRating;
     }
 
 
-    public void setReviews(String[] reviews) {
-        this.reviews = reviews;
+    public void setImdbRating(int imdbRating) {
+        this.imdbRating = imdbRating;
     }
+
+
+    public int getRtRating() {
+        return rtRating;
+    }
+
+
+    public void setRtRating(int rtRating) {
+        this.rtRating = rtRating;
+    } 
 
 
     public String getTrailerPicture() {
