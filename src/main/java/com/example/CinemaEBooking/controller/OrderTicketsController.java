@@ -9,7 +9,8 @@ import com.example.Database.DatabaseConnector;
 @Controller
 public class OrderTicketsController {
 
-    private DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
     @RequestMapping(value = "/orderTickets",method = RequestMethod.GET )
     public String orderTicks(ModelMap model, @RequestParam String movie){

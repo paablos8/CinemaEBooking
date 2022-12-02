@@ -15,7 +15,8 @@ public class SendEMailController {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    private DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     String[] promotionMailAddresses;
 
 

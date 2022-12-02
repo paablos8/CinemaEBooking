@@ -18,7 +18,8 @@ import com.example.Database.DatabaseConnector;
 @Controller
 public class AddMovieController {
 
-    private DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
     
 

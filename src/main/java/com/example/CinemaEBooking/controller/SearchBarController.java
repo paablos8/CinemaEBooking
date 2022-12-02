@@ -13,7 +13,8 @@ import com.example.Database.DatabaseConnector;
 
 @Controller
 public class SearchBarController {
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
 
     @RequestMapping(value = "/searchResults", method = RequestMethod.GET)

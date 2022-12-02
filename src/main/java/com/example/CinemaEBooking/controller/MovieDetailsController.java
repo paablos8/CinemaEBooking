@@ -14,7 +14,8 @@ import com.example.Database.DateTime;
 
 @Controller
 public class MovieDetailsController {
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     DateTime dt = new DateTime();
 
 

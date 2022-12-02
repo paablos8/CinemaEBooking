@@ -22,7 +22,8 @@ import com.example.Database.DatabaseConnector;
 @Controller
 public class AddPromotionController {
 
-    private DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     //private SendEMailController emailController = new SendEMailController();
    
     @Autowired

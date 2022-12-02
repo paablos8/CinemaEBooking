@@ -14,7 +14,8 @@ import com.example.CinemaEBooking.entities.Ticket;
 @Controller
 public class HomepageController {
 
-    private DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     
     @RequestMapping("/")
     public String home(){

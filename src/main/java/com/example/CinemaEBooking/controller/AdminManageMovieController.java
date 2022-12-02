@@ -23,7 +23,8 @@ import com.example.Database.DateTime;
 @Controller
 public class AdminManageMovieController {
 
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     DateTime dt = new DateTime();
     
     @RequestMapping(value = "/adminManageMovies", method = RequestMethod.GET)

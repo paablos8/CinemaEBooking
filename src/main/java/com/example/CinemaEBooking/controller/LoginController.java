@@ -24,7 +24,8 @@ import org.springframework.web.servlet.ModelAndView;
 @SessionAttributes("currentUser")
 public class LoginController {
    
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     int userId;
     String userType;
 

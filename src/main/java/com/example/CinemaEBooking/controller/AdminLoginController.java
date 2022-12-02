@@ -13,7 +13,8 @@ import com.example.Database.DatabaseConnector;
 @Controller
 public class AdminLoginController {
 
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     int userId;
     String userType;
 

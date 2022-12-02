@@ -23,7 +23,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 @Controller("forgotPasswordController")
 public class forgotPasswordController {
 
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.GET)
     public String showForgotPasPage(Model model) {

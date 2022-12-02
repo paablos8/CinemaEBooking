@@ -27,7 +27,8 @@ import org.springframework.web.servlet.ModelAndView;
 @SessionAttributes("currentUser")
 public class EditProfileController {
 
-    DatabaseConnector db = new DatabaseConnector();    
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();    
 
     @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
     public String showViewProfilePage(ModelMap model, HttpServletRequest request) {

@@ -22,7 +22,8 @@ public class User {
     private PaymentCard[] paymentCards = {null, null, null};
 
     
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
     private PaymentCard[] addPaymentInfo (int userId, String nameOnCard, long cardNumber, int cvv, String expirationDate, String street, String city, String state, int zip) {
         db.createNewCard(expirationDate, cvv, cardNumber, nameOnCard, userId, street, city, state, "country - tbd", zip);

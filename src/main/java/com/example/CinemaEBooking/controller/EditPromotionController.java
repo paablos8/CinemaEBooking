@@ -12,7 +12,8 @@ import com.example.Database.DatabaseConnector;
 @Controller
 public class EditPromotionController {
 
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
     @RequestMapping(value = "/viewPromotion", method = RequestMethod.GET)
     public String showAddPromotionPage(ModelMap model) {

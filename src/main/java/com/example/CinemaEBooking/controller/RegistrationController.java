@@ -33,7 +33,8 @@ public class RegistrationController {
     private JavaMailSender javaMailSender;
 
     //@Autowired
-    private DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
 
     /*public RegistrationController(DatabaseConnector dbConnector) {

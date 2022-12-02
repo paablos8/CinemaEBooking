@@ -10,7 +10,8 @@ import com.example.Database.DatabaseConnector;
 @Controller
 public class SearchErrorController {
 
-    private DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
     
 

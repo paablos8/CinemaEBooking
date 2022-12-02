@@ -11,7 +11,8 @@ import com.example.Database.DatabaseConnector;
 @Controller
 public class PromotionHomeController {
 
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
     @RequestMapping(value = "/promotionHome", method = RequestMethod.GET)
     public String showPromotionHomePage(ModelMap model) {

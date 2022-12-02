@@ -20,8 +20,10 @@ import com.example.Database.DatabaseConnector;
 
 @Controller
 public class ResetPasswordController {
+    
     String para;
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
 
    // @ResponseBody
     @RequestMapping(value = "/resetPassword", method = RequestMethod.GET)

@@ -19,7 +19,8 @@ import com.example.Database.DatabaseConnector;
 @Controller
 public class ScheduleMovieController {
 
-    DatabaseConnector db = new DatabaseConnector();
+    //Accessing the Database Connector instance
+    DatabaseConnector db = DatabaseConnector.getInstance();
     DateTime dt = new DateTime();
 
 
