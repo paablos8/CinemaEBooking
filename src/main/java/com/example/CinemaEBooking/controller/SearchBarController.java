@@ -40,7 +40,7 @@ public class SearchBarController {
 
         if (matchFoundTitle == true) {
                 String name = "movie" + 0;
-                String title = allTitles[0];
+                String title = matchingTitle;
                 model.addAttribute(name, title);
                 model.addAttribute(name + "_img",db.getPosterURL(title));
                 model.addAttribute(name + "_trailer",db.getTrailerURL(title));
