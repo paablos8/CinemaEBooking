@@ -18,11 +18,12 @@ public class DatabaseConnector
     private MovieTableConnector mtc = null;
     private PromotionTableConnector ptc = null;
     private ShowtimeTableConnector stc = null;
+    private static DatabaseConnector dc = null;
 
     /**
      * Creates DatabaseConnector object and connects to server.
      */
-    public DatabaseConnector()
+    private DatabaseConnector()
     {
         String serverName = "6.tcp.ngrok.io:15976";
         String loginCredentials = ";user=sa;password=Team_C2;";
@@ -45,6 +46,13 @@ public class DatabaseConnector
             ptc = new PromotionTableConnector(conn);
             stc = new ShowtimeTableConnector(conn);
         }
+    }
+
+    public static DatabaseConnector getInstance()
+    {
+        if (dc == null)
+            dc = new DatabaseConnector();
+        return dc;
     }
 
     /**
@@ -190,4 +198,6 @@ public class DatabaseConnector
     public int[] getAllShowtimeIDs(){return stc.getAllShowtimeIDs();}
     public String getShowTitle(int showtimeID){return stc.getShowTitle(showtimeID);}
     public String getShowDateAndTime (int showtimeID){return stc.getShowDateAndTime(showtimeID);}
+
+
 }
