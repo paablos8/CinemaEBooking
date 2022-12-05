@@ -53,12 +53,16 @@ public class LoginController {
         switch(loginResult)
         {
             case(0):System.out.println("Something went wrong");
+            model.addAttribute("message", "Something went wrong. Try Again!");
             break;
             case(-1):System.out.println("Incorrect password");
+            model.addAttribute("message", "Incorrect password. Try Again!");
             break;
             case(-2):System.out.println("Email not found");
+            model.addAttribute("message", "Email not found. Try Again!");
             break;
             case(-3):System.out.println("Your account was set to INACTIVE");
+            model.addAttribute("message", "Your account was set to INACTIVE");
             System.out.println(status);
             break;
       

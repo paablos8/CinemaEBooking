@@ -117,6 +117,7 @@
     <div class="title">
         Admin Login Page
     </div>
+    <div> ${message}</div>
     <div class="login">
     <%--@elvariable id="login" type=""--%>
     <form:form method="POST" modelAttribute="login">
