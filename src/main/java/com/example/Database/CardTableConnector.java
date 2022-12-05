@@ -70,7 +70,7 @@ public class CardTableConnector extends SQL_GetSet
     {
         long [] cardNums = getCardNumbers(userID);
         String [] cardNames = getCardNames(userID);
-        int [] cardCVVs = getCardZipCodes(userID);
+        int [] cardCVVs = getCardCVVs(userID);
         String [] expDates = getCardExpDates(userID);
         String [] streets = getCardStreetAddress(userID);
         String [] counties = getCardCityCounty(userID);
@@ -128,8 +128,8 @@ public class CardTableConnector extends SQL_GetSet
 
         for(int i = 0; i < numOfCards; i++)
         {
-            String temp = get(cardIDS[i],"Cards","Card ID","CVV");
-            cardCVVs[i] = Integer.parseInt(temp);
+            int temp = get((int)cardIDS[i],"Cards","Card ID","CVV");
+            cardCVVs[i] = temp;
         }
 
         return cardCVVs;
