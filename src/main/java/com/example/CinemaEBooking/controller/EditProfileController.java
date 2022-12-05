@@ -44,7 +44,8 @@ public class EditProfileController {
         for (int i = 0; i < storedPaymentCards.length; i++) {
             model.addAttribute("card" + i, storedPaymentCards[i]);
         }
-
+    
+        if (storedPaymentCards.length > 0) {
         PaymentCard card1 = storedPaymentCards[0];
         model.addAttribute("card1Name",card1.getNameOnCard());
         model.addAttribute("card1Number",card1.getCardNumber());
@@ -60,7 +61,9 @@ public class EditProfileController {
         System.out.println("New City: " + card1.getCity());
         System.out.println("New State: " + card1.getState());
         System.out.println("New Zip: " + card1.getZip());
+        }
 
+        if (storedPaymentCards.length > 1) {
         PaymentCard card2 = storedPaymentCards[1];
 
         model.addAttribute("card2Name",card2.getNameOnCard());
@@ -75,7 +78,10 @@ public class EditProfileController {
         System.out.println("New Street Address: " + card2.getStreet());
         System.out.println("New City: " + card2.getCity());
         System.out.println("New State: " + card2.getState());
-        System.out.println("New Zip: " + card2.getZip());    
+        System.out.println("New Zip: " + card2.getZip()); 
+        }
+        
+        if (storedPaymentCards.length > 2) {
 
     PaymentCard card3 = storedPaymentCards[2];
     model.addAttribute("card3Name",card3.getNameOnCard());
@@ -91,7 +97,10 @@ public class EditProfileController {
     System.out.println("New City: " + card3.getCity());
     System.out.println("New State: " + card3.getState());
     System.out.println("New Zip: " + card3.getZip());
-        return "viewProfile";
+    }
+        
+    return "viewProfile";
+        
     }
 
   

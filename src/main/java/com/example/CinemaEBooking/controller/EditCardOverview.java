@@ -34,16 +34,19 @@ public class EditCardOverview {
     
         //get values from form for card 2.
         PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
-        
-        if(storedPaymentCards[0] != null) {
+
+        if(storedPaymentCards.length == 1) {
             model.addAttribute("card1Created", "Already Card 1 implemented");
         }
 
-        if(storedPaymentCards[1] != null) {
+        if(storedPaymentCards.length == 2) {
+            model.addAttribute("card1Created", "Already Card 1 implemented");
             model.addAttribute("card2Created", "Already Card 2 implemented");
         }
 
-        if(storedPaymentCards[2] != null) {
+        if(storedPaymentCards.length == 3) {
+            model.addAttribute("card1Created", "Already Card 1 implemented");
+            model.addAttribute("card2Created", "Already Card 2 implemented");
             model.addAttribute("card3Created", "Already Card 3 implemented");
         }
 

@@ -209,7 +209,7 @@
     </a>
   </div>
   <div class="title">
-    Edit Card Information
+    Add Card Information
 </div>
 
 <div class="editCardTitle">

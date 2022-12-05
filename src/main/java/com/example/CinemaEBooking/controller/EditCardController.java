@@ -25,11 +25,6 @@ public class EditCardController {
     //Accessing the Database Connector instance
     DatabaseConnector db = DatabaseConnector.getInstance();
 
-    long[] currentCardsNumbers = new long[3];
-    long cardNumber1;
-    long cardNumber2;
-    long cardNumber3;
-
     PaymentCard[] storedPaymentCards = new PaymentCard[3];
 
     
@@ -47,7 +42,9 @@ public class EditCardController {
 
         //Get Card data
         PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
+        if (storedPaymentCards.length > 0) {
             model.addAttribute("card" + 1, storedPaymentCards[0]);
+        }
         return "editCardOne";
     }
 
@@ -63,15 +60,15 @@ public class EditCardController {
         PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
 
         //get values from form for card 1.
-            model.addAttribute("card" + 1, storedPaymentCards[0]);
-            long cardNumber = storedPaymentCards[0].getCardNumber();
+            //model.addAttribute("card" + 1, storedPaymentCards[0]);
+            long cardNumber = card1.getCardNumber();
         
             db.changeCardName(cardNumber, card1.getNameOnCard());
             db.changeCardNumber(cardNumber, card1.getCardNumber());
             db.changeCardCVV(cardNumber, card1.getCvv());
             db.changeCardExpDate(cardNumber, card1.getExpirationDate());
             //db.changeStreetAddress(cardNumber, card1.getStreet());
-            db.changeCityCounty(cardNumber, card1.getCity());
+            //db.changeCityCounty(cardNumber, card1.getCity());
             db.changeStateRegion(cardNumber, card1.getState());
             db.changeZipCode(cardNumber, card1.getZip());
             
@@ -102,8 +99,10 @@ public class EditCardController {
 
         //Get Card data
         PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
+        if (storedPaymentCards.length > 1) {
             model.addAttribute("card" + 2, storedPaymentCards[1]);
             long cardNumber = storedPaymentCards[1].getCardNumber();
+        }
         return "editCardTwo";
 
     }
@@ -160,8 +159,10 @@ public Object editCardTwoSubmit(@ModelAttribute("editCardTwo") PaymentCard card2
 
         //Get Card data
         PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
+        if (storedPaymentCards.length > 2) {
             model.addAttribute("card" + 3, storedPaymentCards[2]);
             long cardNumber = storedPaymentCards[2].getCardNumber();
+        }
 
         return "editCardThree";
 
