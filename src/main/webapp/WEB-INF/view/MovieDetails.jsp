@@ -88,7 +88,7 @@
   border-radius: 25px; 
 }
 
-.movieDET{
+.movieDetTitle{
         border-radius:25px;
         background-color:orange;
         width:100%;
@@ -102,21 +102,13 @@
         text-align:center;
         float:left;
 }
-        .movieDET .inputs span{font-size:24px;}
-        .movieDET .inputs input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
-        .movieDET .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
-        .movieDET .inputs span{float: left;}
-        .movieDET .inputs input{float:center;}
-        .movieDET .inputs2 span{font-size: 24px;}
-        .movieDET .inputs2 input{height:40px;padding:0px 10px;font-size:14px;box-shadow:none;outline:none}
-        .movieDET .inputs2 input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
-        .movieDET .inputs2 span{float: left;}
-        .movieDET .inputs2 input{float:center;}
-        .movieDET .inputs3 span{font-size: 20px;}
-        .movieDET .inputs3 input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
-        .movieDET .inputs3 input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
-        .movieDET .inputs3 span{float: left;}
-        .movieDET .inputs3 input{float:center;}
+        .movieDetTitle .inputs span{font-size:24px;float: left;}
+        .movieDetTitle .inputs input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
+        .movieDetTitle .inputs input{float:center;}[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+        
+         
+        
+        
       
 
 
@@ -126,6 +118,9 @@
   padding:1px;
   font-size: 10px;
 }
+.flex-container .inputs2 span{font-size: 24px;float: left;font-weight: 700;}
+.flex-container .inputs2 input{height:40px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
+.flex-container .inputs2 input{float:center;}[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
 
 a{
   color: black;
@@ -261,47 +256,48 @@ h5{
 </div>
 
 <div class="flex-container">
-  <div class="movieDET">
+  <div class="movieDetTitle">
     <div><img src="${image}" alt="image not found"
   width="200" height="300"></div>
   <br>
   <br> <br>
- 
+ </div>
 </h5>
   
     <form:form method="POST">
 
 <br>
-<div class="inputs"> 
-  <span>Cast:</span> 
-  <input type="text" readonly value="${cast}"/> </div> <br><br>
-  
-<div class="inputs">
-  <span>Director:</span> 
-  <input type="text" readonly value="${director}"> </div> <br><br>
-  
-<div class="inputs"> 
-  <span>Producer:</span> 
-  <input type="text" readonly value="${producer}"> </div> <br><br>
 
-<div class="inputs"> 
-      <span>Rotten Tomato Review(%):</span> 
-      <input type="text" readonly value="${reviews}"> </div> <br><br>
+<div class="inputs"><div class="inputs2"> 
+  <span>Cast:</span></div> <br> <br>
+  ${cast} </div> <br><br>
+  
+<div class="inputs"><div class="inputs2">
+  <span>Director:</span></div><br> <br> 
+  ${director} </div> <br><br>
+  
+<div class="inputs"><div class="inputs2"> 
+  <span>Producer:</span></div> <br><br>
+  ${producer} </div> <br><br>
+
+<div class="inputs"> <div class="inputs2">
+      <span>Rotten Tomato Review(%):</span></div><br> <br>
+      ${reviews}%</div> <br><br>
     
-<div class="inputs3"> 
-        <span>MPAA-US code:</span>
-        <input type="text" readonly value="${mpaa}"> </div> <br><br>
+<div class="inputs"> <div class="inputs2">
+        <span>MPAA-US code:</span></div><br> <br>
+        ${mpaa} </div> <br><br>
 
-<div class="inputs2"> 
-    <span>Synopsis:</span>
-    <input type="text" readonly value="${synopsis}"> </div> <br><br>
+<div class="inputs"> <div class="inputs2">
+    <span>Synopsis:</span></div> <br><br>
+    ${synopsis} </div> <br><br>
 
-    <div class="inputs">
-      <span>Showtimes:</span> <br><br><br> 
-    <a href="orderTickets?show=${show1}" target="_self">${showtime1}</a> <br><br>
-    <a href="orderTickets?show=${show2}" target="_self">${showtime2}</a> <br><br>
-    <a href="orderTickets?show=${show3}" target="_self">${showtime3}</a> <br><br>
-    <a href="orderTickets?show=${show4}" target="_self">${showtime4}</a> <br><br>
+    <div class="inputs"><div class="inputs2">
+      <span>Showtimes:</span></div> <br><br> 
+    <a href="orderTickets?show=${show1}" target="_self">${showtime1}</a> <br>
+    <a href="orderTickets?show=${show2}" target="_self">${showtime2}</a> <br>
+    <a href="orderTickets?show=${show3}" target="_self">${showtime3}</a> <br>
+    <a href="orderTickets?show=${show4}" target="_self">${showtime4}</a> <br>
 
    
 
@@ -310,7 +306,7 @@ h5{
         
           </a> 
         </div>
-</div>
+
 
 
   <br><br>
