@@ -12,6 +12,7 @@ import com.example.Database.DateTime;
 
 
 
+
 @Controller
 public class MovieDetailsController {
     //Accessing the Database Connector instance
@@ -41,6 +42,7 @@ public class MovieDetailsController {
                 String show = "show" + j;
                 model.addAttribute(dateTime, db.getShowDateAndTime(showIDs[i]));
                 model.addAttribute(show, i);
+                
                 j++;
             }
         }

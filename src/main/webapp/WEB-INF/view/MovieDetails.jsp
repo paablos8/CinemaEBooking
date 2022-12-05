@@ -298,10 +298,10 @@ h5{
 
     <div class="inputs">
       <span>Showtimes:</span> <br><br><br> 
-    <a href="link.com" target="_blank">${showtime1}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime2}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime3}</a> <br><br>
-    <a href="link.com" target="_blank">${showtime4}</a> <br><br>
+    <a href="orderTickets?show=${show1}" target="_blank">${showtime1}</a> <br><br>
+    <a href="orderTickets?show=${show2}" target="_blank">${showtime2}</a> <br><br>
+    <a href="orderTickets?show=${show3}" target="_blank">${showtime3}</a> <br><br>
+    <a href="orderTickets?show=${show4}" target="_blank">${showtime4}</a> <br><br>
 
    
 
