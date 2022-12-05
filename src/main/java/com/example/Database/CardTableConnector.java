@@ -47,7 +47,7 @@ public class CardTableConnector extends SQL_GetSet
             stmt.executeUpdate(SQL);
             int addID = getComboKey(streetAddress,cityCounty,"Addresses","Street Address",
                     "City/County","Address ID");
-            SQL = "INSERT INTO Cards VALUES ('"+date+"',"+cvv+","+encryptLong(cardNum)+",'"+nameOnCard+"',"+addID+")";
+            SQL = "INSERT INTO Cards VALUES ('"+date+"',"+cvv+",'"+encryptLong(cardNum)+"','"+nameOnCard+"',"+addID+")";
             stmt.executeUpdate(SQL);
 
             SQL = "INSERT INTO [User Cards] VALUES ('"+userID+"')";
