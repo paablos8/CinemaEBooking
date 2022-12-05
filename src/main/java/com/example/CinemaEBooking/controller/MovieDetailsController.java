@@ -41,7 +41,7 @@ public class MovieDetailsController {
                 String dateTime = "showtime" + j;
                 String show = "show" + j;
                 model.addAttribute(dateTime, db.getShowDateAndTime(showIDs[i]));
-                model.addAttribute(show, i);
+                model.addAttribute(show, showIDs[i]);
                 
                 j++;
             }
