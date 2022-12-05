@@ -247,12 +247,15 @@ h5{
 
   <div class="title">
     <br>
-    ${title}
+    ${title} 
     <br>
-    <h3> <a href="${trailer}" target="_blank">Movie Trailer</a><br> 
-      
+    
+    <h3>
+       More Information & Details Below:
+    <br> <br>
+    <a href="${trailer}" target="_blank">Movie Trailer</a><br> 
+      <br>
     </h3>
-    <br>
 </div>
 
 <div class="flex-container">
@@ -294,10 +297,10 @@ h5{
 
     <div class="inputs"><div class="inputs2">
       <span>Showtimes:</span></div> <br><br> 
-    <a href="orderTickets?show=${show1}" target="_self">${showtime1}</a> <br>
-    <a href="orderTickets?show=${show2}" target="_self">${showtime2}</a> <br>
-    <a href="orderTickets?show=${show3}" target="_self">${showtime3}</a> <br>
-    <a href="orderTickets?show=${show4}" target="_self">${showtime4}</a> <br>
+    <a href="orderTickets?show=${show1}" target="_self">${showtime1}</a> <br> <br>
+    <a href="orderTickets?show=${show2}" target="_self">${showtime2}</a> <br> <br>
+    <a href="orderTickets?show=${show3}" target="_self">${showtime3}</a> <br> <br>
+    <a href="orderTickets?show=${show4}" target="_self">${showtime4}</a> <br> <br>
 
    
 
