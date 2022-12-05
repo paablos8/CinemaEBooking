@@ -4,14 +4,14 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>EditProfile   
+    <title>EditCard  
     </title>
     <meta name="viewport" content="width=device-width">
 
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:220%;
       }
       .registration1{
         border-radius:25px;
@@ -189,6 +189,10 @@
             padding-bottom: 10px;
           }
 
+.editCardTitle {
+  font-size:35px;
+  text-align: center; 
+}
    </style>
   </head>
 <body>
@@ -205,73 +209,58 @@
     </a>
   </div>
   <div class="title">
-    Edit Profile
+    Add Card 3
+</div>
+
+<div class="editCardTitle">
+  Card 3
 </div>
 <div class="registration1">
-    <%--@elvariable id="login" type=""--%>
-    <form:form method="POST" modelAttribute="editAccountForm">
-
-
-        <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="${currentUser.firstName}" />
-        <label class="form-label" for="form2Example1">First Name</label> 
     
-        <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="${currentUser.lastName}" />
-        <label class="form-label" for="form2Example1">Last Name</label> 
+    <label class="form-label" for="form2Example1"><u>Card Information</u></label> 
+    <%--@elvariable id="editCardForm" type=""--%>
+    <form:form method="POST" modelAttribute="editCardThree">
+        <form:input type="name" class="form-control" id="nameOnCard" path="nameOnCard" placeholder="${card3.nameOnCard}" />
+        <label class="form-label" for="form2Example1">Name on Card</label> 
+    
+        <form:input type="name" class="form-control" id="cardNumber" path="cardNumber" placeholder="${card3.cardNumber}" />
+        <label class="form-label" for="form2Example1">Card Number</label> 
 
-        <form:input type="tel" value="${currentUser.phone}" class="form-control" id="phone" path="phone" placeholder="${currentUser.phone}" />
-        <label class="form-label" for="form2Example1">Phone Number</label> 
-
-        <a href="forgotPassword">
-          <div class="buttonPassword">
-            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
-        </div>
-          </a> 
-
-        <div class="containerCheck">
-            <div class="form-check">
-              <form:checkbox path="promotionSubscribe" />
-              <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
-          </div>
-        </div>
+        <form:input type="name" class="form-control" id="cvv" path="cvv" placeholder="${card3.cvv}" />
+        <label class="form-label" for="form2Example1">CVV</label> 
+ 
+        <form:input type="name" class="form-control" id="expirationDate" path="expirationDate" placeholder="${card3.expirationDate}"/>
+        <label class="form-label" for="form2Example1">Card Expiration Date</label> 
 </div>
 
     <div class="registration2">
-        <form:input type="name" class="form-control" id="street" path="street" placeholder="${currentUser.street}" />
-        <label class="form-label" for="form2Example1">Street</label> 
+      <label class="form-label" for="form2Example1"><u>Billing Address</u></label> 
+
+      <form:input type="name" class="form-control" id="street" path="street" placeholder="${card3.street}" />
+      <label class="form-label" for="form2Example1">Street Address</label> 
+      
         
-        <form:input type="name" class="form-control" id="city" path="city" placeholder="${currentUser.city}" />
-        <label class="form-label" for="form2Example1">City</label>
+        <form:input type="name" class="form-control" id="city" path="city" placeholder="${card3.city}" />
+        <label class="form-label" for="form2Example1">City</label> 
         
-        <form:input type="num" value="${currentUser.zipCode}" class="form-control" id="zipCode" path="zipCode" placeholder="${currentUser.zipCode}" />
-        <label class="form-label" for="form2Example1">Zip Code</label> 
-        
-        <form:input type="name" class="form-control" id="state" path="state" placeholder="${currentUser.state}" />
+        <form:input type="name" class="form-control" id="state" path="state" placeholder="${card3.state}" />
         <label class="form-label" for="form2Example1">State</label> 
 
-        <form:input type="name" class="form-control" id="country" path="country" placeholder="${currentUser.country}" />
-        <label class="form-label" for="form2Example1">Country</label> 
+        <form:input type="name" class="form-control" id="zip" path="zip" placeholder="${card3.zip}" />
+        <label class="form-label" for="form2Example1">Zip</label>
+</div>
 
-        
-      </div>
-    
-<br><br><br><br><br><br>   
-<!-- Submit button -->
-   <div class="buttonCenter">
+<br><br>  
+<!-- Submit button --> 
+<div class="buttonCenter">
    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
   </form:form>
-
-  <a href="editCardOverview">
-    <div class="buttonPassword">
-      <button" class="btn btn-secondary btn-block mb-4">Add Payment Cards</button>
-  </div>
-    </a> 
-
-  
+</div>
+<br><br>
 <div class="footer">
   <br>
   <small>Copyright - Company Name</small>
   <br><br>
-
 </div>
 
 </html>

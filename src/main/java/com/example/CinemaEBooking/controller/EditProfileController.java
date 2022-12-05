@@ -44,7 +44,63 @@ public class EditProfileController {
         for (int i = 0; i < storedPaymentCards.length; i++) {
             model.addAttribute("card" + i, storedPaymentCards[i]);
         }
-        return "viewProfile";
+    
+        if (storedPaymentCards.length > 0) {
+        PaymentCard card1 = storedPaymentCards[0];
+        model.addAttribute("card1Name",card1.getNameOnCard());
+        model.addAttribute("card1Number",card1.getCardNumber());
+        model.addAttribute("card1Cvv",card1.getCvv());
+        model.addAttribute("card1Expiration",card1.getExpirationDate());
+        model.addAttribute("card1Zip",card1.getZip());
+
+        System.out.println("New Name on Card: " + card1.getNameOnCard());
+        System.out.println("New Card Number: " + card1.getCardNumber());
+        System.out.println("New CVV: " + card1.getCvv());
+        System.out.println("New Card Expiration Date: " + card1.getExpirationDate());
+        System.out.println("New Street Address: " + card1.getStreet());
+        System.out.println("New City: " + card1.getCity());
+        System.out.println("New State: " + card1.getState());
+        System.out.println("New Zip: " + card1.getZip());
+        }
+
+        if (storedPaymentCards.length > 1) {
+        PaymentCard card2 = storedPaymentCards[1];
+
+        model.addAttribute("card2Name",card2.getNameOnCard());
+        model.addAttribute("card2Number",card2.getCardNumber());
+        model.addAttribute("card2Cvv",card2.getCvv());
+        model.addAttribute("card2Expiration",card2.getExpirationDate());
+        model.addAttribute("card2Zip",card2.getZip());
+        System.out.println("New Name on Card: " + card2.getNameOnCard());
+        System.out.println("New Card Number: " + card2.getCardNumber());
+        System.out.println("New CVV: " + card2.getCvv());
+        System.out.println("New Card Expiration Date: " + card2.getExpirationDate());
+        System.out.println("New Street Address: " + card2.getStreet());
+        System.out.println("New City: " + card2.getCity());
+        System.out.println("New State: " + card2.getState());
+        System.out.println("New Zip: " + card2.getZip()); 
+        }
+        
+        if (storedPaymentCards.length > 2) {
+
+    PaymentCard card3 = storedPaymentCards[2];
+    model.addAttribute("card3Name",card3.getNameOnCard());
+    model.addAttribute("card3Number",card3.getCardNumber());
+    model.addAttribute("card3Cvv",card3.getCvv());
+    model.addAttribute("card3Expiration",card3.getExpirationDate());
+    model.addAttribute("card3Zip",card3.getZip());
+    System.out.println("New Name on Card: " + card3.getNameOnCard());
+    System.out.println("New Card Number: " + card3.getCardNumber());
+    System.out.println("New CVV: " + card3.getCvv());
+    System.out.println("New Card Expiration Date: " + card3.getExpirationDate());
+    System.out.println("New Street Address: " + card3.getStreet());
+    System.out.println("New City: " + card3.getCity());
+    System.out.println("New State: " + card3.getState());
+    System.out.println("New Zip: " + card3.getZip());
+    }
+        
+    return "viewProfile";
+        
     }
 
   
