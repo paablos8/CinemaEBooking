@@ -146,8 +146,9 @@ h5{
   margin-right: 30%;  
 }
 
-.seatChart .p {
-  margin-left: 25px;
+.seatChart p {
+  padding-left: 47px;
+  font-size:15px;
 }
 
 
