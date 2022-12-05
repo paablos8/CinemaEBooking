@@ -138,18 +138,7 @@ h5{
   cursor: pointer;
 }
 
-.seatChart{
-  background-color: white;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-left: 30%;
-  margin-right: 30%;  
-}
 
-.seatChart p {
-  padding-left: 47px;
-  font-size:15px;
-}
 
 
 
@@ -194,50 +183,6 @@ h5{
     </form>
   </div>
 
-  <div class="seatChart">
-  <form:form method="POST" modelAttribute="login">
-    <label for="seatSelection">SeatSelection Template:</label> <br>
-    <p>A B C D E F G</p>
-    <label for="row1">Row 1</label>
-    <input type="checkbox" id="seatA1" ${seat.A1Status}>
-    <input type="checkbox" id="seatB1" disabled>
-    <input type="checkbox" id="seatC1" disabled>
-    <input type="checkbox" id="seatD1" disabled>
-    <input type="checkbox" id="seatE1" disabled>
-    <input type="checkbox" id="seatF1" disabled>
-    <input type="checkbox" id="seatG1" disabled>
-    <br>
-    <label for="row1">Row 2</label>
-    <input type="checkbox" id="seatA2" disabled>
-    <input type="checkbox" id="seatB2" disabled>
-    <input type="checkbox" id="seatC2" disabled>
-    <input type="checkbox" id="seatD2" disabled>
-    <input type="checkbox" id="seatE2" disabled>
-    <input type="checkbox" id="seatF2" disabled>
-    <input type="checkbox" id="seatG2" disabled>
-    <br>
-    <label for="row1">Row 3</label>
-    <input type="checkbox" id="seatA2" disabled>
-    <input type="checkbox" id="seatB2" disabled>
-    <input type="checkbox" id="seatC2" disabled>
-    <input type="checkbox" id="seatD2" disabled>
-    <input type="checkbox" id="seatE2" disabled>
-    <input type="checkbox" id="seatF2" disabled>
-    <input type="checkbox" id="seatG2" disabled>
-    <br>
-    <label for="row1">Row 4</label>
-    <input type="checkbox" id="seatA2" disabled>
-    <input type="checkbox" id="seatB2" disabled>
-    <input type="checkbox" id="seatC2" disabled>
-    <input type="checkbox" id="seatD2" disabled>
-    <input type="checkbox" id="seatE2" disabled>
-    <input type="checkbox" id="seatF2" disabled>
-    <input type="checkbox" id="seatG2" disabled>
-    <br>
-    <input type="submit" value="Submit">
-  </form:form> 
-
-</div>
 
 
 <br><br><br><br>

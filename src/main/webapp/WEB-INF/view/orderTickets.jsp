@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>orderTicketsFC 
+    <title>orderTickets
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,7 +16,7 @@
       .login{
         border-radius:25px;
         background-color:lightgrey;
-        width:50%;
+        width:auto;
         padding: 14px 20px;
         margin-left: auto;
         margin-right: auto;
@@ -81,10 +81,9 @@
 
 .flex-container {
   display:flex;
-  background-color:orange;
   justify-content: center;
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 25px; 
 }
 
@@ -186,6 +185,20 @@ h5{
     top:-40px;
     left:0;
 }
+.seatChart{
+  background-color: white;
+  background-image: ""
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 30%;
+  margin-right: 30%;  
+}
+
+.seatChart p {
+  padding-left: 47px;
+  font-size:15px;
+}
+
 
 /* CSS animation */
 @-webkit-keyframes fadeIn {
@@ -236,14 +249,7 @@ h5{
 <div class="flex-container">
 <div><img src="${img}" alt="image not found"
   width="200" height="300"></div>
-  <br>
-  Showtimes <br> <br>
-  Tuesday : 7pm 8pm 9pm <br>
-  Thursday: 7pm 8pm 9pm <br>
-  Friday  : 7pm 8pm 9pm <br>
-  Saturday: 7pm 8pm 9pm <br> <br>
-Rating: ${rating} <br><br>
-  
+    
 </h5>
 
 </div>
@@ -254,60 +260,13 @@ Rating: ${rating} <br><br>
 
 
 <div class="login">
-
-      Showing Avalible:
       <form>
-        <div class="help-tip">
-          <p>Select your viewing day for your movie selction</p>
-      </div> <div class="col-auto my-1">
-            <label class="mr-sm-2" for="ticketDayOfWeek">Day</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option selected>Day</option>
-              <option value="2">Tuesday</option>
-              <option value="3">Thursday</option>
-              <option value="3">Friday</option>
-              <option value="3">Saturday</option>
-            </select>
-          </div>
-          <div class="help-tip">
-            <p>Select your viewing time for your movie selction</p>
-            </div>
-          <div class="col-auto my-1">
-            <label class="mr-sm-2" for="ticketTime">Time</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option selected>Time</option>
-              <option value="1">7pm</option>
-              <option value="2">8pm</option>
-              <option value="3">9pm</option>
-            </select>
-          </div>
-          <div class="help-tip">
-            <p>Enter the amount of tickets for your movie selction</p>
-            </div>          
-          <div class="form-outline">
-            <label class="form-label" for="numberOfTickets">Number of Tickets:</label>
-            <input type="number" id="typeNumber" class="form-control" />
-          </div>
-          <div class="help-tip">
-            <p>Select your viewing section for your movie selction</p>
-            </div>  
-          <div class="col-auto my-1">
-            <label class="mr-sm-2" for="ticketTime">Section Letter</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option selected>Section</option>
-              <option value="1">A</option>
-              <option value="2">B</option>
-              <option value="3">C</option>
-              <option value="4">D</option>
-            </select>
-          </div>
           <div class="help-tip">
             <p>Select your seat number for your movie selction</p>
             </div>          
-          <div class="col-auto my-1">
-            <label class="mr-sm-2" for="ticketTime">Seat Number</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option selected>Seat</option>
+            <label class="mr-sm-2" for="ticketTime">Number of Child Tickets</label>
+            <select  id="childTicketCount">
+              <option selected>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -317,18 +276,93 @@ Rating: ${rating} <br><br>
               <option value="1">7</option>
               <option value="1">8</option>
               <option value="1">9</option>
-              <option value="1">10</option>
-              
+              <option value="1">10</option>  
             </select>
+           <br>
+              <label class="mr-sm-2" for="ticketTime">Number of Adult Tickets</label>
+              <select id="adultTicketCount">
+                <option selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="1">4</option>
+                <option value="1">5</option>
+                <option value="1">6</option>
+                <option value="1">7</option>
+                <option value="1">8</option>
+                <option value="1">9</option>
+                <option value="1">10</option>
+                
+              </select>
+              <br>
+              <label class="mr-sm-2" for="ticketTime">Number of Senior Tickets</label>
+              <select id="seniorTicketCount">
+                <option selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="1">4</option>
+                <option value="1">5</option>
+                <option value="1">6</option>
+                <option value="1">7</option>
+                <option value="1">8</option>
+                <option value="1">9</option>
+                <option value="1">10</option>
+                
+              </select>
+            <div class="seatChart">
+              <form:form method="POST" modelAttribute="login">
+                <label for="seatSelection">SeatSelection Template:</label> <br>
+                <p>A B C D E F G</p>
+                <label for="row1">Row 1</label>
+                <input type="checkbox" id="seatA1" ${seat.A1Status}> 
+                <input type="checkbox" id="seatB1" disabled>
+                <input type="checkbox" id="seatC1" disabled>
+                <input type="checkbox" id="seatD1" disabled>
+                <input type="checkbox" id="seatE1" disabled>
+                <input type="checkbox" id="seatF1" disabled>
+                <input type="checkbox" id="seatG1" disabled>
+                <br>
+                <label for="row1">Row 2</label>
+                <input type="checkbox" id="seatA2" disabled>
+                <input type="checkbox" id="seatB2" disabled>
+                <input type="checkbox" id="seatC2" disabled>
+                <input type="checkbox" id="seatD2" disabled>
+                <input type="checkbox" id="seatE2" disabled>
+                <input type="checkbox" id="seatF2" disabled>
+                <input type="checkbox" id="seatG2" disabled>
+                <br>
+                <label for="row1">Row 3</label>
+                <input type="checkbox" id="seatA2" disabled>
+                <input type="checkbox" id="seatB2" disabled>
+                <input type="checkbox" id="seatC2" disabled>
+                <input type="checkbox" id="seatD2" disabled>
+                <input type="checkbox" id="seatE2" disabled>
+                <input type="checkbox" id="seatF2" disabled>
+                <input type="checkbox" id="seatG2" disabled>
+                <br>
+                <label for="row1">Row 4</label>
+                <input type="checkbox" id="seatA2" disabled>
+                <input type="checkbox" id="seatB2" disabled>
+                <input type="checkbox" id="seatC2" disabled>
+                <input type="checkbox" id="seatD2" disabled>
+                <input type="checkbox" id="seatE2" disabled>
+                <input type="checkbox" id="seatF2" disabled>
+                <input type="checkbox" id="seatG2" disabled>
+                <br>
+              </form:form> 
+            
+            </div>
+            
           </div>          
           
 
           
           
             <a href="orderSummary">
-            <button" class="btn btn-secondary btn-block mb-4">Submit</button>
+            <button" class="btn btn-secondary btn-block mb-4" style="width:35%; margin-left:32%">Submit</button>
         </a>
-        <div><img src="https://conceptdraw.com/a1607c3/p1/preview/640/pict--movie-theater-seat-layout-cinema-seating-plan.png--diagram-flowchart-example.png" alt="image not found"
+        <div><img src="../movieCovers/seatingChart1.jpg" alt="image not found"
           width="200" height="300" ></div>
       </div>
       
