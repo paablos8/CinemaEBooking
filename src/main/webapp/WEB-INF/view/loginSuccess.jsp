@@ -131,8 +131,8 @@
 <a href="editProfile">
   <button" class="btn btn-secondary btn-block mb-4">Edit Profile</button>
 </a>
-<a href="editCard">
-  <button" class="btn btn-secondary btn-block mb-4">Edit Card</button>
+<a href="editCardOverview">
+  <button" class="btn btn-secondary btn-block mb-4">Add Card</button>
 </a>
 </div>
 

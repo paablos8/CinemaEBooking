@@ -4,7 +4,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>EditProfile   
+    <title>Edit Cards 
     </title>
     <meta name="viewport" content="width=device-width">
 
@@ -205,66 +205,30 @@
     </a>
   </div>
   <div class="title">
-    Edit Profile
-</div>
-<div class="registration1">
-    <%--@elvariable id="login" type=""--%>
-    <form:form method="POST" modelAttribute="editAccountForm">
-
-
-        <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="${currentUser.firstName}" />
-        <label class="form-label" for="form2Example1">First Name</label> 
-    
-        <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="${currentUser.lastName}" />
-        <label class="form-label" for="form2Example1">Last Name</label> 
-
-        <form:input type="tel" value="${currentUser.phone}" class="form-control" id="phone" path="phone" placeholder="${currentUser.phone}" />
-        <label class="form-label" for="form2Example1">Phone Number</label> 
-
-        <a href="forgotPassword">
-          <div class="buttonPassword">
-            <button" class="btn btn-secondary btn-block mb-4">Change Password</button>
-        </div>
-          </a> 
-
-        <div class="containerCheck">
-            <div class="form-check">
-              <form:checkbox path="promotionSubscribe" />
-              <label class="form-check-label" for="form2Example31"> Register for Promotions </label>
-          </div>
-        </div>
+    Edit Cards
 </div>
 
-    <div class="registration2">
-        <form:input type="name" class="form-control" id="street" path="street" placeholder="${currentUser.street}" />
-        <label class="form-label" for="form2Example1">Street</label> 
-        
-        <form:input type="name" class="form-control" id="city" path="city" placeholder="${currentUser.city}" />
-        <label class="form-label" for="form2Example1">City</label>
-        
-        <form:input type="num" value="${currentUser.zipCode}" class="form-control" id="zipCode" path="zipCode" placeholder="${currentUser.zipCode}" />
-        <label class="form-label" for="form2Example1">Zip Code</label> 
-        
-        <form:input type="name" class="form-control" id="state" path="state" placeholder="${currentUser.state}" />
-        <label class="form-label" for="form2Example1">State</label> 
 
-        <form:input type="name" class="form-control" id="country" path="country" placeholder="${currentUser.country}" />
-        <label class="form-label" for="form2Example1">Country</label> 
-
-        
-      </div>
-    
-<br><br><br><br><br><br>   
-<!-- Submit button -->
-   <div class="buttonCenter">
-   <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
-  </form:form>
-
-  <a href="editCardOverview">
+  <a href="editCardOne">
     <div class="buttonPassword">
-      <button" class="btn btn-secondary btn-block mb-4">Add Payment Cards</button>
+      <button" class="btn btn-secondary btn-block mb-4">Edit Payment Card 1</button>
   </div>
     </a> 
+    <div> ${card1Created} </div>
+
+    <a href="editCardTwo">
+        <div class="buttonPassword">
+          <button" class="btn btn-secondary btn-block mb-4">Edit Payment Card 2</button>
+      </div>
+        </a>
+        <div> ${card2Created} </div>
+
+        <a href="editCardThree">
+            <div class="buttonPassword">
+              <button" class="btn btn-secondary btn-block mb-4">Edit Payment Card 3</button>
+          </div>
+            </a>
+            <div> ${card3Created} </div>
 
   
 <div class="footer">
