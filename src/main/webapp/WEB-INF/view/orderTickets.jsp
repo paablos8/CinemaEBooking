@@ -1,5 +1,6 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form"%>
+
+
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
@@ -187,7 +188,7 @@ h5{
 }
 .seatChart{
   background-color: white;
-  background-image: ""
+  background-image: "";
   padding-left: 40px;
   padding-right: 40px;
   margin-left: 30%;
@@ -264,6 +265,7 @@ h5{
           <div class="help-tip">
             <p>Select your seat number for your movie selction</p>
             </div>          
+      
             <label class="mr-sm-2" for="ticketTime">Number of Child Tickets</label>
             <select  id="childTicketCount">
               <option selected>0</option>
@@ -311,53 +313,52 @@ h5{
                 
               </select>
             <div class="seatChart">
-              <form:form method="POST" modelAttribute="login">
-                <label for="seatSelection">SeatSelection Template:</label> <br>
+              <label for="seatSelection">SeatSelection Template:</label> <br>
+              <form:form action="submit" method="POST" modelAttribute="seatSelect">
+                <table>
+                  <tr>
                 <p>A B C D E F G</p>
-                <label for="row1">Row 1</label>
-                <input type="checkbox" id="seatA1" ${seat.A1Status}> 
-                <input type="checkbox" id="seatB1" disabled>
-                <input type="checkbox" id="seatC1" disabled>
-                <input type="checkbox" id="seatD1" disabled>
-                <input type="checkbox" id="seatE1" disabled>
-                <input type="checkbox" id="seatF1" disabled>
-                <input type="checkbox" id="seatG1" disabled>
+                <form:label path="row1Selector" for="row1">Row 1</form:label>
+                <form:checkbox  value="seatA1" ${seat.A1Status} />
+                <form:checkbox  value="seatB1" disabled />
+                <form:checkbox  value="seatC1" disabled />
+                <form:checkbox  value="seatD1" disabled />
+                <form:checkbox  value="seatE1" disabled />
+                <form:checkbox  value="seatF1" disabled />
+                <form:checkbox  value="seatG1" disabled />
                 <br>
-                <label for="row1">Row 2</label>
-                <input type="checkbox" id="seatA2" disabled>
-                <input type="checkbox" id="seatB2" disabled>
-                <input type="checkbox" id="seatC2" disabled>
-                <input type="checkbox" id="seatD2" disabled>
-                <input type="checkbox" id="seatE2" disabled>
-                <input type="checkbox" id="seatF2" disabled>
-                <input type="checkbox" id="seatG2" disabled>
+                <label for="row2">Row 2</label>
+                <form:checkbox type="checkbox" value="seatA2" disabled />
+                <form:checkbox type="checkbox" value="seatB2" disabled />
+                <form:checkbox type="checkbox" value="seatC2" disabled />
+                <form:checkbox type="checkbox" value="seatD2" disabled />
+                <form:checkbox type="checkbox" value="seatE2" disabled />
+                <form:checkbox type="checkbox" value="seatF2" disabled />
+                <form:checkbox type="checkbox" value="seatG2" disabled />
                 <br>
-                <label for="row1">Row 3</label>
-                <input type="checkbox" id="seatA2" disabled>
-                <input type="checkbox" id="seatB2" disabled>
-                <input type="checkbox" id="seatC2" disabled>
-                <input type="checkbox" id="seatD2" disabled>
-                <input type="checkbox" id="seatE2" disabled>
-                <input type="checkbox" id="seatF2" disabled>
-                <input type="checkbox" id="seatG2" disabled>
+                <label for="row3">Row 3</label>
+                <form:checkbox type="checkbox" value="seatA2" disabled />
+                <form:checkbox type="checkbox" value="seatB2" disabled />
+                <form:checkbox type="checkbox" value="seatC2" disabled />
+                <form:checkbox type="checkbox" value="seatD2" disabled />
+                <form:checkbox type="checkbox" value="seatE2" disabled />
+                <form:checkbox type="checkbox" value="seatF2" disabled />
+                <form:checkbox type="checkbox" value="seatG2" disabled />
                 <br>
-                <label for="row1">Row 4</label>
-                <input type="checkbox" id="seatA2" disabled>
-                <input type="checkbox" id="seatB2" disabled>
-                <input type="checkbox" id="seatC2" disabled>
-                <input type="checkbox" id="seatD2" disabled>
-                <input type="checkbox" id="seatE2" disabled>
-                <input type="checkbox" id="seatF2" disabled>
-                <input type="checkbox" id="seatG2" disabled>
+                <label for="row4">Row 4</label>
+                <form:checkbox type="checkbox" id="seatA2" disabled />
+                <form:checkbox type="checkbox" id="seatB2" disabled />
+                <form:checkbox type="checkbox" id="seatC2" disabled />
+                <form:checkbox type="checkbox" id="seatD2" disabled />
+                <form:checkbox type="checkbox" id="seatE2" disabled />
+                <form:checkbox type="checkbox" id="seatF2" disabled />
+                <form:checkbox type="checkbox" id="seatG2" disabled />
                 <br>
               </form:form> 
             
             </div>
             
           </div>          
-          
-
-          
           
             <a href="orderSummary">
             <button" class="btn btn-secondary btn-block mb-4" style="width:35%; margin-left:32%">Submit</button>
@@ -372,7 +373,6 @@ h5{
 
     </div>
     
-
     <br>
   <a href="homePage">
     <button" class="btn btn-secondary btn-block mb-4">Back to Home</button>
