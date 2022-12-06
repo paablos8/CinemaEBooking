@@ -19,6 +19,7 @@ public class OrderTicketsController {
 
     @RequestMapping(value = "/orderTickets",method = RequestMethod.GET )
     public String orderTicks(ModelMap model, @RequestParam int show, HttpServletRequest request){
+        //model.addAttribute("editAccountForm", new Customer());
         
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
