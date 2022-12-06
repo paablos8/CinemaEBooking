@@ -13,13 +13,11 @@ public class PaymentCard {
     private String street;
     private String city;
     private String state;
+    private String country;
     private int zip;
 
 
-    //private Booking[] bookings; //not consistent to our UML diagram, but I think an array to store the bookings would be more appropriate
-
-
-
+    
     //getter and setter
 
 
@@ -90,15 +88,12 @@ public class PaymentCard {
         this.cvv = cvv;
     }
 
-    /*
-    public Booking[] getBookings() {
-        return bookings;
+    public String getCountry() {
+        return country;
     }
 
-    public void setBookings(Booking[] bookings) {
-        this.bookings = bookings;
+    public void setCountry(String country) {
+        this.country = country;
     }
-    */
-
 
 }

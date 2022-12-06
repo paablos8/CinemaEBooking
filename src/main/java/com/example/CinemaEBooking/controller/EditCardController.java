@@ -38,13 +38,6 @@ public class EditCardController {
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
         int userId = currentUser.getUserId();
-        System.out.println("This is the user ID: " + userId);
-
-        //Get Card data
-        PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
-        if (storedPaymentCards.length > 0) {
-            model.addAttribute("card" + 1, storedPaymentCards[0]);
-        }
         return "editCardOne";
     }
 
@@ -56,31 +49,35 @@ public class EditCardController {
         User currentUser = (User) session.getAttribute("currentUser");
         int userId = currentUser.getUserId();
 
-        //get all currently stored card numbers from the database.
-        PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
+            String name = card1.getNameOnCard();
+            long number = card1.getCardNumber();
+            int cvv = card1.getCvv();
+            String expDate = card1.getExpirationDate();
+            String street = card1.getStreet();
+            String city = card1.getCity();
+            String state = card1.getState();
+            String country = card1.getCountry();
+            int zip = card1.getZip();
+        db.createNewCard(expDate, cvv, number, name, userId, street, city, state, country, zip);
+           
+        long[] numbers = db.getCardNumbers(userId);
+        String[] names = db.getCardNames(userId);
+        int[] cvvs = db.getCardCVVs(userId);
+        String[] expDates = db.getCardExpDates(userId);
+        String[] streets = db.getCardStreetAddress(userId);
+        String[] cities = db.getCardCityCounty(userId);
+        String[] states = db.getCardStateRegion(userId);
+        int[] zips = db.getCardZipCodes(userId);
 
-        //get values from form for card 1.
-            //model.addAttribute("card" + 1, storedPaymentCards[0]);
-            long cardNumber = card1.getCardNumber();
-        
-            db.changeCardName(cardNumber, card1.getNameOnCard());
-            db.changeCardNumber(cardNumber, card1.getCardNumber());
-            db.changeCardCVV(cardNumber, card1.getCvv());
-            db.changeCardExpDate(cardNumber, card1.getExpirationDate());
-            //db.changeStreetAddress(cardNumber, card1.getStreet());
-            //db.changeCityCounty(cardNumber, card1.getCity());
-            db.changeStateRegion(cardNumber, card1.getState());
-            db.changeZipCode(cardNumber, card1.getZip());
-            
             System.out.println("Following changes made:");
-            System.out.println("New Name on Card: " + card1.getNameOnCard());
-            System.out.println("New Card Number: " + card1.getCardNumber());
-            System.out.println("New CVV: " + card1.getCvv());
-            System.out.println("New Card Expiration Date: " + card1.getExpirationDate());
-            System.out.println("New Street Address: " + card1.getStreet());
-            System.out.println("New City: " + card1.getCity());
-            System.out.println("New State: " + card1.getState());
-            System.out.println("New Zip: " + card1.getZip());
+            System.out.println("New Name on Card: " + numbers[0]);
+            System.out.println("New Card Number: " + names[0]);
+            System.out.println("New CVV: " + cvvs[0]);
+            System.out.println("New Card Expiration Date: " + expDates[0]);
+            System.out.println("New Street Address: " + streets[0]);
+            System.out.println("New City: " + cities[0]);
+            System.out.println("New State: " + states[0]);
+            System.out.println("New Zip: " + zips[0]);
 
         return "viewProfile";
     }
@@ -96,15 +93,8 @@ public class EditCardController {
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
         int userId = currentUser.getUserId();
-
-        //Get Card data
-        PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
-        if (storedPaymentCards.length > 1) {
-            model.addAttribute("card" + 2, storedPaymentCards[1]);
-            long cardNumber = storedPaymentCards[1].getCardNumber();
-        }
+       
         return "editCardTwo";
-
     }
 
 
@@ -117,28 +107,35 @@ public Object editCardTwoSubmit(@ModelAttribute("editCardTwo") PaymentCard card2
 
 
     //get values from form for card 2.
-    PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
-    model.addAttribute("card" + 2, storedPaymentCards[1]);
-    long cardNumber = storedPaymentCards[1].getCardNumber();
+            String name = card2.getNameOnCard();
+            long number = card2.getCardNumber();
+            int cvv = card2.getCvv();
+            String expDate = card2.getExpirationDate();
+            String street = card2.getStreet();
+            String city = card2.getCity();
+            String state = card2.getState();
+            String country = card2.getCountry();
+            int zip = card2.getZip();
+        db.createNewCard(expDate, cvv, number, name, userId, street, city, state, country, zip);
+           
+        long[] numbers = db.getCardNumbers(userId);
+        String[] names = db.getCardNames(userId);
+        int[] cvvs = db.getCardCVVs(userId);
+        String[] expDates = db.getCardExpDates(userId);
+        String[] streets = db.getCardStreetAddress(userId);
+        String[] cities = db.getCardCityCounty(userId);
+        String[] states = db.getCardStateRegion(userId);
+        int[] zips = db.getCardZipCodes(userId);
 
-    db.changeCardName(cardNumber, card2.getNameOnCard());
-    db.changeCardNumber(cardNumber, card2.getCardNumber());
-    db.changeCardCVV(cardNumber, card2.getCvv());
-    db.changeCardExpDate(cardNumber, card2.getExpirationDate());
-    //db.changeStreetAddress(cardNumber, card2.getStreet());
-    db.changeCityCounty(cardNumber, card2.getCity());
-    db.changeStateRegion(cardNumber, card2.getState());
-    db.changeZipCode(cardNumber, card2.getZip());
-
-    System.out.println("Following changes made:");
-    System.out.println("New Name on Card: " + card2.getNameOnCard());
-    System.out.println("New Card Number: " + card2.getCardNumber());
-    System.out.println("New CVV: " + card2.getCvv());
-    System.out.println("New Card Expiration Date: " + card2.getExpirationDate());
-    System.out.println("New Street Address: " + card2.getStreet());
-    System.out.println("New City: " + card2.getCity());
-    System.out.println("New State: " + card2.getState());
-    System.out.println("New Zip: " + card2.getZip());
+            System.out.println("Following changes made:");
+            System.out.println("New Name on Card: " + numbers[1]);
+            System.out.println("New Card Number: " + names[1]);
+            System.out.println("New CVV: " + cvvs[1]);
+            System.out.println("New Card Expiration Date: " + expDates[1]);
+            System.out.println("New Street Address: " + streets[1]);
+            System.out.println("New City: " + cities[1]);
+            System.out.println("New State: " + states[1]);
+            System.out.println("New Zip: " + zips[1]);
 
     return "viewProfile";
 
@@ -155,14 +152,6 @@ public Object editCardTwoSubmit(@ModelAttribute("editCardTwo") PaymentCard card2
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
         int userId = currentUser.getUserId();
-        System.out.println("This is the user ID: " + userId);
-
-        //Get Card data
-        PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
-        if (storedPaymentCards.length > 2) {
-            model.addAttribute("card" + 3, storedPaymentCards[2]);
-            long cardNumber = storedPaymentCards[2].getCardNumber();
-        }
 
         return "editCardThree";
 
@@ -177,28 +166,35 @@ public Object editCardThreeSubmit(@ModelAttribute("editCardThree") PaymentCard c
     int userId = currentUser.getUserId();
 
     //get values from form for card 3.
-    PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
-    model.addAttribute("card" + 3, storedPaymentCards[2]);
-    long cardNumber = card3.getCardNumber();
+    String name = card3.getNameOnCard();
+            long number = card3.getCardNumber();
+            int cvv = card3.getCvv();
+            String expDate = card3.getExpirationDate();
+            String street = card3.getStreet();
+            String city = card3.getCity();
+            String state = card3.getState();
+            String country = card3.getCountry();
+            int zip = card3.getZip();
+        db.createNewCard(expDate, cvv, number, name, userId, street, city, state, country, zip);
+           
+        long[] numbers = db.getCardNumbers(userId);
+        String[] names = db.getCardNames(userId);
+        int[] cvvs = db.getCardCVVs(userId);
+        String[] expDates = db.getCardExpDates(userId);
+        String[] streets = db.getCardStreetAddress(userId);
+        String[] cities = db.getCardCityCounty(userId);
+        String[] states = db.getCardStateRegion(userId);
+        int[] zips = db.getCardZipCodes(userId);
 
-    db.changeCardName(cardNumber, card3.getNameOnCard());
-    db.changeCardNumber(cardNumber, card3.getCardNumber());
-    db.changeCardCVV(cardNumber, card3.getCvv());
-    db.changeCardExpDate(cardNumber, card3.getExpirationDate());
-    //db.changeStreetAddress(cardNumber, card3.getStreet());
-    db.changeCityCounty(cardNumber, card3.getCity());
-    db.changeStateRegion(cardNumber, card3.getState());
-    //db.changeZipCode(cardNumber, card3.getZip());
-
-    System.out.println("Following changes made:");
-    System.out.println("New Name on Card: " + card3.getNameOnCard());
-    System.out.println("New Card Number: " + card3.getCardNumber());
-    System.out.println("New CVV: " + card3.getCvv());
-    System.out.println("New Card Expiration Date: " + card3.getExpirationDate());
-    System.out.println("New Street Address: " + card3.getStreet());
-    System.out.println("New City: " + card3.getCity());
-    System.out.println("New State: " + card3.getState());
-    System.out.println("New Zip: " + card3.getZip());
+            System.out.println("Following changes made:");
+            System.out.println("New Name on Card: " + numbers[2]);
+            System.out.println("New Card Number: " + names[2]);
+            System.out.println("New CVV: " + cvvs[2]);
+            System.out.println("New Card Expiration Date: " + expDates[2]);
+            System.out.println("New Street Address: " + streets[2]);
+            System.out.println("New City: " + cities[2]);
+            System.out.println("New State: " + states[2]);
+            System.out.println("New Zip: " + zips[2]);
 
     return "loginSuccess";
 

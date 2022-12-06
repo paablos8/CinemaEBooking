@@ -41,62 +41,50 @@ public class EditProfileController {
 
         //Get Card data
         PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
-        for (int i = 0; i < storedPaymentCards.length; i++) {
-            model.addAttribute("card" + i, storedPaymentCards[i]);
-        }
-    
+                    
         if (storedPaymentCards.length > 0) {
-        PaymentCard card1 = storedPaymentCards[0];
-        model.addAttribute("card1Name",card1.getNameOnCard());
-        model.addAttribute("card1Number",card1.getCardNumber());
-        model.addAttribute("card1Cvv",card1.getCvv());
-        model.addAttribute("card1Expiration",card1.getExpirationDate());
-        model.addAttribute("card1Zip",card1.getZip());
+            long[] numbers = db.getCardNumbers(userId);
+            String[] names = db.getCardNames(userId);
+            int[] cvvs = db.getCardCVVs(userId);
+            String[] expDates = db.getCardExpDates(userId);
+            int[] zips = db.getCardZipCodes(userId);
 
-        System.out.println("New Name on Card: " + card1.getNameOnCard());
-        System.out.println("New Card Number: " + card1.getCardNumber());
-        System.out.println("New CVV: " + card1.getCvv());
-        System.out.println("New Card Expiration Date: " + card1.getExpirationDate());
-        System.out.println("New Street Address: " + card1.getStreet());
-        System.out.println("New City: " + card1.getCity());
-        System.out.println("New State: " + card1.getState());
-        System.out.println("New Zip: " + card1.getZip());
+        model.addAttribute("card1Name", names[0]); 
+        model.addAttribute("card1Number", numbers[0]);
+        model.addAttribute("card1Cvv", cvvs[0]);
+        model.addAttribute("card1Expiration",expDates[0]);
+        model.addAttribute("card1Zip", zips[0]);
+
         }
 
         if (storedPaymentCards.length > 1) {
-        PaymentCard card2 = storedPaymentCards[1];
+            
+            long[] numbers = db.getCardNumbers(userId);
+            String[] names = db.getCardNames(userId);
+            int[] cvvs = db.getCardCVVs(userId);
+            String[] expDates = db.getCardExpDates(userId);
+            int[] zips = db.getCardZipCodes(userId);
 
-        model.addAttribute("card2Name",card2.getNameOnCard());
-        model.addAttribute("card2Number",card2.getCardNumber());
-        model.addAttribute("card2Cvv",card2.getCvv());
-        model.addAttribute("card2Expiration",card2.getExpirationDate());
-        model.addAttribute("card2Zip",card2.getZip());
-        System.out.println("New Name on Card: " + card2.getNameOnCard());
-        System.out.println("New Card Number: " + card2.getCardNumber());
-        System.out.println("New CVV: " + card2.getCvv());
-        System.out.println("New Card Expiration Date: " + card2.getExpirationDate());
-        System.out.println("New Street Address: " + card2.getStreet());
-        System.out.println("New City: " + card2.getCity());
-        System.out.println("New State: " + card2.getState());
-        System.out.println("New Zip: " + card2.getZip()); 
+        model.addAttribute("card2Name", names[1]);
+        model.addAttribute("card2Number",numbers[1]);
+        model.addAttribute("card2Cvv",cvvs[1]);
+        model.addAttribute("card2Expiration", expDates[1]);
+        model.addAttribute("card2Zip", zips[1]);
         }
         
         if (storedPaymentCards.length > 2) {
 
-    PaymentCard card3 = storedPaymentCards[2];
-    model.addAttribute("card3Name",card3.getNameOnCard());
-    model.addAttribute("card3Number",card3.getCardNumber());
-    model.addAttribute("card3Cvv",card3.getCvv());
-    model.addAttribute("card3Expiration",card3.getExpirationDate());
-    model.addAttribute("card3Zip",card3.getZip());
-    System.out.println("New Name on Card: " + card3.getNameOnCard());
-    System.out.println("New Card Number: " + card3.getCardNumber());
-    System.out.println("New CVV: " + card3.getCvv());
-    System.out.println("New Card Expiration Date: " + card3.getExpirationDate());
-    System.out.println("New Street Address: " + card3.getStreet());
-    System.out.println("New City: " + card3.getCity());
-    System.out.println("New State: " + card3.getState());
-    System.out.println("New Zip: " + card3.getZip());
+            long[] numbers = db.getCardNumbers(userId);
+            String[] names = db.getCardNames(userId);
+            int[] cvvs = db.getCardCVVs(userId);
+            String[] expDates = db.getCardExpDates(userId);
+            int[] zips = db.getCardZipCodes(userId);
+
+    model.addAttribute("card3Name", names[2]);
+    model.addAttribute("card3Number",numbers[2]);
+    model.addAttribute("card3Cvv",cvvs[2]);
+    model.addAttribute("card3Expiration",expDates[2]);
+    model.addAttribute("card3Zip",zips[2]);
     }
         
     return "viewProfile";
@@ -158,7 +146,6 @@ public class EditProfileController {
         System.out.println("New PromotionSubscribe: " + db.getPromoOp(userId));
         System.out.println("New Zip Code: " + db.getZipCode(userId));
 
-        
         return "viewProfile";
     }
 
