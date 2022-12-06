@@ -18,6 +18,7 @@ public class DatabaseConnector
     private MovieTableConnector mtc = null;
     private PromotionTableConnector ptc = null;
     private ShowtimeTableConnector stc = null;
+    private BookingTableConnector btc = null;
     private static DatabaseConnector dc = null;
 
     /**
@@ -45,6 +46,7 @@ public class DatabaseConnector
             mtc = new MovieTableConnector(conn);
             ptc = new PromotionTableConnector(conn);
             stc = new ShowtimeTableConnector(conn);
+            btc = new BookingTableConnector(conn);
         }
     }
 
@@ -191,6 +193,7 @@ public class DatabaseConnector
     public boolean changeEndDate(String code, String newEndDate){return ptc.changeEndDate(code,newEndDate);}
     public boolean changeCode(String oldCode, String newCode){return ptc.changeCode(oldCode,newCode);}
     public void activatePromotion(String code){ptc.activatePromotion(code);}
+    public boolean verifyPromotion(String code){return ptc.verifyPromotion(code);}
 
     //Showtime Methods
     public int createNewShowtime(String movieTitle,int showroomID, String showDateAndTime)
@@ -199,5 +202,18 @@ public class DatabaseConnector
     public String getShowTitle(int showtimeID){return stc.getShowTitle(showtimeID);}
     public String getShowDateAndTime (int showtimeID){return stc.getShowDateAndTime(showtimeID);}
 
+    //Booking Methods
+    public int createNewBooking(int userID,long cardNum,String promoCode,int showtimeID, int adultTickets,
+                                int childTickets, int seniorTickets)
+    {return btc.createNewBooking(userID,cardNum,promoCode,showtimeID,adultTickets,childTickets,seniorTickets);}
+    int getUserID (int bookingID) {return btc.getUserID(bookingID);}
+    long getCardNum (int bookingID) {return btc.getCardNum(bookingID);}
+    String getPromoCode (int bookingID) {return btc.getPromoCode(bookingID);}
+    double getTotal (int bookingID) {return btc.getTotal(bookingID);}
+    int getShowtimeID (int bookingID) {return btc.getShowtimeID(bookingID);}
+    int getAdultTickets (int bookingID) {return btc.getAdultTickets(bookingID);}
+    int getChildTickets (int bookingID) {return btc.getChildTickets(bookingID);}
+    int getSeniorTickets (int bookingID) {return btc.getSeniorTickets(bookingID);}
 
+    //
 }
