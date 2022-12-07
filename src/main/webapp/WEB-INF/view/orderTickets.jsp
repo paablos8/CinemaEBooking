@@ -297,7 +297,9 @@ h5{
             </div>  
             <br>    
             </div>
-          <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
+            <a href="viewcart">
+              <button" class="btn btn-secondary btn-block mb-4">Submit</button>
+          </a>
           
            
       </form:form> 
