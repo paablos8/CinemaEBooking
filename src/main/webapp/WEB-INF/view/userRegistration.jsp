@@ -183,6 +183,8 @@
     Registration Page
 </div>
 
+<div> ${message}</div>
+
 <div class="registration">
   <%--@elvariable id="login" type=""--%>
   <form:form method="POST" modelAttribute="accountForm">
@@ -263,7 +265,7 @@
 
     <div class="footer">
         <br>
-        <small>Copyright - Company Name</small>
+        <small>Copyright - MovieHub</small>
         <br><br>
     </div>
     </div>
@@ -271,12 +273,6 @@
 </div>
 <br><br><br><br>
 
-
-<div class="footer">
-  <br>
-  <small>Copyright - Company Name</small>
-  <br><br>
-
-</div>
+</body>
 
 </html>

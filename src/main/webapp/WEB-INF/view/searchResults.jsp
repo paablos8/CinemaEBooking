@@ -205,5 +205,11 @@ h5{
           <br><a href="movieDetails?movie=${movie2}" target="_blank">Order Tickets Here</a>
         </h5>
     </div>
-
+    <div class="footer">
+      <br>
+      <small>Copyright - MovieHub</small>
+      <br><br>
+    
+  </div>
+</body>
   
