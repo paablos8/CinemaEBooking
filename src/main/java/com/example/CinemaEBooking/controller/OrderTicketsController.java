@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 import com.example.Database.DatabaseConnector;
 
 @Controller
+@SessionAttributes("showId")
 public class OrderTicketsController {
 
     //Accessing the Database Connector instance
@@ -33,6 +36,7 @@ public class OrderTicketsController {
         /*if (currentUser == null){
             return "redirect:/userLogin";
         }*/
+        model.put("showId", show);
         String movie = db.getShowTitle(show);
         model.addAttribute("title", movie);
         model.addAttribute("img", db.getPosterURL(movie));
