@@ -15,7 +15,7 @@ public class AddressTableConnector extends SQL_GetSet
      * Connection should be linked to server prior to creating this object.
      * @param conn Valid connection
      */
-    public AddressTableConnector(Connection conn) {super(conn);this.conn = conn;}
+    AddressTableConnector(Connection conn) {super(conn);this.conn = conn;}
 
     public int createNewAddress(int userID, String stAdd, String city,
                                     String state, int zip)

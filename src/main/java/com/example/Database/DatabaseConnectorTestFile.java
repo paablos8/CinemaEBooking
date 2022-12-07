@@ -11,22 +11,15 @@ public class DatabaseConnectorTestFile
      */
     public static void main(String[] args)
     {
-        /*
-        DatabaseConnector c1 = new DatabaseConnector();
-        System.out.println(c1.createDraftPromotion("2022-11-26 14:00","2022-11-27 16:00",20,"code"));
+
+        DatabaseConnector c1 = null;
+        c1 = c1.getInstance();
+        System.out.println(c1.verifyLogin("email.com","oawen"));
         c1.close();
-*/
 
-
-
+        /*
         Encryptor enc = new Encryptor();
-        //String temp= enc.encrypt("password");
-        //System.out.println(temp);
-        //System.out.println(enc.decryptLong(temp));
-
-
-        System.out.println(enc.decrypt("password"));
-
-
+        System.out.println(enc.decryptLong("fhfhfhfhfhfhfhfh"));
+         */
     }
 }
