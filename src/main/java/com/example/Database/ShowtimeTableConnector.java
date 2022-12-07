@@ -47,7 +47,7 @@ public class ShowtimeTableConnector extends SQL_GetSet
         {
             e.printStackTrace();
         }
-        
+
         return 0;
     }
 

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 
 public class BookingTableConnector extends SQL_GetSet
 {
@@ -61,6 +62,13 @@ public class BookingTableConnector extends SQL_GetSet
         }
 
         return getComboKey(userID,showtimeID,"Booking","User ID","Showtime ID","Booking ID");
+    }
+
+    int [] getBookings (int userID)
+    {
+        Object [] temp = getMany(userID,"Booking","User ID","Booking ID");
+        Integer [] i =  Arrays.copyOf(temp,temp.length,Integer[].class);
+        return Arrays.stream(i).mapToInt(Integer::intValue).toArray();
     }
 
     int getUserID (int bookingID)

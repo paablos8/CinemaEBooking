@@ -212,6 +212,7 @@ public class DatabaseConnector
     public int getAdultTickets (int bookingID) {return btc.getAdultTickets(bookingID);}
     public int getChildTickets (int bookingID) {return btc.getChildTickets(bookingID);}
     public int getSeniorTickets (int bookingID) {return btc.getSeniorTickets(bookingID);}
+    public int [] getBookings (int userID) {return btc.getBookings(userID);}
 
     //Ticket Methods
     public int createNewTicket (String seatID, String datePurchased, String ticketType, int bookingID)
