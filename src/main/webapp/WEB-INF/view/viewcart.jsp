@@ -264,11 +264,11 @@
       <div class="forms"> 
       <div class="inputs"> 
       <span>Name on Card</span> 
-      <input type="text" readonly value="${card1Name}"> </div> 
+      <input type="text" readonly value="${card2Name}"> </div> 
       
       <div class="inputs"> 
       <span>Number</span> 
-      <input type="text" readonly value="${card1Number}"> </div> 
+      <input type="text" readonly value="${card2Number}"> </div> 
   
 </div>
 <div class="form-check">
@@ -283,11 +283,11 @@
   <div class="forms"> 
   <div class="inputs"> 
   <span>Name on Card</span> 
-  <input type="text" readonly value="${card1Name}"> </div> 
+  <input type="text" readonly value="${card3ame}"> </div> 
   
   <div class="inputs"> 
   <span>Number</span> 
-  <input type="text" readonly value="${card1Number}"> </div> 
+  <input type="text" readonly value="${card3Number}"> </div> 
 
 </div>
 <div class="form-check">
