@@ -121,19 +121,19 @@
 </div>
 <div class="promotionCard">
 <section>
-  <h2>${promo1_code}</h2>
+  <h2>${promo0_code}</h2>
   <div>
       <div>
-       <p> <h3>${promo1_percentOff} % off!!</h3>
+       <p> <h3>${promo0_percentOff} % off!!</h3>
       <br>
-      Starts at: ${promo1_startDate} and expires at: ${promo1_expirationDate}</p><br>
+      Starts at: ${promo0_startDate} and expires at: ${promo0_expirationDate}</p><br>
       </div>
     <div>
       <button role= "RemoveBut">Remove</button>
-<a href="editPromotion?promotion=${promo1_code}" target="_blank">Edit Promotion</a> 
-      <!--<form action="editPromotion?promotion=${promo1_code}">-->
+      <a href="editPromotion?promotion=${promo0_code}" target="_blank"> 
         <button type="submit">Edit Promotions</button>
-     </form>
+      </a>
+      </form>
     </div>
   </div>
 </div>  
@@ -142,20 +142,20 @@
 </section>
 <div class="promotionCard">
 <section>
-  <h2>${promo0_code}</h2>
+  <h2>${promo1_code}</h2>
   <div>
       <div>
-       <p> <h3>${promo0_percentOff} % off!!</h3>
+       <p> <h3>${promo1_percentOff} % off!!</h3>
       <br>
        (Present order confirmation reciept in order to redeem.)
        <br>
-       Starts at: ${promo0_startDate} and expires at: ${promo0_expirationDate}</p><br>
+       Starts at: ${promo1_startDate} and expires at: ${promo1_expirationDate}</p><br>
       </div>
     <div>
       <button role= "RemoveBut">Remove</button>
-      <a href="editPromotion?promotion=${promo0_code}" target="_blank">Edit Promotion</a>
-      <!--<form action="editPromotion?promotion=${promo0_code}">-->
+      <a href="editPromotion?promotion=${promo1_code}" target="_blank"> 
         <button type="submit">Edit Promotions</button>
+      </a>
      </form>
   </div>
   </div>    
@@ -175,9 +175,10 @@
       </div>
       <div>
         <button role= "RemoveBut">Remove</button>
-        <button role= "EditBut">Edit this Coupon</button>
-        <a href="editPromotion?promotion=${promo2_code}" target="_blank">Edit Promotion</a>
-    </div>
+        <a href="editPromotion?promotion=${promo2_code}" target="_blank"> 
+          <button type="submit">Edit Promotions</button>
+        </a>    
+      </div>
     </div>  
   </div>
     <hr> 
