@@ -325,7 +325,7 @@ h5{
 
 <div class="footer">
   <br>
-  <small>Copyright - Company Name</small>
+  <small>Copyright - MovieHub</small>
   <br><br>
 
 </div>
