@@ -192,13 +192,24 @@
       <div class="title">
         Your Cart Summary
     </div>
+    
+    <%--@elvariable id="paymentCard" type=""--%>
+    <form:form method="POST" modelAttribute="paymentCard">
+    <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
+              <form:select  path="checkoutCard">
+                <form:option value="1"  label="1" />
+                <form:option value="2"  label="2" />
+                <form:option value="3"  label="3" /> 
+              </form:select>
+            </form:form>
+    
     <div class='section'>
       <div class='flex-container'>
         <div class='order-info-content'>
           <h2>Order Summary</h2>
           <span class='thin'>Adult Ticket</span>
-          <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
-          Subtotal Cost: EnTeR Price Here
+          <br> Enter MOvie Title here<br> <span class='thin small'> Number of tickets: number here <br></span>
+          Subtotal Cost: Enter Price Here
           
         </td>
       </tr>
@@ -242,7 +253,7 @@
 </div>
 <div class='flex-container2'>
     
-      <table class='half-input-table'>
+      <table class='half-sinput-table'>
         <tr><td>Please select your card of purchase: </td></tr>
       </table>
 
@@ -297,10 +308,6 @@
   <span>Number</span> 
   <input type="text" readonly value="${card3Number}"> </div> 
 
-</div>
-<div class="form-check">
-  <form:checkbox path="checkoutCard3" />
-  <label class="form-check-label" for="checkoutCard3"> Select card as Form of Payment </label>
 </div>
 </div>
 
