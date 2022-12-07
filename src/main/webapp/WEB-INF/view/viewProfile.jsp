@@ -192,7 +192,6 @@
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
     <a href="#promotions">Promotions</a>
-    <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
     <a href="logoutSuccess">Logout</a>
   </div>
