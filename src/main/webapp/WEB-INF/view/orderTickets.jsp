@@ -1,4 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
 <head>
@@ -267,7 +267,7 @@ h5{
             </div>          
             <form:form action="submitForm" method="POST" modelAttribute="seatSelect">
             <label class="mr-sm-2" for="ticketTime">Number of Child Tickets</label>
-            <form:select  path="childTicketCount">
+            <form:select  path="child" id = "child">
               <form:option value="0"  label="0" />
               <form:option value="1"  label="1" />
               <form:option value="2"  label="2" />
@@ -282,7 +282,7 @@ h5{
             </form:select>
            <br>
               <label class="mr-sm-2" for="ticketTime">Number of Adult Tickets</label>
-              <form:select  path="adultTicketCount">
+              <form:select  path="adult">
                 <form:option value="0"  label="0" />
                 <form:option value="1"  label="1" />
                 <form:option value="2"  label="2" />
@@ -297,7 +297,7 @@ h5{
               </form:select>
              <br>
               <label class="mr-sm-2" for="ticketTime">Number of Senior Tickets</label>
-              <form:select  path="seniorTicketCount">
+              <form:select  path="senior">
                 <form:option value="0"  label="0" />
                 <form:option value="1"  label="1" />
                 <form:option value="2"  label="2" />
@@ -310,49 +310,11 @@ h5{
                 <form:option value="9"  label="9" />
                 <form:option value="10" label="10"/>  
               </form:select>
-            <div class="seatChart">
-              <label for="seatSelection">SeatSelection Template:</label> <br>
-                <table>
-                  <tr>
-                <p>A B C D E F G</p>
-                <form:label path="row1Selector" for="row1">Row 1</form:label>
-                <form:checkbox  value="seatA1" ${seat.A1Status} />
-                <form:checkbox  value="seatB1" disabled />
-                <form:checkbox  value="seatC1" disabled />
-                <form:checkbox  value="seatD1" disabled />
-                <form:checkbox  value="seatE1" disabled />
-                <form:checkbox  value="seatF1" disabled />
-                <form:checkbox  value="seatG1" disabled />
-                <br>
-                <label for="row2">Row 2</label>
-                <form:checkbox type="checkbox" value="seatA2" disabled />
-                <form:checkbox type="checkbox" value="seatB2" disabled />
-                <form:checkbox type="checkbox" value="seatC2" disabled />
-                <form:checkbox type="checkbox" value="seatD2" disabled />
-                <form:checkbox type="checkbox" value="seatE2" disabled />
-                <form:checkbox type="checkbox" value="seatF2" disabled />
-                <form:checkbox type="checkbox" value="seatG2" disabled />
-                <br>
-                <label for="row3">Row 3</label>
-                <form:checkbox type="checkbox" value="seatA2" disabled />
-                <form:checkbox type="checkbox" value="seatB2" disabled />
-                <form:checkbox type="checkbox" value="seatC2" disabled />
-                <form:checkbox type="checkbox" value="seatD2" disabled />
-                <form:checkbox type="checkbox" value="seatE2" disabled />
-                <form:checkbox type="checkbox" value="seatF2" disabled />
-                <form:checkbox type="checkbox" value="seatG2" disabled />
-                <br>
-                <label for="row4">Row 4</label>
-                <form:checkbox type="checkbox" id="seatA2" disabled />
-                <form:checkbox type="checkbox" id="seatB2" disabled />
-                <form:checkbox type="checkbox" id="seatC2" disabled />
-                <form:checkbox type="checkbox" id="seatD2" disabled />
-                <form:checkbox type="checkbox" id="seatE2" disabled />
-                <form:checkbox type="checkbox" id="seatF2" disabled />
-                <form:checkbox type="checkbox" id="seatG2" disabled />
-                <br>
             
-            </div>
+              <td><form:checkboxes items = "${row1}" path = "row1" /></td>
+              <td><form:checkboxes items = "${row2}" path = "row2" /></td>
+              <td><form:checkboxes items = "${row3}" path = "row3" /></td>
+              <td><form:checkboxes items = "${row4}" path = "row4" /></td>
             
           </div>          
           
