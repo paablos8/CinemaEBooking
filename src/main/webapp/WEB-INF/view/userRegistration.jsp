@@ -183,6 +183,8 @@
     Registration Page
 </div>
 
+<div> ${message}</div>
+
 <div class="registration">
   <%--@elvariable id="login" type=""--%>
   <form:form method="POST" modelAttribute="accountForm">

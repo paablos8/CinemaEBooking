@@ -67,19 +67,39 @@ public class RegistrationController {
                                     String password = accountForm.getPassword();
                                     Boolean promotionSubscribe = accountForm.getPromotionSubscribe();
 
-        /*if (bindingResult.hasErrors()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-        }
-        */
+        int result = db.createNewUser(firstName, lastName, phone, email, promotionSubscribe, false, password);
 
-        db.createNewUser(firstName, lastName, phone, email, promotionSubscribe, false, password);
+        
+        if (result == -3) {
+            model.addAttribute("message", "You have to enter a first name!");
+            return "userRegistration";
+        }
+        
+        if (result == -4) {
+            model.addAttribute("message", "You have to enter a last name!");
+            return "userRegistration";
+        }
+        
+        if (result == -5) {
+            model.addAttribute("message", "You have to enter a password!");
+            return "userRegistration";
+        }
+        
+        if (result == -6) {
+            model.addAttribute("message", "Registration failed, this email-address is already used by another User!");
+            return "userRegistration";
+        }
+
+        else {
         int userID = db.verifyLogin(email, password);
         db.createNewAddress(userID, street, city, state, "USA", zipcode);
+        System.out.println(result);
 
         System.out.println("user created with email:" + email + " and password: " + password);
         //sendEmail(email);
 
-     return "redirect:/registrationConfirmation";
+        return "redirect:/registrationConfirmation";
+        }
 
     
 }
