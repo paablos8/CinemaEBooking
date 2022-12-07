@@ -2,9 +2,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
     <head>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheets" href="css/stylesheet.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
        <title>Your Cart</title> 
-       <link rel="stylesheet" href="stylesheet.css">
-    
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
         background:linear-gradient(grey,orange);
@@ -91,7 +96,7 @@
   
   .flex-container2 {
     display: flex;
-    background-color: rgb(126, 126, 126);
+    
     margin-left: 500px;
     margin-right: auto;
     margin-top: 45px;
@@ -162,6 +167,23 @@
           .card .inputs span{font: size 20px;}
           .card .inputs input{height:24px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
           .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+
+          .search-container {
+  margin-top:12px;
+  float: right;
+}
+
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
 .footer{
     position:fixed;
     left:0;
@@ -179,11 +201,15 @@
       <div class="topnav" id="myTopnav">
         <a href="homePage" class="active">Home</a>
         <a href="promotionHome">Promotions</a>
-        <a href="userLogin">Login</a>
-        <a href="viewcart">View Cart</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
+        <div class="topNavLogout" id="logout">
+          <a href="loginSuccess">${currentUser.firstName}</a>
+          <div class="search-container">
+          <form action="/searchResults">
+            <input type="text" placeholder="Search:" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        </div>
       </div>
 
 
