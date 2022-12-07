@@ -112,10 +112,14 @@
 <div class="login">
     <br>
     
-    Show: NaN<br>
-    Show Time: NaN<br>
-    Number of tickets: NaN<br>
-    Cost: NaN<br>
+    Movie: ${title}<br>
+    Show Time: ${showtime}<br>
+    Adult Tickets: ${adultTickets}<br>
+    Child Tickets: ${childTickets}<br>
+    Senior Tickets: ${seniorTickets}<br>
+    The Promo Code ${promoCode} saved you $ ${moneySaved}<br>
+    Total Sum: ${total}<br>
+    Card Number: ${cardNum}<br>
     Ticket(s) Number: NaN<br>
     <br>
     <a href="homePage">
