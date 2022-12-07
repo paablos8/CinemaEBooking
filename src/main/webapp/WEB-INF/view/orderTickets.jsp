@@ -1,11 +1,9 @@
-<%@ taglib prefix="isform" uri="http://www.springframework.org/tags/form"%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>orderTickets
-    </title>
+    <title>orderTickets</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -33,7 +31,6 @@
   overflow: hidden;
   background-color: #333;
 }
-
 .topnav a {
   float: left;
   display: block;
@@ -43,21 +40,17 @@
   text-decoration: none;
   font-size: 17px;
 }
-
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .topnav a.active {
   background-color: orange;
   color: white;
 }
-
 .topnav .icon {
   display: none;
 }
-
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -65,7 +58,6 @@
     display: block;
   }
 }
-
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -79,7 +71,6 @@
     text-align: left;
   }
 }
-
 .flex-container {
   display:flex;
   justify-content: center;
@@ -87,29 +78,24 @@
   margin-right: auto;
   border-radius: 25px; 
 }
-
 .flex-container > div {
   background: orange;
   margin:25px;
   padding:1px;
   font-size: 10px;
 }
-
 a{
   color: black;
 }
-
 h5{
   text-align:center;
 }
-
 .buttonCentering {
             margin-top:45px;
             align-content:center;
             margin-left: 30%;
             margin-right: 30%;
           }
-
 .footer{
     position:fixed;
     left:0;
@@ -122,9 +108,7 @@ h5{
           
 .seatingChart {
   align-items:center;
-
 }
-
 .help-tip{
     position: static;
     text-align: center;
@@ -136,22 +120,17 @@ h5{
     line-height: 26px;
     cursor: default;
 }
-
 .help-tip:before{
     content:'?';
     font-weight: bold;
     color:#fff;
 }
-
 .help-tip:hover p{
     display:block;
     transform-origin: 100% 0%;
-
     -webkit-animation: fadeIn 0.3s ease-in-out;
     animation: fadeIn 0.3s ease-in-out;
-
 }
-
 .help-tip p{    /* The tooltip */
     display: none;
     text-align: center;
@@ -166,7 +145,6 @@ h5{
     font-size: 13px;
     line-height: 1.4;
 }
-
 .help-tip p:before{ /* The pointer of the tooltip */
     float: right;
     content: '';
@@ -177,7 +155,6 @@ h5{
     right:10px;
     top:-12px;
 }
-
 .help-tip p:after{ /* Prevents the tooltip from being hidden */
     width:100%;
     height:40px;
@@ -194,32 +171,25 @@ h5{
   margin-left: 30%;
   margin-right: 30%;  
 }
-
 .seatChart p {
   padding-left: 47px;
   font-size:15px;
 }
-
-
 /* CSS animation */
 @-webkit-keyframes fadeIn {
     0% { 
         opacity:0; 
         transform: scale(0.6);
     }
-
     100% {
         opacity:100%;
         transform: scale(1);
     }
 }
-
 @keyframes fadeIn {
     0% { opacity:0; }
     100% { opacity:100%; }
 }
-
-
     </style>
   </head>
 
@@ -258,8 +228,6 @@ h5{
 <div class="buttonCentering">
   <a href="movieDetails"><button" class="btn btn-secondary btn-block mb-4">Additional Movie Details Here</button></a> 
   </div>
-
-
 <div class="login">
       <form>
           <div class="help-tip">
@@ -310,17 +278,15 @@ h5{
                 <form:option value="9"  label="9" />
                 <form:option value="10" label="10"/>  
               </form:select>
-
-              <td><form:checkboxes items = "${row1}" path = "row1" /></td>
-              <td><form:checkboxes items = "${row2}" path = "row2" /></td>
-              <td><form:checkboxes items = "${row3}" path = "row3" /></td>
-              <td><form:checkboxes items = "${row4}" path = "row4" /></td>
-            
+              
+              <br><td><form:checkboxes items = "${row1}" path = "row1" /></td>
+              <br><td><form:checkboxes items = "${row2}" path = "row2" /></td>
+              <br><td><form:checkboxes items = "${row3}" path = "row3" /></td>
+              <br><td><form:checkboxes items = "${row4}" path = "row4" /></td>
+              <br>    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
           </div>          
           
-            <a href="orderSummary">
-            <button" class="btn btn-secondary btn-block mb-4" style="width:35%; margin-left:32%">Submit</button>
-        </a>
+           
       </form:form> 
 
         <div><img src="../movieCovers/seatingChart1.jpg" alt="image not found"
@@ -337,21 +303,18 @@ h5{
   <a href="homePage">
     <button" class="btn btn-secondary btn-block mb-4">Back to Home</button>
 </a>
-
   
 </div>
-
 <br>
 <br>
 <br>
-
-
     <div class="footer">
       <br>
-      <small>Copyright - MovieHub</small>
+      <small>Copyright - Company Name</small>
       <br><br>
     
   </div>
+   
   </body>
     <script>
       function myFunction() {
@@ -364,7 +327,4 @@ h5{
       }
       </script>
       
-
-
-
 </html>

@@ -79,6 +79,4 @@ public class Booking {
     public void setPromoID(int promoID) {
         this.promoID = promoID;
     }
-
-    
 }
