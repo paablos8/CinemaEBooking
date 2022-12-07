@@ -101,6 +101,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
+    
   }
   
   .flex-container3 {
@@ -112,7 +113,7 @@
     margin-right: auto;
     margin-top: 25px;
     border-radius: 25px;
-    float:left; 
+    float:right; 
   }
 
 .flex-container > div {
@@ -120,6 +121,7 @@
     margin:25px;
     padding:.5px;
     font-size: 19px;
+    font-family:'Roboto', sans-serif;
   }
   
     .flex-container2 > div {
@@ -127,6 +129,7 @@
     margin:25px;
     padding:.5px;
     font-size: 14px;
+    font-family:'Roboto', sans-serif;
     }
   
     .flex-container3 > div {
@@ -134,6 +137,7 @@
     margin:25px;
     padding:.5px;
     font-size: 19px;
+    font-family:'Roboto', sans-serif;
     }
 
     .card{
@@ -229,11 +233,15 @@
       
     </tbody>
   </table>
+  <br>
+  Have a Promo Code? Enter Here:<br>
+  <input class='input-field'></input>
+  <button class='pay-btn'>Add Promo</button>
   </div>
+  
 </div>
 <div class='flex-container2'>
     
-      <div> Wallet </div>
       <table class='half-input-table'>
         <tr><td>Please select your card of purchase: </td></tr>
       </table>
@@ -253,8 +261,8 @@
         
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="checkoutcard1"  />
-        <label class="form-check-label" for="checkoutcard1"> Select card as Form of Payment </label>
+        <form:checkbox path="checkoutCard1" />
+        <label class="form-check-label" for="checkoutCard1"> Select card as Form of Payment </label>
     </div>
     </div>
     <div class="card"> <div class="info"> 
@@ -272,8 +280,8 @@
   
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkoutcard2"  />
-  <label class="form-check-label" for="checkoutcard2"> Select card as Form of Payment </label>
+  <form:checkbox path="checkoutCard2" />
+  <label class="form-check-label" for="checkoutCard2"> Select card as Form of Payment </label>
 </div>
 </div>
 <div class="card"> <div class="info"> 
@@ -291,14 +299,23 @@
 
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkoutcard3" />
-  <label class="form-check-label" for="checkoutcard3"> Select card as Form of Payment </label>
+  <form:checkbox path="checkoutCard3" />
+  <label class="form-check-label" for="checkoutCard3"> Select card as Form of Payment </label>
 </div>
 </div>
 
 </div>
 
- <br>
+
+
+
+ <div class='flex-container3'>
+  
+ </div>
+ 
+
+
+
   <div class='flex-container3'>
 <div class='total'>
     <span style='float:left;'>

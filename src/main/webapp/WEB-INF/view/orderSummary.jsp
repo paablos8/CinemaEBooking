@@ -105,7 +105,7 @@
 
 
   <div class="title">
-    Order Summary
+    Order Successful!
 
 </div>
 
@@ -119,12 +119,9 @@
     Ticket(s) Number: NaN<br>
     <br>
     <a href="homePage">
-      <button" class="btn btn-secondary btn-block mb-4">Cancel Order?</button>
+      <button" class="btn btn-secondary btn-block mb-4">Back to Home</button>
   </a>
-  <a href="viewcart">
-    <button" class="btn btn-secondary btn-block mb-4">Proceed to cart</button>
-</a>
-</div>
+  
 
 <div class="footer">
   <br>
