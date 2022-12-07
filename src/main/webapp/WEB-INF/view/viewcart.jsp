@@ -82,8 +82,9 @@
 }
 
 .flex-container {
-    display:flex;
-    background-color:orange;
+
+
+    background-color:#333;
     justify-content: center;
     flex-wrap: wrap;
     margin-left: auto;
@@ -91,11 +92,9 @@
     border-radius: 25px; 
     padding: 14px 20px;
     text-align:center;
-    float:left;
   }
   
   .flex-container2 {
-    display: flex;
     
     margin-left: 500px;
     margin-right: auto;
@@ -244,9 +243,6 @@
     
 
   
-  <table class='order-table'>
-    <tbody>
-      <tr>
         
         <td>
         <span class='thin'>Youth Ticket</span>
@@ -254,101 +250,21 @@
         Subtotal Cost: EnTeR Price Here
       </tr>
     
-    </tbody>
-  </table>
-  <div class='line'></div> <br>
-  <table class='order-table'>
-    <tbody>
-      <tr>
-        
+        <br><br>
+
         <td>
         <span class='thin'>Senior Ticket</span>
         <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
         Subtotal Cost: EnTeR Price Here
 
-      </tr>
-      
-    </tbody>
-  </table>
-  <br>
+        <br><br>
   Have a Promo Code? Enter Here:<br>
   <input class='input-field'></input>
   <button class='pay-btn'>Add Promo</button>
-  </div>
+          <br>
+</div>
   
 </div>
-<div class='flex-container2'>
-    
-      <table class='half-sinput-table'>
-        <tr><td>Please select your card of purchase: </td></tr>
-      </table>
-
-      <div class="card"> <div class="info"> 
-            <span>Primary Card Information</span> 
-            </div> 
-            
-            <div class="forms"> 
-            <div class="inputs"> 
-            <span>Name on Card</span> 
-            <input type="text" readonly value="${card1Name}"> </div> 
-            
-            <div class="inputs"> 
-            <span>Number</span> 
-            <input type="text" readonly value="${card1Number}"> </div> 
-        
-      </div>
-      <div class="form-check">
-        <form:checkbox path="checkoutCard1" />
-        <label class="form-check-label" for="checkoutCard1"> Select card as Form of Payment </label>
-    </div>
-    </div>
-    <div class="card"> <div class="info"> 
-      <span>Secondary Card Information</span> 
-      </div> 
-      
-      <div class="forms"> 
-      <div class="inputs"> 
-      <span>Name on Card</span> 
-      <input type="text" readonly value="${card2Name}"> </div> 
-      
-      <div class="inputs"> 
-      <span>Number</span> 
-      <input type="text" readonly value="${card2Number}"> </div> 
-  
-</div>
-<div class="form-check">
-  <form:checkbox path="checkoutCard2" />
-  <label class="form-check-label" for="checkoutCard2"> Select card as Form of Payment </label>
-</div>
-</div>
-<div class="card"> <div class="info"> 
-  <span>Tertiary Card Information</span> 
-  </div> 
-  
-  <div class="forms"> 
-  <div class="inputs"> 
-  <span>Name on Card</span> 
-  <input type="text" readonly value="${card3ame}"> </div> 
-  
-  <div class="inputs"> 
-  <span>Number</span> 
-  <input type="text" readonly value="${card3Number}"> </div> 
-
-</div>
-</div>
-
-</div>
-
-
-
-
- <div class='flex-container3'>
-  
- </div>
- 
-
-
-
   <div class='flex-container3'>
 <div class='total'>
     <span style='float:left;'>
