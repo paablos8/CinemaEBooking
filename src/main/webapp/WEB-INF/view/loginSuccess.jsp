@@ -133,6 +133,9 @@
 <a href="editCardOverview">
   <button" class="btn btn-secondary btn-block mb-4">Add Card</button>
 </a>
+<a href="orderHistory">
+  <button" class="btn btn-secondary btn-block mb-4">View Order History</button>
+</a>
 </div>
 
 <div class="footer">
