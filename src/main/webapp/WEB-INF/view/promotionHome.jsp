@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
-        background-color: grey;
-      }
+        background:linear-gradient(grey,orange);
+        height:150%;
+      }      
       .login{
         border-radius:25px;
         background-color:lightgrey;
@@ -85,6 +86,16 @@
     background-color:#333;
     color: white;  
 }
+.promoCard{
+  text-align: center;
+  border-radius:25px;
+  background-color: #333;
+  margin-left:30%;
+  margin-right:30%;
+  padding-top: 15px;
+  color: lightgrey;
+}
+
 
     </style>
   </head>
@@ -107,6 +118,9 @@
     <h1>Coupons and Promotions</h1>
        <h5>Available coupons are limited to one coupon per cart and showtime</h5>
 </div>
+
+<br><br>
+<div class="promoCard">
 <section>
   <h2>"${promo0_code}"</h2>
   <div>
@@ -115,12 +129,11 @@
       <br>
       Starts: "${promo0_startDate}" and Expires: "${promo0_expirationDate}"</p><br>
       </div>
-      <div>
-          <button role= "addTo-butt">Add to Cart</button>
-      </div>
       <hr> 
   </div>
 </section>
+</div>
+<div class="promoCard">
 
 <section>
   <h2>${promo1_code}"</h2>
@@ -130,13 +143,12 @@
       <br>
       Starts: "${promo1_startDate}" and Expires: "${promo1_expirationDate}"</p><br>
       </div>
-      <div>
-          <button role= "addTo-butt">Add to Cart</button>
-      </div>
       <hr> 
   </div>
 </section>
+</div>
 
+<div class="promoCard">
 <section>
   <h2>${promo2_code}"</h2>
   <div>
@@ -145,12 +157,10 @@
       <br>
       Starts: "${promo2_startDate}" and Expires: "${promo2_expirationDate}"</p><br>
       </div>
-      <div>
-          <button role= "addTo-butt">Add to Cart</button>
-      </div><br><br><br>
       <hr> 
   </div>
 </section>
+</div>
 
 <div class="footer">
   <br>

@@ -11,7 +11,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:auto;
+        height:150%;
       }
       .login{
         border-radius:25px;
@@ -87,6 +87,17 @@
     background-color:#333;
     color: white;  
 }
+.menuCard{
+  text-align: center;
+  border-radius:25px;
+  background-color: #333;
+  margin-left:30%;
+  margin-right:30%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: lightgrey;
+}
     </style>
   </head>
 
@@ -101,14 +112,13 @@
     </a>
   </div>
 
-
-
   <div class="title">
     <h1>Admin Home</h1>
-      
+      <br>
 </div>
+<div class="menuCard">
 <section>
-  <h2>Movie Management</h2>
+  <h5>Movie Management</h5>
   <div>
       <div>
         <a href="adminManageMovies"><button role= "EditMovie-butt">Edit Movie Database</button></a>
@@ -116,6 +126,8 @@
       <hr> 
   </div>
 </section>
+</div>
+<div class="menuCard">
 
 <section>
   <h2>Promo Management</h2>
@@ -126,7 +138,8 @@
       <hr> 
   </div>
 </section>
-
+</div>
+<div class="menuCard">
 <section>
   <h2>User Management</h2>
   <div>
@@ -136,7 +149,11 @@
       <hr> 
   </div>
 </section>
-
+</div>
+<br><br>
+<br><br>
+<br>
+<br>
 <div class="footer">
   <br>
   <small>Copyright - MovieHub</small>

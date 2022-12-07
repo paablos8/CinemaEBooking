@@ -146,6 +146,18 @@
     top:-40px;
     left:0;
 }
+.registrationError{
+      text-align:center;
+      margin-top:10px;
+      margin-left: 30%;
+      margin-right:30%;
+      border-radius:25px;
+      padding-top:5px;
+      padding-bottom:5px;
+      background-color:#333;
+      color: lightgrey;
+    
+}
 /* CSS animation */
 @-webkit-keyframes fadeIn {
     0% { 
@@ -183,7 +195,9 @@
     Registration Page
 </div>
 
-<div> ${message}</div>
+<div class="registrationError"> 
+  <h5>${message}</h5>
+</div>
 
 <div class="registration">
   <%--@elvariable id="login" type=""--%>
@@ -192,29 +206,29 @@
 
 
       <div class="form-outline mb-4"></div>
-                <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="Enter First Name" />
+                <form:input type="name" class="form-control" id="firstName" path="firstName" placeholder="Enter First Name" required="true" />
                 <label class="form-label" for="form2Example1">First Name</label>    
             
 
             <div class="form-outline mb-4"></div>
-                <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="Enter Last Name" />
+                <form:input type="name" class="form-control" id="lastName" path="lastName" placeholder="Enter Last Name" required="true" />
                 <label class="form-label" for="form2Example1">Last name</label>    
             
 
             <div class="form-outline mb-4"></div>
-                <form:input type="adress" class="form-control" id="street" path="street" placeholder="Enter Street" />
+                <form:input type="adress" class="form-control" id="street" path="street" placeholder="Enter Street" required="true"/>
                 <label class="form-label" for="form2Example1">Street</label>
                 
             <div class="form-outline mb-4"></div>
-                <form:input type="text" class="form-control" id="city" path="city" placeholder="Enter city" />
+                <form:input type="text" class="form-control" id="city" path="city" placeholder="Enter city" required="true" />
                 <label class="form-label" for="form2Example1">City</label>  
 
             <div class="form-outline mb-4"></div>
-                <form:input type="text" class="form-control" id="state" path="state" placeholder="Enter state" />
+                <form:input type="text" class="form-control" id="state" path="state" placeholder="Enter state" required="true"/>
                 <label class="form-label" for="form2Example1">State</label>  
 
             <div class="form-outline mb-4"></div>
-                <form:input type="text" class="form-control" id="zipCode" path="zipCode" placeholder="Enter zipcode" />
+                <form:input type="text" class="form-control" id="zipCode" path="zipCode" placeholder="Enter zipcode" required="true" />
                 <label class="form-label" for="form2Example1">Zip Code</label>  
 
 
@@ -222,19 +236,19 @@
             
 
             <div class="form-outline mb-4"></div>
-                <form:input type="number" class="form-control" id="phone" path="phone" placeholder="(000)000 0000" />
+                <form:input type="number" class="form-control" id="phone" path="phone" placeholder="(000)000 0000" required="true"/>
                 <label class="form-label" for="form2Example1"></label>Phone Number </label>    
             
        
             <!-- Email input -->
             <div class="form-outline mb-4"></div>
-                <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter Email Address" />
+                <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter Email Address" required="true"/>
                 <label class="form-label" for="form2Example1">Email address</label>    
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-                <form:input type="password" id="password" class="form-control"  placeholder="Enter password" autocomplete="false" path="password"/>
+                <form:input type="password" id="password" class="form-control"  placeholder="Enter password" autocomplete="false" path="password" required="true"/>
                 <label class="form-label" for="form2Example2">Password</label>
             </div>
 

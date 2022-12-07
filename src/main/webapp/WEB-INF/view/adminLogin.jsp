@@ -139,13 +139,13 @@
         
             <!-- Email input -->
             <div class="form-outline mb-4"></div>
-                <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter email address" />
+                <form:input type="email" class="form-control" id="email" path="email" placeholder="Enter email address" required="true"/>
                 <label class="form-label" for="form2Example1">Email address</label>    
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-                <form:input type="password" id="password" class="form-control"  placeholder="Enter password" autocomplete="false" path="password"/>
+                <form:input type="password" id="password" class="form-control"  placeholder="Enter password" autocomplete="false" path="password" required="true"/>
                 <label class="form-label" for="form2Example2">Password</label>
             </div>
 

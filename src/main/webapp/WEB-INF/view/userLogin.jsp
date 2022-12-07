@@ -147,7 +147,7 @@
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-                <form:input type="password" id="password" class="form-control"  placeholder="Enter password" autocomplete="false" path="password"/>
+                <form:input type="password" id="password" class="form-control"  placeholder="Enter password" autocomplete="false" path="password" />
                 <label class="form-label" for="form2Example2">Password</label>
             </div>
 

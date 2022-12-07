@@ -1,4 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="isform" uri="http://www.springframework.org/tags/form"%>
 
 
 <head>
@@ -314,7 +314,7 @@ h5{
               <label for="seatSelection">SeatSelection Template:</label> <br>
                 <table>
                   <tr>
-                <p>A B C D E F G</p>
+                <p>A B C D E F</p>
                 <form:label path="row1Selector" for="row1">Row 1</form:label>
                 <form:checkbox  value="seatA1" ${seat.A1Status} />
                 <form:checkbox  value="seatB1" disabled />
@@ -322,7 +322,6 @@ h5{
                 <form:checkbox  value="seatD1" disabled />
                 <form:checkbox  value="seatE1" disabled />
                 <form:checkbox  value="seatF1" disabled />
-                <form:checkbox  value="seatG1" disabled />
                 <br>
                 <label for="row2">Row 2</label>
                 <form:checkbox type="checkbox" value="seatA2" disabled />
@@ -331,7 +330,6 @@ h5{
                 <form:checkbox type="checkbox" value="seatD2" disabled />
                 <form:checkbox type="checkbox" value="seatE2" disabled />
                 <form:checkbox type="checkbox" value="seatF2" disabled />
-                <form:checkbox type="checkbox" value="seatG2" disabled />
                 <br>
                 <label for="row3">Row 3</label>
                 <form:checkbox type="checkbox" value="seatA2" disabled />
@@ -340,7 +338,6 @@ h5{
                 <form:checkbox type="checkbox" value="seatD2" disabled />
                 <form:checkbox type="checkbox" value="seatE2" disabled />
                 <form:checkbox type="checkbox" value="seatF2" disabled />
-                <form:checkbox type="checkbox" value="seatG2" disabled />
                 <br>
                 <label for="row4">Row 4</label>
                 <form:checkbox type="checkbox" id="seatA2" disabled />
@@ -349,7 +346,6 @@ h5{
                 <form:checkbox type="checkbox" id="seatD2" disabled />
                 <form:checkbox type="checkbox" id="seatE2" disabled />
                 <form:checkbox type="checkbox" id="seatF2" disabled />
-                <form:checkbox type="checkbox" id="seatG2" disabled />
                 <br>
             
             </div>
@@ -390,8 +386,6 @@ h5{
       <br><br>
     
   </div>
-   
-
   </body>
     <script>
       function myFunction() {
