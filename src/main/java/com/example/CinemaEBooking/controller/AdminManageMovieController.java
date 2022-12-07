@@ -25,7 +25,6 @@ public class AdminManageMovieController {
 
     //Accessing the Database Connector instance
     DatabaseConnector db = DatabaseConnector.getInstance();
-    DateTime dt = new DateTime();
     
     @RequestMapping(value = "/adminManageMovies", method = RequestMethod.GET)
     public String showAdminManageMoviesPage(ModelMap model) {
