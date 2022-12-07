@@ -112,8 +112,7 @@
 <body>
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
-    <a href="#promotions">Promotions</a>
-    <a href="viewcart">View Cart</a>
+    <a href="promotionHome">Promotions</a>
     <div class="topNavLogout" id="logout">
       <i class="fa fa-bars"></i>
     </a>
