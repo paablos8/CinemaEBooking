@@ -132,6 +132,7 @@ color: black;
         ${child0}
         ${adult0}
         ${senior0}
+        ${total0}
     </div>
         <hr> 
     </div>
@@ -144,6 +145,7 @@ color: black;
             ${child1}
             ${adult1}
             ${senior1}
+            ${total1}
         </div>
             <hr> 
         </div>
@@ -156,6 +158,7 @@ color: black;
                 ${child2}
                 ${adult2}
                 ${senior2}
+                ${total2}
             </div>
                 <hr> 
             </div>
@@ -168,6 +171,7 @@ color: black;
                     ${child3}
                     ${adult3}
                     ${senior3}
+                    ${total3}
                 </div>
                     <hr> 
                 </div>

@@ -58,7 +58,7 @@ public class EditCardController {
             String state = card1.getState();
             String country = card1.getCountry();
             int zip = card1.getZip();
-        db.createNewCard(expDate, cvv, number, name, userId, street, city, state, country, zip);
+            System.out.println(db.createNewCard(expDate, cvv, number, name, userId, street, city, state, country, zip));
            
         long[] numbers = db.getCardNumbers(userId);
         String[] names = db.getCardNames(userId);
@@ -79,7 +79,7 @@ public class EditCardController {
             System.out.println("New State: " + states[0]);
             System.out.println("New Zip: " + zips[0]);
 
-        return "viewProfile";
+        return "redirect:/viewProfile";
     }
 
 
@@ -137,7 +137,7 @@ public Object editCardTwoSubmit(@ModelAttribute("editCardTwo") PaymentCard card2
             System.out.println("New State: " + states[1]);
             System.out.println("New Zip: " + zips[1]);
 
-    return "viewProfile";
+    return "redirect:/viewProfile";
 
     }
 
@@ -196,7 +196,7 @@ public Object editCardThreeSubmit(@ModelAttribute("editCardThree") PaymentCard c
             System.out.println("New State: " + states[2]);
             System.out.println("New Zip: " + zips[2]);
 
-    return "loginSuccess";
+    return  "redirect:/viewProfile";
 
     }
 }

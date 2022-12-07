@@ -38,7 +38,7 @@ public class CardTableConnector extends SQL_GetSet
         if (!verifyString(cityCounty)) return -4;
         if (!verifyString(stateRegion)) return -5;
         if (zip<501) return -6;
-        if (cardNum>999999999999999L&&cardNum<9999999999999999L) return -7;
+        if (cardNum>999999999999999L&&cardNum<1000000000000000L) return -7;
 
         try(Statement stmt = conn.createStatement())
         {

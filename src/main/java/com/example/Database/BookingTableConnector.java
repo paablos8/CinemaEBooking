@@ -88,8 +88,8 @@ public class BookingTableConnector extends SQL_GetSet
 
     double getTotal (int bookingID)
     {
-        BigDecimal temp = get(bookingID,"Booking","Booking ID","Total");
-        return temp.doubleValue();
+        int temp = get(bookingID,"Booking","Booking ID","Total");
+        return (double)temp;
     }
 
     int getShowtimeID (int bookingID)

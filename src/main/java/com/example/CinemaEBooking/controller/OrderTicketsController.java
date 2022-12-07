@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 import com.example.Database.DatabaseConnector;
 
 @Controller
+@SessionAttributes("showId")
 public class OrderTicketsController {
 
     //Accessing the Database Connector instance
@@ -30,9 +33,15 @@ public class OrderTicketsController {
         HttpSession session = request.getSession();
         User currentUser = (User) session.getAttribute("currentUser");
 
-        /*if (currentUser == null){
+        if (currentUser == null){
             return "redirect:/userLogin";
-        }*/
+        }
+
+        int [] CVVs = db.getCardCVVs(currentUser.getUserId());
+        if (CVVs.length == 0 ){
+         return "redirect:/editCardOne";
+        }
+        model.put("showId", show);
         String movie = db.getShowTitle(show);
         model.addAttribute("title", movie);
         model.addAttribute("img", db.getPosterURL(movie));
