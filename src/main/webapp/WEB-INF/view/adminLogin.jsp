@@ -95,6 +95,17 @@
         background-color:#333;
         color: white;  
     }
+    .loginError{
+      text-align:center;
+      margin-top:10px;
+      margin-left: 30%;
+      margin-right:30%;
+      border-radius:25px;
+      padding-top:5px;
+      padding-bottom:5px;
+      background-color:#333;
+      color: lightgrey;
+    }
     
          </style>
     </head>
@@ -113,11 +124,14 @@
     </a>
   </div>
 
-
     <div class="title">
         Admin Login Page
     </div>
-    <div> ${message}</div>
+
+    <div class="loginError">
+       <h5>${message}</h5>
+      </div>
+
     <div class="login">
     <%--@elvariable id="login" type=""--%>
     <form:form method="POST" modelAttribute="login">

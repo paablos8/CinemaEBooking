@@ -265,56 +265,53 @@ h5{
           <div class="help-tip">
             <p>Select your seat number for your movie selction</p>
             </div>          
-      
+            <form:form action="submitForm" method="POST" modelAttribute="seatSelect">
             <label class="mr-sm-2" for="ticketTime">Number of Child Tickets</label>
-            <select  id="childTicketCount">
-              <option selected>0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="1">4</option>
-              <option value="1">5</option>
-              <option value="1">6</option>
-              <option value="1">7</option>
-              <option value="1">8</option>
-              <option value="1">9</option>
-              <option value="1">10</option>  
-            </select>
+            <form:select  path="childTicketCount">
+              <form:option value="0"  label="0" />
+              <form:option value="1"  label="1" />
+              <form:option value="2"  label="2" />
+              <form:option value="3"  label="3" />
+              <form:option value="4"  label="4" />
+              <form:option value="5"  label="5" />
+              <form:option value="6"  label="6" />
+              <form:option value="7"  label="7" />
+              <form:option value="8"  label="8" />
+              <form:option value="9"  label="9" />
+              <form:option value="10" label="10"/>  
+            </form:select>
            <br>
               <label class="mr-sm-2" for="ticketTime">Number of Adult Tickets</label>
-              <select id="adultTicketCount">
-                <option selected>0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="1">4</option>
-                <option value="1">5</option>
-                <option value="1">6</option>
-                <option value="1">7</option>
-                <option value="1">8</option>
-                <option value="1">9</option>
-                <option value="1">10</option>
-                
-              </select>
-              <br>
+              <form:select  path="adultTicketCount">
+                <form:option value="0"  label="0" />
+                <form:option value="1"  label="1" />
+                <form:option value="2"  label="2" />
+                <form:option value="3"  label="3" />
+                <form:option value="4"  label="4" />
+                <form:option value="5"  label="5" />
+                <form:option value="6"  label="6" />
+                <form:option value="7"  label="7" />
+                <form:option value="8"  label="8" />
+                <form:option value="9"  label="9" />
+                <form:option value="10" label="10"/>  
+              </form:select>
+             <br>
               <label class="mr-sm-2" for="ticketTime">Number of Senior Tickets</label>
-              <select id="seniorTicketCount">
-                <option selected>0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="1">4</option>
-                <option value="1">5</option>
-                <option value="1">6</option>
-                <option value="1">7</option>
-                <option value="1">8</option>
-                <option value="1">9</option>
-                <option value="1">10</option>
-                
-              </select>
+              <form:select  path="seniorTicketCount">
+                <form:option value="0"  label="0" />
+                <form:option value="1"  label="1" />
+                <form:option value="2"  label="2" />
+                <form:option value="3"  label="3" />
+                <form:option value="4"  label="4" />
+                <form:option value="5"  label="5" />
+                <form:option value="6"  label="6" />
+                <form:option value="7"  label="7" />
+                <form:option value="8"  label="8" />
+                <form:option value="9"  label="9" />
+                <form:option value="10" label="10"/>  
+              </form:select>
             <div class="seatChart">
               <label for="seatSelection">SeatSelection Template:</label> <br>
-              <form:form action="submit" method="POST" modelAttribute="seatSelect">
                 <table>
                   <tr>
                 <p>A B C D E F G</p>
@@ -354,7 +351,6 @@ h5{
                 <form:checkbox type="checkbox" id="seatF2" disabled />
                 <form:checkbox type="checkbox" id="seatG2" disabled />
                 <br>
-              </form:form> 
             
             </div>
             
@@ -363,6 +359,8 @@ h5{
             <a href="orderSummary">
             <button" class="btn btn-secondary btn-block mb-4" style="width:35%; margin-left:32%">Submit</button>
         </a>
+      </form:form> 
+
         <div><img src="../movieCovers/seatingChart1.jpg" alt="image not found"
           width="200" height="300" ></div>
       </div>
