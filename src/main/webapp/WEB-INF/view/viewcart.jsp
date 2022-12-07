@@ -2,9 +2,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
     <head>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheets" href="css/stylesheet.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
        <title>Your Cart</title> 
-       <link rel="stylesheet" href="stylesheet.css">
-    
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
         background:linear-gradient(grey,orange);
@@ -91,7 +96,7 @@
   
   .flex-container2 {
     display: flex;
-    background-color: rgb(126, 126, 126);
+    
     margin-left: 500px;
     margin-right: auto;
     margin-top: 45px;
@@ -101,6 +106,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
+    
   }
   
   .flex-container3 {
@@ -112,7 +118,7 @@
     margin-right: auto;
     margin-top: 25px;
     border-radius: 25px;
-    float:left; 
+    float:right; 
   }
 
 .flex-container > div {
@@ -120,6 +126,7 @@
     margin:25px;
     padding:.5px;
     font-size: 19px;
+    font-family:'Roboto', sans-serif;
   }
   
     .flex-container2 > div {
@@ -127,6 +134,7 @@
     margin:25px;
     padding:.5px;
     font-size: 14px;
+    font-family:'Roboto', sans-serif;
     }
   
     .flex-container3 > div {
@@ -134,6 +142,7 @@
     margin:25px;
     padding:.5px;
     font-size: 19px;
+    font-family:'Roboto', sans-serif;
     }
 
     .card{
@@ -158,6 +167,23 @@
           .card .inputs span{font: size 20px;}
           .card .inputs input{height:24px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
           .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+
+          .search-container {
+  margin-top:12px;
+  float: right;
+}
+
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
 .footer{
     position:fixed;
     left:0;
@@ -175,11 +201,15 @@
       <div class="topnav" id="myTopnav">
         <a href="homePage" class="active">Home</a>
         <a href="promotionHome">Promotions</a>
-        <a href="userLogin">Login</a>
-        <a href="viewcart">View Cart</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
+        <div class="topNavLogout" id="logout">
+          <a href="loginSuccess">${currentUser.firstName}</a>
+          <div class="search-container">
+          <form action="/searchResults">
+            <input type="text" placeholder="Search:" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        </div>
       </div>
 
 
@@ -188,13 +218,24 @@
       <div class="title">
         Your Cart Summary
     </div>
+    
+    <%--@elvariable id="paymentCard" type=""--%>
+    <form:form method="POST" modelAttribute="paymentCard">
+    <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
+              <form:select  path="checkoutCard">
+                <form:option value="1"  label="1" />
+                <form:option value="2"  label="2" />
+                <form:option value="3"  label="3" /> 
+              </form:select>
+            </form:form>
+    
     <div class='section'>
       <div class='flex-container'>
         <div class='order-info-content'>
           <h2>Order Summary</h2>
           <span class='thin'>Adult Ticket</span>
-          <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
-          Subtotal Cost: EnTeR Price Here
+          <br> Enter MOvie Title here<br> <span class='thin small'> Number of tickets: number here <br></span>
+          Subtotal Cost: Enter Price Here
           
         </td>
       </tr>
@@ -229,12 +270,16 @@
       
     </tbody>
   </table>
+  <br>
+  Have a Promo Code? Enter Here:<br>
+  <input class='input-field'></input>
+  <button class='pay-btn'>Add Promo</button>
   </div>
+  
 </div>
 <div class='flex-container2'>
     
-      <div> Wallet </div>
-      <table class='half-input-table'>
+      <table class='half-sinput-table'>
         <tr><td>Please select your card of purchase: </td></tr>
       </table>
 
@@ -253,8 +298,8 @@
         
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="checkoutcard1"  />
-        <label class="form-check-label" for="checkoutcard1"> Select card as Form of Payment </label>
+        <form:checkbox path="checkoutCard1" />
+        <label class="form-check-label" for="checkoutCard1"> Select card as Form of Payment </label>
     </div>
     </div>
     <div class="card"> <div class="info"> 
@@ -272,8 +317,8 @@
   
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkoutcard2"  />
-  <label class="form-check-label" for="checkoutcard2"> Select card as Form of Payment </label>
+  <form:checkbox path="checkoutCard2" />
+  <label class="form-check-label" for="checkoutCard2"> Select card as Form of Payment </label>
 </div>
 </div>
 <div class="card"> <div class="info"> 
@@ -290,15 +335,20 @@
   <input type="text" readonly value="${card3Number}"> </div> 
 
 </div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkoutcard3" />
-  <label class="form-check-label" for="checkoutcard3"> Select card as Form of Payment </label>
-</div>
 </div>
 
 </div>
 
- <br>
+
+
+
+ <div class='flex-container3'>
+  
+ </div>
+ 
+
+
+
   <div class='flex-container3'>
 <div class='total'>
     <span style='float:left;'>
