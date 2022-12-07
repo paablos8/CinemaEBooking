@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
-        background-color: grey;
+        background:linear-gradient(grey,orange);
+        height:auto;
       }
       .login{
         border-radius:25px;
@@ -25,6 +26,7 @@
         font-size:50px;
         text-align: center;
       }
+      
       .topnav {
   overflow: hidden;
   background-color: #333;
@@ -86,6 +88,25 @@ color: black;
     background-color:#333;
     color: white;  
 }
+.manageCard{
+  text-align: center;
+  border-radius:25px;
+  background-color: #333;
+  margin-left:30%;
+  margin-right:30%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  color: lightgrey;
+}
+.manageCard a {
+  color: lightgrey;
+}
+
+  .centerElement{
+    text-align:center;
+  }
 
     </style>
   </head>
@@ -104,7 +125,9 @@ color: black;
  <div class="title">
     Manage Movies
 </div>
-  <section>
+<br>
+  <div class="manageCard">  
+<section>
     <h2>${movie0}</h2>
     
         <a href="link.com" target="_blank">${remove0}</a>
@@ -114,7 +137,9 @@ color: black;
         <hr> 
     </div>
   </section>
+</div>
 
+<div class="manageCard">  
   <section>
     <h2>${movie1}</h2>
     
@@ -125,8 +150,9 @@ color: black;
         <hr> 
     </div>
   </section>
-
-  <section>
+</div>
+<div class="manageCard">    
+<section>
     <h2>${movie2}</h2>
     
         <a href="link.com" target="_blank">${remove2}</a>
@@ -136,6 +162,8 @@ color: black;
         <hr> 
     </div>
   </section>
+</div>
+<div class="manageCard">  
 
   <section>
     <h2>${movie3}</h2>
@@ -147,7 +175,8 @@ color: black;
         <hr> 
     </div>
   </section>
-
+</div>
+<div class="manageCard">  
   <section>
     <h2>${movie4}</h2>
     
@@ -158,7 +187,8 @@ color: black;
         <hr> 
     </div>
   </section>
-
+</div>
+<div class="manageCard">  
   <section>
     <h2>${movie5}</h2>
     
@@ -169,7 +199,8 @@ color: black;
         <hr> 
     </div>
   </section>
-
+</div>
+<div class="manageCard">  
   <section>
     <h2>${movie6}</h2>
     
@@ -180,7 +211,8 @@ color: black;
         <hr> 
     </div>
   </section>
-
+</div>
+<div class="manageCard">  
   <section>
     <h2>${movie7}</h2>
     
@@ -191,7 +223,8 @@ color: black;
         <hr> 
     </div>
   </section>
-
+</div>
+<div class="manageCard">  
   <section>
     <h2>${movie8}</h2>
     
@@ -202,7 +235,8 @@ color: black;
         <hr> 
     </div>
   </section>
-
+</div>
+<div class="manageCard">  
   <section>
     <h2>${movie9}</h2>
     
@@ -213,25 +247,28 @@ color: black;
         <hr> 
     </div>
   </section>
- 
+  <div>
 
+    <div class="centerElement">
 <section>
-
+  
         <a href="addMovie"><button class='add-btn'>Add New Movie</button></a>
 
       </div>
       <br><br><br>
-      <div>
+      
+      <div class="centerElement">
         <a href="adminHome"><button role= "Back2Home-butt">Back to Admin Home</button></a>
       </div>
+    
       <br><br><br><br><br><br><br>
-
+    </div>
       <div class="footer">
         <br>
         <small>Copyright - MovieHub</small>
         <br><br>
         </div>
-     
+     </body>
 </section>
     <script>
       function myFunction() {

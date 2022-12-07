@@ -1,17 +1,16 @@
-<!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
-    <title>Admin Home    
+    <title>orderHistory 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:150%;
+        height:auto;
       }
       .login{
         border-radius:25px;
@@ -27,11 +26,14 @@
         font-size:50px;
         text-align: center;
       }
+      
       .topnav {
   overflow: hidden;
   background-color: #333;
 }
-
+a{
+color: black;
+}
 .topnav a {
   float: left;
   display: block;
@@ -77,7 +79,6 @@
     text-align: left;
   }
 }
-
 .footer{
     position:fixed;
     left:0;
@@ -87,7 +88,7 @@
     background-color:#333;
     color: white;  
 }
-.menuCard{
+.manageCard{
   text-align: center;
   border-radius:25px;
   background-color: #333;
@@ -96,8 +97,17 @@
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 15px;
   color: lightgrey;
 }
+.manageCard a {
+  color: lightgrey;
+}
+
+  .centerElement{
+    text-align:center;
+  }
+
     </style>
   </head>
 
@@ -105,61 +115,85 @@
 
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
-    <a href="viewPromotion">Manage Promotions</a>
+    <a href="viewPromotion"> Manage Promotions</a>
     <a href="adminManageMovies">Manage Movies</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
-  <br>
-  <div class="title">
-    <h1>Admin Home</h1>
-      <br>
-</div>
-<div class="menuCard">
-<section>
-  <h3>Movie Management</h3>
-  <div>
-      <div>
-        <a href="adminManageMovies"><button role= "EditMovie-butt">Edit Movie Database</button></a>
-      </div>
-      <hr> 
-  </div>
-</section>
-</div>
-<div class="menuCard">
 
-<section>
-  <h3>Promo Management</h3>
-  <div>
-      <div>
-        <a href="viewPromotion"><button role= "EditHome-butt">Edit Promotions</button></a>
-      </div>
-      <hr> 
-  </div>
-</section>
+ <div class="title">
+    Account Order History
 </div>
-<div class="menuCard">
+<br>
+  <div class="manageCard">  
 <section>
-  <h3>User Management</h3>
-  <div>
-      <div>
-        <button role= "EditHome-butt">Manage Users</button></a>
-      </div>
-      <hr> 
-  </div>
-</section>
+    <h2>${movie0}</h2>
+        ${child0}
+        ${adult0}
+        ${senior0}
+    </div>
+        <hr> 
+    </div>
+  </section>
 </div>
-<br><br>
-<br><br>
-<br>
-<br>
-<div class="footer">
-  <br>
-  <small>Copyright - MovieHub</small>
-  <br><br>
-  </div>
 
+<div class="manageCard">  
+    <section>
+        <h2>${movie1}</h2>
+            ${child1}
+            ${adult1}
+            ${senior1}
+        </div>
+            <hr> 
+        </div>
+      </section>
+    </div>
+
+    <div class="manageCard">  
+        <section>
+            <h2>${movie2}</h2>
+                ${child2}
+                ${adult2}
+                ${senior2}
+            </div>
+                <hr> 
+            </div>
+          </section>
+        </div>
+
+        <div class="manageCard">  
+            <section>
+                <h2>${movie3}</h2>
+                    ${child3}
+                    ${adult3}
+                    ${senior3}
+                </div>
+                    <hr> 
+                </div>
+              </section>
+    </div>
+    
+        <div>
+    <div class="centerElement">
+<section>
+        <a href="addMovie"><button class='add-btn'>Add New Movie</button></a>
+      </div>
+      <br><br><br>
+      <div class="centerElement">
+        <a href="adminHome"><button role= "Back2Home-butt">Back to Admin Home</button></a>
+      </div>
+     <br><br><br><br>
+     <br><br><br>
+    </div>
+
+      <div class="footer">
+        <br>
+        <small>Copyright - MovieHub</small>
+        <br><br>
+        </div>
+     </body>
+</section>
     <script>
       function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -175,4 +209,3 @@
 
 
 </html>
-       

@@ -163,14 +163,21 @@ h5{
     top:-40px;
     left:0;
 }
+
+.seatChartImg{
+  background-image: url("https://i.imgur.com/UyM2oFk.png");
+  background-position: center;
+  margin-left: 200px;
+  margin-right:200px;
+  overflow:hidden;
+  background-repeat: no-repeat;
+}
 .seatChart{
-  background-color: white;
-  background-image: "";
   padding-left: 40px;
   padding-right: 40px;
-  margin-left: 30%;
-  margin-right: 30%;  
+ 
 }
+
 .seatChart p {
   padding-left: 47px;
   font-size:15px;
@@ -190,6 +197,7 @@ h5{
     0% { opacity:0; }
     100% { opacity:100%; }
 }
+
     </style>
   </head>
 
@@ -278,19 +286,23 @@ h5{
                 <form:option value="9"  label="9" />
                 <form:option value="10" label="10"/>  
               </form:select>
-              
+              <div class="seatChartImg">
+              <div class="seatChart">
+                A B C D E
               <br><td><form:checkboxes items = "${row1}" path = "row1" /></td>
               <br><td><form:checkboxes items = "${row2}" path = "row2" /></td>
               <br><td><form:checkboxes items = "${row3}" path = "row3" /></td>
               <br><td><form:checkboxes items = "${row4}" path = "row4" /></td>
-              <br>    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
-          </div>          
+              </div>
+            </div>  
+            <br>    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
+            </div>
+          
           
            
       </form:form> 
 
-        <div><img src="../movieCovers/seatingChart1.jpg" alt="image not found"
-          width="200" height="300" ></div>
+
       </div>
       
 

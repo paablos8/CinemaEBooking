@@ -154,7 +154,7 @@
             <!-- 2 column grid layout for inline styling -->
             <div class="row mb-4">
                 <div class="col d-flex justify-content-center">
-                <!-- Checkbox -->
+            <!-- Checkbox -->
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
                     <label class="form-check-label" for="form2Example31"> Remember me </label>
@@ -162,15 +162,15 @@
             </div>
 
             <div class="col">
-                <!-- Simple link -->
+            <!-- Simple link -->
                 <a href="forgotPassword">Forgot password?</a>
             </div>
         </div>
 
-        <!-- Submit button -->
+            <!-- Submit button -->
         <form:button type="submit" class="btn btn-secondary btn-block mb-4">Sign in</form:button>
 
-        <!-- Register buttons -->
+            <!-- Register buttons -->
         <div class="text-center">
             <p>Not a member? <a href="userRegistration">Register</a></p>
             <p>Continue as guest? <a href="homePage">Continue</a></p>
