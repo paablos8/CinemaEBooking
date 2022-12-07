@@ -220,5 +220,5 @@ public class DatabaseConnector
     public String getSeatID (int ticketID){return ttc.getSeatID(ticketID);}
     public String getDatePurchased (int ticketID){return ttc.getDatePurchased(ticketID);}
     public String getTicketType (int ticketID){return ttc.getTicketType(ticketID);}
-    //public boolean[][] getSeatAvaliability (int showtimeID)
+    public boolean[][] getSeatAvaliability (int showtimeID) {return ttc.getSeatAvailability(showtimeID);}
 }

@@ -94,7 +94,6 @@ class UserTableConnector extends SQL_GetSet
                           String password)
     {
         if(!(verifyEmail(email))){return -1;}
-        //else if(!verifyPhoneNum(pNum)){return -2;}
         else if(!verifyString(fName)){return -3;}
         else if(!verifyString(lName)){return -4;}
         else if(!verifyString(password)){return -5;}

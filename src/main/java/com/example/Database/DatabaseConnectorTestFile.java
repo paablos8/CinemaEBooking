@@ -14,7 +14,7 @@ public class DatabaseConnectorTestFile
 
         DatabaseConnector c1 = null;
         c1 = c1.getInstance();
-        System.out.println(c1.verifyLogin("email.com","oawen"));
+        System.out.println(c1.getSeatAvaliability(1)[1][1]);
         c1.close();
 
         /*
