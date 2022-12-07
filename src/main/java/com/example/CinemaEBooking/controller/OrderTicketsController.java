@@ -40,9 +40,8 @@ public class OrderTicketsController {
     }
 
     @RequestMapping(value = "/orderTickets", method = RequestMethod.POST)
-    public String submitForm(@ModelAttribute("seatSelect")Booking booking, ModelMap model) {
-        int child = booking.getChild();
-        System.out.println(child);
+    public Object submitForm(@ModelAttribute("seatSelect")Booking booking, ModelMap model) {
+        
         return "viewcart";
     }
 

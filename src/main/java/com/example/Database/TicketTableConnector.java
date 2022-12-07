@@ -28,7 +28,8 @@ public class TicketTableConnector extends SQL_GetSet
         {
             e.printStackTrace();
         }
-
+        int showtimeID = get(bookingID,"Booking","Booking ID","Showtime ID");
+        update(showtimeID,"Showroom 1 Seat Availabilities","Showtime ID",seatID,true);
         return 0;
     }
 
@@ -51,9 +52,9 @@ public class TicketTableConnector extends SQL_GetSet
     {
         boolean [][] seats = new boolean[12][10];
 
-        for (int i = 1; i < 13; i ++)
+        for (int i = 1; i < 5; i ++)
         {
-            for (int j = 1; j < 11; j ++)
+            for (int j = 1; j < 6; j ++)
             {
                 String seatID = i + getSeatLetter(j);
                 System.out.println(seatID);

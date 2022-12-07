@@ -59,7 +59,7 @@ public class LoginController {
             model.addAttribute("message", "Incorrect password. Try Again!");
             break;
             case(-2):System.out.println("Email not found");
-            model.addAttribute("message", "Email not found. Try Again!");
+            model.addAttribute("message", "Email not found. Try Again or register first!");
             break;
             case(-3):System.out.println("Your account was set to INACTIVE");
             model.addAttribute("message", "Your account was set to INACTIVE");

@@ -241,7 +241,7 @@ h5{
           <div class="help-tip">
             <p>Select your seat number for your movie selction</p>
             </div>          
-            <form:form action="submitForm" method="POST" modelAttribute="seatSelect">
+            <form:form method="POST" modelAttribute="seatSelect">
             <label class="mr-sm-2" for="ticketTime">Number of Child Tickets</label>
             <form:select  path="child" id = "child">
               <form:option value="0"  label="0" />
@@ -295,9 +295,9 @@ h5{
               <br><td><form:checkboxes items = "${row4}" path = "row4" /></td>
               </div>
             </div>  
-            <br>    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
+            <br>    
             </div>
-          
+          <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
           
            
       </form:form> 
