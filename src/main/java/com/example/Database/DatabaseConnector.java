@@ -19,6 +19,7 @@ public class DatabaseConnector
     private PromotionTableConnector ptc = null;
     private ShowtimeTableConnector stc = null;
     private BookingTableConnector btc = null;
+    private TicketTableConnector ttc = null;
     private static DatabaseConnector dc = null;
 
     /**
@@ -30,13 +31,9 @@ public class DatabaseConnector
         String loginCredentials = ";user=sa;password=Team_C2;";
         String settings = "encrypt=true;trustServerCertificate=true";
         String dbURL = "jdbc:sqlserver://"+serverName+loginCredentials+settings;
-        try
-        {
-            conn = DriverManager.getConnection(dbURL);
-        } catch (SQLException e)
-        {
-            throw new RuntimeException(e);
-        }
+
+        conn = SQL_Connection.connect(dbURL);
+
         if (conn != null)
         {
             System.out.println("Connected");
@@ -47,6 +44,7 @@ public class DatabaseConnector
             ptc = new PromotionTableConnector(conn);
             stc = new ShowtimeTableConnector(conn);
             btc = new BookingTableConnector(conn);
+            ttc = new TicketTableConnector(conn);
         }
     }
 
@@ -206,14 +204,21 @@ public class DatabaseConnector
     public int createNewBooking(int userID,long cardNum,String promoCode,int showtimeID, int adultTickets,
                                 int childTickets, int seniorTickets)
     {return btc.createNewBooking(userID,cardNum,promoCode,showtimeID,adultTickets,childTickets,seniorTickets);}
-    int getUserID (int bookingID) {return btc.getUserID(bookingID);}
-    long getCardNum (int bookingID) {return btc.getCardNum(bookingID);}
-    String getPromoCode (int bookingID) {return btc.getPromoCode(bookingID);}
-    double getTotal (int bookingID) {return btc.getTotal(bookingID);}
-    int getShowtimeID (int bookingID) {return btc.getShowtimeID(bookingID);}
-    int getAdultTickets (int bookingID) {return btc.getAdultTickets(bookingID);}
-    int getChildTickets (int bookingID) {return btc.getChildTickets(bookingID);}
-    int getSeniorTickets (int bookingID) {return btc.getSeniorTickets(bookingID);}
+    public int getUserID (int bookingID) {return btc.getUserID(bookingID);}
+    public long getCardNum (int bookingID) {return btc.getCardNum(bookingID);}
+    public String getPromoCode (int bookingID) {return btc.getPromoCode(bookingID);}
+    public double getTotal (int bookingID) {return btc.getTotal(bookingID);}
+    public int getShowtimeID (int bookingID) {return btc.getShowtimeID(bookingID);}
+    public int getAdultTickets (int bookingID) {return btc.getAdultTickets(bookingID);}
+    public int getChildTickets (int bookingID) {return btc.getChildTickets(bookingID);}
+    public int getSeniorTickets (int bookingID) {return btc.getSeniorTickets(bookingID);}
 
-    //
+    //Ticket Methods
+    public int createNewTicket (String seatID, String datePurchased, String ticketType, int bookingID)
+    {return ttc.createNewTicket(seatID,datePurchased,ticketType,bookingID);}
+    public int[] getAllTickets(int bookingID){return ttc.getAllTicketIDs(bookingID);}
+    public String getSeatID (int ticketID){return ttc.getSeatID(ticketID);}
+    public String getDatePurchased (int ticketID){return ttc.getDatePurchased(ticketID);}
+    public String getTicketType (int ticketID){return ttc.getTicketType(ticketID);}
+    //public boolean[][] getSeatAvaliability (int showtimeID)
 }

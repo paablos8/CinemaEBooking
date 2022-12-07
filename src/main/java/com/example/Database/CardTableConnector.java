@@ -20,7 +20,7 @@ public class CardTableConnector extends SQL_GetSet
      * Connection should be linked to server prior to creating this object.
      * @param conn Valid connection
      */
-    public CardTableConnector(Connection conn) {super(conn);this.conn = conn;}
+    CardTableConnector(Connection conn) {super(conn);this.conn = conn;}
 
     /**
      * Creates a new card entry.

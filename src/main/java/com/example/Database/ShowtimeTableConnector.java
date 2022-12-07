@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class ShowtimeTableConnector extends SQL_GetSet
 {
     private Connection conn;
-    public ShowtimeTableConnector(Connection conn){super(conn);this.conn = conn;}
+    ShowtimeTableConnector(Connection conn){super(conn);this.conn = conn;}
 
     /**
      * Creates a new showtime

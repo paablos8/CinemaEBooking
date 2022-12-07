@@ -37,6 +37,13 @@ class PromotionTableConnector extends SQL_GetSet
         return 0;
     }
 
+    boolean verifyPromotion(String code)
+    {
+        if(exists(code,"Promotions","Code"))
+            return true;
+        return false;
+    }
+
     /**
      * Returns true if the promotion is still a draft
      * @param code code for promotion

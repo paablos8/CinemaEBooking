@@ -14,7 +14,7 @@ public class BookingTableConnector extends SQL_GetSet
      * Connection should be linked to server prior to creating this object.
      * @param conn Valid connection
      */
-    public BookingTableConnector(Connection conn) {super(conn);this.conn = conn;}
+    BookingTableConnector(Connection conn) {super(conn);this.conn = conn;}
 
     //createNewBooking
     public int createNewBooking(int userID, long cardNum, String promoCode,

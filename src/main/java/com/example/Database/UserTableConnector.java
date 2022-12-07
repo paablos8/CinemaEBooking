@@ -98,6 +98,7 @@ class UserTableConnector extends SQL_GetSet
         else if(!verifyString(fName)){return -3;}
         else if(!verifyString(lName)){return -4;}
         else if(!verifyString(password)){return -5;}
+        else if(exists(email,"Users","Email")) return -6;
 
         String encPass = encrypt(password);
         try(Statement stmt = conn.createStatement())
