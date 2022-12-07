@@ -96,10 +96,8 @@
     color: white;  
 }
 .buttonCenter {
-            margin-top:45px;
-            align-content:center;
-            margin-left: 30%;
-            margin-right: 30%;
+   align-content:center;    
+   text-align:center;
           }
     </style>
   </head>
@@ -121,6 +119,7 @@
     <h1>Coupons and Promotions</h1>
        <h5>Available coupons are limited to one coupon per cart and showtime</h5>
 </div>
+<div class="promotionCard">
 <section>
   <h2>${promo1_code}</h2>
   <div>
@@ -137,9 +136,11 @@
      </form>
     </div>
   </div>
-      <hr> 
+</div>  
+  <hr> 
+    
 </section>
-
+<div class="promotionCard">
 <section>
   <h2>${promo0_code}</h2>
   <div>
@@ -157,10 +158,13 @@
         <button type="submit">Edit Promotions</button>
      </form>
   </div>
-      <hr> 
-  </div>
+  </div>    
+</div>
+  <hr> 
+  
 </section>
 
+<div class="promotionCard">
 <section>
   <h2>${promo2_code}</h2>
   <div>
@@ -174,29 +178,32 @@
         <button role= "EditBut">Edit this Coupon</button>
         <a href="editPromotion?promotion=${promo2_code}" target="_blank">Edit Promotion</a>
     </div>
-      <hr> 
+    </div>  
   </div>
+    <hr> 
+  
 </section>
 <section>
-    <div class='coupon-info-content'>
+    <div class='buttonCenter'>
     
         <a href="addPromotion"><button class='add-btn'>Add New Promotion</button></a>
 
       </div>
 </section>
 
-<br><br><br>
-      <div>
+<br>
+      
+<div class="buttonCenter">
         <a href="AdminHome"><button role= "Back2Home-butt">Back to Admin Home</button></a>
       </div>
       <br><br><br><br><br><br><br>
 
-<div class="footer">
+  <div class="footer">
   <br>
   <small>Copyright - MovieHub</small>
   <br><br>
   </div>
-
+</body>
     <script>
       function myFunction() {
         var x = document.getElementById("myTopnav");

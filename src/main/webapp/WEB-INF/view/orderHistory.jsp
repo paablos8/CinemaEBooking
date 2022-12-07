@@ -112,15 +112,15 @@ color: black;
   </head>
 
 <body>
-
-  <div class="topnav" id="myTopnav">
-    <a href="homePage" class="active">Home</a>
-    <a href="viewPromotion"> Manage Promotions</a>
-    <a href="adminManageMovies">Manage Movies</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
+<div class="topnav" id="myTopnav">
+        <a href="homePage" class="active">Home</a>
+        <a href="promotionHome">Promotions</a>
+        <a href="userLogin">Login</a>
+        <a href="viewcart">View Cart</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
 
  <div class="title">
     Account Order History
@@ -172,19 +172,6 @@ color: black;
                     <hr> 
                 </div>
               </section>
-    </div>
-    
-        <div>
-    <div class="centerElement">
-<section>
-        <a href="addMovie"><button class='add-btn'>Add New Movie</button></a>
-      </div>
-      <br><br><br>
-      <div class="centerElement">
-        <a href="adminHome"><button role= "Back2Home-butt">Back to Admin Home</button></a>
-      </div>
-     <br><br><br><br>
-     <br><br><br>
     </div>
 
       <div class="footer">
