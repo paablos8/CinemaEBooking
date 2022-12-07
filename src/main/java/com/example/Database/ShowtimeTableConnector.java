@@ -34,13 +34,20 @@ public class ShowtimeTableConnector extends SQL_GetSet
         {
             String SQL = "INSERT INTO Showtimes VALUES ('"+movieID+"','"+showroomID+"','"+showDateAndTime+"')";
             stmt.executeUpdate(SQL);
+
+            int showtimeID = getComboKey(movieID,showDateAndTime,"Showtimes","Movie ID","Show Date","Showtime ID");
+
+            SQL = "INSERT INTO [Showroom 1 Seat Availabilities] VALUES ("+showtimeID+","+true+","+true+","+true+","+true+
+                    ","+true+","+true+","+true+","+true+","+true+","+true+","+true+","+true+","+true+","+true+","+true+
+                    ","+true+","+true+","+true+","+true+","+true+")";
+            stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
         catch (SQLException e)
         {
             e.printStackTrace();
         }
-
+        
         return 0;
     }
 
