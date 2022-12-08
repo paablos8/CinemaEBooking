@@ -100,12 +100,16 @@ public Object submitCheckout(@ModelAttribute("submitCheckout") Booking booking, 
     User currentUser = (User) session.getAttribute("currentUser");
     int userId = currentUser.getUserId();
 
+    
+
     //Get show ID the tickets will be booked for
     int showId = (Integer) session.getAttribute("showId");
 
     String promotionCode = booking.getPromoCode();
     String[] allPromotionCodes = db.getAllPromotionCodes();
     boolean promoFound = false;
+
+    System.out.println(promotionCode);
 
     for (int i = 0; i < allPromotionCodes.length; i++) {
         if (promotionCode.equals(allPromotionCodes[i])) {
@@ -136,13 +140,13 @@ public Object submitCheckout(@ModelAttribute("submitCheckout") Booking booking, 
         double totalPrice = db.getTotal(bookingId);
         System.out.println(totalPrice);
         
-        return "orderSummary";
+        return "redirect:/orderSummary";
         }
 
     else {
 
         model.addAttribute("promotionResult", "The used Promotion Code is not valid!");
-        return "viewcart";  
+        return "redirect:/viewcart";  
         
     }
     }       
