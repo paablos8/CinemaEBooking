@@ -10,7 +10,7 @@
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:auto;
+        height:100%;
       }
       .login{
         border-radius:25px;
