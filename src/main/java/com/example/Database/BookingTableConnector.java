@@ -48,10 +48,12 @@ public class BookingTableConnector extends SQL_GetSet
 
         int total = (int)(adultPrice * adultTickets + childPrice * childTickets + seniorPrice * seniorTickets);
 
+        String encCard = encryptLong(cardNum);
+
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Booking VALUES ("
-                    +userID+","+cardNum+",'"+promoCode+"',"+total+","+showtimeID+
+                    +userID+","+encCard+",'"+promoCode+"',"+total+","+showtimeID+
                     ","+adultTickets+","+childTickets+","+seniorTickets+")";
             stmt.executeUpdate(SQL);
         }
