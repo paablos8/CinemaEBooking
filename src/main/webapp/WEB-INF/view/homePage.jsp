@@ -151,7 +151,6 @@ h5{
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
     <a href="promotionHome">Promotions</a>
-    <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
     <a href="userLogin">${login}</a>
     <a href="loginSuccess">${currentUser.firstName}</a>

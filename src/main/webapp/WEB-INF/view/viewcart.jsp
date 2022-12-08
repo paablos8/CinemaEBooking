@@ -91,10 +91,11 @@
 }
 
 .flex-container {
-
-
-    background-color:#333;
-    justify-content: center;
+  
+  display:flex;
+  background-color:orange;
+  justify-content: center;
+  
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
@@ -106,8 +107,8 @@
   
   .flex-container2 {
     display: flex;
-    
-    margin-left: 500px;
+    background-color: rgb(126, 126, 126);
+    margin-left: auto;
     margin-right: auto;
     margin-top: 45px;
     border-radius: 25px;
@@ -155,13 +156,28 @@
     font-family:'Roboto', sans-serif;
     }
 
+    .dropdown-container{
+    display: flex;
+    background-color: rgb(126, 126, 126);
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+    border-radius: 25px;
+    padding: 14px 14px;
+    text-align: center;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    }
+
     .card{
       width:350px;
-      height:250px;
+      height:185px;
       background-color:#fff;
       box-shadow:0px 15px 30px rgba(0,0,0,0.1);
       border-radius:10px;
       overflow:hidden;
+      margin: 14px;
     }
       .card .info
       {padding:15px;display:flex;justify-content:space-between;border-bottom:1px solid #e1dede;
@@ -183,6 +199,15 @@
   float: right;
 }
 
+.footer{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    background-color:#333;
+    color: white;  
+}
 
 .search-container button {
   float: right;
@@ -194,14 +219,7 @@
   cursor: pointer;
 }
 
-.flex-container {
-  display:flex;
-  background-color:lightgray;
-  justify-content: center;
-  margin-left: 7%;
-  margin-right: 7%;
-  border-radius: 25px; 
-}
+
 
     </style>
 
@@ -220,12 +238,13 @@
     </div>
   </div>
 
-<body>
+
       <div class="title">
         Your Cart Summary
     </div>
-    
-    
+
+    <div class='dropdown-container'>
+    <span style='float:center; font-size: 24px;'>
     <form:form method="POST" modelAttribute="submitCheckout">
     <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
               <form:select  path="cardID">
@@ -233,8 +252,9 @@
                 <form:option value="2"  label="2" />
                 <form:option value="3"  label="3" /> 
               </form:select>
-            
-    
+            </span>
+    </div>
+
     <div class='section'>
       <div class='flex-container'>
         <div class='order-info-content'>
@@ -267,9 +287,8 @@
         <br><br>
   Have a Promo Code? Enter Here:<br>
   <form:input class='input-field' path="promoCode" />
-  <button class='pay-btn'>Add Promo</button>
           <br>
-        </form:form>
+        
 </div>
   
 </div>
@@ -287,18 +306,78 @@
       <div class='thin dense'>Subto Calc</div>
       Total calc
     <br> <br>
-    <button class='pay-btn'>Checkout</button>
+    <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
+    </form:form>
+
   </span>  
   </div>
  </div>
+
+ <div class='flex-container2'>
+    
+    Your Wallet:
+<br>  
+  <div class="card"> <div class="info"> 
+        <span>Primary Card Information</span> 
+        </div> 
+        
+        <div class="forms"> 
+        <div class="inputs"> 
+        <span>Name on Card</span> 
+        <input type="text" readonly value="${card1Name}"> </div> 
+        
+        <div class="inputs"> 
+        <span>Number</span> 
+        <input type="text" readonly value="${card1Number}"> </div> 
+    
+  </div>
 </div>
 
+<div class="card"> <div class="info"> 
+  <span>Secondary Card Information</span> 
+  </div> 
+  
+  <div class="forms"> 
+  <div class="inputs"> 
+  <span>Name on Card</span> 
+  <input type="text" readonly value="${card2Name}"> </div> 
+  
+  <div class="inputs"> 
+  <span>Number</span> 
+  <input type="text" readonly value="${card2Number}"> </div> 
+</div>
+</div>
+
+<div class="card"> <div class="info"> 
+<span>Tertiary Card Information</span> 
+</div> 
+
+<div class="forms"> 
+<div class="inputs"> 
+<span>Name on Card</span> 
+<input type="text" readonly value="${card3Name}"> </div> 
+
+<div class="inputs"> 
+<span>Number</span> 
+<input type="text" readonly value="${card3Number}"> </div> 
+</div>
+</div>
+
+
+
+</div>
+
+</div>
+
+<br><br><br><br><br><br>
 <div class="footer">
   <br>
   <small>Copyright - MovieHub</small>
   <br><br>
-
 </div>
+
+</body>
+
     <script>
       function myFunction() {
         var x = document.getElementById("myTopnav");
