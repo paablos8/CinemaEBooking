@@ -58,17 +58,31 @@ public class OrderConfirmationController {
         System.out.println("This is the highest bookingID" + bookingId);
         
         long cardNumber = db.getCardNum (bookingId);
+        System.out.println("This is the Card that was charged: " + cardNumber);
         String promoCode = db.getPromoCode(bookingId);
+
+        double percentOff = 0;
+        double moneySaved = 0.00;
+
         
+        if(promoCode.equals ("0")) {
+        }
+        
+        else {
+        percentOff = db.getPercentOff(promoCode)*0.01;
+        System.out.println("Percent Off: " + percentOff);
+        moneySaved = percentOff * 19;
+        }
+
+        model.addAttribute("moneySaved", moneySaved); 
+
         int showtimeId = db.getShowtimeID(bookingId);
         int adultTickets = db.getAdultTickets(bookingId);
         int childTickets = db.getChildTickets(bookingId);
         int seniorTickets = db.getSeniorTickets(bookingId);
 
-        double percentOff = db.getPercentOff(promoCode)*0.01;
-        System.out.println(percentOff);
-        double moneySaved = percentOff * 19;
-        double total = db.getTotal(bookingId) - moneySaved;
+        
+        double total = db.getTotal(bookingId);
         String title = db.getShowTitle(showtimeId);
         String showtime = db.getShowDateAndTime(showtimeId);        
 
@@ -79,7 +93,6 @@ public class OrderConfirmationController {
         model.addAttribute("adultTickets", adultTickets);
         model.addAttribute("childTickets", childTickets);
         model.addAttribute("seniorTickets", seniorTickets);
-        model.addAttribute("moneySaved", moneySaved);  
         model.addAttribute("title", title); 
         model.addAttribute("showtime", showtime); 
         
