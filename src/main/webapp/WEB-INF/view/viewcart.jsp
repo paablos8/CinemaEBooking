@@ -253,9 +253,9 @@
       <div class='flex-container'>
         <div class='order-info-content'>
           <h2>Order Summary</h2>
-          <span class='thin'>Adult Tickets</span>
-          <br> ${s}<br> <span class='thin small'> Number of tickets: 2 <br></span>
-          Subtotal Cost: Enter Price Here
+          <span class='thin'>${movie}</span>
+          <br>Adult Ticket<br> <span class='thin small'> Showtime: ${showtime} <br></span>
+          Subtotal Cost: $7.00
           
         </td>
       </tr>
@@ -263,17 +263,17 @@
       <br><br>
     
         <td>
-        <span class='thin'>Youth Tickets</span>
-        <br>${a}<br> <span class='thin small'> Number of tickets: 1 <br></span>
-        Subtotal Cost: EnTeR Price Here
+        <span class='thin'>${movie}</span>
+        <br>Adult Ticket<br> <span class='thin small'> Showtime: ${showtime} <br></span>
+        Subtotal Cost: $7.00
       </tr>
     
         <br><br>
 
         <td>
-        <span class='thin'>Senior Tickets</span>
-        <br>${v}<br> <span class='thin small'> Number of tickets: 0 <br></span>
-        Subtotal Cost: EnTeR Price Here
+        <span class='thin'>${movie}</span>
+        <br>Youth Ticket<br> <span class='thin small'> Showtime: ${showtime} <br></span>
+        Subtotal Cost: $5.00
 
         <br><br>
   Have a Promo Code? Enter Here:<br>
@@ -294,9 +294,9 @@
     </span>
     <span style='float:right; text-align:right; margin-left: 25px;'>
       <div class='thin dense'>ent.couponCalchere</div>
-      <div class='thin dense'>tax calc</div>
-      <div class='thin dense'>Subto Calc</div>
-      Total calc
+      <div class='thin dense'>$1.33</div>
+      <div class='thin dense'>$19.00</div>
+      $20.33
     <br> <br>
     <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit Changes</form:button>
     </form:form>
