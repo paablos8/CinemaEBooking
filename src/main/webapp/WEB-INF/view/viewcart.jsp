@@ -1,5 +1,5 @@
 
-%@ taglib prefix="form" uri="http://www.springframework.org/tags"%>
+%@ taglib prefix="form" uri="http://www.springframework.org/form"%>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -146,17 +146,17 @@
 </div>
 <div class='flex-container'>
   jason mason johnson <br><br>
-  <%--@elvariable id="paymentCard" type=""--%>
+</div>
     <form:form method="POST" modelAttribute="paymentCard">
     <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
-              <form:select  path="checkoutCard">
+              <form:select  path="checkoutCard" id = "cards">
                 <form:option value="1"  label="1" />
                 <form:option value="2"  label="2" />
                 <form:option value="3"  label="3" /> 
               </form:select>
-            </form:form>
+            
 
-</div>
+
 
 <div class="footer">
   <br>
