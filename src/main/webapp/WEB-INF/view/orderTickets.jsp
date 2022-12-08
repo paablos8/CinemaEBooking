@@ -1,5 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheets" href="css/stylesheet.css">
@@ -297,7 +297,9 @@ h5{
             </div>  
             <br>    
             </div>
-          <form:button type="submit" class="btn btn-secondary btn-block mb-4">Submit</form:button>
+            <a href="viewcart">
+              <button" class="btn btn-secondary btn-block mb-4">Submit</button>
+          </a>
           
            
       </form:form> 

@@ -3,15 +3,21 @@ import org.springframework.ui.ModelMap;
 
 import java.util.Arrays;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.Database.DatabaseConnector;
 import com.example.CinemaEBooking.entities.Movie;
 import com.example.CinemaEBooking.entities.Ticket;
+import com.example.CinemaEBooking.entities.User;
 
 @Controller
+@SessionAttributes("currentUser")
 public class HomepageController {
 
     //Accessing the Database Connector instance
@@ -22,8 +28,18 @@ public class HomepageController {
         return "redirect:/homePage";
     }
 
+    
+    
     @RequestMapping(value = "/homePage", method = RequestMethod.GET)
-    public String homePage (ModelMap model){
+    public String homePage (ModelMap model, HttpServletRequest request){
+
+
+        HttpSession session = request.getSession();
+        if(session.getAttribute("currentUser") == null) {
+            model.addAttribute("login", "Login");
+        }
+
+
         String titles[] = db.getAllTitles();
         int showsId[] = db.getAllShowtimeIDs();
         String ShowsTitles[] = new String[100];
@@ -60,5 +76,11 @@ public class HomepageController {
     public String registrationConfirmation(){
 
         return "registrationConfirmation";
+    }
+
+
+    @RequestMapping("/viewCartBS")
+    public String viewCartBS(){
+        return "viewCartBS";
     }
 }

@@ -153,7 +153,7 @@ h5{
     <a href="promotionHome">Promotions</a>
     <a href="viewcart">View Cart</a>
     <div class="topNavLogout" id="logout">
-    <a href="userLogin">Login</a>
+    <a href="userLogin">${login}</a>
     <a href="loginSuccess">${currentUser.firstName}</a>
     <div class="search-container">
     <form action="/searchResults">

@@ -8,6 +8,11 @@ public class Booking {
     private int ShowID;
     private int cardID;
     private int promoID;
+    private String promoCode;
+   
+    public void setPromoCode(String promoCode) {
+        this.promoCode = promoCode;
+    }
     private String [] row1;
     private String [] row2;
     private String [] row3;
@@ -78,5 +83,9 @@ public class Booking {
     }
     public void setPromoID(int promoID) {
         this.promoID = promoID;
+    }
+
+    public String getPromoCode() {
+        return promoCode;
     }
 }

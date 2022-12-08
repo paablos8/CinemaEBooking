@@ -94,9 +94,6 @@
 
   <div class="topnav" id="myTopnav">
     <a href="homePage" class="active">Home</a>
-    <a href="promotionHome">Promotions</a>
-    <a href="userLogin">Login</a>
-    <a href="viewcart">View Cart</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -112,11 +109,15 @@
 <div class="login">
     <br>
     
-    Show: NaN<br>
-    Show Time: NaN<br>
-    Number of tickets: NaN<br>
-    Cost: NaN<br>
-    Ticket(s) Number: NaN<br>
+    Movie: ${title}<br>
+    Show Time: ${showtime}<br>
+    Adult Tickets: ${adultTickets}<br>
+    Child Tickets: ${childTickets}<br>
+    Senior Tickets: ${seniorTickets}<br>
+    The Promo Code " ${promoCode} " saved you $ ${moneySaved}<br>
+    Total Sum: $ ${total}<br>
+    Card Number charged: ${cardNum}<br>
+    <br>
     <br>
     <a href="homePage">
       <button" class="btn btn-secondary btn-block mb-4">Back to Home</button>
