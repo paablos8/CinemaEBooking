@@ -137,7 +137,8 @@ public Object submitCheckout(@ModelAttribute("submitCheckout") Booking booking, 
         int bookingId = db.createNewBooking(userId, userId, promotionCode, showId, 2, 1, 0);
         
         //get the total price
-        double totalPrice = db.getTotal(bookingId);
+        //double totalPrice = db.getTotal(bookingId);
+        double totalPrice = 10;
         System.out.println(totalPrice);
         
         return "redirect:/orderSummary";
@@ -146,7 +147,55 @@ public Object submitCheckout(@ModelAttribute("submitCheckout") Booking booking, 
     else {
 
         model.addAttribute("promotionResult", "The used Promotion Code is not valid!");
-        return "redirect:/viewcart";  
+        PaymentCard[] storedPaymentCards = db.createCardObjects(userId);
+        if (storedPaymentCards.length > 0) {
+            model.addAttribute("noCardStored", "You have currently no Card stored in your Account!");
+        }
+        
+        if (storedPaymentCards.length > 0) {
+            long[] numbers = db.getCardNumbers(userId);
+            String[] names = db.getCardNames(userId);
+            int[] cvvs = db.getCardCVVs(userId);
+            String[] expDates = db.getCardExpDates(userId);
+            int[] zips = db.getCardZipCodes(userId);
+
+            model.addAttribute("card1Name", names[0]); 
+            model.addAttribute("card1Number", numbers[0]);
+            model.addAttribute("card1Cvv", cvvs[0]);
+            model.addAttribute("card1Expiration",expDates[0]);
+            model.addAttribute("card1Zip", zips[0]);
+        }
+
+        if (storedPaymentCards.length > 1) {
+            
+            long[] numbers = db.getCardNumbers(userId);
+            String[] names = db.getCardNames(userId);
+            int[] cvvs = db.getCardCVVs(userId);
+            String[] expDates = db.getCardExpDates(userId);
+            int[] zips = db.getCardZipCodes(userId);
+
+            model.addAttribute("card2Name", names[1]);
+            model.addAttribute("card2Number",numbers[1]);
+            model.addAttribute("card2Cvv",cvvs[1]);
+            model.addAttribute("card2Expiration", expDates[1]);
+            model.addAttribute("card2Zip", zips[1]);
+        }
+        
+        if (storedPaymentCards.length > 2) {
+
+            long[] numbers = db.getCardNumbers(userId);
+            String[] names = db.getCardNames(userId);
+            int[] cvvs = db.getCardCVVs(userId);
+            String[] expDates = db.getCardExpDates(userId);
+            int[] zips = db.getCardZipCodes(userId);
+
+            model.addAttribute("card3Name", names[2]);
+            model.addAttribute("card3Number",numbers[2]);
+            model.addAttribute("card3Cvv",cvvs[2]);
+            model.addAttribute("card3Expiration",expDates[2]);
+            model.addAttribute("card3Zip",zips[2]);
+    }
+        return "viewcart";  
         
     }
     }       
