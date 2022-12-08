@@ -282,6 +282,7 @@
   Have a Promo Code? Enter Here:<br>
   <form:input class='input-field' path="promoCode" />
           <br>
+          ${promotionResult}
         
 </div>
   
