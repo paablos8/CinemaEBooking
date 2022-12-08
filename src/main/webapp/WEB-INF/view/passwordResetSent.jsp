@@ -88,6 +88,14 @@
   }
 }
 
+.flex-container {
+    background: orange;
+    margin:25px;
+    padding:.5px;
+    font-size: 19px;
+    font-family:'Roboto', sans-serif;
+  }
+
 .footer{
     position:fixed;
     left:0;
@@ -115,7 +123,10 @@
 
 
   <div class="title">
-    A mail has been sent to your account! Follow the instructions in the Mail to reset your password!<BR/>
+    Password Reset Confirmed!
+</div>
+<div class="flex-container">
+A mail has been sent to your account! Follow the instructions in the Mail to reset your password!<BR/>
 </div>
 
 

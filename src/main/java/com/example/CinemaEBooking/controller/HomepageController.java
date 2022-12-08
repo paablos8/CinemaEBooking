@@ -79,8 +79,4 @@ public class HomepageController {
     }
 
 
-    @RequestMapping("/viewCartBS")
-    public String viewCartBS(){
-        return "viewCartBS";
-    }
 }

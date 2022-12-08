@@ -225,7 +225,7 @@
         Your Cart Summary
     </div>
     
-    %--@elvariable id="paymentCard" type=""--%
+    
     <form:form method="POST" modelAttribute="paymentCard">
     <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
               <form:select  path="checkoutCard">
@@ -233,7 +233,7 @@
                 <form:option value="2"  label="2" />
                 <form:option value="3"  label="3" /> 
               </form:select>
-            </form:form>
+            
     
     <div class='section'>
       <div class='flex-container'>
@@ -268,6 +268,7 @@
   Have a Promo Code? Enter Here:<br>
   <input class='input-field'></input>
   <button class='pay-btn'>Add Promo</button>
+          </form:form>
           <br>
 </div>
   
