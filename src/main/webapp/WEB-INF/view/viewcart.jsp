@@ -226,9 +226,9 @@
     </div>
     
     
-    <form:form method="POST" modelAttribute="paymentCard">
+    <form:form method="POST" modelAttribute="submitCheckout">
     <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
-              <form:select  path="checkoutCard">
+              <form:select  path="cardID">
                 <form:option value="1"  label="1" />
                 <form:option value="2"  label="2" />
                 <form:option value="3"  label="3" /> 
@@ -266,10 +266,10 @@
 
         <br><br>
   Have a Promo Code? Enter Here:<br>
-  <input class='input-field'></input>
+  <form:input class='input-field' path="promoCode" />
   <button class='pay-btn'>Add Promo</button>
-          </form:form>
           <br>
+        </form:form>
 </div>
   
 </div>
