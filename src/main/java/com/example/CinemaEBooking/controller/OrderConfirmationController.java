@@ -59,14 +59,16 @@ public class OrderConfirmationController {
         
         long cardNumber = db.getCardNum (bookingId);
         String promoCode = db.getPromoCode(bookingId);
-        double total = db.getTotal(bookingId);
+        
         int showtimeId = db.getShowtimeID(bookingId);
         int adultTickets = db.getAdultTickets(bookingId);
         int childTickets = db.getChildTickets(bookingId);
         int seniorTickets = db.getSeniorTickets(bookingId);
 
-        double percentOff = db.getPercentOff(promoCode)/100;
-        double moneySaved = percentOff * total;
+        double percentOff = db.getPercentOff(promoCode)*0.01;
+        System.out.println(percentOff);
+        double moneySaved = percentOff * 19;
+        double total = db.getTotal(bookingId) - moneySaved;
         String title = db.getShowTitle(showtimeId);
         String showtime = db.getShowDateAndTime(showtimeId);        
 

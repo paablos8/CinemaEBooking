@@ -254,7 +254,7 @@
         <div class='order-info-content'>
           <h2>Order Summary</h2>
           <span class='thin'>Adult Tickets</span>
-          <br> ${}<br> <span class='thin small'> Number of tickets: 2 <br></span>
+          <br> ${s}<br> <span class='thin small'> Number of tickets: 2 <br></span>
           Subtotal Cost: Enter Price Here
           
         </td>
@@ -264,7 +264,7 @@
     
         <td>
         <span class='thin'>Youth Tickets</span>
-        <br>${}<br> <span class='thin small'> Number of tickets: 1 <br></span>
+        <br>${a}<br> <span class='thin small'> Number of tickets: 1 <br></span>
         Subtotal Cost: EnTeR Price Here
       </tr>
     
@@ -272,7 +272,7 @@
 
         <td>
         <span class='thin'>Senior Tickets</span>
-        <br>${}<br> <span class='thin small'> Number of tickets: 0 <br></span>
+        <br>${v}<br> <span class='thin small'> Number of tickets: 0 <br></span>
         Subtotal Cost: EnTeR Price Here
 
         <br><br>

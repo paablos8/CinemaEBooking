@@ -134,9 +134,10 @@ public Object submitCheckout(@ModelAttribute("submitCheckout") Booking booking, 
         model.addAttribute("totalSum");
 
         long[] numbers = db.getCardNumbers(userId);
+        System.out.println(numbers[booking.getCardID() - 1]);
 
         //Create new booking
-        int bookingId = db.createNewBooking(userId, numbers[booking.getCardID()], promotionCode, showId, 2, 1, 0);
+        int bookingId = db.createNewBooking(userId, numbers[booking.getCardID() - 1], promotionCode, showId, 2, 1, 0);
         
         //get the total price
         double totalPrice = db.getTotal(bookingId);
