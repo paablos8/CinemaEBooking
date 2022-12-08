@@ -117,10 +117,10 @@
     Adult Tickets: ${adultTickets}<br>
     Child Tickets: ${childTickets}<br>
     Senior Tickets: ${seniorTickets}<br>
-    The Promo Code ${promoCode} saved you $ ${moneySaved}<br>
-    Total Sum: ${total}<br>
-    Card Number: ${cardNum}<br>
-    Ticket(s) Number: NaN<br>
+    The Promo Code " ${promoCode} " saved you $ ${moneySaved}<br>
+    Total Sum: $ ${total}<br>
+    Card Number charged: ${cardNum}<br>
+    <br>
     <br>
     <a href="homePage">
       <button" class="btn btn-secondary btn-block mb-4">Back to Home</button>

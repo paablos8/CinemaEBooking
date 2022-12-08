@@ -65,7 +65,7 @@ public class OrderConfirmationController {
         int childTickets = db.getChildTickets(bookingId);
         int seniorTickets = db.getSeniorTickets(bookingId);
 
-        double percentOff = db.getPercentOff(promoCode);
+        double percentOff = db.getPercentOff(promoCode)/100;
         double moneySaved = percentOff * total;
         String title = db.getShowTitle(showtimeId);
         String showtime = db.getShowDateAndTime(showtimeId);        
