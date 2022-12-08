@@ -146,17 +146,17 @@
 </div>
 <div class='flex-container'>
   jason mason johnson <br><br>
-  <%--@elvariable id="paymentCard" type=""--%>
+</div>
     <form:form method="POST" modelAttribute="paymentCard">
     <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
-              <form:select  path="checkoutCard">
+              <form:select  path="checkoutCard" id = "cards">
                 <form:option value="1"  label="1" />
                 <form:option value="2"  label="2" />
                 <form:option value="3"  label="3" /> 
               </form:select>
-            </form:form>
+            
 
-</div>
+
 
 <div class="footer">
   <br>

@@ -3,6 +3,7 @@ package com.example.CinemaEBooking.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ public class OrderConfirmationController {
 
 
     //Send confirmation Email
+    @Autowired
     JavaMailSender javaMailSender;
 
     void sendConfirmationEmail(String email, long cardNumber, String promoCode, double total, int adultTickets, int seniorTickets, int childTickets, double moneySaved, String title, String showtime) {
@@ -30,7 +32,7 @@ public class OrderConfirmationController {
         SimpleMailMessage msg = new SimpleMailMessage();        
             msg.setTo(email);
             msg.setSubject("MovieHub - Order Confirmation");
-            msg.setText("Thank you for your recent purchase! You just bought " + adultTickets + " Adult Tickets, " + childTickets + " Child Tickets, " + seniorTickets + " Senior Tickets for the Movie "+ title + " on " + showtime + " for a total of " + total + " !");
+            msg.setText("Thank you for your recent purchase! You just bought " + adultTickets + " Adult Tickets, " + childTickets + " Child Tickets, " + seniorTickets + " Senior Tickets for the Movie "+ title + " on " + showtime + " for a total of $" + total + " !");
         
             javaMailSender.send(msg);
     }
@@ -63,7 +65,7 @@ public class OrderConfirmationController {
         int childTickets = db.getChildTickets(bookingId);
         int seniorTickets = db.getSeniorTickets(bookingId);
 
-        double percentOff = db.getPercentOff(promoCode);
+        double percentOff = db.getPercentOff(promoCode)/100;
         double moneySaved = percentOff * total;
         String title = db.getShowTitle(showtimeId);
         String showtime = db.getShowDateAndTime(showtimeId);        

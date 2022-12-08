@@ -22,10 +22,7 @@ public class HomepageController {
         return "redirect:/homePage";
     }
 
-    @RequestMapping("/viewCartBS")
-    public String viewcartbs(){
-        return "redirect:/viewCartBS";
-    }
+    
 
     @RequestMapping(value = "/homePage", method = RequestMethod.GET)
     public String homePage (ModelMap model){
@@ -65,5 +62,11 @@ public class HomepageController {
     public String registrationConfirmation(){
 
         return "registrationConfirmation";
+    }
+
+
+    @RequestMapping("/viewCartBS")
+    public String viewCartBS(){
+        return "viewCartBS";
     }
 }
