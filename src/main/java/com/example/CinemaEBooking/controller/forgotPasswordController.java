@@ -39,12 +39,16 @@ public class forgotPasswordController {
         int loginResult = db.verifyLogin(email, "lol");
 
         if (loginResult == -1)  {
-            System.out.println("succes");
+            System.out.println("success");
             sendEmail(email);
+            return "passwordResetSent";
 
         }
 
-        return "redirect:/userLogin";
+        else {
+            System.out.println("Something went wrong, try again!");
+            return "forgotPassword";
+        }
     }
 
     @Autowired

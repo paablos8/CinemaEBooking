@@ -45,7 +45,7 @@ public class ResetPasswordController {
         System.out.println(email);
         System.out.println(password);
         db.resetPassword(email, password);
-        return "homePage";
+        return "redirect:/userLogin";
     }
 }
 
