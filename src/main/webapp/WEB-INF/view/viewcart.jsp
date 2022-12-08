@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+%@ taglib prefix="form" uri="http://www.springframework.org/tags"%>
 <html>
-    <head>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <link rel="stylesheets" href="css/stylesheet.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-       <title>Your Cart</title> 
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheets" href="css/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>viewCart    
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body{
         background:linear-gradient(grey,orange);
-        height:100%;
+        height:auto;
       }
       .login{
         border-radius:25px;
@@ -28,7 +28,6 @@
       .title{
         font-size:50px;
         text-align: center;
-        font-family:'Roboto', sans-serif;
       }
       .topnav {
   overflow: hidden;
@@ -37,6 +36,16 @@
 
 .topnav a {
   float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topNavLogout a {
+  float: right;
   display: block;
   color: #f2f2f2;
   text-align: center;
@@ -78,13 +87,12 @@
     float: none;
     display: block;
     text-align: left;
-  }
+  } 
 }
 
 .flex-container {
-
-
-    background-color:#333;
+    display:flex;
+    background-color:orange;
     justify-content: center;
     flex-wrap: wrap;
     margin-left: auto;
@@ -92,9 +100,11 @@
     border-radius: 25px; 
     padding: 14px 20px;
     text-align:center;
+    float:left;
   }
   
   .flex-container2 {
+    display: flex;
     
     margin-left: 500px;
     margin-right: auto;
@@ -183,36 +193,32 @@
   cursor: pointer;
 }
 
-.footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    text-align:center;
-    background-color:#333;
-    color: white;  
+.flex-container {
+  display:flex;
+  background-color:lightgray;
+  justify-content: center;
+  margin-left: 7%;
+  margin-right: 7%;
+  border-radius: 25px; 
 }
-    
+
     </style>
-     </head>
-     
-     
-      <div class="topnav" id="myTopnav">
-        <a href="homePage" class="active">Home</a>
-        <a href="promotionHome">Promotions</a>
-        <div class="topNavLogout" id="logout">
-          <a href="loginSuccess">${currentUser.firstName}</a>
-          <div class="search-container">
-          <form action="/searchResults">
-            <input type="text" placeholder="Search:" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-        </div>
-      </div>
 
+  </head>
+  <div class="topnav" id="myTopnav">
+    <a href="homePage" class="active">Home</a>
+    <a href="promotionHome">Promotions</a>
+    <div class="topNavLogout" id="logout">
+      <a href="loginSuccess">${currentUser.firstName}</a>
+      <div class="search-container">
+      <form action="/searchResults">
+        <input type="text" placeholder="Search:" name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+    </div>
+  </div>
 
-      
 <body>
       <div class="title">
         Your Cart Summary
@@ -243,6 +249,9 @@
     
 
   
+  <table class='order-table'>
+    <tbody>
+      <tr>
         
         <td>
         <span class='thin'>Youth Ticket</span>
@@ -250,21 +259,101 @@
         Subtotal Cost: EnTeR Price Here
       </tr>
     
-        <br><br>
-
+    </tbody>
+  </table>
+  <div class='line'></div> <br>
+  <table class='order-table'>
+    <tbody>
+      <tr>
+        
         <td>
         <span class='thin'>Senior Ticket</span>
         <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
         Subtotal Cost: EnTeR Price Here
 
-        <br><br>
+      </tr>
+      
+    </tbody>
+  </table>
+  <br>
   Have a Promo Code? Enter Here:<br>
   <input class='input-field'></input>
   <button class='pay-btn'>Add Promo</button>
-          <br>
-</div>
+  </div>
   
 </div>
+<div class='flex-container2'>
+    
+      <table class='half-sinput-table'>
+        <tr><td>Please select your card of purchase: </td></tr>
+      </table>
+
+      <div class="card"> <div class="info"> 
+            <span>Primary Card Information</span> 
+            </div> 
+            
+            <div class="forms"> 
+            <div class="inputs"> 
+            <span>Name on Card</span> 
+            <input type="text" readonly value="${card1Name}"> </div> 
+            
+            <div class="inputs"> 
+            <span>Number</span> 
+            <input type="text" readonly value="${card1Number}"> </div> 
+        
+      </div>
+      <div class="form-check">
+        <form:checkbox path="checkoutCard1" />
+        <label class="form-check-label" for="checkoutCard1"> Select card as Form of Payment </label>
+    </div>
+    </div>
+    <div class="card"> <div class="info"> 
+      <span>Secondary Card Information</span> 
+      </div> 
+      
+      <div class="forms"> 
+      <div class="inputs"> 
+      <span>Name on Card</span> 
+      <input type="text" readonly value="${card2Name}"> </div> 
+      
+      <div class="inputs"> 
+      <span>Number</span> 
+      <input type="text" readonly value="${card2Number}"> </div> 
+  
+</div>
+<div class="form-check">
+  <form:checkbox path="checkoutCard2" />
+  <label class="form-check-label" for="checkoutCard2"> Select card as Form of Payment </label>
+</div>
+</div>
+<div class="card"> <div class="info"> 
+  <span>Tertiary Card Information</span> 
+  </div> 
+  
+  <div class="forms"> 
+  <div class="inputs"> 
+  <span>Name on Card</span> 
+  <input type="text" readonly value="${card3ame}"> </div> 
+  
+  <div class="inputs"> 
+  <span>Number</span> 
+  <input type="text" readonly value="${card3Number}"> </div> 
+
+</div>
+</div>
+
+</div>
+
+
+
+
+ <div class='flex-container3'>
+  
+ </div>
+ 
+
+
+
   <div class='flex-container3'>
 <div class='total'>
     <span style='float:left;'>
@@ -284,27 +373,25 @@
   </div>
  </div>
 </div>
-      
-        
-  
-  </body>
 
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <div class="footer">
-    <br>
-    <small>Copyright - MovieHub</small>
-    <br><br>
-  
+<div class="footer">
+  <br>
+  <small>Copyright - MovieHub</small>
+  <br><br>
+
 </div>
-  <script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
       }
-    }
-    </script>
+      </script>
+      
+
+
 
 </html>

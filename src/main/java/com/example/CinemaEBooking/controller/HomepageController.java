@@ -22,6 +22,11 @@ public class HomepageController {
         return "redirect:/homePage";
     }
 
+    @RequestMapping("/viewCartBS")
+    public String viewcartbs(){
+        return "redirect:/viewCartBS";
+    }
+
     @RequestMapping(value = "/homePage", method = RequestMethod.GET)
     public String homePage (ModelMap model){
         String titles[] = db.getAllTitles();
