@@ -45,6 +45,7 @@ public class ResetPasswordController {
         System.out.println(email);
         System.out.println(password);
         db.resetPassword(email, password);
+        //System.out.println("That is the password stored in the databse: " + db.getUserPassword(user.getUserId()));
         return "redirect:/userLogin";
     }
 }
