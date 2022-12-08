@@ -93,7 +93,11 @@
     margin:25px;
     padding:.5px;
     font-size: 19px;
-    font-family:'Roboto', sans-serif;
+    flex-wrap: wrap;
+    border-radius: 25px; 
+    padding: 14px 20px;
+    text-align:center;
+    float:center;
   }
 
 .footer{
@@ -126,7 +130,7 @@
     Password Reset Confirmed!
 </div>
 <div class="flex-container">
-A mail has been sent to your account! Follow the instructions in the Mail to reset your password!<BR/>
+An e-mail has been sent to your account! Follow the instructions in the e-mail to reset your password!<br>
 </div>
 
 
