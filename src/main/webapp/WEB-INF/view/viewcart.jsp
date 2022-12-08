@@ -110,13 +110,11 @@
     background-color: rgb(126, 126, 126);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 45px;
     border-radius: 25px;
     padding: 14px 20px;
-    text-align: center;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
+    
     
   }
   
@@ -127,7 +125,6 @@
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 25px;
     border-radius: 25px;
     float:right; 
   }
@@ -137,7 +134,6 @@
     margin:25px;
     padding:.5px;
     font-size: 19px;
-    font-family:'Roboto', sans-serif;
   }
   
     .flex-container2 > div {
@@ -145,7 +141,6 @@
     margin:25px;
     padding:.5px;
     font-size: 14px;
-    font-family:'Roboto', sans-serif;
     }
   
     .flex-container3 > div {
@@ -153,14 +148,13 @@
     margin:25px;
     padding:.5px;
     font-size: 19px;
-    font-family:'Roboto', sans-serif;
     }
 
     .dropdown-container{
     display: flex;
     background-color: rgb(126, 126, 126);
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 365px;
+    margin-right: 395px;
     margin-top: 10px;
     border-radius: 25px;
     padding: 14px 14px;
@@ -171,8 +165,8 @@
     }
 
     .card{
-      width:350px;
-      height:185px;
+      width:auto;
+      height:auto;
       background-color:#fff;
       box-shadow:0px 15px 30px rgba(0,0,0,0.1);
       border-radius:10px;
@@ -300,7 +294,7 @@
       <div class='thin dense'>Subtotal</div>
       TOTAL
     </span>
-    <span style='float:right; text-align:right; margin-left: 50px;'>
+    <span style='float:right; text-align:right; margin-left: 25px;'>
       <div class='thin dense'>ent.couponCalchere</div>
       <div class='thin dense'>tax calc</div>
       <div class='thin dense'>Subto Calc</div>
@@ -314,8 +308,9 @@
  </div>
 
  <div class='flex-container2'>
-    
+  <span style='float:center';>
     Your Wallet:
+    </span>
 <br>  
   <div class="card"> <div class="info"> 
         <span>Primary Card Information</span> 
