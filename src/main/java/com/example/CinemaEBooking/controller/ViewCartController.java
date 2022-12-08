@@ -120,12 +120,12 @@ public Object submitCheckout(@ModelAttribute("submitCheckout") Booking booking, 
 
     System.out.println(promotionCode);
 
-    /*
+    
     if (promotionCode.isEmpty()) {
-        promotionCode = "0";
+        promotionCode = "-";
         promoFound = true;
     }
-    */
+    
 
         for (int i = 0; i < allPromotionCodes.length; i++) {
             if (promotionCode.equals(allPromotionCodes[i])) {
