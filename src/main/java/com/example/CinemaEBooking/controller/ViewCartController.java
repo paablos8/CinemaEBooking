@@ -120,7 +120,7 @@ public Object submitCheckout(@ModelAttribute("submitCheckout") Booking booking, 
     if (promoFound == true) {
         double percentOff = db.getPercentOff(promotionCode);
 
-        double sum = 19.00 * (1-percentOff);
+        double sum = 19.00 * (1-percentOff*0.01);
 
         System.out.println("After Promotion and Tickets: " + sum);
         model.addAttribute("afterPromotion", sum);
@@ -133,12 +133,14 @@ public Object submitCheckout(@ModelAttribute("submitCheckout") Booking booking, 
         model.addAttribute("promotionApplied", message);
         model.addAttribute("totalSum");
 
+        long[] numbers = db.getCardNumbers(userId);
+
         //Create new booking
-        int bookingId = db.createNewBooking(userId, userId, promotionCode, showId, 2, 1, 0);
+        int bookingId = db.createNewBooking(userId, numbers[booking.getCardID()], promotionCode, showId, 2, 1, 0);
         
         //get the total price
-        //double totalPrice = db.getTotal(bookingId);
-        double totalPrice = 10;
+        double totalPrice = db.getTotal(bookingId);
+        //double totalPrice = 10;
         System.out.println(totalPrice);
         
         return "redirect:/orderSummary";
