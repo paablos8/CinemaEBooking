@@ -53,7 +53,7 @@ public class BookingTableConnector extends SQL_GetSet
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Booking VALUES ("
-                    +userID+","+encCard+",'"+promoCode+"',"+total+","+showtimeID+
+                    +userID+",'"+encCard+"','"+promoCode+"',"+total+","+showtimeID+
                     ","+adultTickets+","+childTickets+","+seniorTickets+")";
             stmt.executeUpdate(SQL);
         }
