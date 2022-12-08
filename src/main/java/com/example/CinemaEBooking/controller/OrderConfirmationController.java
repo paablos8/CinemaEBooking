@@ -30,7 +30,7 @@ public class OrderConfirmationController {
         SimpleMailMessage msg = new SimpleMailMessage();        
             msg.setTo(email);
             msg.setSubject("MovieHub - Order Confirmation");
-            msg.setText("Thank you for your recent purchase! You just bought " + adultTickets + " Adult Tickets, " + childTickets + " Child Tickets, " + SeniorTickets + " Senior Tickets for the Movie "+ title + " on " + showtime + " for a total of " + total + " !");
+            msg.setText("Thank you for your recent purchase! You just bought " + adultTickets + " Adult Tickets, " + childTickets + " Child Tickets, " + seniorTickets + " Senior Tickets for the Movie "+ title + " on " + showtime + " for a total of " + total + " !");
         
             javaMailSender.send(msg);
     }
