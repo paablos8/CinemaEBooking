@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-%@ taglib prefix="form" uri="http://www.springframework.org/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -178,7 +178,7 @@
           .card .inputs input{height:24px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
           .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
 
-          .search-container {
+  .search-container {
   margin-top:12px;
   float: right;
 }

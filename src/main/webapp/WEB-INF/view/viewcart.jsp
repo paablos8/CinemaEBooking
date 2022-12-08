@@ -89,16 +89,96 @@
     text-align: left;
   } 
 }
-.footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    text-align:center;
+
+.flex-container {
+
+
     background-color:#333;
-    color: white; 
-}
-.search-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px; 
+    padding: 14px 20px;
+    text-align:center;
+    float:left;
+  }
+  
+  .flex-container2 {
+    display: flex;
+    
+    margin-left: 500px;
+    margin-right: auto;
+    margin-top: 45px;
+    border-radius: 25px;
+    padding: 14px 20px;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    
+  }
+  
+  .flex-container3 {
+    display:flex;
+    background-color:orange;
+    justify-content:center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border-radius: 25px;
+    float:right; 
+  }
+
+.flex-container > div {
+    background: orange;
+    margin:25px;
+    padding:.5px;
+    font-size: 19px;
+    font-family:'Roboto', sans-serif;
+  }
+  
+    .flex-container2 > div {
+    background: rgb(126, 126, 126);
+    margin:25px;
+    padding:.5px;
+    font-size: 14px;
+    font-family:'Roboto', sans-serif;
+    }
+  
+    .flex-container3 > div {
+    background: orange;
+    margin:25px;
+    padding:.5px;
+    font-size: 19px;
+    font-family:'Roboto', sans-serif;
+    }
+
+    .card{
+      width:350px;
+      height:250px;
+      background-color:#fff;
+      box-shadow:0px 15px 30px rgba(0,0,0,0.1);
+      border-radius:10px;
+      overflow:hidden;
+    }
+      .card .info
+      {padding:15px;display:flex;justify-content:space-between;border-bottom:1px solid #e1dede;
+        background-color:#e5e5e5}
+        .card .info button
+        {height:30px;width:80px;border:none;
+          color:#fff;border-radius:4px;background-color:#000;
+          cursor:pointer;text-transform:uppercase}
+          .card .forms
+          {padding:10px}
+          .card .inputs
+          {display:flex;flex-direction:column;margin-bottom:10px}
+          .card .inputs span{font: size 20px;}
+          .card .inputs input{height:24px;padding:0px 10px;font-size:17px;box-shadow:none;outline:none}
+          .card .inputs input[type="text"][readonly]{border: 2px solid rgba(0,0,0,0)}
+
+  .search-container {
   margin-top:12px;
   float: right;
 }
@@ -141,22 +221,76 @@
   </div>
 
 <body>
-<div class="title">
-    Your Cart Summary
-</div>
-<div class='flex-container'>
-  jason mason johnson <br><br>
-</div>
+      <div class="title">
+        Your Cart Summary
+    </div>
+    
+    %--@elvariable id="paymentCard" type=""--%
     <form:form method="POST" modelAttribute="paymentCard">
     <label class="mr-sm-2" for="paymentCard">Select the card you want to use:</label>
-              <form:select  path="checkoutCard" id = "cards">
+              <form:select  path="checkoutCard">
                 <form:option value="1"  label="1" />
                 <form:option value="2"  label="2" />
                 <form:option value="3"  label="3" /> 
               </form:select>
-            
+            </form:form>
+    
+    <div class='section'>
+      <div class='flex-container'>
+        <div class='order-info-content'>
+          <h2>Order Summary</h2>
+          <span class='thin'>Adult Ticket</span>
+          <br> Enter MOvie Title here<br> <span class='thin small'> Number of tickets: number here <br></span>
+          Subtotal Cost: Enter Price Here
+          
+        </td>
+      </tr>
+      
+      <br><br>
+    
 
+  
+        
+        <td>
+        <span class='thin'>Youth Ticket</span>
+        <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
+        Subtotal Cost: EnTeR Price Here
+      </tr>
+    
+        <br><br>
 
+        <td>
+        <span class='thin'>Senior Ticket</span>
+        <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
+        Subtotal Cost: EnTeR Price Here
+
+        <br><br>
+  Have a Promo Code? Enter Here:<br>
+  <input class='input-field'></input>
+  <button class='pay-btn'>Add Promo</button>
+          <br>
+</div>
+  
+</div>
+  <div class='flex-container3'>
+<div class='total'>
+    <span style='float:left;'>
+      <div class='thin dense'>Coupon(if Used)%</div>
+      <div class='thin dense'>Tax</div>
+      <div class='thin dense'>Subtotal</div>
+      TOTAL
+    </span>
+    <span style='float:right; text-align:right; margin-left: 50px;'>
+      <div class='thin dense'>ent.couponCalchere</div>
+      <div class='thin dense'>tax calc</div>
+      <div class='thin dense'>Subto Calc</div>
+      Total calc
+    <br> <br>
+    <button class='pay-btn'>Checkout</button>
+  </span>  
+  </div>
+ </div>
+</div>
 
 <div class="footer">
   <br>
