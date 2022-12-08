@@ -159,8 +159,7 @@ class UserTableConnector extends SQL_GetSet
             {
                 if((email.equals(rs.getString("Email"))))
                 {
-                    //String encPass = encrypt(password);
-                    String encPass = password;
+                    String encPass = encrypt(password);
                     rs.updateString("Password", encPass);
                     rs.updateRow();
                 }
