@@ -253,8 +253,8 @@
       <div class='flex-container'>
         <div class='order-info-content'>
           <h2>Order Summary</h2>
-          <span class='thin'>Adult Ticket</span>
-          <br> Enter MOvie Title here<br> <span class='thin small'> Number of tickets: number here <br></span>
+          <span class='thin'>Adult Tickets</span>
+          <br> ${}<br> <span class='thin small'> Number of tickets: 2 <br></span>
           Subtotal Cost: Enter Price Here
           
         </td>
@@ -262,20 +262,17 @@
       
       <br><br>
     
-
-  
-        
         <td>
-        <span class='thin'>Youth Ticket</span>
-        <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
+        <span class='thin'>Youth Tickets</span>
+        <br>${}<br> <span class='thin small'> Number of tickets: 1 <br></span>
         Subtotal Cost: EnTeR Price Here
       </tr>
     
         <br><br>
 
         <td>
-        <span class='thin'>Senior Ticket</span>
-        <br> Enter MOvie TiTLe here<br> <span class='thin small'> Number of tickets: number here <br></span>
+        <span class='thin'>Senior Tickets</span>
+        <br>${}<br> <span class='thin small'> Number of tickets: 0 <br></span>
         Subtotal Cost: EnTeR Price Here
 
         <br><br>
