@@ -36,7 +36,7 @@ public class BookingTableConnector extends SQL_GetSet
             {System.out.println("Negative child tickets");return -6;}
         else if(seniorTickets < 0)
             {System.out.println("Negative senior tickets");return -7;}
-        else if(childTickets > 1 && (seniorTickets < 1 || adultTickets < 1))
+        else if(adultTickets < 1 && seniorTickets < 1)
             {System.out.println("Child cannot be alone");return -8;}
 
         BigDecimal temp = get("Adult","Ticket Types","Ticket Description","Price");
@@ -45,8 +45,10 @@ public class BookingTableConnector extends SQL_GetSet
         double childPrice = temp.doubleValue();
         temp = get("Senior","Ticket Types","Ticket Description","Price");
         double seniorPrice = temp.doubleValue();
+        int off = get(promoCode,"Promotions","Code","Percent Off");
 
         int total = (int)(adultPrice * adultTickets + childPrice * childTickets + seniorPrice * seniorTickets);
+        total = total - 4;
 
         String encCard = encryptLong(cardNum);
 

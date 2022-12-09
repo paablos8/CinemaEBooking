@@ -69,7 +69,7 @@ public class ShowtimeTableConnector extends SQL_GetSet
      */
     String getShowTitle(int showtimeID)
     {
-        int movieID =  get(showtimeID,"Showtimes","Showtime ID","Movie ID");
+        int movieID = get(showtimeID,"Showtimes","Showtime ID","Movie ID");
         return get(movieID,"Movie Titles","Movie ID","Title");
     }
 
