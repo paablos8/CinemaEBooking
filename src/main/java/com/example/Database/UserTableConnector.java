@@ -103,8 +103,8 @@ class UserTableConnector extends SQL_GetSet
         try(Statement stmt = conn.createStatement())
         {
             String SQL = "INSERT INTO Users VALUES ('"
-                    +fName+"','"+lName+"',"+pNum+",'"+email+"','"+
-                    promoOp+"',"+2+",'"+isAdmin+"','"+encPass+"')";
+                    +fName+"','"+lName+"','"+email+"','"+
+                    promoOp+"',"+2+",'"+isAdmin+"','"+encPass+"',"+0+","+pNum+")";
             stmt.executeUpdate(SQL);
         }
         // Handle any errors that may have occurred.
