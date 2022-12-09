@@ -297,10 +297,11 @@ h5{
             </div>  
             <br>    
             </div>
+            <div class="buttonCentering">
             <a href="viewcart">
               <button" class="btn btn-secondary btn-block mb-4">Submit</button>
           </a>
-          
+          </div>
            
       </form:form> 
 
@@ -313,11 +314,11 @@ h5{
 
     </div>
     
-    <br>
+    <div class="buttonCentering">
   <a href="homePage">
     <button" class="btn btn-secondary btn-block mb-4">Back to Home</button>
 </a>
-  
+  </div>
 </div>
 <br>
 <br>

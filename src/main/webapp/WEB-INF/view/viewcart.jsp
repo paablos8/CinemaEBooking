@@ -287,13 +287,11 @@
   <div class='flex-container3'>
 <div class='total'>
     <span style='float:left;'>
-      <div class='thin dense'>Coupon(if Used)%</div>
       <div class='thin dense'>Tax</div>
       <div class='thin dense'>Subtotal</div>
       TOTAL
     </span>
     <span style='float:right; text-align:right; margin-left: 25px;'>
-      <div class='thin dense'>ent.couponCalchere</div>
       <div class='thin dense'>$1.33</div>
       <div class='thin dense'>$19.00</div>
       $20.33
