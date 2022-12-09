@@ -207,29 +207,29 @@
     Edit Cards
 </div>
 
-<div> If you have no card added yet, you must use the "Add Payment Card 1"!</div>
-
+<div> <span style='font-size: 20px;'> If you have no card added yet, you must use the "Add Payment Card 1"!</span>
+</div>
 
   <a href="editCardOne">
     <div class="buttonPassword">
       <button" class="btn btn-secondary btn-block mb-4">Add Payment Card 1</button>
   </div>
     </a> 
-    <div> ${card1Created} </div>
+    <div>  <span style='font-size: 20px;'> ${card1Created} </span></div>
 
     <a href="editCardTwo">
         <div class="buttonPassword">
           <button" class="btn btn-secondary btn-block mb-4">Add Payment Card 2</button>
       </div>
         </a>
-        <div> ${card2Created} </div>
+        <div> <span style='font-size: 20px;'> ${card2Created} </span> </div>
 
         <a href="editCardThree">
             <div class="buttonPassword">
               <button" class="btn btn-secondary btn-block mb-4">Add Payment Card 3</button>
           </div>
             </a>
-            <div> ${card3Created} </div>
+            <div>  <span style='font-size: 20px;'> ${card3Created} </span></div>
 
   
 <div class="footer">
