@@ -96,7 +96,7 @@ public class RegistrationController {
         System.out.println(result);
 
         System.out.println("user created with email:" + email + " and password: " + password);
-        //sendEmail(email);
+        sendEmail(email);
 
         return "redirect:/registrationConfirmation";
         }
