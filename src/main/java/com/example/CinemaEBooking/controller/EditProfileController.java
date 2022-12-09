@@ -146,7 +146,7 @@ public class EditProfileController {
         System.out.println("New PromotionSubscribe: " + db.getPromoOp(userId));
         System.out.println("New Zip Code: " + db.getZipCode(userId));
 
-        return "viewProfile";
+        return "redirect:/viewProfile";
     }
 
 
