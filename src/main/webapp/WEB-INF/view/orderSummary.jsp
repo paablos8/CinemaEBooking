@@ -116,7 +116,7 @@
     Senior Tickets: ${seniorTickets}<br>
     The Promo Code " ${promoCode} " saved you $ ${moneySaved}<br>
     Total Sum: $ ${total}<br>
-    Card Number charged: ${cardNum}<br>
+    Card Number charged: ${cardNumber}<br>
     <br>
     <br>
     <a href="homePage">
